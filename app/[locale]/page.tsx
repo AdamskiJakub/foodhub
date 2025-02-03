@@ -1,23 +1,21 @@
-import { Locale } from "@/i18n/routing";
 import { setRequestLocale } from "next-intl/server";
 import NotFound from "./not-found";
 import LocaleSwitcher from "@/components/switcher/LocaleSwitcher";
+import { Locale } from "@/i18n/routing";
 
-interface Params {
-  locale: Locale;
-}
+type Params = Promise<{ locale: Locale }>;
 
 interface Props {
   params: Params;
 }
 
-export const generateStaticParams = (): Params[] => {
+export const generateStaticParams = (): { locale: Locale }[] => {
   return [{ locale: "en" }, { locale: "pl" }];
 };
 
-export default function HomePage(props: Props) {
+export default async function HomePage(props: Props) {
   const { params } = props;
-  const { locale } = params;
+  const { locale } = await params;
 
   setRequestLocale(locale);
 

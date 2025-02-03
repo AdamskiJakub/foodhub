@@ -1,29 +1,116 @@
+import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { NextIntlClientProvider } from "next-intl";
-import { getLocale, getMessages } from "next-intl/server";
-import { ReactNode } from "react";
 import "@/styles/globals.css";
+import { Locale, routing } from "@/i18n/routing";
+import { SEOAttributes } from "@/types/seo";
+import { ReactNode } from "react";
+import { getMessages, setRequestLocale } from "next-intl/server";
+import Head from "next/head";
+import { notFound } from "next/navigation";
+import { NextIntlClientProvider } from "next-intl";
+import LocaleSwitcher from "@/components/switcher/LocaleSwitcher";
 
 const inter = Inter({ subsets: ["latin"] });
 
-type Props = {
+type Params = Promise<{ locale: Locale }>;
+
+interface Props {
   children: ReactNode;
+  params: Params;
+}
+
+export const generateStaticParams = (): { locale: Locale }[] => {
+  return routing.locales.map((locale) => ({ locale }));
 };
 
-export default async function LocaleLayout({ children }: Props) {
-  const locale = await getLocale();
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
 
-  // Providing all messages to the client
-  // side is the easiest way to get started
-  const messages = await getMessages();
+  const messages = (await getMessages({ locale })) as unknown as Record<
+    string,
+    SEOAttributes
+  >;
+  const seoMessages = messages.SEO;
+
+  const title = seoMessages?.title || "Default Title";
+  const description = seoMessages?.description || "Default Description";
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `./`,
+      images: [
+        {
+          url: "https://placehold.co/1200x630/png",
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+      type: "website",
+    },
+  };
+}
+
+export default async function LocaleLayout({ children, params }: Props) {
+  const { locale } = await params;
+
+  if (!routing.locales.includes(locale)) {
+    return notFound();
+  }
+
+  setRequestLocale(locale);
+
+  const messages = await getMessages({ locale });
+
+  const businessInfo = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "FoodHub",
+
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Białystok",
+      addressRegion: "Podlaskie",
+      addressCountry: "PL",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 53.075999,
+      longitude: 23.095159,
+    },
+
+    telephone: "+48 123 456 789",
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "08:00",
+        closes: "17:00",
+      },
+    ],
+  };
+
+  if (!messages) {
+    return notFound();
+  }
 
   return (
     <html lang={locale}>
-      <head>
-        <title>next-intl example</title>
-      </head>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(businessInfo, null, 2),
+          }}
+        />
+      </Head>
       <body className={inter.className}>
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <LocaleSwitcher />
           {children}
         </NextIntlClientProvider>
       </body>
