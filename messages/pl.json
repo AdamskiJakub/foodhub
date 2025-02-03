@@ -1,0 +1,19 @@
+{
+  "LocaleSwitcher": {
+    "label": "Wybierz język",
+    "locale": "{locale, select, en {Angielski} pl {Polski} other {Nieznany}}",
+    "save": "Zapisz",
+    "cancel": "Anuluj"
+  },
+  "NotFound": {
+    "title": "Ups! Nie znaleziono strony",
+    "description": "Strona, której szukasz, może już nie istnieć lub została przeniesiona. Skorzystaj z menu głównego lub przejdź na stronę główną, aby kontynuować.",
+    "backHome": "Strona główna"
+  },
+  "SEO": {
+    "title": "Adwokaci w Białymstoku",
+    "description": "Profesjonalna obsługa prawna w Białymstoku.",
+    "ogTitle": "Adwokaci Białystok - Najlepsza obsługa prawna",
+    "ogDescription": "Zaufaj najlepszym adwokatom w Białymstoku."
+  }
+}

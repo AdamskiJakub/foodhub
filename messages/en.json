@@ -1,0 +1,19 @@
+{
+  "LocaleSwitcher": {
+    "label": "Choose language",
+    "locale": "{locale, select, en {English} pl {Polish} other {Unknown}}",
+    "save": "Save",
+    "cancel": "Cancel"
+  },
+  "NotFound": {
+    "title": "Ups! Page not found",
+    "description": "The page you are looking for might have been moved or no longer exists. Use the main menu or go to the homepage to continue.",
+    "backHome": "Main page"
+  },
+  "SEO": {
+    "title": "Attorneys in Białystok",
+    "description": "Professional legal services in Białystok.",
+    "ogTitle": "Białystok Attorneys - Best Legal Services",
+    "ogDescription": "Trust the best attorneys in Białystok."
+  }
+}
