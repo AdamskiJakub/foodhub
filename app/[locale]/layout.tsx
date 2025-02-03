@@ -36,6 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const description = seoMessages?.description || "Default Description";
 
   return {
+    metadataBase: new URL("", process.env.NEXT_PUBLIC_BASE_URL!),
     title,
     description,
     openGraph: {
@@ -70,7 +71,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "FoodHub",
-
+    //add image
     address: {
       "@type": "PostalAddress",
       addressLocality: "Białystok",
@@ -82,7 +83,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       latitude: 53.075999,
       longitude: 23.095159,
     },
-
+    url: process.env.NEXT_PUBLIC_BASE_URL,
     telephone: "+48 123 456 789",
     openingHoursSpecification: [
       {
