@@ -33,7 +33,7 @@ model Restaurant {
   website             String?
   operator            String?
   openingHours        String?
-  coordinates         Json      
+  coordinates         Json?
   building            String?   
   buildingLevels      String?   
   buildingMaterial    String?   

@@ -1,7 +1,8 @@
 import { setRequestLocale } from "next-intl/server";
-import NotFound from "./not-found";
 import LocaleSwitcher from "@/components/switcher/LocaleSwitcher";
-import { Locale } from "@/i18n/routing";
+import { Locale, routing } from "@/i18n/routing";
+import prisma from "@/lib/prisma";
+import { Restaurant } from "@/types/restaurant";
 
 type Params = Promise<{ locale: Locale }>;
 
@@ -10,18 +11,29 @@ interface Props {
 }
 
 export const generateStaticParams = (): { locale: Locale }[] => {
-  return [{ locale: "en" }, { locale: "pl" }];
+  return routing.locales.map((locale) => ({ locale }));
 };
 
-export default async function HomePage(props: Props) {
-  const { params } = props;
+export default async function HomePage({ params }: Props) {
   const { locale } = await params;
 
   setRequestLocale(locale);
 
+  const restaurants: Restaurant[] = await prisma.restaurant.findMany();
+
   return (
     <div>
-      <NotFound />
+      <h1>Lista restauracji</h1>
+      <ul>
+        {restaurants.map((restaurant: Restaurant) => (
+          <li key={restaurant.id}>
+            <h2>{restaurant.name}</h2>
+            <p>
+              {restaurant.city}, {restaurant.street}
+            </p>
+          </li>
+        ))}
+      </ul>
       <LocaleSwitcher />
     </div>
   );
