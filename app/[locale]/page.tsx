@@ -4,19 +4,16 @@ import { Locale } from "@/i18n/routing";
 import prisma from "@/lib/prisma";
 import { Restaurant } from "@/types/restaurant";
 
-type Params = Promise<{ locale: Locale }>;
+type Params = { locale: Locale };
 
 interface Props {
   params: Params;
 }
 
-export const generateStaticParams = (): { locale: Locale }[] => {
-  return [{ locale: "en" }, { locale: "pl" }];
-};
+export const dynamic = "force-dynamic";
 
-export default async function HomePage(props: Props) {
-  const { params } = props;
-  const { locale } = await params;
+export default async function HomePage({ params }: Props) {
+  const { locale } = params;
 
   setRequestLocale(locale);
 
