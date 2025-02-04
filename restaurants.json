@@ -1,0 +1,4586 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-02-02T15:58:57Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/182454413",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "55",
+        "addr:street": "Baranowicka",
+        "amenity": "restaurant",
+        "building": "yes",
+        "cuisine": "greek",
+        "email": "biuro@restauracja-santana.pl",
+        "name": "Santana",
+        "operator": "H. I. M. Skłodowscy",
+        "phone": "+48 85 743 79 27",
+        "source:addr": "EMUiA (emuia.gugik.gov.pl)",
+        "website": "http://www.hotelsantana.pl/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.2014828, 53.1223216]
+      },
+      "id": "way/182454413"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/210102969",
+        "addr:city": "Białystok",
+        "addr:housenumber": "3",
+        "addr:street": "Wschodnia",
+        "amenity": "restaurant",
+        "building": "yes",
+        "name": "Malibu",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1873976, 53.1495941]
+      },
+      "id": "way/210102969"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/231698296",
+        "addr:city": "Białystok",
+        "addr:housenumber": "9",
+        "addr:street": "Stefana Żeromskiego",
+        "amenity": "restaurant",
+        "building": "yes",
+        "name": "Da Grasso",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1313603, 53.1089734]
+      },
+      "id": "way/231698296"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/234038415",
+        "addr:city": "Białystok",
+        "addr:housenumber": "47",
+        "addr:postcode": "15-249",
+        "addr:street": "Adama Mickiewicza",
+        "amenity": "restaurant",
+        "building": "retail",
+        "building:levels:underground": "3",
+        "cuisine": "regional",
+        "name": "Trzy po trzy",
+        "opening_hours": "Mo-Th 11:00-22:00; Fr, Sa 11:00-23:00; Su 12:00-22:00",
+        "phone": "+48 85 663 33 44",
+        "website": "https://trzypotrzy.com/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1753789, 53.1198774]
+      },
+      "id": "way/234038415"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/248109896",
+        "addr:city": "Białystok",
+        "addr:housenumber": "12",
+        "addr:street": "Elewatorska",
+        "amenity": "restaurant",
+        "building": "commercial",
+        "building:levels": "2",
+        "building:material": "concrete",
+        "name": "Lech",
+        "phone": "+48 85 662 72 57",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.0769708, 53.132193]
+      },
+      "id": "way/248109896"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/296472397",
+        "addr:city": "Białystok",
+        "addr:housenumber": "1",
+        "addr:postcode": "15-554",
+        "addr:street": "Myśliwska",
+        "amenity": "restaurant",
+        "building": "yes",
+        "check_date:opening_hours": "2022-10-17",
+        "cuisine": "regional",
+        "name": "Bar Era",
+        "opening_hours": "Mo-Fr 10:00-18:00; Sa,Su 10:00-17:00",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.2016575, 53.1127145]
+      },
+      "id": "way/296472397"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/298675001",
+        "addr:city": "Białystok",
+        "addr:housenumber": "42",
+        "addr:street": "Łącznikowa",
+        "amenity": "restaurant",
+        "building": "yes",
+        "cuisine": "regional",
+        "name": "Smakosz",
+        "source:addr": "EMUiA (emuia.gugik.gov.pl)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1865084, 53.1548593]
+      },
+      "id": "way/298675001"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/299683213",
+        "addr:city": "Białystok",
+        "addr:housenumber": "88",
+        "addr:street": "Władysława Wysockiego",
+        "amenity": "restaurant",
+        "building": "yes",
+        "name": "Magnolia. Sala bankietowa",
+        "source:addr": "EMUiA (emuia.gugik.gov.pl)",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1868897, 53.1606334]
+      },
+      "id": "way/299683213"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/300053307",
+        "addr:city": "Białystok",
+        "addr:housenumber": "34",
+        "addr:postcode": "15-741",
+        "addr:street": "Antoniuk Fabryczny",
+        "amenity": "restaurant",
+        "building": "yes",
+        "cuisine": "pizza",
+        "name": "Da Grasso",
+        "opening_hours": "Mo-Th 11:00-23:00; Fr-Sa 11:00-24:00; Su 11:00-23:00",
+        "takeaway": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1189198, 53.1483164]
+      },
+      "id": "way/300053307"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/303243339",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "10",
+        "addr:postcode": "15-441",
+        "addr:street": "Spółdzielcza",
+        "amenity": "restaurant",
+        "building": "yes",
+        "building:levels": "2",
+        "name": "Patio",
+        "website": "@peatioprzyjacirle",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1578256, 53.1337813]
+      },
+      "id": "way/303243339"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/307918995",
+        "addr:city": "Białystok",
+        "addr:housenumber": "2",
+        "addr:postcode": "15-542",
+        "addr:street": "Ciesielska",
+        "amenity": "restaurant",
+        "building": "yes",
+        "name": "Savona Pizza Club",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.2020417, 53.1213704]
+      },
+      "id": "way/307918995"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/527835092",
+        "addr:city": "Białystok",
+        "addr:housenumber": "15A",
+        "addr:postcode": "15-275",
+        "addr:street": "Marii Skłodowskiej-Curie",
+        "amenity": "restaurant",
+        "name": "Hort-cafe"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1614452, 53.1265879]
+      },
+      "id": "node/527835092"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/701832645",
+        "addr:city": "Białystok",
+        "addr:housenumber": "43",
+        "addr:street": "Wiejska",
+        "amenity": "restaurant",
+        "cuisine": "asian",
+        "name": "Bar BIBI"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1449812, 53.1167037]
+      },
+      "id": "node/701832645"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1005843951",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "32",
+        "addr:postcode": "15-426",
+        "addr:street": "Rynek Kościuszki",
+        "amenity": "restaurant",
+        "name": "Sioux"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1575954, 53.1329621]
+      },
+      "id": "node/1005843951"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1006089201",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "10",
+        "addr:postcode": "15-441",
+        "addr:street": "Spółdzielcza",
+        "amenity": "restaurant",
+        "contact:email": "dewolajresto@gmail.com",
+        "contact:facebook": "https://www.facebook.com/patiobialystok/",
+        "contact:instagram": "https://www.instagram.com/patioprzyjaciele/",
+        "contact:mobile": "+48786861073",
+        "contact:website": "https://patioprzyjaciele.pl/menu/",
+        "cuisine": "barbecue;international;italian;mediterranean;pasta;pizza",
+        "email": "dewolajresto@gmail.com",
+        "mobile": "+48786861073",
+        "name": "Patio",
+        "official_name": "Patio. Jedzenie Muzyka Przyjaciele",
+        "opening_hours": "Su-Th 09:00-24:00; Fr-Sa 09:00-02:00",
+        "outdoor_seating": "yes",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "reservation": "yes",
+        "smoking": "outside",
+        "takeaway": "yes",
+        "website": "https://patioprzyjaciele.pl/menu/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1577803, 53.1337776]
+      },
+      "id": "node/1006089201"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1007217285",
+        "addr:city": "Białystok",
+        "addr:housenumber": "11F",
+        "addr:postcode": "15-345",
+        "addr:street": "Pogodna",
+        "amenity": "restaurant",
+        "cuisine": "pizza",
+        "diet:vegetarian": "yes",
+        "name": "Savona",
+        "opening_hours": "Mo-Sa 11:00-18:00+; Su 12:00-18:00+"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1419135, 53.1141744]
+      },
+      "id": "node/1007217285"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1067680783",
+        "addr:city": "Białystok",
+        "addr:housenumber": "65",
+        "addr:postcode": "15-351",
+        "addr:street": "Wiejska",
+        "amenity": "restaurant",
+        "contact:email": "retrospekcja@interia.pl",
+        "contact:facebook": "https://www.facebook.com/retrospekcjanalesnikarnia/",
+        "contact:instagram": "https://www.instagram.com/retrospekcja_nalesnikarnia/",
+        "contact:mobile": "+48510728020",
+        "contact:phone": "+48857331199",
+        "contact:website": "http://www.retrospekcja.com.pl/",
+        "cuisine": "international;pancake;crepe",
+        "delivery": "yes",
+        "email": "retrospekcja@interia.pl",
+        "mobile": "+48510728020",
+        "name": "Naleśnikarnia Retrospekcja",
+        "opening_hours": "Mo-Su 10:00-22:00",
+        "opening_hours:kitchen": "Mo-Su 10:00-21:00",
+        "payment:american_express": "yes",
+        "payment:coins": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:notes": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "phone": "+48857331199",
+        "smoking": "no",
+        "takeaway": "yes",
+        "website": "http://www.retrospekcja.com.pl/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.146673, 53.1145797]
+      },
+      "id": "node/1067680783"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1237872499",
+        "amenity": "restaurant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1725623, 53.1222565]
+      },
+      "id": "node/1237872499"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1237872500",
+        "addr:city": "Białystok",
+        "addr:housenumber": "13",
+        "addr:postcode": "15-232",
+        "addr:street": "Adama Mickiewicza",
+        "amenity": "restaurant",
+        "name": "Szaszłykarnia"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1713744, 53.1259139]
+      },
+      "id": "node/1237872500"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1696291157",
+        "addr:city": "Białystok",
+        "addr:housenumber": "14",
+        "addr:postcode": "15-054",
+        "addr:street": "Mieszka I",
+        "amenity": "restaurant",
+        "cuisine": "pizza",
+        "name": "Pizza Pelati"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1911678, 53.1334428]
+      },
+      "id": "node/1696291157"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2250358418",
+        "addr:city": "Białystok",
+        "addr:housenumber": "6",
+        "addr:street": "42 Pułku Piechoty",
+        "amenity": "restaurant",
+        "name": "Lipcowy Ogród",
+        "website": "https://www.lipcowyogrod.pl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1924553, 53.1436657]
+      },
+      "id": "node/2250358418"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2446218911",
+        "addr:city": "Białystok",
+        "addr:housenumber": "10",
+        "addr:street": "Legionowa",
+        "amenity": "restaurant",
+        "contact:email": "restauracja@kawelin.pl",
+        "contact:facebook": "https://www.facebook.com/RestauracjaKawelin",
+        "contact:instagram": "https://www.instagram.com/restauracjakawelin_/",
+        "contact:mobile": "+48605226611",
+        "contact:phone": "+48857409902",
+        "contact:website": "https://kawelin.pl/",
+        "contact:youtube": "https://www.youtube.com/channel/UC4Kq3tkdrZEgo-eA52C_JGw",
+        "email": "restauracja@kawelin.pl",
+        "mobile": "+48605226611",
+        "name": "Kawelin",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:postfinance_card": "no",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "phone": "+48857409902",
+        "reservation": "yes",
+        "website": "https://kawelin.pl/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1593759, 53.130824]
+      },
+      "id": "node/2446218911"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2506375700",
+        "addr:city": "Białystok",
+        "addr:housenumber": "2",
+        "addr:postcode": "15-222",
+        "addr:street": "Adama Mickiewicza",
+        "amenity": "restaurant",
+        "email": "arsenalnowa@wp.pl",
+        "name": "Arsenał",
+        "opening_hours": "Mo-Fr,Su 12:00-23:00; Sa 12:00-01:30; PH off",
+        "phone": "+48857428565",
+        "website": "http://www.arsenalrestauracja.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1666417, 53.1304867]
+      },
+      "id": "node/2506375700"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2627228765",
+        "addr:city": "Białystok",
+        "addr:housenumber": "28",
+        "addr:postcode": "15-004",
+        "addr:street": "Henryka Sienkiewicza",
+        "amenity": "restaurant",
+        "name": "Bar Grodno",
+        "opening_hours": "9:00-19:00",
+        "website": "https://bargrodno.pl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1653368, 53.1358408]
+      },
+      "id": "node/2627228765"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2968704946",
+        "addr:city": "Białystok",
+        "addr:housenumber": "16",
+        "addr:street": "Kolejowa",
+        "amenity": "restaurant",
+        "cuisine": "regional",
+        "name": "Bar Okrąglak"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1357486, 53.1353296]
+      },
+      "id": "node/2968704946"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3027696891",
+        "addr:city": "Białystok",
+        "addr:housenumber": "3",
+        "addr:street": "Grochowa",
+        "amenity": "restaurant",
+        "contact:email": "info@piudi.pl",
+        "contact:facebook": "https://www.facebook.com/PiudiPizza",
+        "contact:mobile": "+48501507401",
+        "contact:website": "https://www.piudi.pl/",
+        "cuisine": "pizza",
+        "delivery": "Mo-Su 10:00-22:30",
+        "email": "info@piudi.pl",
+        "mobile": "+48501507401",
+        "name": "Piu'di Pizza",
+        "opening_hours": "Mo-Su 10:00-23:00",
+        "payment:american_express": "yes",
+        "payment:coins": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:notes": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "reservation": "yes",
+        "smoking": "no",
+        "takeaway": "yes",
+        "website": "https://www.piudi.pl/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1515091, 53.1326467]
+      },
+      "id": "node/3027696891"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3027818934",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "12",
+        "addr:postcode": "15-427",
+        "addr:street": "Lipowa",
+        "amenity": "restaurant",
+        "contact:email": "bialystok@njs.pl",
+        "contact:facebook": "https://www.facebook.com/nalesnikijaksmokbialystok",
+        "contact:mobile": "+48502227127",
+        "contact:website": "https://www.restauracjanjs.pl/",
+        "cuisine": "pancake;regional;tapas",
+        "delivery": "Mo-Su 10:00-22:00",
+        "email": "bialystok@njs.pl",
+        "indoor_seating": "yes",
+        "level": "0",
+        "mobile": "+48502227127",
+        "name": "Naleśniki jak smok",
+        "opening_hours": "Mo-Su 10:00-22:00",
+        "outdoor_seating": "yes",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "website": "https://www.restauracjanjs.pl/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1552577, 53.1330734]
+      },
+      "id": "node/3027818934"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3027832483",
+        "addr:city": "Białystok",
+        "addr:housenumber": "3/5",
+        "addr:postcode": "15-424",
+        "addr:street": "Lipowa",
+        "amenity": "restaurant",
+        "check_date:opening_hours": "2024-07-08",
+        "contact:email": "restauracja@cristal.com.pl",
+        "contact:facebook": "https://www.facebook.com/restauracjacristalbialystok/",
+        "contact:instagram": "https://www.instagram.com/restauracjacristal/",
+        "contact:phone": "+48857496159",
+        "contact:website": "https://hotelcristal.com.pl/restauracja/menu/",
+        "cuisine": "international;regional",
+        "delivery": "yes",
+        "email": "restauracja@cristal.com.pl",
+        "name": "Cristal Restaurant & Bar",
+        "opening_hours": "Su-Th 11:00-23:00; Fr-Sa 11:00-24:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "phone": "+48857496159",
+        "takeaway": "yes",
+        "website": "https://hotelcristal.com.pl/restauracja/menu/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1558388, 53.1326735]
+      },
+      "id": "node/3027832483"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3027847800",
+        "addr:city": "Białystok",
+        "addr:housenumber": "7",
+        "addr:postcode": "15-440",
+        "addr:street": "Icchoka Malmeda",
+        "amenity": "restaurant",
+        "contact:email": "restauracja@tokaj.com.pl",
+        "contact:facebook": "https://www.facebook.com/tokajrestauracja",
+        "contact:instagram": "https://www.instagram.com/tokajrestauracja/",
+        "contact:mobile": "+48600052527",
+        "contact:phone": "+48857420807",
+        "contact:website": "https://tokaj.com.pl/",
+        "cuisine": "hungarian",
+        "name": "Tokaj",
+        "opening_hours": "Su-Fr 12:00-22:00; Sa 12:00-22:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1561572, 53.1334946]
+      },
+      "id": "node/3027847800"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3034455120",
+        "addr:city": "Białystok",
+        "addr:housenumber": "17",
+        "addr:postcode": "15-426",
+        "addr:street": "Rynek Kościuszki",
+        "amenity": "restaurant",
+        "contact:email": "rynek@gastrostrefa.pl",
+        "contact:facebook": "https://www.facebook.com/RestauracjaBarley",
+        "contact:instagram": "https://www.instagram.com/restauracjabarley/",
+        "contact:mobile": "+48668122680",
+        "contact:website": "https://r.myrest.io/barle1r",
+        "cuisine": "italian",
+        "email": "rynek@gastrostrefa.pl",
+        "mobile": "+48668122680",
+        "name": "BARLEY",
+        "opening_hours": "Mo-Th 09:00-23:00; Fr-Sa 10:00-01:00; Su 11:00-23:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "website": "https://r.myrest.io/barle1r"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1571887, 53.1323386]
+      },
+      "id": "node/3034455120"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3034465948",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "28",
+        "addr:postcode": "15-426",
+        "addr:street": "Rynek Kościuszki",
+        "amenity": "restaurant",
+        "cuisine": "regional;polish;east_european",
+        "name": "Tygiel",
+        "toilets:wheelchair": "no",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.157975, 53.1327608]
+      },
+      "id": "node/3034465948"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3042574746",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "4/1",
+        "addr:postcode": "15-097",
+        "addr:street": "Marii Skłodowskiej-Curie",
+        "amenity": "restaurant",
+        "contact:email": "kontakt@kuchniadomowa.net.pl",
+        "contact:facebook": "https://www.facebook.com/Bar-Express-Kuchnia-Domowa-112578740394542",
+        "contact:mobile": "+4690499892",
+        "contact:website": "https://www.kuchniadomowa.net.pl/",
+        "cuisine": "regional",
+        "delivery": "yes",
+        "email": "kontakt@kuchniadomowa.net.pl",
+        "level": "0",
+        "mobile": "+4690499892",
+        "name": "Bar Express - Kuchnia Domowa",
+        "opening_hours": "Mo-Fr 09:00-17:00; Sa-Su 10:00-16:00",
+        "opening_hours:kitchen": "Mo-Fr 09:00-16:30; Sa-Su 10:00-15:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "smoking": "no",
+        "takeaway": "yes",
+        "website": "https://www.kuchniadomowa.net.pl/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1572122, 53.1291792]
+      },
+      "id": "node/3042574746"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3085277787",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "3",
+        "addr:postcode": "15-432",
+        "addr:street": "Henryka Sienkiewicza",
+        "amenity": "restaurant",
+        "brand": "Pizza Hut",
+        "brand:wikidata": "Q191615",
+        "cuisine": "pizza",
+        "level": "0",
+        "name": "Pizza Hut",
+        "opening_hours": "Su-Th 11:00-22:00; Fr,Sa 11:00-23:00",
+        "operator": "AmRest",
+        "phone": "+48 519 191 565",
+        "website": "https://pizzahut.pl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1603853, 53.1326038]
+      },
+      "id": "node/3085277787"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3093738390",
+        "addr:city": "Białystok",
+        "addr:housenumber": "74",
+        "addr:postcode": "15-277",
+        "addr:street": "Warszawska",
+        "amenity": "restaurant",
+        "cuisine": "regional",
+        "name": "Regionalne Specjały"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1803637, 53.1277376]
+      },
+      "id": "node/3093738390"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3093744329",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "79",
+        "addr:postcode": "15-201",
+        "addr:street": "Warszawska",
+        "amenity": "restaurant",
+        "name": "Restauracja Dąbrówka"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1810769, 53.1285314]
+      },
+      "id": "node/3093744329"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3094250954",
+        "addr:city": "Białystok",
+        "addr:housenumber": "22",
+        "addr:street": "Warszawska",
+        "amenity": "restaurant",
+        "contact:phone": "+48 790 333 251",
+        "cuisine": "pizza",
+        "name": "Sioło Pizza",
+        "opening_hours": "Mo-Th 11:00-23:00, Fr-Sa 11:00-24:00, Su 12:00-22:00",
+        "website": "https://siolopizza.pl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1697578, 53.133199]
+      },
+      "id": "node/3094250954"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3097726950",
+        "addr:city": "Białystok",
+        "addr:housenumber": "17A",
+        "addr:postcode": "15-814",
+        "addr:street": "Generała Józefa Hallera",
+        "amenity": "restaurant",
+        "name": "Pruszynka"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1247273, 53.1523522]
+      },
+      "id": "node/3097726950"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3097748487",
+        "addr:city": "Białystok",
+        "addr:housenumber": "9/1",
+        "addr:postcode": "15-281",
+        "addr:street": "Legionowa",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/savona.pizzaclub",
+        "cuisine": "pizza",
+        "diet:vegetarian": "yes",
+        "fax": "+48856615555",
+        "level": "0",
+        "name": "Savona",
+        "opening_hours": "Mo-Su 10:00-24:00; Su 12:00-24:00; PH 12:00-24:00",
+        "payment:coins": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:notes": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "phone": "+48782700055",
+        "smoking": "separated",
+        "website": "http://www.savonapizza.pl/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1528636, 53.1277854]
+      },
+      "id": "node/3097748487"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3101121424",
+        "addr:city": "Białystok",
+        "addr:housenumber": "16A",
+        "addr:street": "Dziesięciny",
+        "amenity": "restaurant",
+        "cuisine": "pizza",
+        "name": "Icelandic Pizza",
+        "opening_hours": "Mo-Th 11:00-22:00; Fr-Sa 11:00-23:00; Su 11:00-22:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1293866, 53.1495371]
+      },
+      "id": "node/3101121424"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3144215101",
+        "addr:city": "Białystok",
+        "addr:door": "1",
+        "addr:housenumber": "2",
+        "addr:postcode": "15-682",
+        "addr:street": "Michała Pietkiewicza",
+        "amenity": "restaurant",
+        "name": "Kumar's"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.0865819, 53.1542698]
+      },
+      "id": "node/3144215101"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3144230979",
+        "addr:city": "Białystok",
+        "addr:housenumber": "75",
+        "addr:street": "Hugo Kołłątaja",
+        "amenity": "restaurant",
+        "name": "Lech. Garmażeria Staropolska"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.0870218, 53.1539615]
+      },
+      "id": "node/3144230979"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3150816045",
+        "addr:city": "Białystok",
+        "addr:housenumber": "11",
+        "addr:street": "Krakowska",
+        "amenity": "restaurant",
+        "contact:email": "info@sztukamiesa.com.pl",
+        "contact:facebook": "https://www.facebook.com/SztukaMiesa/",
+        "contact:instagram": "https://www.instagram.com/sztukamiesa/",
+        "contact:phone": "+48857420740",
+        "contact:website": "https://www.sztukamiesa.com.pl/",
+        "cuisine": "barbecue;sausage;steak_house",
+        "delivery": "yes",
+        "email": "info@sztukamiesa.com.pl",
+        "name": "Sztuka Mięsa",
+        "opening_hours": "Mo-Fr 10:00-22:00; Sa 12:00-22:00; Su 12:00-20:00",
+        "outdoor_seating": "yes",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "phone": "+48857420740",
+        "takeaway": "yes",
+        "website": "https://www.sztukamiesa.com.pl/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1470184, 53.1324764]
+      },
+      "id": "node/3150816045"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3152582215",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "15",
+        "addr:postcode": "15-089",
+        "addr:street": "Jana Kilińskiego",
+        "amenity": "restaurant",
+        "name": "Savoy"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1650678, 53.1321481]
+      },
+      "id": "node/3152582215"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3273837886",
+        "addr:city": "Białystok",
+        "addr:housenumber": "16A",
+        "addr:street": "Włókiennicza",
+        "amenity": "restaurant",
+        "contact:email": "379edyta@wp.pl",
+        "contact:facebook": "https://www.facebook.com/nowetvbistro/",
+        "contact:mobile": "+48733589511",
+        "email": "379edyta@wp.pl",
+        "mobile": "+48733589511",
+        "name": "Bistro TV",
+        "opening_hours": "Mo-Fr 09:00-18:00; Sa-Su,PH off",
+        "payment:american_express": "yes",
+        "payment:bancomat": "no",
+        "payment:bankaxess": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1572035, 53.1389553]
+      },
+      "id": "node/3273837886"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3366686621",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "13",
+        "addr:postcode": "15-436",
+        "addr:street": "Rynek Kościuszki",
+        "amenity": "restaurant",
+        "contact:email": "info@publondon.pl",
+        "contact:facebook": "https://www.facebook.com/sherlock.bialystok/",
+        "contact:instagram": "https://www.instagram.com/pub_sherlock/",
+        "contact:mobile": "+48728988801",
+        "contact:website": "https://www.publondon.pl/",
+        "cuisine": "barbecue;international;sandwich;steak_house;tex-mex",
+        "email": "info@publondon.pl",
+        "mobile": "+48728988801",
+        "name": "The Sherlock Holmes",
+        "opening_hours": "Su-Th 12:00-24:00; Fr-Sa 12:00-02:00",
+        "outdoor_seating": "yes",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "website": "https://www.publondon.pl/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1583608, 53.1319363]
+      },
+      "id": "node/3366686621"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3457940242",
+        "addr:city": "Białystok",
+        "addr:door": "6",
+        "addr:housenumber": "38",
+        "addr:postcode": "15-756",
+        "addr:street": "Swobodna",
+        "amenity": "restaurant",
+        "email": "szalone.widelce@o2.pl",
+        "name": "Szalone Widelce",
+        "opening_hours": "Mo-Fr 11:00-19:00, Sa-Su 11:00-18:00",
+        "operator": "Aneta Bazyluk",
+        "phone": "+48733111455",
+        "smoking": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1063648, 53.1445636]
+      },
+      "id": "node/3457940242"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3710521559",
+        "addr:city": "Białystok",
+        "addr:door": "5",
+        "addr:housenumber": "38",
+        "addr:postcode": "15-756",
+        "addr:street": "Swobodna",
+        "amenity": "restaurant",
+        "delivery": "yes",
+        "name": "Pizza Pelati",
+        "opening_hours": "Mo-Th 10:00-22:00; Fr-Su 10:00-23:00",
+        "phone": "+48606851515;+48857222565",
+        "website": "https://pizzapelati.pl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1063297, 53.1446092]
+      },
+      "id": "node/3710521559"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3780850291",
+        "addr:city": "Białystok",
+        "addr:housenumber": "54",
+        "addr:postcode": "15-754",
+        "addr:street": "Wysoki Stoczek",
+        "amenity": "restaurant",
+        "communication:mobile_phone": "+48606938478",
+        "delivery": "yes",
+        "name": "Pizzeria Quattro",
+        "opening_hours": "Mo-Fr 11:00-23:00; Sa 11:00-24:00; Su 11:00-22:00",
+        "outdoor_seating": "yes",
+        "phone": "+48856745126",
+        "takeaway": "yes",
+        "website": "https://www.pizzeriaquattro.pl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1064056, 53.1438161]
+      },
+      "id": "node/3780850291"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3802003405",
+        "addr:city": "Białystok",
+        "addr:housenumber": "1",
+        "addr:postcode": "15-101",
+        "addr:street": "Jurowiecka",
+        "amenity": "restaurant",
+        "name": "Hokus Pokus"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1632675, 53.1362563]
+      },
+      "id": "node/3802003405"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3802003442",
+        "addr:city": "Białystok",
+        "addr:housenumber": "1",
+        "addr:postcode": "15-101",
+        "addr:street": "Jurowiecka",
+        "amenity": "restaurant",
+        "cuisine": "asian",
+        "name": "ZenThai"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1633839, 53.1363317]
+      },
+      "id": "node/3802003442"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3817969886",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "1A",
+        "addr:street": "Warszawska",
+        "amenity": "restaurant",
+        "cuisine": "pizza",
+        "name": "Speedy Romano",
+        "opening_hours": "Mo-Th 11:00-21:30; Fr-Sa 11:00-22:30; Su 11:00-20:30",
+        "website": "https://www.speedyromano.pl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1664735, 53.1360123]
+      },
+      "id": "node/3817969886"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3880563446",
+        "addr:city": "Białystok",
+        "addr:housenumber": "31",
+        "addr:street": "Jurowiecka",
+        "amenity": "restaurant",
+        "contact:email": "brooklyn-pizza-club@wp.pl",
+        "contact:facebook": "https://www.facebook.com/profile.php?id=61559006822979",
+        "contact:instagram": "https://www.instagram.com/brooklynpizzabialystok/",
+        "contact:mobile": "+48573057545",
+        "contact:phone": "+48856538844",
+        "contact:website": "https://www.brooklyn.com.pl/",
+        "cuisine": "pizza",
+        "email": "brooklyn-pizza-club@wp.pl",
+        "level": "0",
+        "mobile": "+48573057545",
+        "name": "Brooklyn Pizza Club",
+        "opening_hours": "Mo-Th 10:00-22:00; Fr,Sa 10:00-24:00; Su 11:00-22:00",
+        "phone": "+48856538844",
+        "website": "https://www.brooklyn.com.pl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1582308, 53.140537]
+      },
+      "id": "node/3880563446"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3880591406",
+        "addr:city": "Białystok",
+        "addr:housenumber": "17",
+        "addr:postcode": "15-665",
+        "addr:street": "Rumiankowa",
+        "amenity": "restaurant",
+        "contact:email": "restauracja@mozart.net.pl",
+        "contact:facebook": "https://www.facebook.com/RestauracjaMozart",
+        "contact:fax": "+48856546828",
+        "contact:instagram": "https://www.instagram.com/mozartrestauracja/",
+        "contact:mobile": "+48508052210",
+        "contact:phone": "+48856546827",
+        "contact:website": "https://mozart.net.pl/",
+        "cuisine": "international;polish",
+        "delivery": "yes",
+        "email": "restauracja@mozart.net.pl",
+        "fax": "+48856546828",
+        "mobile": "+48508052210",
+        "name": "Restauracja Mozart",
+        "opening_hours": "Mo-Th 08:00-18:00; Fr-Su 08:00-24:00",
+        "payment:american_express": "yes",
+        "payment:coins": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:notes": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "phone": "+48856546827",
+        "reservation": "yes",
+        "smoking": "no",
+        "website": "https://mozart.net.pl/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1039608, 53.1208709]
+      },
+      "id": "node/3880591406"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3951232421",
+        "addr:city": "Białystok",
+        "addr:housenumber": "2",
+        "addr:street": "Generała George'a Smitha Pattona",
+        "amenity": "restaurant",
+        "name": "Savilla"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.0891247, 53.158029]
+      },
+      "id": "node/3951232421"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4185228924",
+        "addr:city": "Białystok",
+        "addr:housenumber": "8",
+        "addr:postcode": "15-441",
+        "addr:street": "Spółdzielcza",
+        "amenity": "restaurant",
+        "cuisine": "chinese",
+        "name": "Baanko Bar",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1581745, 53.1335668]
+      },
+      "id": "node/4185228924"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4276270489",
+        "addr:city": "Białystok",
+        "addr:housenumber": "52",
+        "addr:postcode": "15-004",
+        "addr:street": "Henryka Sienkiewicza",
+        "amenity": "restaurant",
+        "contact:email": "rukola@rukola.com.pl",
+        "contact:facebook": "https://www.facebook.com/Rukola-pizza-bistro-566261290205454",
+        "contact:instagram": "https://www.instagram.com/rukolapizzabistro/",
+        "contact:mobile": "+48666045666",
+        "contact:website": "https://www.rukola.com.pl/",
+        "cuisine": "burger;cake;ice_cream;italian;mediterranean;noodle;pancake;pasta;pizza;tex-mex",
+        "delivery": "yes",
+        "email": "rukola@rukola.com.pl",
+        "mobile": "+48666045666",
+        "name": "Rukola Pizza Bistro",
+        "opening_hours": "Su-Th 11:00-22:00; Fr-Sa 11:00-23:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "takeaway": "yes",
+        "website": "https://www.rukola.com.pl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1685147, 53.1373515]
+      },
+      "id": "node/4276270489"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4352718544",
+        "addr:city": "Białystok",
+        "addr:housenumber": "16",
+        "addr:postcode": "15-673",
+        "addr:street": "Ekologiczna",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/Lokalna.Bistro",
+        "contact:phone": "+48 731 760 939",
+        "cuisine": "regional",
+        "email": "lokalna.bistro@gmail.com",
+        "name": "Lokalna Bistro",
+        "opening_hours": "Mo-Fr 10:00-18:00; Sa,Su 11:00-18:00",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1200919, 53.1116026]
+      },
+      "id": "node/4352718544"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4406717205",
+        "addr:city": "Białystok",
+        "addr:housenumber": "1",
+        "addr:postcode": "15-406",
+        "addr:street": "Odeska",
+        "amenity": "restaurant",
+        "cuisine": "international",
+        "level": "1",
+        "name": "Restauracja Forma",
+        "name:eo": "Restoracio Forma",
+        "opening_hours": "Mo-Su 10:00-22:00",
+        "phone": "+48 85 306 75 45",
+        "smoking": "outside",
+        "website": "https://restauracjaforma.pl/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1498279, 53.1299794]
+      },
+      "id": "node/4406717205"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4423417526",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "5",
+        "addr:postcode": "15-092",
+        "addr:street": "Henryka Sienkiewicza",
+        "amenity": "restaurant",
+        "cuisine": "regional;polish",
+        "name": "Bar Słoneczny"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1606581, 53.133199]
+      },
+      "id": "node/4423417526"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4546133894",
+        "addr:city": "Białystok",
+        "addr:housenumber": "14",
+        "addr:postcode": "15-669",
+        "addr:street": "Magnoliowa",
+        "amenity": "restaurant",
+        "name": "Biesiadna",
+        "outdoor_seating": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.0944995, 53.1193141]
+      },
+      "id": "node/4546133894"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4575560055",
+        "addr:city": "Białystok",
+        "addr:housenumber": "11",
+        "addr:postcode": "15-091",
+        "addr:street": "Rynek Kościuszki",
+        "amenity": "restaurant",
+        "name": "Monte Carlo",
+        "operator": "Hotel Royal & SPA",
+        "takeaway": "no",
+        "website": "https://royal-hotel.pl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.159156, 53.132027]
+      },
+      "id": "node/4575560055"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4585685602",
+        "addr:city": "Białystok",
+        "addr:housenumber": "30",
+        "addr:postcode": "15-267",
+        "addr:street": "Akademicka",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/pawilontowarzyski",
+        "contact:instagram": "https://www.instagram.com/pawilon_towarzyski/",
+        "contact:mobile": "+48664464777",
+        "contact:website": "https://www.pawilontowarzyski.pl/",
+        "delivery": "Mo-Th 09:00-22:00;Fr-Sa 09:00-23:00;Su 12:00-22:00",
+        "mobile": "+48664464777",
+        "name": "Pawilon Towarzyski",
+        "opening_hours": "Mo-Th 09:00-22:00; Fr-Sa 09:00-23:00; Su 12:00-22:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "reservation": "yes",
+        "takeaway": "yes",
+        "website": "https://www.pawilontowarzyski.pl/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.163526, 53.1268421]
+      },
+      "id": "node/4585685602"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4682242603",
+        "addr:city": "Białystok",
+        "addr:housenumber": "51",
+        "addr:postcode": "15-644",
+        "addr:street": "Wrocławska",
+        "amenity": "restaurant",
+        "cuisine": "pizza",
+        "name": "Pizza Mateo"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.0960622, 53.1253179]
+      },
+      "id": "node/4682242603"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4755986118",
+        "addr:city": "Białystok",
+        "addr:postcode": "15-502",
+        "addr:street": "Plażowa",
+        "amenity": "restaurant",
+        "name": "Bistro Plaża"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.2190649, 53.1095358]
+      },
+      "id": "node/4755986118"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4871308381",
+        "addr:city": "Białystok",
+        "addr:door": "5",
+        "addr:housenumber": "32",
+        "addr:postcode": "15-304",
+        "addr:street": "Jerzego Waszyngtona",
+        "amenity": "restaurant",
+        "capacity": "30",
+        "cuisine": "georgian",
+        "name": "Sakhinkle",
+        "opening_hours": "Mo-Su 12:00-22:00",
+        "takeaway": "yes",
+        "website": "https://www.facebook.com/sakhinkle.bistro"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1520345, 53.125345]
+      },
+      "id": "node/4871308381"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4904478280",
+        "addr:city": "Białystok",
+        "addr:housenumber": "2A",
+        "addr:street": "Jarzębinowa",
+        "amenity": "restaurant",
+        "name": "Ambrozja"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1118797, 53.1510974]
+      },
+      "id": "node/4904478280"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5018155128",
+        "addr:city": "Białystok",
+        "addr:housenumber": "7/1",
+        "addr:postcode": "15-089",
+        "addr:street": "Jana Kilińskiego",
+        "amenity": "restaurant",
+        "contact:email": "p350stopni@gmail.com",
+        "contact:facebook": "https://www.facebook.com/350stopni/",
+        "contact:instagram": "https://www.instagram.com/350_stopni/",
+        "contact:mobile": "+48570937111",
+        "contact:website": "https://www.350stopni.pl/",
+        "cuisine": "international;italian;mediterranean;pizza",
+        "delivery": "yes",
+        "email": "p350stopni@gmail.com",
+        "mobile": "+48570937111",
+        "name": "350 Stopni - Pizza Romana & Prosecco Bar",
+        "opening_hours": "Mo-Th 11:00-22:00; Fr-Sa 11:00-23:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "reservation": "yes",
+        "takeaway": "yes",
+        "website": "https://www.350stopni.pl/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1661263, 53.1323513]
+      },
+      "id": "node/5018155128"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5062485968",
+        "addr:city": "Białystok",
+        "addr:housenumber": "38",
+        "addr:postcode": "15-304",
+        "addr:street": "Waszyngtona",
+        "amenity": "restaurant",
+        "contact:email": "pani.pierozek@gmail.com",
+        "contact:facebook": "https://www.facebook.com/mrs.dumplings/",
+        "contact:instagram": "https://www.instagram.com/pani_pierozek/",
+        "contact:mobile": "+48500023007",
+        "contact:website": "https://www.panipierozek.pl/;https://panipierozek.eatbu.com/",
+        "cuisine": "polish;regional",
+        "delivery": "yes",
+        "email": "pani.pierozek@gmail.com",
+        "level": "0",
+        "mobile": "+48500023007",
+        "name": "Pani Pierożek",
+        "opening_hours": "Mo-Su 11:00-20:00",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "smoking": "no",
+        "takeaway": "yes",
+        "website": "https://www.panipierozek.pl/;https://panipierozek.eatbu.com/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1508277, 53.1245691]
+      },
+      "id": "node/5062485968"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5160341599",
+        "addr:city": "Białystok",
+        "addr:housenumber": "34",
+        "addr:postcode": "15-304",
+        "addr:street": "Jerzego Waszyngtona",
+        "amenity": "restaurant",
+        "cuisine": "regional",
+        "level": "0",
+        "name": "Karczma Maciejówka"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1517246, 53.1245849]
+      },
+      "id": "node/5160341599"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5160557843",
+        "addr:city": "Białystok",
+        "addr:housenumber": "2",
+        "addr:street": "Słonecznikowa",
+        "amenity": "restaurant",
+        "cuisine": "pizza",
+        "name": "Chilli Pizza",
+        "opening_hours": "Mo-Th 10:00-22:00; Fr,Sa 10:00-23:00; Su 10:00-22:00",
+        "website": "https://chillipizza.pl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1054085, 53.1252214]
+      },
+      "id": "node/5160557843"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5190621057",
+        "addr:city": "Białystok",
+        "addr:housenumber": "7/1",
+        "addr:postcode": "15-089",
+        "addr:street": "Jana Kilińskiego",
+        "amenity": "restaurant",
+        "contact:email": "koku@kokusushi.pl",
+        "contact:facebook": "https://www.facebook.com/kokubialystokkilinskiego",
+        "contact:instagram": "https://www.instagram.com/ilovekoku/",
+        "contact:mobile": "+48535600677",
+        "contact:website": "https://www.kokusushi.pl/",
+        "contact:youtube": "https://www.youtube.com/channel/UCEsFJRlson8WTckQAVm4rxA",
+        "cuisine": "fish;seafood;sushi",
+        "email": "koku@kokusushi.pl",
+        "mobile": "+48535600677",
+        "name": "KOKU Sushi",
+        "opening_hours": "Mo-We 11:00-23:00; Th 12:00-23:00; Fr 11:00-24:00; Sa 12:00-24:00; Su 12:00-23:00",
+        "operator": "KOKU Sushi",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "reservation": "yes",
+        "takeaway": "yes",
+        "website": "https://www.kokusushi.pl/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1662927, 53.1323331]
+      },
+      "id": "node/5190621057"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5197852929",
+        "addr:city": "Białystok",
+        "addr:housenumber": "40",
+        "addr:postcode": "15-472",
+        "addr:street": "Ciepła",
+        "amenity": "restaurant",
+        "cuisine": "regional",
+        "name": "Pieprz i Wanilia"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1689994, 53.1408783]
+      },
+      "id": "node/5197852929"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5243989738",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "26",
+        "addr:postcode": "15-092",
+        "addr:street": "Henryka Sienkiewicza",
+        "amenity": "restaurant",
+        "contact:email": "ramenbialystok@gmail.com",
+        "contact:facebook": "https://www.facebook.com/ramnbase",
+        "contact:instagram": "https://www.instagram.com/ramnbase/",
+        "contact:mobile": "+48720756105",
+        "contact:website": "https://wciagnij.to/restauracja/pl/bialystok/icenroll",
+        "cuisine": "ramen",
+        "email": "ramenbialystok@gmail.com",
+        "mobile": "+48720756105",
+        "name": "RAM 'N' BASE",
+        "opening_hours": "Su-Fr 12:00-21:00; Sa 12:00-22:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "smoking": "outside",
+        "website": "https://wciagnij.to/restauracja/pl/bialystok/icenroll",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1632369, 53.1345306]
+      },
+      "id": "node/5243989738"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5264473401",
+        "addr:city": "Białystok",
+        "addr:housenumber": "92",
+        "addr:street": "Adama Mickiewicza",
+        "amenity": "restaurant",
+        "contact:email": "pizzeria@poprostupizza.pl",
+        "contact:facebook": "https://www.facebook.com/poprostupizza",
+        "contact:mobile": "+48798435455",
+        "contact:website": "http://poprostupizza.pl/",
+        "cuisine": "pizza",
+        "email": "pizzeria@poprostupizza.pl",
+        "mobile": "+48798435455",
+        "name": "Po Prostu Pizza Club",
+        "opening_hours": "Mo-Th 10:00-23:00; Fr,Sa 10:00-23:00; Su 12:00-23:00",
+        "website": "http://poprostupizza.pl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1772204, 53.1154167]
+      },
+      "id": "node/5264473401"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5374092473",
+        "addr:city": "Białystok",
+        "addr:door": "13",
+        "addr:housenumber": "24",
+        "addr:postcode": "15-776",
+        "addr:street": "Aleja Konstytucji 3 Maja",
+        "amenity": "restaurant",
+        "cuisine": "regional",
+        "delivery": "yes",
+        "name": "Pan Schabowy - Kuchnia domowa",
+        "opening_hours": "Mo-Fr 11:00-17:00",
+        "operator": "Agnieszka Chodak",
+        "phone": "+48730199000",
+        "takeaway": "only"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1147099, 53.1458794]
+      },
+      "id": "node/5374092473"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5622817852",
+        "addr:city": "Białystok",
+        "addr:housenumber": "7",
+        "addr:postcode": "15-008",
+        "addr:street": "Łąkowa",
+        "amenity": "restaurant",
+        "cuisine": "pizza",
+        "name": "Mamma Mia",
+        "opening_hours": "Mo-Th 13:00-21:30; Fr-Sa 13:00-22:30; Su 12:00-21:30",
+        "phone": "+48 881201802",
+        "website": "https://mammamia.bialystok.pl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.175764, 53.1397227]
+      },
+      "id": "node/5622817852"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5622817854",
+        "addr:city": "Białystok",
+        "addr:housenumber": "7",
+        "addr:street": "Łąkowa",
+        "amenity": "restaurant",
+        "contact:email": "kontakt@pizzauracja.pl",
+        "contact:facebook": "https://www.facebook.com/PizzauracjaMappa",
+        "contact:instagram": "https://www.instagram.com/pizzauracja",
+        "contact:mobile": "+48733730733",
+        "contact:website": "http://www.pizzauracja.pl/",
+        "cuisine": "italian;pizza",
+        "delivery": "yes",
+        "diet:dairy_free": "yes",
+        "diet:gluten_free": "yes",
+        "diet:lactose_free": "yes",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "email": "kontakt@pizzauracja.pl",
+        "mobile": "+48733730733",
+        "name": "Pizzauracja Mappa",
+        "opening_hours": "Mo-Th 09:00-22:00; Fr-Sa 09:00-23:00; Su 11:00-22:00",
+        "smoking": "no",
+        "takeaway": "yes",
+        "toilets": "yes",
+        "website": "http://www.pizzauracja.pl/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1752997, 53.1400152]
+      },
+      "id": "node/5622817854"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5760925445",
+        "addr:city": "Białystok",
+        "addr:housenumber": "21",
+        "addr:postcode": "15-062",
+        "addr:street": "Warszawska",
+        "amenity": "restaurant",
+        "name": "Sushi To Go"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.170016, 53.1335136]
+      },
+      "id": "node/5760925445"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5760925456",
+        "amenity": "restaurant",
+        "level": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1615901, 53.131405]
+      },
+      "id": "node/5760925456"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5760925483",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "18",
+        "addr:postcode": "15-426",
+        "addr:street": "Rynek Kościuszki",
+        "amenity": "restaurant",
+        "contact:email": "gospoda.podlaska@wp.pl",
+        "contact:facebook": "https://www.facebook.com/jedzeniewgospodzie",
+        "contact:instagram": "https://www.instagram.com/gospodapodlaska/",
+        "contact:mobile": "+48609496606",
+        "contact:website": "http://www.gospodapodlaska.pl/",
+        "cuisine": "polish;regional",
+        "email": "gospoda.podlaska@wp.pl",
+        "mobile": "+48609496606",
+        "name": "Gospoda Podlaska",
+        "opening_hours": "Mo-Th 11:00-24:00; Fr-Sa 11:00-01:00; Su 12:00-24:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "takeaway": "yes",
+        "website": "http://www.gospodapodlaska.pl/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1589423, 53.1326805]
+      },
+      "id": "node/5760925483"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5760925484",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "20",
+        "addr:postcode": "15-426",
+        "addr:street": "Rynek Kościuszki",
+        "amenity": "restaurant",
+        "contact:email": "roxyburgers@wp.pl",
+        "contact:facebook": "https://www.facebook.com/roxyburgery",
+        "contact:instagram": "https://www.instagram.com/roxyburgers_bialystok/",
+        "contact:mobile": "+48732837587",
+        "contact:website": "http://www.roxyburgers.pl/",
+        "cuisine": "burger",
+        "email": "roxyburgers@wp.pl",
+        "mobile": "+48732837587",
+        "name": "ROXY Burgers",
+        "opening_hours": "Mo 11:00-23:00; Tu-Th 11:00-24:00; Fr 11:00-02:00; Sa 12:00-02:00; Su 12:00-23:00",
+        "payment:american_express": "yes",
+        "payment:bancomat": "no",
+        "payment:bankaxess": "no",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "takeaway": "yes",
+        "website": "http://www.roxyburgers.pl/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1588049, 53.1326903]
+      },
+      "id": "node/5760925484"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5760925498",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "4",
+        "addr:postcode": "15-427",
+        "addr:street": "Lipowa",
+        "air_conditioning": "yes",
+        "amenity": "restaurant",
+        "breakfast": "yes",
+        "contact:facebook": "https://facebook.com/bzmlipowa4",
+        "contact:instagram": "https://instagram.com/bulkazmaslem2013/",
+        "delivery": "yes",
+        "diet:halal": "no",
+        "diet:kosher": "no",
+        "diet:vegan": "yes",
+        "diet:vegetarian": "yes",
+        "indoor_seating": "yes",
+        "name": "Bułka z Masłem",
+        "opening_hours": "Mo-Su 08:00-18:00",
+        "outdoor_seating": "yes",
+        "phone": "+48720880008",
+        "smoking": "outside",
+        "website": "https://bulkazmaslem.eu",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1569994, 53.1328468]
+      },
+      "id": "node/5760925498"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5760925510",
+        "addr:city": "Białystok",
+        "addr:housenumber": "39",
+        "addr:postcode": "15-062",
+        "addr:street": "Warszawska",
+        "amenity": "restaurant",
+        "cuisine": "pizza",
+        "delivery": "yes",
+        "internet_access": "wlan",
+        "name": "Jaga Pizza & Bistro",
+        "opening_hours": "Mo-Th, Su 09:00-22:30; Fr-Sa 09:00-23:30",
+        "takeaway": "yes",
+        "website": "https://www.jagapizza.pl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1722729, 53.1318308]
+      },
+      "id": "node/5760925510"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5760925511",
+        "addr:city": "Białystok",
+        "addr:housenumber": "1",
+        "addr:postcode": "15-424",
+        "addr:street": "Lipowa",
+        "amenity": "restaurant",
+        "contact:email": "ratuszowycaferest@gmail.com",
+        "contact:facebook": "https://www.facebook.com/ratuszowyrest",
+        "contact:instagram": "https://www.instagram.com/ratuszowy/",
+        "contact:mobile": "+48601583020",
+        "cuisine": "international",
+        "email": "ratuszowycaferest@gmail.com",
+        "mobile": "+48601583020",
+        "name": "Ratuszowy",
+        "opening_hours": "Mo 09:00-22:00; Tu-Th 09:00-23:30; Fr 09:00-24:00; Sa 10:00-24:00; Su 10:00-22:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1572205, 53.1324877]
+      },
+      "id": "node/5760925511"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5760925753",
+        "addr:city": "Białystok",
+        "addr:housenumber": "2",
+        "addr:street": "Grochowa",
+        "amenity": "restaurant",
+        "contact:email": "info@restauracjaoliwa.pl",
+        "contact:facebook": "https://www.facebook.com/RestauracjaOliwa",
+        "contact:instagram": "https://www.instagram.com/restauracja_oliwa/",
+        "contact:mobile": "+48607905777",
+        "contact:website": "http://www.restauracjaoliwa.pl/",
+        "cuisine": "fish;international;italian;mediterranean;pasta;seafood",
+        "email": "info@restauracjaoliwa.pl",
+        "mobile": "+48607905777",
+        "name": "Oliwa",
+        "opening_hours": "Mo-Th 12:00-22:00; Fr-Sa 12:00-23:00; Su 12:00-20:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "website": "http://www.restauracjaoliwa.pl/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.151066, 53.1329044]
+      },
+      "id": "node/5760925753"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5760925761",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "37",
+        "addr:postcode": "15-424",
+        "addr:street": "Lipowa",
+        "amenity": "restaurant",
+        "contact:email": "lipowa@hokuspokus.pl",
+        "contact:facebook": "https://www.facebook.com/RestauracjeHokusPokus",
+        "contact:instagram": "https://www.instagram.com/hokus_pokus.pl/",
+        "contact:mobile": "+48 660 869 545",
+        "contact:website": "https://hokuspokus.pl/",
+        "cuisine": "international;polish;regional",
+        "diet:vegetarian": "yes",
+        "name": "Hokus Pokus",
+        "opening_hours": "Mo-Su 10:00-18:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "takeaway": "yes",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.149842, 53.1336739]
+      },
+      "id": "node/5760925761"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5774021875",
+        "addr:city": "Białystok",
+        "addr:housenumber": "25",
+        "addr:street": "Starobojarska",
+        "amenity": "restaurant",
+        "name": "Bar Eljot"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1693096, 53.1372612]
+      },
+      "id": "node/5774021875"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5779385694",
+        "addr:city": "Białystok",
+        "addr:door": "6",
+        "addr:housenumber": "32",
+        "addr:postcode": "15-229",
+        "addr:street": "Jerzego Waszyngtona",
+        "amenity": "restaurant",
+        "cuisine": "regional",
+        "name": "Pierogarnia Smak i Tradycja",
+        "opening_hours": "Mo-Fr 10:00-20:00; Sa 12:00-20:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.151969, 53.1254134]
+      },
+      "id": "node/5779385694"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6031746788",
+        "addr:city": "Białystok",
+        "addr:housenumber": "30A",
+        "addr:street": "Nowowarszawska",
+        "addr:unit": "U8",
+        "amenity": "restaurant",
+        "contact:email": "onaionpizza@gmail.com",
+        "contact:facebook": "https://www.facebook.com/onaionpizza",
+        "contact:instagram": "https://www.instagram.com/onaionpizza/",
+        "contact:mobile": "+48505711599",
+        "contact:website": "https://www.onaionpizza.pl/",
+        "cuisine": "pizza",
+        "delivery": "yes",
+        "email": "onaionpizza@gmail.com",
+        "mobile": "+48505711599",
+        "name": "Ona i On Pizza Bistro",
+        "opening_hours": "Mo-Th 10:00-21:00, Fr-Sa 10:00-22:00, Su 12:00-21:00",
+        "outdoor_seating": "yes",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "takeaway": "yes",
+        "website": "https://www.onaionpizza.pl/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1877367, 53.1244883]
+      },
+      "id": "node/6031746788"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6132437146",
+        "addr:city": "Białystok",
+        "addr:housenumber": "44",
+        "addr:postcode": "15-223",
+        "addr:street": "Adama Mickiewicza",
+        "amenity": "restaurant",
+        "name": "Vanessa"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1725884, 53.1226443]
+      },
+      "id": "node/6132437146"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6132447164",
+        "addr:city": "Białystok",
+        "addr:housenumber": "6",
+        "addr:street": "Warszawska",
+        "amenity": "restaurant",
+        "contact:email": "smacznacechowa@gmail.com",
+        "contact:facebook": "https://www.facebook.com/cechowa",
+        "contact:instagram": "https://www.instagram.com/cechowa.bialystok/",
+        "contact:phone": "+48857222916",
+        "contact:website": "http://cechowa.com.pl/",
+        "cuisine": "regional",
+        "email": "smacznacechowa@gmail.com",
+        "name": "Cechowa",
+        "opening_hours": "Su-Tu 12:00-22:00; We-Su 12:00-24:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "phone": "+48857222916",
+        "website": "http://cechowa.com.pl/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1664563, 53.1352629]
+      },
+      "id": "node/6132447164"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6170245439",
+        "addr:city": "Białystok",
+        "addr:door": "315",
+        "addr:housenumber": "4",
+        "addr:postcode": "15-111",
+        "addr:street": "Aleja Tysiąclecia Państwa Polskiego",
+        "amenity": "restaurant",
+        "contact:mobile": "+48797766505",
+        "contact:phone": "+48856760228",
+        "cuisine": "asian;polish;vietnamese",
+        "delivery": "yes",
+        "level": "0",
+        "mobile": "+48797766505",
+        "name": "Orientalna",
+        "opening_hours": "Mo-Sa 10:00-17:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "phone": "+48856760228",
+        "takeaway": "yes",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1581112, 53.1450467]
+      },
+      "id": "node/6170245439"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6181559284",
+        "addr:city": "Białystok",
+        "addr:housenumber": "18",
+        "addr:street": "Jana Henryka Dąbrowskiego",
+        "amenity": "restaurant",
+        "cuisine": "korean",
+        "name": "Hanguk Korean Food House",
+        "opening_hours": "Tu-Su 14:00-21:00",
+        "website": "https://www.facebook.com/profile.php?id=61557814057970"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1445184, 53.1362882]
+      },
+      "id": "node/6181559284"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6213357079",
+        "addr:city": "Białystok",
+        "addr:housenumber": "18 A",
+        "addr:street": "Kombatantów",
+        "amenity": "restaurant",
+        "name": "Na Serio"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1568051, 53.1513218]
+      },
+      "id": "node/6213357079"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6301958609",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "32",
+        "addr:postcode": "15-426",
+        "addr:street": "Rynek Kościuszki",
+        "amenity": "restaurant",
+        "cuisine": "pizza",
+        "name": "Jimi Rocket",
+        "website": "https://www.jimirocket.pl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1576036, 53.1327898]
+      },
+      "id": "node/6301958609"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6302007285",
+        "addr:city": "Białystok",
+        "addr:housenumber": "2",
+        "addr:street": "Adama Mickiewicza",
+        "amenity": "restaurant",
+        "cuisine": "greek",
+        "name": "Tawerna Grecka Panteon",
+        "website": "https://www.panteon.bialystok.pl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1666539, 53.1305887]
+      },
+      "id": "node/6302007285"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6302013285",
+        "addr:city": "Białystok",
+        "addr:housenumber": "28",
+        "addr:street": "Legionowa",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/MeetAndFitPolska",
+        "contact:instagram": "https://www.instagram.com/meetandfitpolska/",
+        "contact:mobile": "+48512298546",
+        "contact:website": "https://www.meetandfit.pl/",
+        "cuisine": "barbecue;burger;chicken;friture;sausage;steak_house;tex-mex",
+        "delivery": "yes",
+        "diet:vegetarian": "yes",
+        "highchair": "yes",
+        "name": "Meet & Fit - Slow Food",
+        "opening_hours": "Mo-Th 10:00-22:00; Fr 10:00-23:00; Sa 12:00-23:00; Su 12:00-22:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "takeaway": "yes",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1551754, 53.129285]
+      },
+      "id": "node/6302013285"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6451380628",
+        "addr:city": "Białystok",
+        "addr:housenumber": "2",
+        "addr:street": "Atłasowa",
+        "amenity": "restaurant",
+        "cuisine": "pizza",
+        "name": "Pizzeria Savona",
+        "opening_hours": "Mo-Sa 10:00-00:00; Su 12:00-00:00",
+        "website": "http://savonapizza.pl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.0776526, 53.166892]
+      },
+      "id": "node/6451380628"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6506655049",
+        "amenity": "restaurant",
+        "cuisine": "regional"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1533995, 53.1547445]
+      },
+      "id": "node/6506655049"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6565730290",
+        "addr:city": "Białystok",
+        "addr:housenumber": "7",
+        "addr:street": "Kijowska",
+        "amenity": "restaurant",
+        "cuisine": "asian",
+        "indoor_seating": "yes",
+        "name": "Doho Sushi",
+        "outdoor_seating": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1482131, 53.1289095]
+      },
+      "id": "node/6565730290"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6919861830",
+        "addr:city": "Białystok",
+        "addr:housenumber": "8A",
+        "addr:postcode": "15-879",
+        "addr:street": "Świętego Rocha",
+        "amenity": "restaurant",
+        "contact:email": "restauracja@mazeltov.pl",
+        "contact:facebook": "https://www.facebook.com/Restauracja-MAZEL-TOV-Kuchnia-%C5%BBydowska-2276536465946044/",
+        "contact:instagram": "https://www.instagram.com/mazel____tov/",
+        "contact:mobile": "+48537537509",
+        "contact:website": "https://mazeltov.pl/",
+        "cuisine": "international;mediterranean",
+        "diet:kosher": "yes",
+        "email": "restauracja@mazeltov.pl",
+        "mobile": "+48537537509",
+        "name": "Mazel Tov",
+        "opening_hours": "Tu-Th 14:00-22:00; Fr 14:00-23:00; Sa 12:00-23:00; Su 12:00-20:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:debit_cards": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "no",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "no",
+        "payment:visa_electron": "no",
+        "website": "https://mazeltov.pl/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1425906, 53.134]
+      },
+      "id": "node/6919861830"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7101576053",
+        "amenity": "restaurant"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1200746, 53.1380619]
+      },
+      "id": "node/7101576053"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7658986989",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "59",
+        "addr:street": "Warszawska",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/pages/Toni-Peperoni/763453430382529",
+        "contact:phone": "+48 507 344 386",
+        "cuisine": "pizza",
+        "name": "Toni Peperoni",
+        "opening_hours": "Mo-Th 11:00-22:00, Fr-Sa 11:00-23:00, Su 11:00-22:00",
+        "website": "https://www.tonipeperoni.pl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1749845, 53.130501]
+      },
+      "id": "node/7658986989"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7865956261",
+        "addr:city": "Białystok",
+        "addr:housenumber": "1",
+        "addr:street": "Lipowa",
+        "amenity": "restaurant",
+        "contact:email": "jagapizzabistro@gmail.com",
+        "contact:facebook": "https://www.facebook.com/jagapizza",
+        "contact:instagram": "https://www.instagram.com/jagapizzabistro/",
+        "contact:mobile": "+48883800101",
+        "contact:website": "https://www.jagapizza.pl/",
+        "cuisine": "pizza",
+        "delivery": "yes",
+        "email": "jagapizzabistro@gmail.com",
+        "mobile": "+48883800101",
+        "name": "Jaga Pizza & Bistro",
+        "opening_hours": "Su-Th 09:00-23:00; Fr-Sa 09:00-23:30",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "takeaway": "yes",
+        "website": "https://www.jagapizza.pl/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1569601, 53.132596]
+      },
+      "id": "node/7865956261"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8236179916",
+        "addr:city": "Białystok",
+        "addr:housenumber": "14",
+        "addr:postcode": "15-369",
+        "addr:street": "Lipowa",
+        "amenity": "restaurant",
+        "contact:email": "pizzamajstry@wp.pl",
+        "contact:facebook": "https://www.facebook.com/pizzamajstry/",
+        "contact:instagram": "https://instagram.com/pizza_majstry",
+        "contact:mobile": "+48666522255",
+        "contact:tripadvisor": "https://www.tripadvisor.com/Restaurant_Review-g274741-d21250697-Reviews-Pizza_Majstry-Bialystok_Podlaskie_Province_Eastern_Poland.html",
+        "contact:website": "https://www.pizzamajstry.com/",
+        "cuisine": "pizza;italian",
+        "delivery": "yes",
+        "mobile": "+48666522255",
+        "name": "Pizza Majstry",
+        "opening_hours": "Mo-We 10:30-21:00; Th 10:30-23:00; Fr 10:30-24:00; Sa 12:00-24:00; Su 12:00-22:00",
+        "outdoor_seating": "yes",
+        "payment:american_express": "yes",
+        "payment:bancomat": "yes",
+        "payment:coins": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:notes": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "takeaway": "yes",
+        "website": "https://www.pizzamajstry.com/",
+        "website:menu": "https://www.pizzamajstry.com/restauracja/pizza-majstry-bialystok",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1539379, 53.1333667]
+      },
+      "id": "node/8236179916"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8541364140",
+        "addr:city": "Białystok",
+        "addr:housenumber": "1/O",
+        "addr:street": "Rycerska",
+        "amenity": "restaurant",
+        "contact:email": "rezerwacja@restauracjahalva.pl",
+        "contact:facebook": "https://www.facebook.com/RestauracjaHalva",
+        "contact:instagram": "https://www.instagram.com/halva_bialystok/",
+        "contact:mobile": "+48577044833",
+        "contact:website": "https://www.pyszne.pl/menu/halva-restauracja-tatarska",
+        "cuisine": "balkan;georgian;international;mediterranean;turkish",
+        "delivery": "yes",
+        "email": "rezerwacja@restauracjahalva.pl",
+        "mobile": "+48577044833",
+        "name": "Restauracja Tatarska HALVA",
+        "opening_hours": "Mo-Su 12:00-21:00",
+        "reservation": "yes",
+        "website": "https://www.pyszne.pl/menu/halva-restauracja-tatarska",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1990933, 53.1616838]
+      },
+      "id": "node/8541364140"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8821318041",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "9",
+        "addr:postcode": "15-440",
+        "addr:street": "Icchoka Malmeda",
+        "amenity": "restaurant",
+        "contact:instagram": "https://www.instagram.com/kitsune.asia/",
+        "contact:mobile": "+48515299000",
+        "cuisine": "asian;seafood;sushi",
+        "delivery": "yes",
+        "mobile": "+48515299000",
+        "name": "Kitsune",
+        "opening_hours": "Tu-Th 11:00-21:00, Fr-Su 11:00-22:00",
+        "payment:american_express": "yes",
+        "payment:coins": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:notes": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "takeaway": "yes",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1562852, 53.1336642]
+      },
+      "id": "node/8821318041"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8822676632",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "3",
+        "addr:postcode": "15-453",
+        "addr:street": "Nowy Świat",
+        "amenity": "restaurant",
+        "contact:email": "p500stopni@gmail.com",
+        "contact:facebook": "https://www.facebook.com/500stopni",
+        "contact:mobile": "+48574105500",
+        "contact:website": "https://www.500stopnibialystok.pl/",
+        "cuisine": "italian;pizza",
+        "delivery": "Mo-Th,Su 12:00-21:45;Fr,Sa 12:00-22:45",
+        "email": "p500stopni@gmail.com",
+        "level": "0",
+        "mobile": "+48574105500",
+        "name": "500 Stopni - Pizza Napoletana",
+        "opening_hours": "Mo-Th,Su 12:00-22:00; Fr,Sa 12:00-23:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "takeaway": "yes",
+        "website": "https://www.500stopnibialystok.pl/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1539462, 53.1341924]
+      },
+      "id": "node/8822676632"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8971665004",
+        "addr:city": "Białystok",
+        "addr:housenumber": "81/3",
+        "addr:street": "Henryka Sienkiewicza",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/profile.php?id=100067650463279",
+        "contact:mobile": "+48516636454",
+        "cuisine": "georgian",
+        "diet:vegetarian": "yes",
+        "level": "-1",
+        "mobile": "+48516636454",
+        "name": "Chinkali U Nany",
+        "opening_hours": "Mo-Su 10:00-20:00",
+        "takeaway": "yes",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1724741, 53.1405593]
+      },
+      "id": "node/8971665004"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8996636351",
+        "addr:city": "Białystok",
+        "addr:housenumber": "26A",
+        "addr:street": "Akademicka",
+        "amenity": "restaurant",
+        "contact:email": "neobistrokwestiaczasu@gmail.com",
+        "contact:facebook": "https://www.facebook.com/restauracjakwestiaczasu",
+        "contact:mobile": "+48600575050",
+        "cuisine": "international;polish;wings;mediterranean;italian",
+        "delivery": "yes",
+        "email": "neobistrokwestiaczasu@gmail.com",
+        "mobile": "+48600575050",
+        "name": "Kwestia Czasu",
+        "opening_hours": "Mo-We 12:00-21:00, Th 12:00-22:00, Fr-Sa 12:00-23:00, Su 12:00-22:00",
+        "outdoor_seating": "yes",
+        "payment:american_express": "yes",
+        "payment:coins": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:notes": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "takeaway": "yes",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1619074, 53.1283058]
+      },
+      "id": "node/8996636351"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9062907039",
+        "addr:city": "Białystok",
+        "addr:housenumber": "5",
+        "addr:postcode": "15-879",
+        "addr:street": "Świętego Rocha",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/NOVA-SUSHI-Bia%C5%82ystok-102327481924361/",
+        "contact:instagram": "https://www.instagram.com/nova.sushi/",
+        "contact:mobile": "+48797930920",
+        "contact:website": "https://www.novasushi.pl/bialystok/",
+        "cuisine": "sushi",
+        "mobile": "+48797930920",
+        "name": "Nova Sushi",
+        "opening_hours": "Mo-Su 12:00-22:00",
+        "operator": "Nova Sushi",
+        "payment:american_express": "yes",
+        "payment:coins": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:notes": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "takeaway": "yes",
+        "website": "https://www.novasushi.pl/bialystok/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1446434, 53.1337381]
+      },
+      "id": "node/9062907039"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9296512934",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "19/21",
+        "addr:postcode": "15-424",
+        "addr:street": "Lipowa",
+        "amenity": "restaurant",
+        "check_date:opening_hours": "2023-03-06",
+        "contact:email": "steakowniabialystok@zmwarmia.pl",
+        "contact:facebook": "https://www.facebook.com/steakowniaBialystok",
+        "contact:instagram": "https://www.instagram.com/steakownia/",
+        "contact:phone": "+48856632175",
+        "contact:website": "https://www.steakownia.pl/",
+        "cuisine": "steak_house",
+        "email": "steakowniabialystok@zmwarmia.pl",
+        "name": "Steakownia",
+        "opening_hours": "Su-Th 12:00-21:00; Fr-Sa 12:00-22:00",
+        "payment:american_express": "yes",
+        "payment:bankaxess": "no",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "phone": "+48856632175",
+        "reservation": "yes",
+        "website": "https://www.steakownia.pl/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1529199, 53.1331709]
+      },
+      "id": "node/9296512934"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9310779029",
+        "addr:city": "Białystok",
+        "addr:housenumber": "18",
+        "addr:postcode": "15-306",
+        "addr:street": "Wesoła",
+        "amenity": "restaurant",
+        "contact:email": "restauracja@kaunas.pl",
+        "contact:mobile": "+48733513511",
+        "contact:phone": "+48857421409",
+        "contact:website": "https://kaunas.pl/",
+        "cuisine": "polish;regional",
+        "email": "restauracja@kaunas.pl",
+        "mobile": "+48733513511",
+        "name": "Kaunas",
+        "opening_hours": "Mo-Fr 11:00-17:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "phone": "+48857421409",
+        "takeaway": "yes",
+        "website": "https://kaunas.pl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1529688, 53.1221192]
+      },
+      "id": "node/9310779029"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9310779030",
+        "addr:city": "Białystok",
+        "addr:housenumber": "18",
+        "addr:postcode": "15-306",
+        "addr:street": "Wesoła",
+        "amenity": "restaurant",
+        "contact:email": "biuro@tawernafiord.pl",
+        "contact:facebook": "https://www.facebook.com/TawernaFiord",
+        "contact:mobile": "+48690030299;+48733513511",
+        "contact:phone": "+48857421409",
+        "contact:website": "https://www.tawernafiord.pl/",
+        "cuisine": "fish;fish_and_chips;seafood",
+        "delivery": "yes",
+        "email": "biuro@tawernafiord.pl",
+        "mobile": "+48690030299;+48733513511",
+        "name": "Tawerna Fiord",
+        "opening_hours": "Mo-Th 11:00-18:00; Fr 11:00-22:00; Sa 12:00-22:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "phone": "+48857421409",
+        "takeaway": "yes",
+        "website": "https://www.tawernafiord.pl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1528943, 53.1221986]
+      },
+      "id": "node/9310779030"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9325846382",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "12",
+        "addr:postcode": "15-427",
+        "addr:street": "Lipowa",
+        "amenity": "restaurant",
+        "contact:email": "futu@futusushi.pl",
+        "contact:facebook": "https://www.facebook.com/futusushi/",
+        "contact:instagram": "https://www.instagram.com/futusushibialystok/",
+        "contact:mobile": "+48690990212",
+        "contact:website": "https://www.futusushi.pl/",
+        "cuisine": "seafood;sushi",
+        "delivery": "yes",
+        "email": "futu@futusushi.pl",
+        "indoor_seating": "yes",
+        "level": "0",
+        "mobile": "+48690990212",
+        "name": "FUTU SUSHI",
+        "opening_hours": "Mo-Th 11:30-22:00; Fr 11:30-24:00; Sa 12:00-23:00; Su 12:00-22:00",
+        "outdoor_seating": "yes",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "reservation": "yes",
+        "takeaway": "yes",
+        "website": "https://www.futusushi.pl/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1551081, 53.133099]
+      },
+      "id": "node/9325846382"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9341284366",
+        "addr:city": "Białystok",
+        "addr:housenumber": "6",
+        "addr:postcode": "15-432",
+        "addr:street": "Rynek Kościuszki",
+        "amenity": "restaurant",
+        "contact:email": "146.bialystok@sphinx.pl",
+        "contact:facebook": "https://www.facebook.com/sphinxbialystokrynek",
+        "contact:instagram": "https://www.instagram.com/sphinx.rynek.bialystok/",
+        "contact:mobile": "+48665850949",
+        "contact:website": "https://www.sphinx.pl/",
+        "cuisine": "barbecue;burger;fish;fish_and_chips;friture;international;kebab;sausage;steak_house;wings",
+        "email": "146.bialystok@sphinx.pl",
+        "level": "0",
+        "mobile": "+48665850949",
+        "name": "Sphinx",
+        "opening_hours": "Mo-Th 11:00-22:00; Fr-Sa 10:00-24:00; Su 10:00-23:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "takeaway": "yes",
+        "website": "https://www.sphinx.pl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1600635, 53.1325807]
+      },
+      "id": "node/9341284366"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9343982450",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "3",
+        "addr:postcode": "15-432",
+        "addr:street": "Henryka Sienkiewicza",
+        "amenity": "restaurant",
+        "contact:email": "koku@kokusushi.pl",
+        "contact:facebook": "https://www.facebook.com/kokubialystokrynek",
+        "contact:instagram": "https://www.instagram.com/ilovekoku/",
+        "contact:mobile": "+48722131001",
+        "contact:website": "https://www.kokusushi.pl/",
+        "contact:youtube": "https://www.youtube.com/channel/UCEsFJRlson8WTckQAVm4rxA",
+        "cuisine": "fish;seafood;sushi",
+        "email": "koku@kokusushi.pl",
+        "level": "0",
+        "mobile": "+48722131001",
+        "name": "KOKU Sushi",
+        "opening_hours": "Su-Th 12:00-23:00; Fr-Sa 12:00-24:00",
+        "operator": "KOKU Sushi",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "reservation": "yes",
+        "takeaway": "yes",
+        "website": "https://www.kokusushi.pl/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1602758, 53.1325669]
+      },
+      "id": "node/9343982450"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9355696029",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "2",
+        "addr:postcode": "15-453",
+        "addr:street": "Nowy Świat",
+        "amenity": "restaurant",
+        "contact:email": "ranyjulekbialystok@gmail.com",
+        "contact:facebook": "https://www.facebook.com/ranyjulekbialystok/",
+        "contact:mobile": "+48727272862",
+        "contact:website": "http://www.ranyjulek.com/",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "email": "ranyjulekbialystok@gmail.com",
+        "mobile": "+48727272862",
+        "name": "Rany Julek",
+        "opening_hours": "Su-Th 12:00-20:00; Fr-Sa 12:00-22:00",
+        "outdoor_seating": "yes",
+        "payment:american_express": "yes",
+        "payment:coins": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:notes": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "takeaway": "yes",
+        "website": "http://www.ranyjulek.com/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1488331, 53.1343751]
+      },
+      "id": "node/9355696029"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9442267184",
+        "addr:city": "Białystok",
+        "addr:housenumber": "19",
+        "addr:postcode": "15-275",
+        "addr:street": "Marii Skłodowskiej-Curie",
+        "amenity": "restaurant",
+        "cuisine": "pizza",
+        "name": "Paradiso"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1622332, 53.1260793]
+      },
+      "id": "node/9442267184"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9528561531",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "13",
+        "addr:postcode": "15-436",
+        "addr:street": "Rynek Kościuszki",
+        "amenity": "restaurant",
+        "contact:email": "zapiecek2021bi@gmail.com",
+        "contact:facebook": "https://www.facebook.com/zapiecekbialystok",
+        "contact:instagram": "https://www.instagram.com/zapiecek_podlaskie_jadlo/",
+        "contact:mobile": "+48795221122",
+        "cuisine": "polish;regional",
+        "email": "zapiecek2021bi@gmail.com",
+        "mobile": "+48795221122",
+        "name": "Zapiecek-Podlaskie Jadło",
+        "opening_hours": "Mo-Su 11:00-22:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1587169, 53.1319859]
+      },
+      "id": "node/9528561531"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9603646254",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "11",
+        "addr:postcode": "15-440",
+        "addr:street": "Icchoka Malmeda",
+        "amenity": "restaurant",
+        "contact:email": "mahobialystok@gmail.com",
+        "contact:facebook": "https://www.facebook.com/MahoSushiBialystok",
+        "contact:instagram": "https://www.instagram.com/maho.sushi/",
+        "contact:mobile": "+48519073257",
+        "contact:website": "https://www.maho-sushi.pl/",
+        "cuisine": "fish;seafood;sushi",
+        "delivery": "Su-Th 11:00-21:30;Fr-Sa 11:00-22:30",
+        "email": "mahobialystok@gmail.com",
+        "mobile": "+48519073257",
+        "name": "MAHO Sushi",
+        "opening_hours": "Su-Th 11:00-21:45; Fr-Sa 11:00-22:45",
+        "opening_hours:kitchen": "Su-Th 11:00-21:00; Fr-Sa 11:00-22:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "reservation": "yes",
+        "website": "https://www.maho-sushi.pl/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1567445, 53.1338277]
+      },
+      "id": "node/9603646254"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9651445005",
+        "addr:city": "Białystok",
+        "addr:housenumber": "11",
+        "addr:street": "Antoniuk Fabryczny",
+        "amenity": "restaurant",
+        "contact:email": "koku@kokusushi.pl",
+        "contact:facebook": "https://www.facebook.com/kokusushibialystokantoniuk",
+        "contact:instagram": "https://www.instagram.com/ilovekoku/",
+        "contact:mobile": "+48537501601",
+        "contact:website": "https://www.kokusushi.pl/",
+        "contact:youtube": "https://www.youtube.com/channel/UCEsFJRlson8WTckQAVm4rxA",
+        "cuisine": "fish;seafood;sushi",
+        "email": "koku@kokusushi.pl",
+        "mobile": "+48537501601",
+        "name": "KOKU Sushi",
+        "opening_hours": "Mo-Su 12:00-22:00",
+        "operator": "KOKU Sushi",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "reservation": "yes",
+        "takeaway": "yes",
+        "website": "https://www.kokusushi.pl/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1240462, 53.1462932]
+      },
+      "id": "node/9651445005"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9651455981",
+        "addr:city": "Białystok",
+        "addr:housenumber": "14/16",
+        "addr:street": "Legionowa",
+        "amenity": "restaurant",
+        "contact:email": "selfie.bialystok@gmail.com",
+        "contact:facebook": "https://www.facebook.com/profile.php?id=100089199991222",
+        "contact:instagram": "https://www.instagram.com/selfie.bialystok/",
+        "contact:mobile": "+48517427777",
+        "contact:website": "https://www.selfiebialystok.pl/",
+        "cuisine": "mediterranean;seafood;sushi;thai",
+        "email": "selfie.bialystok@gmail.com",
+        "level": "1",
+        "mobile": "+48517427777",
+        "name": "Selfie",
+        "opening_hours": "Tu-Th 16:00-24:00; Fr 16:00-02:00; Sa 13:00-02:00; Su 13:00-23:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "reservation": "yes",
+        "takeaway": "yes",
+        "website": "https://www.selfiebialystok.pl/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1588535, 53.1306753]
+      },
+      "id": "node/9651455981"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9663405181",
+        "addr:city": "Białystok",
+        "addr:city:simc": "0922410",
+        "addr:housenumber": "46",
+        "addr:postcode": "15-727",
+        "addr:street": "Hetmańska",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/Bona-Me-101198675869591/",
+        "contact:instagram": "https://www.instagram.com/restauracjaboname/",
+        "contact:phone": "+48856881712",
+        "cuisine": "fish;international;italian;mediterranean",
+        "name": "Bona Me",
+        "opening_hours": "Su 12:00-22:00; Mo-Sa 12:00-23:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "phone": "+48856881712",
+        "reservation": "recommended",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1176957, 53.1297835]
+      },
+      "id": "node/9663405181"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9706819684",
+        "addr:city": "Białystok",
+        "addr:housenumber": "1",
+        "addr:street": "Antoniukowska",
+        "amenity": "restaurant",
+        "cuisine": "asian",
+        "name": "Mama Thai bistro"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1386113, 53.1390627]
+      },
+      "id": "node/9706819684"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9767490393",
+        "addr:city": "Białystok",
+        "addr:housenumber": "28",
+        "addr:postcode": "15-277",
+        "addr:street": "Świętojańska",
+        "amenity": "restaurant",
+        "contact:email": "biuro@mastercheese.pl",
+        "contact:facebook": "https://www.facebook.com/profile.php?id=61558253784114",
+        "contact:instagram": "https://www.instagram.com/mastercheesepizzaburger",
+        "contact:mobile": "+48668610267",
+        "contact:website": "https://www.mastercheese.pl/",
+        "cuisine": "american;pizza",
+        "delivery": "yes",
+        "email": "biuro@mastercheese.pl",
+        "mobile": "+48668610267",
+        "name": "Master Cheese - Pizza & Burger",
+        "opening_hours": "Mo-Th 11:00-22:00; Fr-Sa 11:00-23:00; Su 12:00-22:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:girocard": "no",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "takeaway": "yes",
+        "website": "https://www.mastercheese.pl/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1675079, 53.1256105]
+      },
+      "id": "node/9767490393"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9893356017",
+        "addr:city": "Białystok",
+        "addr:housenumber": "66",
+        "addr:street": "Henryka Sienkiewicza",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/wokwiet/",
+        "contact:mobile": "+48579188904",
+        "contact:website": "https://www.pyszne.pl/menu/wok-wiet-bialystok",
+        "cuisine": "asian;vietnamese",
+        "mobile": "+48579188904",
+        "name": "Wok Wiet",
+        "name:pl": "Wok Wiet",
+        "opening_hours": "Mo-Fr 10:00-20:30; Sa-Su 11:00-20:25",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "website": "https://www.pyszne.pl/menu/wok-wiet-bialystok"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.169535, 53.1382729]
+      },
+      "id": "node/9893356017"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9927967366",
+        "addr:city": "Białystok",
+        "addr:housenumber": "1",
+        "addr:postcode": "15-121",
+        "addr:street": "Węglowa",
+        "amenity": "restaurant",
+        "contact:email": "restauracjamozaika@gmail.com",
+        "contact:mobile": "+48668982957",
+        "cuisine": "international;polish;regional",
+        "email": "restauracjamozaika@gmail.com",
+        "mobile": "+48668982957",
+        "name": "Mozaika",
+        "opening_hours": "Tu-Fr,Su 10:00-17:00; Sa 12:00-19:00",
+        "outdoor_seating": "yes",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "toilets": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1747403, 53.1436757]
+      },
+      "id": "node/9927967366"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9929814073",
+        "addr:city": "Białystok",
+        "addr:housenumber": "3",
+        "addr:postcode": "15-145",
+        "addr:street": "Romualda Traugutta",
+        "amenity": "restaurant",
+        "contact:email": "restauracja@hoteltraugutta3.pl",
+        "contact:facebook": "https://www.facebook.com/RestauracjaRegiment1884",
+        "contact:instagram": "https://www.instagram.com/restauracjaregiment/",
+        "contact:mobile": "+48733733722",
+        "contact:phone": "+48856777773",
+        "contact:website": "https://www.hoteltraugutta3.pl/restauracja/restauracja-regiment",
+        "cuisine": "international",
+        "delivery": "Mo-Su 14:00-20:00",
+        "email": "restauracja@hoteltraugutta3.pl",
+        "internet_access": "wlan",
+        "mobile": "+48733733722",
+        "name": "Regiment 1884",
+        "opening_hours": "Mo-Sa 12:00-22:00; Su 12:00-21:00",
+        "operator": "Hotel Traugutta3",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "phone": "+48856777773",
+        "reservation": "recommended",
+        "smoking": "no",
+        "website": "https://www.hoteltraugutta3.pl/restauracja/restauracja-regiment",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.180002, 53.1429629]
+      },
+      "id": "node/9929814073"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10048020221",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "12",
+        "addr:postcode": "15-089",
+        "addr:street": "Jana Kilińskiego",
+        "amenity": "restaurant",
+        "contact:email": "kontakt@flyhighcoffee.pl",
+        "contact:facebook": "https://www.facebook.com/flyhighcoffee",
+        "contact:instagram": "https://www.instagram.com/flyhighcoffee/",
+        "contact:mobile": "+48664361921",
+        "contact:website": "https://www.flyhighcoffee.pl/",
+        "cuisine": "international",
+        "email": "kontakt@flyhighcoffee.pl",
+        "level": "0",
+        "mobile": "+48664361921",
+        "name": "High Fly Coffee",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "no",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "takeaway": "yes",
+        "website": "https://www.flyhighcoffee.pl/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1653993, 53.1324164]
+      },
+      "id": "node/10048020221"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10056728024",
+        "addr:city": "Białystok",
+        "addr:housenumber": "97",
+        "addr:postcode": "15-396",
+        "addr:street": "Mikołaja Kopernika",
+        "amenity": "restaurant",
+        "contact:mobile": "+48531711552",
+        "cuisine": "international;polish;regional",
+        "mobile": "+48531711552",
+        "name": "Restauracja Silver"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1238774, 53.1230958]
+      },
+      "id": "node/10056728024"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10058799899",
+        "addr:city": "Białystok",
+        "addr:housenumber": "25",
+        "addr:postcode": "15-435",
+        "addr:street": "Ludwika Zamenhofa",
+        "amenity": "restaurant",
+        "contact:email": "restauracja@hotelbranicki.com.pl",
+        "contact:facebook": "https://www.facebook.com/hotelbranicki.restauracjaoranzeria",
+        "contact:instagram": "https://www.instagram.com/restauracja_oranzeria/",
+        "contact:phone": "+48856652500",
+        "contact:website": "http://hotelbranicki.com.pl/restauracja",
+        "cuisine": "international;mediterranean;polish",
+        "email": "restauracja@hotelbranicki.com.pl",
+        "name": "Restauracja Oranżeria",
+        "opening_hours": "Mo-Su 16:00-21:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "phone": "+48856652500",
+        "reservation": "recommended",
+        "website": "http://hotelbranicki.com.pl/restauracja",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1601075, 53.1346514]
+      },
+      "id": "node/10058799899"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10121296207",
+        "addr:city": "Białystok",
+        "addr:housenumber": "26A",
+        "addr:postcode": "15-274",
+        "addr:street": "Jerzego Waszyngtona",
+        "amenity": "restaurant",
+        "contact:email": "spaghetteria.bialystok@gmail.com",
+        "contact:facebook": "https://www.facebook.com/profile.php?id=100063539922490",
+        "contact:instagram": "https://www.instagram.com/trattoria_angelino_pasta_wino/",
+        "contact:mobile": "+48519113177",
+        "cuisine": "international;italian;mediterranean",
+        "email": "spaghetteria.bialystok@gmail.com",
+        "level": "0",
+        "mobile": "+48519113177",
+        "name": "Angelino Pasta Wino",
+        "opening_hours": "Tu-Su 12:00-21:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1526373, 53.1262845]
+      },
+      "id": "node/10121296207"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10222411813",
+        "addr:city": "Białystok",
+        "addr:housenumber": "17",
+        "addr:postcode": "15-307",
+        "addr:street": "Wesoła",
+        "amenity": "restaurant",
+        "contact:email": "jedzenieipiciebialystok@gmail.com",
+        "contact:facebook": "https://www.facebook.com/jedzenieipiciebialystok",
+        "contact:instagram": "https://www.instagram.com/jedzenie_i_picie_bialystok/",
+        "contact:mobile": "+48796818318",
+        "contact:website": "http://www.jedzenieipicie.pl/",
+        "delivery": "yes",
+        "email": "jedzenieipiciebialystok@gmail.com",
+        "level": "0",
+        "mobile": "+48796818318",
+        "name": "Jedzenie i Picie",
+        "opening_hours": "Su-Th 12:00-21:00; Fr-Sa 12:00-23:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "takeaway": "yes",
+        "website": "http://www.jedzenieipicie.pl/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1537917, 53.1218203]
+      },
+      "id": "node/10222411813"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10226107004",
+        "addr:city": "Białystok",
+        "addr:housenumber": "2",
+        "addr:postcode": "15-265",
+        "addr:street": "Czesława Miłosza",
+        "amenity": "restaurant",
+        "level": "0",
+        "name": "Hokus Pokus"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1769178, 53.1218696]
+      },
+      "id": "node/10226107004"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10226107005",
+        "addr:city": "Białystok",
+        "addr:housenumber": "2",
+        "addr:postcode": "15-265",
+        "addr:street": "Czesława Miłosza",
+        "amenity": "restaurant",
+        "level": "0",
+        "name": "Tigon Asian Cuisune"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1769748, 53.1219767]
+      },
+      "id": "node/10226107005"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10994350325",
+        "addr:city": "Białystok",
+        "addr:housenumber": "2",
+        "addr:postcode": "15-666",
+        "addr:street": "Szarych Szeregów",
+        "amenity": "restaurant",
+        "cuisine": "pizza;chicken",
+        "diet:non-vegetarian": "yes",
+        "email": "hacienda.pizzabstok@gmail.com",
+        "name": "Hacienda - Pizza, Fryty, Shoarma",
+        "opening_hours": "Mo-Tu 12:00-21:00; We-Th 12:00-22:00; Fr-Sa 12:00-23:00; Su 11:00-21:00",
+        "phone": "+48  604986299",
+        "website": "https://www.haciendabialystok.pl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.0915023, 53.1307735]
+      },
+      "id": "node/10994350325"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11029855315",
+        "addr:city": "Białystok",
+        "addr:housenumber": "1",
+        "addr:postcode": "15-101",
+        "addr:street": "Jurowiecka",
+        "amenity": "restaurant",
+        "brand": "Pizzeria 105",
+        "brand:wikidata": "Q123090276",
+        "cuisine": "pizza",
+        "name": "Pizzeria 105",
+        "opening_hours": "Mo-Th 12:00-22:00; Fr-Sa 12:00-23:00; Su 12:00-22:00",
+        "phone": "+48 513 105 107",
+        "website": "https://105.pl/bialystok-jurowiecka/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1635048, 53.1363098]
+      },
+      "id": "node/11029855315"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11037705608",
+        "addr:city": "Białystok",
+        "addr:housenumber": "16",
+        "addr:postcode": "15-673",
+        "addr:street": "Ekologiczna",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/NOVA-SUSHI-Bia%C5%82ystok-102327481924361/",
+        "contact:instagram": "https://www.instagram.com/nova.sushi/",
+        "contact:mobile": "+48797930930",
+        "contact:website": "https://www.novasushi.pl/bialystok/",
+        "cuisine": "sushi",
+        "mobile": "+48797930930",
+        "name": "Nova Sushi",
+        "opening_hours": "Mo-Su 12:00-22:00",
+        "operator": "Nova Sushi",
+        "payment:american_express": "yes",
+        "payment:coins": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:notes": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "takeaway": "yes",
+        "website": "https://www.novasushi.pl/bialystok/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1195947, 53.1114337]
+      },
+      "id": "node/11037705608"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11179107238",
+        "addr:city": "Białystok",
+        "addr:housenumber": "7",
+        "addr:street": "Kijowska",
+        "amenity": "restaurant",
+        "indoor_seating": "yes",
+        "name": "Pho House",
+        "outdoor_seating": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1480252, 53.129073]
+      },
+      "id": "node/11179107238"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11348089025",
+        "addr:city": "Białystok",
+        "addr:housenumber": "67",
+        "addr:street": "Hugo Kołłątaja",
+        "amenity": "restaurant",
+        "name": "Pan Schabowy"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.0878705, 53.152854]
+      },
+      "id": "node/11348089025"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11385509055",
+        "addr:city": "Białystok",
+        "addr:housenumber": "7",
+        "addr:postcode": "15-440",
+        "addr:street": "Icchoka Malmeda",
+        "amenity": "restaurant",
+        "contact:phone": "+48 85 742 08 07;+48 600 052 527",
+        "cuisine": "hungarian",
+        "name": "Tokaj",
+        "opening_hours": "Mo-Su 12:00-22:00",
+        "website": "https://tokaj.com.pl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1559032, 53.1336669]
+      },
+      "id": "node/11385509055"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11400939277",
+        "addr:city": "Białystok",
+        "addr:housenumber": "19",
+        "addr:street": "Upalna",
+        "amenity": "restaurant",
+        "cuisine": "pizza",
+        "name": "Sponti Pizza"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.0986875, 53.1275243]
+      },
+      "id": "node/11400939277"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11466692279",
+        "addr:city": "Białystok",
+        "addr:housenumber": "2",
+        "addr:street": "Nowy Świat",
+        "amenity": "restaurant",
+        "contact:email": "kurrabialystok@gmail.com",
+        "contact:facebook": "https://www.facebook.com/kurrabialystok/",
+        "contact:instagram": "https://www.instagram.com/kurrabialystok/",
+        "contact:mobile": "+48511417512",
+        "contact:website": "https://www.kurrabialystok.pl/",
+        "cuisine": "american;asian;burger;chicken;mediterranean;polish",
+        "delivery": "yes",
+        "email": "kurrabialystok@gmail.com",
+        "level": "0;-1",
+        "mobile": "+48511417512",
+        "name": "Kurra Street Food and Bar",
+        "opening_hours": "Mo-Th 12:00-22:00; Fr-Sa 12:00-23:00; Su 12:00-20:00",
+        "outdoor_seating": "yes",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "smoking": "outside",
+        "takeaway": "yes",
+        "website": "https://www.kurrabialystok.pl/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1541706, 53.1339513]
+      },
+      "id": "node/11466692279"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11624470473",
+        "addr:city": "Białystok",
+        "addr:door": "U2",
+        "addr:housenumber": "72K",
+        "addr:postcode": "15-181",
+        "addr:street": "42 Pułku Piechoty",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/people/UNO-Pizza-More/61553506471363/",
+        "contact:instagram": "https://www.instagram.com/unopizzeriabialystok/",
+        "cuisine": "pizza;salad",
+        "diet:chicken": "yes",
+        "diet:seafood": "yes",
+        "diet:vegetarian": "yes",
+        "email": "biuro@uno-pizza.pl",
+        "name": "Uno Pizza&More",
+        "opening_hours": "Mo-Su 12:00-22:00",
+        "outdoor_seating": "yes",
+        "phone": "+48 664 650 101",
+        "website": "https://uno-pizza.pl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.2287433, 53.1406665]
+      },
+      "id": "node/11624470473"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11684599092",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "2",
+        "addr:postcode": "15-424",
+        "addr:street": "Lipowa",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/chinkalniabialystok",
+        "contact:instagram": "https://www.instagram.com/chinkalnia_bialystok/",
+        "contact:website": "http://www.chinkalnia.pl/",
+        "cuisine": "georgian",
+        "delivery": "yes",
+        "name": "Chinkalnia",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "takeaway": "yes",
+        "website": "http://www.chinkalnia.pl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1573354, 53.1328296]
+      },
+      "id": "node/11684599092"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11783451337",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "20",
+        "addr:postcode": "15-427",
+        "addr:street": "Lipowa",
+        "amenity": "restaurant",
+        "contact:email": "saludtapasbar@gmail.com",
+        "contact:facebook": "https://www.facebook.com/Saludtapasbarbialystok/",
+        "contact:instagram": "https://www.instagram.com/salud_tapas_bar/",
+        "contact:mobile": "+48519756271",
+        "contact:website": "https://www.saludtapas.pl/",
+        "cuisine": "spanish",
+        "delivery": "yes",
+        "email": "saludtapasbar@gmail.com",
+        "level": "-1",
+        "mobile": "+48519756271",
+        "name": "Salud",
+        "opening_hours": "Su-Mo 12:00-21:00; Tu-Th 12:00-21:00; Fr-Sa 12:00-24:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "smoking": "outside",
+        "takeaway": "yes",
+        "website": "https://www.saludtapas.pl/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1493712, 53.1340291]
+      },
+      "id": "node/11783451337"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11813862279",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "12",
+        "addr:postcode": "15-089",
+        "addr:street": "Jana Kilińskiego",
+        "amenity": "restaurant",
+        "contact:email": "grillkebab.bialystok@gmail.com",
+        "contact:mobile": "+48514747454",
+        "contact:website": "https://www.foodbooking.com/ordering/restaurant/menu?restaurant_uid=0586b50e-2172-46b5-8870-405110933114",
+        "cuisine": "barbecue;beef_bowl;kebab;sausage;turkish;wings",
+        "delivery": "Mo-Th, Su 11:00-23:00;Fr-Sa 11:00-24:00",
+        "email": "grillkebab.bialystok@gmail.com",
+        "level": "0",
+        "mobile": "+48514747454",
+        "name": "Grill Kebab",
+        "opening_hours": "Mo-Th, Su 11:00-23:00; Fr-Sa 11:00-24:00",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "smoking": "outside",
+        "takeaway": "Mo-Su 11:00-22:00",
+        "website": "https://www.foodbooking.com/ordering/restaurant/menu?restaurant_uid=0586b50e-2172-46b5-8870-405110933114",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1652476, 53.1323993]
+      },
+      "id": "node/11813862279"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11816818066",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "11",
+        "addr:postcode": "15-089",
+        "addr:street": "Jana Kilińskiego",
+        "amenity": "restaurant",
+        "contact:email": "restauracja@dwaswiaty.com.pl",
+        "contact:facebook": "https://www.facebook.com/dwaswiatybialystok/",
+        "contact:instagram": "https://www.instagram.com/dwaswiatybialystok/",
+        "contact:mobile": "+48690008719;+48783186431",
+        "cuisine": "international;polish;regional",
+        "email": "restauracja@dwaswiaty.com.pl",
+        "mobile": "+48690008719;+48783186431",
+        "name": "Dwa Światy - Food & Wine",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "reservation": "yes",
+        "takeaway": "yes",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1656452, 53.1322771]
+      },
+      "id": "node/11816818066"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11901538676",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "24",
+        "addr:postcode": "15-092",
+        "addr:street": "Henryka Sienkiewicza",
+        "amenity": "restaurant",
+        "contact:email": "info@trzypotrzy.com",
+        "contact:mobile": "+48604512039",
+        "contact:website": "https://trzypotrzy.com/",
+        "cuisine": "polish;regional",
+        "email": "info@trzypotrzy.com",
+        "mobile": "+48604512039",
+        "name": "Trzy Po Trzy",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "website": "https://trzypotrzy.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1627195, 53.1342797]
+      },
+      "id": "node/11901538676"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11916316511",
+        "addr:city": "Białystok",
+        "addr:housenumber": "10/1",
+        "addr:street": "Akademicka",
+        "amenity": "restaurant",
+        "building": "retail",
+        "building:levels": "1",
+        "contact:email": "voilabialystok@gmail.com",
+        "contact:facebook": "https://www.facebook.com/voilabialystok/",
+        "contact:instagram": "https://www.instagram.com/voila_bialystok/",
+        "contact:mobile": "+48798881351",
+        "contact:website": "https://www.voilabialystok.pl/",
+        "cuisine": "international;mediterranean",
+        "email": "voilabialystok@gmail.com",
+        "mobile": "+48798881351",
+        "name": "Voilà - Lounge & Restaurant",
+        "opening_hours": "Mo-Th 12:00-23:00; Fr 12:00-01:00; Sa 12:00-04:00; Su 12:00-24:00",
+        "outdoor_seating": "yes",
+        "start_date": "1974",
+        "takeaway": "yes",
+        "website": "https://www.voilabialystok.pl/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1609056, 53.1289122]
+      },
+      "id": "node/11916316511"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11916316523",
+        "addr:city": "Białystok",
+        "addr:housenumber": "2",
+        "addr:street": "Słonimska",
+        "amenity": "restaurant",
+        "contact:email": "starebojary@gmail.com",
+        "contact:facebook": "https://www.facebook.com/StareBojaryRestauracja",
+        "contact:instagram": "https://www.instagram.com/stare_bojary_restauracja",
+        "contact:mobile": "+48537374737",
+        "cuisine": "french;italian;polish;regional",
+        "email": "starebojary@gmail.com",
+        "mobile": "+48537374737",
+        "name": "Stare Bojary",
+        "opening_hours": "Tu 14:00-21:00; We-Th 12:00-21:00; Fr 12:00-22:00; Sa 12:00-23:00; Su 12:00-21:00",
+        "outdoor_seating": "yes",
+        "payment:american_express": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:diners_club": "yes",
+        "payment:discover_card": "yes",
+        "payment:jcb": "yes",
+        "payment:maestro": "yes",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "payment:visa_debit": "yes",
+        "payment:visa_electron": "yes",
+        "reservation": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1751074, 53.1342662]
+      },
+      "id": "node/11916316523"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11941693071",
+        "addr:city": "Białystok",
+        "addr:housenumber": "1",
+        "addr:street": "Węglowa",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/piwokaczkasushi/",
+        "contact:instagram": "https://www.instagram.com/piwokaczkasushi/",
+        "contact:mobile": "+48698332499",
+        "cuisine": "burger;fish;fish_and_chips;ramen;seafood;sushi;vietnamese;wings",
+        "delivery": "yes",
+        "mobile": "+48698332499",
+        "name": "Piwo Kaczka Sushi",
+        "opening_hours": "11:00-21:00",
+        "outdoor_seating": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "takeaway": "yes",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1750358, 53.1437606]
+      },
+      "id": "node/11941693071"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12000500871",
+        "addr:city": "Białystok",
+        "addr:housenumber": "45",
+        "addr:postcode": "15-024",
+        "addr:street": "Józefa Ignacego Kraszewskiego",
+        "amenity": "restaurant",
+        "cuisine": "indian",
+        "name": "Razma"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.181264, 53.1399641]
+      },
+      "id": "node/12000500871"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12158628794",
+        "addr:city": "Białystok",
+        "addr:housenumber": "2",
+        "addr:postcode": "15-282",
+        "addr:street": "Piękna",
+        "alt_name": "Trufla & Wino",
+        "amenity": "restaurant",
+        "contact:email": "biuro@truflaiwino.pl",
+        "contact:facebook": "https://www.facebook.com/truflaiwinobialystok",
+        "contact:instagram": "https://www.instagram.com/trufla_i_wino_bialystok",
+        "contact:mobile": "+48514929839",
+        "contact:website": "https://www.truflaiwino.pl/",
+        "cuisine": "italian;mediterranean;pizza",
+        "email": "biuro@truflaiwino.pl",
+        "level": "1",
+        "mobile": "+48514929839",
+        "name": "Trufla i Wino",
+        "opening_hours": "Mo-Th 12:00-22:00; Fr-Sa 12:00-24:00; Su 12:00-21:00",
+        "outdoor_seating": "yes",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "reservation": "recommended",
+        "smoking": "outside",
+        "start_date": "2024-08-02",
+        "website": "https://www.truflaiwino.pl/",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.153618, 53.1289504]
+      },
+      "id": "node/12158628794"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12160760677",
+        "addr:city": "Białystok",
+        "addr:housenumber": "45",
+        "addr:postcode": "15-024",
+        "addr:street": "Józefa Ignacego Kraszewskiego",
+        "amenity": "restaurant",
+        "cuisine": "sushi",
+        "name": "Koku Sushi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1810073, 53.1397936]
+      },
+      "id": "node/12160760677"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12222296859",
+        "addr:city": "Białystok",
+        "addr:city:simc": "0922410",
+        "addr:housenumber": "5",
+        "addr:postcode": "15-410",
+        "addr:street": "Kijowska",
+        "amenity": "restaurant",
+        "contact:facebook": "https://www.facebook.com/profile.php?id=61561984564875",
+        "contact:instagram": "https://www.instagram.com/restauracjaaplauz/",
+        "contact:phone": "+48856855910",
+        "cuisine": "international;polish;regional",
+        "indoor_seating": "yes",
+        "level": "0",
+        "name": "Aplauz",
+        "opening_hours": "Su-Th 13:00-22:00; Fr-Sa 12:00-23:00",
+        "operator": "Hotel Opera",
+        "phone": "+48856855910",
+        "toilets": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1489194, 53.1282508]
+      },
+      "id": "node/12222296859"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12321080687",
+        "amenity": "restaurant",
+        "contact:instagram": "https://www.instagram.com/lux888886061",
+        "cuisine": "georgian",
+        "name": "LUX Restauracja",
+        "opening_hours": "Mo-Su 10:00-22:00",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "takeaway": "yes",
+        "toilets": "yes",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1537132, 53.1330511]
+      },
+      "id": "node/12321080687"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12334335357",
+        "addr:city": "Białystok",
+        "addr:housenumber": "26/1A",
+        "addr:postcode": "15-274",
+        "addr:street": "Jerzego Waszyngtona",
+        "amenity": "restaurant",
+        "contact:email": "addamascuspl@gmail.com",
+        "contact:facebook": "https://www.facebook.com/damascusbialystok",
+        "contact:instagram": "https://www.instagram.com/damascus_bialystok",
+        "contact:mobile": "+48730286097",
+        "contact:website": "https://www.restauracjadamascus.pl/",
+        "cuisine": "syrian",
+        "delivery": "yes",
+        "email": "addamascuspl@gmail.com",
+        "facebook": "https://www.facebook.com/damascusbialystok",
+        "mobile": "+48730286097",
+        "name": "Damascus",
+        "official_name": "Damascus Restaurant",
+        "opening_hours": "Mo-Th 11:00-21:00; Fr-Sa 11:00-22:00; Su 11:00-20:00",
+        "payment:cash": "yes",
+        "payment:contactless": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "takeaway": "yes",
+        "website": "https://www.restauracjadamascus.pl/",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1535275, 53.1250644]
+      },
+      "id": "node/12334335357"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12376505122",
+        "addr:city": "Białystok",
+        "addr:country": "PL",
+        "addr:housenumber": "19/1",
+        "addr:postcode": "15-312",
+        "addr:street": "Zwierzyniecka",
+        "amenity": "restaurant",
+        "contact:email": "biuro@pizzapelati.pl",
+        "contact:facebook": "https://www.facebook.com/PizzaPelati/",
+        "contact:instagram": "https://www.instagram.com/pizzapelati/",
+        "contact:mobile": "+48793735284",
+        "contact:phone": "+48857191120",
+        "contact:website": "https://www.pizzapelati.pl/",
+        "email": "biuro@pizzapelati.pl",
+        "mobile": "+48793735284",
+        "name": "Pizza Pelati",
+        "opening_hours": "Mo-Th 10:00-22:00; Fr-Su 10:00-23:00",
+        "operator": "Pizza Pelati",
+        "phone": "+48857191120",
+        "website": "https://www.pizzapelati.pl/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.1539109, 53.1200708]
+      },
+      "id": "node/12376505122"
+    }
+  ]
+}
