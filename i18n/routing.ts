@@ -10,10 +10,7 @@ export const routing = defineRouting({
       en: "/",
       pl: "/",
     },
-    "/team/[member]": {
-      en: "/team/[member]",
-      pl: "/zespol/[member]",
-    },
+
     "/contact": {
       en: "/contact",
       pl: "/kontakt",

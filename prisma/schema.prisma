@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -11,4 +5,77 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  email     String    @unique
+  password  String
+  name      String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  comments  Comment[]
+  ratings   Rating[]
+}
+
+model Restaurant {
+  id                  Int       @id @default(autoincrement())
+  osmId               String    @unique // ID z OpenStreetMap
+  name                String
+  city                String
+  country             String    @default("PL")
+  street              String
+  housenumber         String?
+  postcode            String?
+  cuisine             String?
+  email               String?
+  phone               String?
+  website             String?
+  operator            String?
+  openingHours        String?
+  coordinates         Json      
+  building            String?   
+  buildingLevels      String?   
+  buildingMaterial    String?   
+  checkDate           String?   
+  outdoorSeating      Boolean?  
+  smoking             String?   
+  takeaway            Boolean?  
+  delivery            Boolean?  
+  wheelchair          String?   
+  reservation         Boolean?  
+  paymentMethods      Json?     
+  contactEmail        String?   
+  contactFacebook     String?   
+  contactInstagram    String?   
+  contactMobile       String?   
+  contactWebsite      String?   
+  officialName        String?   
+  dietVegetarian      Boolean?  
+  createdAt           DateTime  
+  updatedAt           DateTime 
+  comments            Comment[]
+  ratings             Rating[]
+}
+
+model Comment {
+  id           Int       @id @default(autoincrement())
+  content      String
+  userId       Int
+  user         User      @relation(fields: [userId], references: [id])
+  restaurantId Int
+  restaurant   Restaurant @relation(fields: [restaurantId], references: [id])
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model Rating {
+  id           Int       @id @default(autoincrement())
+  value        Int       // from 1 to 5 ( validate in application )
+  userId       Int
+  user         User      @relation(fields: [userId], references: [id])
+  restaurantId Int
+  restaurant   Restaurant @relation(fields: [restaurantId], references: [id])
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
 }

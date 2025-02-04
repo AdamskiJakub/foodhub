@@ -27,8 +27,14 @@ export default function LocaleSwitcher() {
   const handleLocaleChange = useCallback(
     (locale: Locale) => {
       setIsOpen(false);
-      /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
-      router.push({ pathname, params: params as any }, { locale });
+
+      const hasDynamicParams = Object.keys(params).length > 0;
+
+      const navigationOptions = hasDynamicParams
+        ? { pathname, params }
+        : { pathname };
+
+      router.push(navigationOptions, { locale });
     },
     [router, params, pathname]
   );
