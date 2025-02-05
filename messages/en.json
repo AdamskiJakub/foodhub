@@ -11,9 +11,22 @@
     "backHome": "Main page"
   },
   "SEO": {
-    "title": "Attorneys in Białystok",
-    "description": "Professional legal services in Białystok.",
-    "ogTitle": "Białystok Attorneys - Best Legal Services",
-    "ogDescription": "Trust the best attorneys in Białystok."
+    "title": "FoodHub",
+    "description": "List of restaurants in your city.",
+    "ogTitle": "FoodHub - best restaurant website",
+    "ogDescription": "Check restaurants in your city"
+  },
+  "Navbar": {
+    "blog": "Blog",
+    "about": "About us",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "login": "Login",
+    "name": "FoodHub",
+    "subname": "Best restaurants in your city",
+    "language": "English",
+    "ariaHomepage": "Go to the homepage",
+    "ariaToggleMenu": "Toggle navigation menu",
+    "ariaContact": "Go to the contact page"
   }
 }

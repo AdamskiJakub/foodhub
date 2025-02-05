@@ -10,10 +10,25 @@ export const routing = defineRouting({
       en: "/",
       pl: "/",
     },
-
+    "/blog": {
+      en: "/blog",
+      pl: "/blog",
+    },
+    "/about": {
+      en: "/about",
+      pl: "/o-nas",
+    },
+    "/faq": {
+      en: "/faq",
+      pl: "/faq",
+    },
     "/contact": {
       en: "/contact",
       pl: "/kontakt",
+    },
+    "/login": {
+      en: "/login",
+      pl: "/zaloguj",
     },
   },
 });

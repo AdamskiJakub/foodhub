@@ -11,9 +11,22 @@
     "backHome": "Strona główna"
   },
   "SEO": {
-    "title": "Adwokaci w Białymstoku",
-    "description": "Profesjonalna obsługa prawna w Białymstoku.",
-    "ogTitle": "Adwokaci Białystok - Najlepsza obsługa prawna",
-    "ogDescription": "Zaufaj najlepszym adwokatom w Białymstoku."
+    "title": "FoodHub",
+    "description": "Lista Restauracji w twoim mieście.",
+    "ogTitle": "FoodHub - najlepsza strona z restauracjami",
+    "ogDescription": "Sprawdź restauracje w swoim mieście."
+  },
+  "Navbar": {
+    "blog": "Blog",
+    "about": "O nas",
+    "faq": "FAQ",
+    "contact": "Kontakt",
+    "login": "Zaloguj się",
+    "name": "FoodHub",
+    "subname": "Najlepsze restauracje w twoim mieście",
+    "language": "Polski",
+    "ariaHomepage": "Przejdź na stronę główną",
+    "ariaToggleMenu": "Przełącz menu nawigacyjne",
+    "ariaContact": "Przejdź do strony kontaktowej"
   }
 }
