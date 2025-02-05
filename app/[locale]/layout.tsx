@@ -9,6 +9,7 @@ import Head from "next/head";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import LocaleSwitcher from "@/components/switcher/LocaleSwitcher";
+import Navbar from "@/components/navbar/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -111,6 +112,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       </Head>
       <body className={inter.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
+          <Navbar />
           <LocaleSwitcher />
           {children}
         </NextIntlClientProvider>

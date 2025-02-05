@@ -1,5 +1,4 @@
 import { setRequestLocale } from "next-intl/server";
-import LocaleSwitcher from "@/components/switcher/LocaleSwitcher";
 import { Locale, routing } from "@/i18n/routing";
 import prisma from "@/lib/prisma";
 import { Restaurant } from "@/types/restaurant";
@@ -34,7 +33,6 @@ export default async function HomePage({ params }: Props) {
           </li>
         ))}
       </ul>
-      <LocaleSwitcher />
     </div>
   );
 }

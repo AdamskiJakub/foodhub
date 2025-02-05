@@ -68,7 +68,7 @@ export default function LocaleSwitcher() {
         className="flex items-center gap-2 px-4 py-2 rounded hover:bg-gray-100"
       >
         <Image
-          src={`/${locale}.svg`}
+          src={`/images/${locale}.svg`}
           alt={currentLanguage?.label ?? ""}
           width={20}
           height={20}
@@ -111,7 +111,7 @@ export default function LocaleSwitcher() {
               }`}
             >
               <Image
-                src={`/${langLocale}.svg`}
+                src={`/images/${langLocale}.svg`}
                 alt={label}
                 width={20}
                 height={20}
