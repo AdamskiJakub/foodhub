@@ -62,7 +62,7 @@ const Navbar = () => {
           <LocaleSwitcher />
           <Link
             href="/login"
-            className="bg-[#07222F] px-6 py-3 leading-none text-white text-center rounded text-base font-medium"
+            className="bg-primary px-6 py-3 leading-none text-white text-center rounded text-base font-medium hover:bg-primary/90"
             onClick={() => setIsOpen(false)}
           >
             {t("login")}
@@ -134,7 +134,7 @@ const Navbar = () => {
 
               <Link
                 href="/login"
-                className="bg-[#07222F] text-white w-full text-center py-3 rounded text-base font-medium"
+                className="bg-primary text-white w-full text-center py-3 rounded text-base font-medium hover:bg-primary/90"
                 onClick={() => setIsOpen(false)}
               >
                 {t("login")}
