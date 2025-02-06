@@ -35,7 +35,9 @@
     "password": "Password",
     "submit": "Sign In",
     "noAccount": "Don't have an account?",
-    "registerLink": "Register here"
+    "registerLink": "Register here",
+    "toastLoginSuccess": "Login successful!",
+    "toastLoginError": "Invalid login credentials."
   },
   "Register": {
     "title": "Register",
@@ -44,6 +46,8 @@
     "confirmPassword": "Confirm Password",
     "submit": "Sign Up",
     "haveAccount": "Already have an account?",
-    "loginLink": "Login here"
+    "loginLink": "Login here",
+    "toastRegisterSuccess": "Registration successful! You can now log in.",
+    "toastRegisterError": "An error occurred during registration."
   }
 }

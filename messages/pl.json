@@ -35,7 +35,9 @@
     "password": "Hasło",
     "submit": "Zaloguj się",
     "noAccount": "Nie masz konta?",
-    "registerLink": "Zarejestruj się tutaj"
+    "registerLink": "Zarejestruj się tutaj",
+    "toastLoginSuccess": "Logowanie udane!",
+    "toastLoginError": "Nieprawidłowe dane logowania."
   },
   "Register": {
     "title": "Rejestracja",
@@ -44,6 +46,8 @@
     "confirmPassword": "Potwierdź hasło",
     "submit": "Zarejestruj się",
     "haveAccount": "Masz już konto?",
-    "loginLink": "Zaloguj się tutaj"
+    "loginLink": "Zaloguj się tutaj",
+    "toastRegisterSuccess": "Rejestracja udana! Możesz się teraz zalogować.",
+    "toastRegisterError": "Wystąpił błąd podczas rejestracji."
   }
 }

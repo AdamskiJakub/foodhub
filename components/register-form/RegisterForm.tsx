@@ -10,19 +10,51 @@ import {
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const RegisterForm = () => {
-  const t = useTranslations("Register");
   const {
     control,
     handleSubmit,
     formState: { errors },
   } = useForm<RegisterFormData>({
     resolver: zodResolver(registerSchema),
+    defaultValues: {
+      email: "",
+      password: "",
+      confirmPassword: "",
+    },
   });
 
-  const onSubmit: SubmitHandler<RegisterFormData> = (data) => {
-    console.log(data);
+  const router = useRouter();
+  const t = useTranslations("Register");
+
+  const onSubmit: SubmitHandler<RegisterFormData> = async (data) => {
+    try {
+      const response = await fetch("/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: data.email,
+          password: data.password,
+        }),
+      });
+
+      if (response.ok) {
+        toast.success(t("toastRegisterSuccess"));
+        setTimeout(() => router.push("/login"), 5000);
+      } else {
+        const errorData = await response.json();
+        toast.error(t("toastRegisterError"));
+        console.error("Registration failed:", errorData.message);
+      }
+    } catch (error) {
+      toast.error(t("toastRegisterError"));
+      console.error("Registration error:", error);
+    }
   };
 
   return (

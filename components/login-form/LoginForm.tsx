@@ -7,8 +7,14 @@ import { loginSchema, LoginFormData } from "@/lib/validation/loginSchema";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Locale } from "@/i18n/routing";
+import toast from "react-hot-toast";
 
-const LoginForm = () => {
+interface Props {
+  locale: Locale;
+}
+
+const LoginForm = ({ locale }: Props) => {
   const t = useTranslations("Login");
   const {
     control,
@@ -16,10 +22,33 @@ const LoginForm = () => {
     formState: { errors },
   } = useForm<LoginFormData>({
     resolver: zodResolver(loginSchema),
+    defaultValues: {
+      email: "",
+      password: "",
+    },
   });
 
-  const onSubmit: SubmitHandler<LoginFormData> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<LoginFormData> = async (data) => {
+    try {
+      const response = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast.success(t(""));
+        console.log(result.message);
+      } else {
+        console.error(result.message);
+      }
+    } catch (error) {
+      console.error("Login failed:", error);
+    }
   };
 
   return (
@@ -64,12 +93,12 @@ const LoginForm = () => {
           <p className="text-red-500 text-sm">{errors.password.message}</p>
         )}
       </div>
-      <Button type="submit" className="w-full p-2  text-white rounded">
+      <Button type="submit" className="w-full p-2 text-white rounded">
         {t("submit")}
       </Button>
       <p className="text-center">
         {t("noAccount")}{" "}
-        <Link href="/register" className="text-blue-500">
+        <Link href={`/${locale}/register`} className="text-blue-500">
           {t("registerLink")}
         </Link>
       </p>
