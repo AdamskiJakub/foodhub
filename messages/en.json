@@ -37,7 +37,9 @@
     "noAccount": "Don't have an account?",
     "registerLink": "Register here",
     "toastLoginSuccess": "Login successful!",
-    "toastLoginError": "Invalid login credentials."
+    "toastLoginError": "Invalid login credentials.",
+    "invalidEmail": "Invalid email address.",
+    "invalidPassword": "Invalid password."
   },
   "Register": {
     "title": "Register",
@@ -48,6 +50,11 @@
     "haveAccount": "Already have an account?",
     "loginLink": "Login here",
     "toastRegisterSuccess": "Registration successful! You can now log in.",
-    "toastRegisterError": "An error occurred during registration."
+    "toastRegisterError": "An error occurred during registration.",
+    "toastEmailTaken": "This email is already in use.",
+    "invalidEmail": "Invalid email address",
+    "passwordMin": "Password must be at least 6 characters.",
+    "passwordRegex": "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.",
+    "passwordMatch": "Passwords must match."
   }
 }

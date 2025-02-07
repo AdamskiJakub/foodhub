@@ -1,19 +1,28 @@
 import { z } from "zod";
 
-interface Props {
-  password: string;
-  confirmPassword: string;
-}
+export const createRegisterSchema = (t: (key: string) => string) => {
+  return z
+    .object({
+      email: z.string().email(t("invalidEmail")),
+      password: z
+        .string()
+        .min(6, { message: t("passwordMin") })
+        .regex(
+          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,15}$/,
+          {
+            message: t("passwordRegex"),
+          }
+        ),
+      confirmPassword: z.string(),
+    })
+    .refine(
+      (data: { password: string; confirmPassword: string }) =>
+        data.password === data.confirmPassword,
+      {
+        message: t("passwordMatch"),
+        path: ["confirmPassword"],
+      }
+    );
+};
 
-export const registerSchema = z
-  .object({
-    email: z.string().email("Invalid email address"),
-    password: z.string().min(6, "Password must be at least 6 characters"),
-    confirmPassword: z.string(),
-  })
-  .refine((data: Props) => data.password === data.confirmPassword, {
-    message: "Passwords do not match",
-    path: ["confirmPassword"],
-  });
-
-export type RegisterFormData = z.infer<typeof registerSchema>;
+export type RegisterFormData = z.infer<ReturnType<typeof createRegisterSchema>>;

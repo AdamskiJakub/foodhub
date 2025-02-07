@@ -1,9 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { loginSchema, LoginFormData } from "@/lib/validation/loginSchema";
+import { createLoginSchema, LoginFormData } from "@/lib/validation/loginSchema";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -16,12 +16,15 @@ interface Props {
 
 const LoginForm = ({ locale }: Props) => {
   const t = useTranslations("Login");
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
+
   const {
     control,
     handleSubmit,
     formState: { errors },
   } = useForm<LoginFormData>({
-    resolver: zodResolver(loginSchema),
+    resolver: zodResolver(createLoginSchema(t)),
     defaultValues: {
       email: "",
       password: "",
@@ -41,14 +44,26 @@ const LoginForm = ({ locale }: Props) => {
       const result = await response.json();
 
       if (response.ok) {
-        toast.success(t(""));
+        toast.success(t("toastLoginSuccess"));
         console.log(result.message);
+        setEmailError(false);
+        setPasswordError(false);
       } else {
-        console.error(result.message);
+        toast.error(t("toastLoginError"));
+        setEmailError(true);
+        setPasswordError(true);
       }
     } catch (error) {
       console.error("Login failed:", error);
+      toast.error(t("toastLoginError"));
+      setEmailError(true);
+      setPasswordError(true);
     }
+  };
+
+  const handleFieldChange = (field: string) => {
+    if (field === "email") setEmailError(false);
+    if (field === "password") setPasswordError(false);
   };
 
   return (
@@ -57,6 +72,7 @@ const LoginForm = ({ locale }: Props) => {
       className="space-y-4 max-w-2xl items-center align-middle justify-center mx-auto px-4 my-20"
     >
       <h1 className="text-2xl font-bold">{t("title")}</h1>
+
       <div>
         <label className="block text-sm font-medium mb-2">{t("email")}</label>
         <Controller
@@ -66,7 +82,15 @@ const LoginForm = ({ locale }: Props) => {
             <input
               {...field}
               type="email"
-              className="w-full p-2 border rounded"
+              className={`w-full p-2 border rounded ${
+                errors.email || emailError
+                  ? "border-red-500"
+                  : "border-gray-300"
+              }`}
+              onChange={(e) => {
+                field.onChange(e);
+                handleFieldChange("email");
+              }}
             />
           )}
         />
@@ -74,6 +98,7 @@ const LoginForm = ({ locale }: Props) => {
           <p className="text-red-500 text-sm">{errors.email.message}</p>
         )}
       </div>
+
       <div>
         <label className="block text-sm font-medium mb-2">
           {t("password")}
@@ -85,7 +110,15 @@ const LoginForm = ({ locale }: Props) => {
             <input
               {...field}
               type="password"
-              className="w-full p-2 border rounded"
+              className={`w-full p-2 border rounded ${
+                errors.password || passwordError
+                  ? "border-red-500"
+                  : "border-gray-300"
+              }`}
+              onChange={(e) => {
+                field.onChange(e);
+                handleFieldChange("password");
+              }}
             />
           )}
         />
@@ -93,9 +126,11 @@ const LoginForm = ({ locale }: Props) => {
           <p className="text-red-500 text-sm">{errors.password.message}</p>
         )}
       </div>
+
       <Button type="submit" className="w-full p-2 text-white rounded">
         {t("submit")}
       </Button>
+
       <p className="text-center">
         {t("noAccount")}{" "}
         <Link href={`/${locale}/register`} className="text-blue-500">

@@ -37,17 +37,24 @@
     "noAccount": "Nie masz konta?",
     "registerLink": "Zarejestruj się tutaj",
     "toastLoginSuccess": "Logowanie udane!",
-    "toastLoginError": "Nieprawidłowe dane logowania."
+    "toastLoginError": "Nieprawidłowe dane logowania.",
+    "invalidEmail": "Błędny adres email.",
+    "invalidPassword": "Błędne hasło."
   },
   "Register": {
-    "title": "Rejestracja",
+    "title": "Zarejestruj się",
     "email": "Email",
     "password": "Hasło",
-    "confirmPassword": "Potwierdź hasło",
+    "confirmPassword": "Potwierdź Hasło",
     "submit": "Zarejestruj się",
     "haveAccount": "Masz już konto?",
     "loginLink": "Zaloguj się tutaj",
-    "toastRegisterSuccess": "Rejestracja udana! Możesz się teraz zalogować.",
-    "toastRegisterError": "Wystąpił błąd podczas rejestracji."
+    "toastRegisterSuccess": "Rejestracja zakończona sukcesem! Teraz możesz się zalogować.",
+    "toastRegisterError": "Wystąpił błąd podczas rejestracji.",
+    "toastEmailTaken": "Ten email jest już w użyciu.",
+    "invalidEmail": "Nieprawidłowy adres email",
+    "passwordMin": "Hasło musi mieć przynajmniej 6 znaków.",
+    "passwordRegex": "Hasło musi zawierać co najmniej jedną dużą literę, jedną małą literę, cyfrę i znak specjalny.",
+    "passwordMatch": "Hasła muszą być identyczne."
   }
 }
