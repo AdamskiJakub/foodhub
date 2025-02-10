@@ -27,7 +27,8 @@
     "language": "English",
     "ariaHomepage": "Go to the homepage",
     "ariaToggleMenu": "Toggle navigation menu",
-    "ariaContact": "Go to the contact page"
+    "ariaContact": "Go to the contact page",
+    "logout": "Logout"
   },
   "Login": {
     "title": "Login",

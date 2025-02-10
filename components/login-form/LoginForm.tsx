@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Locale } from "@/i18n/routing";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
 
 interface Props {
   locale: Locale;
@@ -36,26 +37,21 @@ const LoginForm = ({ locale }: Props) => {
 
   const onSubmit: SubmitHandler<LoginFormData> = async (data) => {
     try {
-      const response = await fetch("/api/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+      const result = await signIn("credentials", {
+        redirect: false,
+        email: data.email,
+        password: data.password,
       });
 
-      const result = await response.json();
-
-      if (response.ok) {
-        toast.success(t("toastLoginSuccess"));
-        console.log(result.message);
-        setEmailError(false);
-        setPasswordError(false);
-        setTimeout(() => router.push("/"), 5000);
-      } else {
+      if (result?.error) {
         toast.error(t("toastLoginError"));
         setEmailError(true);
         setPasswordError(true);
+      } else {
+        toast.success(t("toastLoginSuccess"));
+        setEmailError(false);
+        setPasswordError(false);
+        router.push(`/${locale}`);
       }
     } catch (error) {
       console.error("Login failed:", error);
