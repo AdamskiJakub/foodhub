@@ -10,6 +10,7 @@ import {
 import { User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 
 const UserDropdown = () => {
   const { data: session } = useSession();
@@ -27,6 +28,14 @@ const UserDropdown = () => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
+        <Link
+          href={{
+            pathname: "/[member]/settings",
+            params: { member: session.user.id },
+          }}
+        >
+          <DropdownMenuItem>{t("settings")}</DropdownMenuItem>
+        </Link>
         <DropdownMenuItem onClick={() => signOut()}>
           {t("logout")}
         </DropdownMenuItem>

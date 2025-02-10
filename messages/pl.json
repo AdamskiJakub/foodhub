@@ -28,7 +28,8 @@
     "ariaHomepage": "Przejdź na stronę główną",
     "ariaToggleMenu": "Przełącz menu nawigacyjne",
     "ariaContact": "Przejdź do strony kontaktowej",
-    "logout": "Wyloguj się"
+    "logout": "Wyloguj się",
+    "settings": "Ustawienia"
   },
   "Login": {
     "title": "Logowanie",
@@ -57,5 +58,13 @@
     "passwordMin": "Hasło musi mieć przynajmniej 6 znaków.",
     "passwordRegex": "Hasło musi zawierać co najmniej jedną dużą literę, jedną małą literę, cyfrę i znak specjalny.",
     "passwordMatch": "Hasła muszą być identyczne."
+  },
+  "UserSettings": {
+    "title": "Ustawienia użytkownika",
+    "options": "Opcje",
+    "changePassword": "Zmień hasło",
+    "editProfile": "Edytuj profil",
+    "profileInfo": "Informacje o profilu",
+    "email": "Email"
   }
 }

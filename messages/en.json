@@ -28,7 +28,8 @@
     "ariaHomepage": "Go to the homepage",
     "ariaToggleMenu": "Toggle navigation menu",
     "ariaContact": "Go to the contact page",
-    "logout": "Logout"
+    "logout": "Logout",
+    "settings": "Settings"
   },
   "Login": {
     "title": "Login",
@@ -57,5 +58,13 @@
     "passwordMin": "Password must be at least 6 characters.",
     "passwordRegex": "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.",
     "passwordMatch": "Passwords must match."
+  },
+  "UserSettings": {
+    "title": "User Settings",
+    "options": "Options",
+    "changePassword": "Change Password",
+    "editProfile": "Edit Profile",
+    "profileInfo": "Profile Information",
+    "email": "Email"
   }
 }

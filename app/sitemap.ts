@@ -1,17 +1,40 @@
 import type { MetadataRoute } from "next";
 import { routing, getPathname } from "@/i18n/routing";
+import prisma from "@/lib/prisma";
 
 const host = process.env.NEXT_PUBLIC_BASE_URL;
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date().toISOString();
 
-  const staticEntries: MetadataRoute.Sitemap = [
-    getEntry("/", lastModified),
-    getEntry("/contact", lastModified),
-  ];
+  try {
+    const users = await prisma.user.findMany({
+      select: { id: true },
+    });
+    const staticEntries: MetadataRoute.Sitemap = [
+      getEntry("/", lastModified),
+      getEntry("/contact", lastModified),
+      getEntry("/about", lastModified),
+      getEntry("/blog", lastModified),
+      getEntry("/faq", lastModified),
+      getEntry("/login", lastModified),
+      getEntry("/register", lastModified),
+    ];
 
-  return [...staticEntries];
+    const userEntries: MetadataRoute.Sitemap = users
+      .filter((user) => user.id)
+      .map((user) =>
+        getEntry(
+          { pathname: "/[member]/settings", params: { member: user.id } },
+          lastModified
+        )
+      );
+
+    return [...staticEntries, ...userEntries];
+  } catch (error) {
+    console.error("Error fetching users", error);
+    return [];
+  }
 }
 
 function getEntry(
