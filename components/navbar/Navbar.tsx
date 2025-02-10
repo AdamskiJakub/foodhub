@@ -11,6 +11,8 @@ import Image from "next/image";
 import { Locale, usePathname } from "@/i18n/routing";
 import LocaleSwitcher from "../switcher/LocaleSwitcher";
 import NavbarMobileLinks from "./MobileLinks";
+import UserDropdown from "./UserDropdown";
+import { useSession } from "next-auth/react";
 
 const Navbar = () => {
   const t = useTranslations("Navbar");
@@ -20,6 +22,7 @@ const Navbar = () => {
 
   const pathname = usePathname();
   const locale = useLocale();
+  const { data: session } = useSession();
 
   const toggleMenu = useCallback(() => {
     setIsOpen((prev) => !prev);
@@ -60,13 +63,18 @@ const Navbar = () => {
           </div>
           {/* TODO: both LocaleSwitcher and LanguageModal should have passed the same logic for switching lang */}
           <LocaleSwitcher />
-          <Link
-            href="/login"
-            className="bg-primary px-6 py-3 leading-none text-white text-center rounded text-base font-medium hover:bg-primary/90"
-            onClick={() => setIsOpen(false)}
-          >
-            {t("login")}
-          </Link>
+
+          {session ? (
+            <UserDropdown />
+          ) : (
+            <Link
+              href="/login"
+              className="bg-primary px-6 py-3 leading-none text-white text-center rounded text-base font-medium hover:bg-primary/90"
+              onClick={() => setIsOpen(false)}
+            >
+              {t("login")}
+            </Link>
+          )}
         </div>
 
         <button
@@ -131,14 +139,17 @@ const Navbar = () => {
                   {t("language")}
                 </button>
               </div>
-
-              <Link
-                href="/login"
-                className="bg-primary text-white w-full text-center py-3 rounded text-base font-medium hover:bg-primary/90"
-                onClick={() => setIsOpen(false)}
-              >
-                {t("login")}
-              </Link>
+              {session ? (
+                <UserDropdown />
+              ) : (
+                <Link
+                  href="/login"
+                  className="bg-primary text-white w-full text-center py-3 rounded text-base font-medium hover:bg-primary/90"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {t("login")}
+                </Link>
+              )}
             </motion.div>
           )}
         </AnimatePresence>
