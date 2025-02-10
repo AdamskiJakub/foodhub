@@ -9,6 +9,8 @@ import Head from "next/head";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import Navbar from "@/components/navbar/Navbar";
+import ClientSessionProvider from "@/components/providers/ClientSessionProvider";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -109,11 +111,15 @@ export default async function LocaleLayout({ children, params }: Props) {
           }}
         />
       </Head>
+
       <body className={inter.className}>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <Navbar />
-          {children}
-        </NextIntlClientProvider>
+        <ClientSessionProvider>
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <Navbar />
+            <Toaster position="top-right" />
+            {children}
+          </NextIntlClientProvider>
+        </ClientSessionProvider>
       </body>
     </html>
   );

@@ -4,12 +4,14 @@ import React from "react";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
-  registerSchema,
   RegisterFormData,
+  createRegisterSchema,
 } from "@/lib/validation/registerSchema";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const RegisterForm = () => {
   const t = useTranslations("Register");
@@ -18,11 +20,45 @@ const RegisterForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<RegisterFormData>({
-    resolver: zodResolver(registerSchema),
+    resolver: zodResolver(createRegisterSchema(t)),
+    defaultValues: {
+      email: "",
+      password: "",
+      confirmPassword: "",
+    },
   });
 
-  const onSubmit: SubmitHandler<RegisterFormData> = (data) => {
-    console.log(data);
+  const router = useRouter();
+
+  const onSubmit: SubmitHandler<RegisterFormData> = async (data) => {
+    try {
+      const response = await fetch("/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: data.email,
+          password: data.password,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast.success(t("toastRegisterSuccess"));
+        setTimeout(() => router.push("/login"), 5000);
+      } else {
+        if (result.message === "Email is already taken") {
+          toast.error(t("toastEmailTaken"));
+        } else {
+          toast.error(t("toastRegisterError"));
+        }
+      }
+    } catch (error) {
+      toast.error(t("toastRegisterError"));
+      console.error("Registration error:", error);
+    }
   };
 
   return (
