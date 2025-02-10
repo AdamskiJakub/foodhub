@@ -9,6 +9,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Locale } from "@/i18n/routing";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 interface Props {
   locale: Locale;
@@ -31,6 +32,8 @@ const LoginForm = ({ locale }: Props) => {
     },
   });
 
+  const router = useRouter();
+
   const onSubmit: SubmitHandler<LoginFormData> = async (data) => {
     try {
       const response = await fetch("/api/login", {
@@ -48,6 +51,7 @@ const LoginForm = ({ locale }: Props) => {
         console.log(result.message);
         setEmailError(false);
         setPasswordError(false);
+        setTimeout(() => router.push("/"), 5000);
       } else {
         toast.error(t("toastLoginError"));
         setEmailError(true);
