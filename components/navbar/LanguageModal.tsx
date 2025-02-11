@@ -2,27 +2,23 @@
 
 import React, { useCallback, useState, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
-import { useRouter, usePathname, Locale } from "@/i18n/routing";
+import { Locale } from "@/i18n/routing";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import cn from "classnames";
-import { useParams } from "next/navigation";
 
 interface LanguageModalProps {
   onClose: () => void;
   selectedLang: Locale;
-  onChange: (lang: Locale) => void;
+  onChangeLocale: (locale: Locale) => void;
 }
 
 const LanguageModal: React.FC<LanguageModalProps> = ({
   onClose,
   selectedLang,
-  onChange,
+  onChangeLocale,
 }) => {
   const t = useTranslations("LocaleSwitcher");
-  const router = useRouter();
-  const pathname = usePathname();
-  const params = useParams();
 
   const [currentLang, setCurrentLang] = useState<Locale>(selectedLang);
   const modalRef = useRef<HTMLDivElement>(null);
@@ -30,19 +26,6 @@ const LanguageModal: React.FC<LanguageModalProps> = ({
   const handleLanguageSelect = useCallback((lang: Locale) => {
     setCurrentLang(lang);
   }, []);
-
-  const saveLanguage = useCallback(() => {
-    onChange(currentLang);
-
-    const hasDynamicParams = Object.keys(params).length > 0;
-
-    const navigationOptions = hasDynamicParams
-      ? { pathname, params }
-      : { pathname };
-    router.push(navigationOptions, { locale: currentLang });
-
-    onClose();
-  }, [currentLang, onChange, onClose, pathname, params, router]);
 
   const handleClickOutside = useCallback(
     (event: MouseEvent) => {
@@ -116,7 +99,7 @@ const LanguageModal: React.FC<LanguageModalProps> = ({
         </div>
 
         <div className="mt-8 flex flex-col gap-4">
-          <Button className="bg-dark-blue" onClick={saveLanguage}>
+          <Button onClick={() => onChangeLocale(currentLang)}>
             {t("save")}
           </Button>
           <Button onClick={onClose}>{t("cancel")}</Button>

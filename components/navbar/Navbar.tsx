@@ -8,21 +8,22 @@ import LogoSection from "./LogoSection";
 import LanguageModal from "./LanguageModal";
 import NavbarLinks from "./NavbarLinks";
 import Image from "next/image";
-import { Locale, usePathname } from "@/i18n/routing";
+import { usePathname } from "@/i18n/routing";
 import LocaleSwitcher from "../switcher/LocaleSwitcher";
 import NavbarMobileLinks from "./MobileLinks";
 import UserDropdown from "./UserDropdown";
 import { useSession } from "next-auth/react";
+import { useChangeLocale } from "@/hooks/useChangeLocal";
 
 const Navbar = () => {
   const t = useTranslations("Navbar");
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedLang, setSelectedLang] = useState<Locale>("pl");
 
   const pathname = usePathname();
   const locale = useLocale();
   const { data: session } = useSession();
+  const { handleLocaleChange } = useChangeLocale();
 
   const toggleMenu = useCallback(() => {
     setIsOpen((prev) => !prev);
@@ -32,10 +33,6 @@ const Navbar = () => {
     pathname && ["/specializations", "/downloads"].includes(pathname)
       ? "bg-beige"
       : "bg-white";
-
-  const handleLanguageChange = useCallback((lang: Locale) => {
-    setSelectedLang(lang);
-  }, []);
 
   const handleOverflow = useCallback(() => {
     const body = document.body;
@@ -62,7 +59,7 @@ const Navbar = () => {
             <NavbarLinks />
           </div>
           {/* TODO: both LocaleSwitcher and LanguageModal should have passed the same logic for switching lang */}
-          <LocaleSwitcher />
+          <LocaleSwitcher onChangeLocale={handleLocaleChange} />
 
           {session ? (
             <UserDropdown />
@@ -158,8 +155,8 @@ const Navbar = () => {
       {isModalOpen && (
         <LanguageModal
           onClose={() => setIsModalOpen(false)}
-          selectedLang={selectedLang}
-          onChange={handleLanguageChange}
+          selectedLang={locale as "en" | "pl"}
+          onChangeLocale={handleLocaleChange}
         />
       )}
     </nav>
