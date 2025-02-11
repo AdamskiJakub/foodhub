@@ -63,7 +63,13 @@
     "title": "Ustawienia użytkownika",
     "options": "Opcje",
     "profileInfo": "Informacje o profilu",
+    "editProfile": "Edytuj profil",
     "email": "Email",
+    "name": "Imię",
+    "dateOfBirth": "Data urodzenia",
+    "location": "Lokalizacja",
+    "phoneNumber": "Numer telefonu",
+    "address": "Adres",
     "changePassword": "Zmień hasło",
     "currentPassword": "Aktualne hasło",
     "newPassword": "Nowe hasło",
@@ -75,6 +81,10 @@
     "passwordChangedSuccess": "Hasło zostało zmienione pomyślnie",
     "passwordChangeError": "Wystąpił błąd podczas zmiany hasła",
     "invalidCurrentPassword": "Nieprawidłowe aktualne hasło",
-    "userNotFound": "Użytkownik nie znaleziony"
+    "userNotFound": "Użytkownik nie znaleziony",
+    "nameRequired": "Imię jest wymagane",
+    "profileUpdatedSuccess": "Profil został zaktualizowany pomyślnie",
+    "profileUpdateError": "Wystąpił błąd podczas aktualizacji profilu",
+    "saveChanges": "Zapisz zmiany"
   }
 }

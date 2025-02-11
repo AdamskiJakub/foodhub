@@ -23,3 +23,14 @@ export const changePasswordSchema = (t: (key: string) => string) =>
 export type ChangePasswordFormData = z.infer<
   ReturnType<typeof changePasswordSchema>
 >;
+
+export const changeProfileSchema = (t: (key: string) => string) =>
+  z.object({
+    name: z.string().min(1, { message: t("nameRequired") }),
+    dateOfBirth: z.string().optional(),
+    location: z.string().optional(),
+    phoneNumber: z.string().optional(),
+    address: z.string().optional(),
+  });
+
+export type ProfileFormData = z.infer<ReturnType<typeof changeProfileSchema>>;

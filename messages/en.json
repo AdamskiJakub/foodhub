@@ -63,7 +63,13 @@
     "title": "User Settings",
     "options": "Options",
     "profileInfo": "Profile Information",
+    "editProfile": "Edit Profile",
     "email": "Email",
+    "name": "Name",
+    "dateOfBirth": "Date of Birth",
+    "location": "Location",
+    "phoneNumber": "Phone Number",
+    "address": "Address",
     "changePassword": "Change Password",
     "currentPassword": "Current Password",
     "newPassword": "New Password",
@@ -75,6 +81,10 @@
     "passwordChangedSuccess": "Password changed successfully",
     "passwordChangeError": "An error occurred while changing the password",
     "invalidCurrentPassword": "Invalid current password",
-    "userNotFound": "User not found"
+    "userNotFound": "User not found",
+    "nameRequired": "Name is required",
+    "profileUpdatedSuccess": "Profile updated successfully",
+    "profileUpdateError": "An error occurred while updating the profile",
+    "saveChanges": "Save Changes"
   }
 }
