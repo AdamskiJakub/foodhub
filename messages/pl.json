@@ -62,9 +62,19 @@
   "UserSettings": {
     "title": "Ustawienia użytkownika",
     "options": "Opcje",
-    "changePassword": "Zmień hasło",
-    "editProfile": "Edytuj profil",
     "profileInfo": "Informacje o profilu",
-    "email": "Email"
+    "email": "Email",
+    "changePassword": "Zmień hasło",
+    "currentPassword": "Aktualne hasło",
+    "newPassword": "Nowe hasło",
+    "confirmNewPassword": "Potwierdź nowe hasło",
+    "currentPasswordRequired": "Aktualne hasło jest wymagane",
+    "passwordMin": "Hasło musi mieć przynajmniej 6 znaków",
+    "passwordRegex": "Hasło musi zawierać co najmniej jedną dużą literę, jedną małą literę, cyfrę i znak specjalny",
+    "passwordMatch": "Hasła muszą być identyczne",
+    "passwordChangedSuccess": "Hasło zostało zmienione pomyślnie",
+    "passwordChangeError": "Wystąpił błąd podczas zmiany hasła",
+    "invalidCurrentPassword": "Nieprawidłowe aktualne hasło",
+    "userNotFound": "Użytkownik nie znaleziony"
   }
 }

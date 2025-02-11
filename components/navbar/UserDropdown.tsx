@@ -12,7 +12,11 @@ import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 
-const UserDropdown = () => {
+interface UserDropdownProps {
+  onClose?: () => void;
+}
+
+const UserDropdown = ({ onClose }: UserDropdownProps) => {
   const { data: session } = useSession();
   const t = useTranslations("Navbar");
 
@@ -29,6 +33,7 @@ const UserDropdown = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <Link
+          onClick={onClose}
           href={{
             pathname: "/[member]/settings",
             params: { member: session.user.id },

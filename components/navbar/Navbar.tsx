@@ -140,7 +140,7 @@ const Navbar = () => {
                 </button>
               </div>
               {session ? (
-                <UserDropdown />
+                <UserDropdown onClose={() => setIsOpen(false)} />
               ) : (
                 <Link
                   href="/login"

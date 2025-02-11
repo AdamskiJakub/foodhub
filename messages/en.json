@@ -62,9 +62,19 @@
   "UserSettings": {
     "title": "User Settings",
     "options": "Options",
-    "changePassword": "Change Password",
-    "editProfile": "Edit Profile",
     "profileInfo": "Profile Information",
-    "email": "Email"
+    "email": "Email",
+    "changePassword": "Change Password",
+    "currentPassword": "Current Password",
+    "newPassword": "New Password",
+    "confirmNewPassword": "Confirm New Password",
+    "currentPasswordRequired": "Current password is required",
+    "passwordMin": "Password must be at least 6 characters",
+    "passwordRegex": "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character",
+    "passwordMatch": "Passwords must match",
+    "passwordChangedSuccess": "Password changed successfully",
+    "passwordChangeError": "An error occurred while changing the password",
+    "invalidCurrentPassword": "Invalid current password",
+    "userNotFound": "User not found"
   }
 }
