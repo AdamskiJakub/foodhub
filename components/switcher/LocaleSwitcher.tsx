@@ -2,42 +2,30 @@
 
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { useLocale } from "next-intl";
-import { useRouter, usePathname, Locale } from "@/i18n/routing";
+import { Locale } from "@/i18n/routing";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useParams } from "next/navigation";
+
+interface LocaleSwitcherProps {
+  onChangeLocale: (locale: Locale) => void;
+}
 
 const languageOptions: { locale: Locale; label: string }[] = [
   { locale: "pl", label: "Polski" },
   { locale: "en", label: "English" },
 ];
 
-export default function LocaleSwitcher() {
+export default function LocaleSwitcher({
+  onChangeLocale,
+}: LocaleSwitcherProps) {
   const locale = useLocale();
-  const router = useRouter();
-  const params = useParams();
-  const pathname = usePathname();
+
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   const toggleMenu = useCallback(() => {
     setIsOpen((prev) => !prev);
   }, []);
-
-  const handleLocaleChange = useCallback(
-    (locale: Locale) => {
-      setIsOpen(false);
-
-      const hasDynamicParams = Object.keys(params).length > 0;
-
-      const navigationOptions = hasDynamicParams
-        ? { pathname, params }
-        : { pathname };
-
-      router.push(navigationOptions, { locale });
-    },
-    [router, params, pathname]
-  );
 
   const handleClickOutside = useCallback((event: MouseEvent) => {
     if (ref.current && !ref.current.contains(event.target as Node)) {
@@ -105,7 +93,7 @@ export default function LocaleSwitcher() {
           {languageOptions.map(({ locale: langLocale, label }) => (
             <button
               key={langLocale}
-              onClick={() => handleLocaleChange(langLocale)}
+              onClick={() => onChangeLocale(langLocale)}
               className={`flex justify-start w-full items-center gap-2 px-2 py-2 rounded hover:bg-[#F1F1EF] ${
                 langLocale === locale ? "font-semibold" : "font-normal"
               }`}

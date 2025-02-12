@@ -117,7 +117,9 @@ export default async function LocaleLayout({ children, params }: Props) {
           <NextIntlClientProvider locale={locale} messages={messages}>
             <Navbar />
             <Toaster position="top-right" />
-            {children}
+            <div className="max-w-[1440px] mx-auto px-4 lg:px-20">
+              {children}
+            </div>
           </NextIntlClientProvider>
         </ClientSessionProvider>
       </body>

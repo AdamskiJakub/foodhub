@@ -26,9 +26,17 @@ export const routing = defineRouting({
       en: "/contact",
       pl: "/kontakt",
     },
+    "/register": {
+      en: "/register",
+      pl: "/rejestracja",
+    },
     "/login": {
       en: "/login",
       pl: "/zaloguj",
+    },
+    "/[member]/settings": {
+      en: "/[member]/settings",
+      pl: "/[member]/ustawienia",
     },
   },
 });

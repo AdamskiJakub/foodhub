@@ -7,7 +7,22 @@ declare module "next-auth" {
       name?: string | null;
       email?: string | null;
       image?: string | null;
+      dateOfBirth?: string | null;
+      location?: string | null;
+      phoneNumber?: string | null;
+      address?: string | null;
     };
+  }
+
+  interface User {
+    id: string;
+    name?: string | null;
+    email?: string | null;
+    image?: string | null;
+    dateOfBirth?: string | null;
+    location?: string | null;
+    phoneNumber?: string | null;
+    address?: string | null;
   }
 
   interface JWT {
@@ -15,5 +30,9 @@ declare module "next-auth" {
     name?: string | null;
     email?: string | null;
     image?: string | null;
+    dateOfBirth?: string | null;
+    location?: string | null;
+    phoneNumber?: string | null;
+    address?: string | null;
   }
 }

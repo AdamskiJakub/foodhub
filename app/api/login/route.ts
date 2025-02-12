@@ -7,9 +7,7 @@ export async function POST(req: Request) {
     const { email, password } = await req.json();
 
     const user = await prisma.user.findUnique({
-      where: {
-        email: email.toLowerCase(),
-      },
+      where: { email: email.toLowerCase() },
     });
 
     if (!user) {
@@ -17,7 +15,6 @@ export async function POST(req: Request) {
     }
 
     const isPasswordValid = await bcrypt.compare(password, user.password);
-
     if (!isPasswordValid) {
       return NextResponse.json(
         { message: "Invalid credentials" },
@@ -25,7 +22,19 @@ export async function POST(req: Request) {
       );
     }
 
-    return NextResponse.json({ message: "Login successful", user });
+    return NextResponse.json({
+      message: "Login successful",
+      user: {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        image: user.image,
+        dateOfBirth: user.dateOfBirth,
+        location: user.location,
+        phoneNumber: user.phoneNumber,
+        address: user.address,
+      },
+    });
   } catch (error) {
     console.error("Login error:", error);
     return NextResponse.json({ message: "An error occurred" }, { status: 500 });

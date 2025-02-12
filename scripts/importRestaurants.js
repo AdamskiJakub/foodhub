@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 
 async function main() {
   const filePath = path.join(process.cwd(), "public", "restaurants.json");
-  console.log("Ścieżka do pliku: ", filePath); // Sprawdźmy ścieżkę
+  console.log("Ścieżka do pliku: ", filePath);
   const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
   const restaurants = data.features;
 

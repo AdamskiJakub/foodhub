@@ -33,6 +33,8 @@ const LoginForm = ({ locale }: Props) => {
     },
   });
 
+  console.log("Locale in LoginForm:", locale);
+
   const router = useRouter();
 
   const onSubmit: SubmitHandler<LoginFormData> = async (data) => {
