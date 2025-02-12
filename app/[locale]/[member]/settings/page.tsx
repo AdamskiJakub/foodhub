@@ -168,7 +168,8 @@ const UserSettingsPage = () => {
             <>
               <h2 className="text-lg font-semibold mb-4">{t("profileInfo")}</h2>
               <p>
-                <strong>{t("name")}:</strong> {session.user.name || "N/A"}
+                <strong>{t("name")}:</strong>{" "}
+                {session.user.name || t("emptyField")}
               </p>
               <p>
                 <strong>{t("email")}:</strong> {session.user.email}
@@ -178,18 +179,19 @@ const UserSettingsPage = () => {
                 {session.user.dateOfBirth &&
                 !isNaN(new Date(session.user.dateOfBirth).getTime())
                   ? new Date(session.user.dateOfBirth).toLocaleDateString()
-                  : "N/A"}
+                  : t("emptyField")}
               </p>
               <p>
                 <strong>{t("location")}:</strong>{" "}
-                {session.user.location || "N/A"}
+                {session.user.location || t("emptyField")}
               </p>
               <p>
                 <strong>{t("phoneNumber")}:</strong>{" "}
-                {session.user.phoneNumber || "N/A"}
+                {session.user.phoneNumber || t("emptyField")}
               </p>
               <p>
-                <strong>{t("address")}:</strong> {session.user.address || "N/A"}
+                <strong>{t("address")}:</strong>{" "}
+                {session.user.address || t("emptyField")}
               </p>
             </>
           ) : activeSection === "editProfile" ? (

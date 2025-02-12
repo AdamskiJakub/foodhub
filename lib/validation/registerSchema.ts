@@ -13,16 +13,17 @@ export const createRegisterSchema = (t: (key: string) => string) => {
             message: t("passwordRegex"),
           }
         ),
+      name: z.string(),
       confirmPassword: z.string(),
+      dateOfBirth: z.string().optional(),
+      location: z.string().optional(),
+      phoneNumber: z.string().optional(),
+      address: z.string().optional(),
     })
-    .refine(
-      (data: { password: string; confirmPassword: string }) =>
-        data.password === data.confirmPassword,
-      {
-        message: t("passwordMatch"),
-        path: ["confirmPassword"],
-      }
-    );
+    .refine((data) => data.password === data.confirmPassword, {
+      message: t("passwordMatch"),
+      path: ["confirmPassword"],
+    });
 };
 
 export type RegisterFormData = z.infer<ReturnType<typeof createRegisterSchema>>;

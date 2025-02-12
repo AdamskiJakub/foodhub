@@ -41,7 +41,11 @@
     "toastLoginSuccess": "Login successful!",
     "toastLoginError": "Invalid login credentials.",
     "invalidEmail": "Invalid email address.",
-    "invalidPassword": "Invalid password."
+    "invalidPassword": "Invalid password.",
+    "dateOfBirth": "Date of Birth",
+    "location": "Location",
+    "phoneNumber": "Phone Number",
+    "address": "Address"
   },
   "Register": {
     "title": "Register",
@@ -49,6 +53,10 @@
     "password": "Password",
     "confirmPassword": "Confirm Password",
     "submit": "Sign Up",
+    "dateOfBirth": "Date of Birth",
+    "location": "Location",
+    "phoneNumber": "Phone Number",
+    "address": "Address",
     "haveAccount": "Already have an account?",
     "loginLink": "Login here",
     "toastRegisterSuccess": "Registration successful! You can now log in.",
@@ -57,7 +65,8 @@
     "invalidEmail": "Invalid email address",
     "passwordMin": "Password must be at least 6 characters.",
     "passwordRegex": "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.",
-    "passwordMatch": "Passwords must match."
+    "passwordMatch": "Passwords must match.",
+    "nameAndSurname": "Name and surname"
   },
   "UserSettings": {
     "title": "User Settings",
@@ -85,6 +94,8 @@
     "nameRequired": "Name is required",
     "profileUpdatedSuccess": "Profile updated successfully",
     "profileUpdateError": "An error occurred while updating the profile",
-    "saveChanges": "Save Changes"
+    "saveChanges": "Save Changes",
+
+    "emptyField": "Information not provided"
   }
 }

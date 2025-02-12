@@ -36,12 +36,17 @@
     "email": "Email",
     "password": "Hasło",
     "submit": "Zaloguj się",
+
     "noAccount": "Nie masz konta?",
     "registerLink": "Zarejestruj się tutaj",
     "toastLoginSuccess": "Logowanie udane!",
     "toastLoginError": "Nieprawidłowe dane logowania.",
     "invalidEmail": "Błędny adres email.",
-    "invalidPassword": "Błędne hasło."
+    "invalidPassword": "Błędne hasło.",
+    "dateOfBirth": "Data urodzenia",
+    "location": "Lokalizacja",
+    "phoneNumber": "Numer telefonu",
+    "address": "Adres"
   },
   "Register": {
     "title": "Zarejestruj się",
@@ -57,7 +62,12 @@
     "invalidEmail": "Nieprawidłowy adres email",
     "passwordMin": "Hasło musi mieć przynajmniej 6 znaków.",
     "passwordRegex": "Hasło musi zawierać co najmniej jedną dużą literę, jedną małą literę, cyfrę i znak specjalny.",
-    "passwordMatch": "Hasła muszą być identyczne."
+    "passwordMatch": "Hasła muszą być identyczne.",
+    "dateOfBirth": "Data urodzenia",
+    "location": "Lokalizacja",
+    "phoneNumber": "Numer telefonu",
+    "address": "Adres",
+    "nameAndSurname": "Imię i nazwisko"
   },
   "UserSettings": {
     "title": "Ustawienia użytkownika",
@@ -85,6 +95,7 @@
     "nameRequired": "Imię jest wymagane",
     "profileUpdatedSuccess": "Profil został zaktualizowany pomyślnie",
     "profileUpdateError": "Wystąpił błąd podczas aktualizacji profilu",
-    "saveChanges": "Zapisz zmiany"
+    "saveChanges": "Zapisz zmiany",
+    "emptyField": "Informacja nie została podana"
   }
 }

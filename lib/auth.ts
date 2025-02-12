@@ -22,6 +22,16 @@ export const authOptions: AuthOptions = {
 
         const user = await prisma.user.findFirst({
           where: { email: credentials.email },
+          select: {
+            id: true,
+            email: true,
+            name: true,
+            password: true,
+            dateOfBirth: true,
+            location: true,
+            phoneNumber: true,
+            address: true,
+          },
         });
 
         if (!user) {
@@ -37,25 +47,41 @@ export const authOptions: AuthOptions = {
           throw new Error("Invalid credentials.");
         }
 
-        return user;
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const { password, ...userWithoutPassword } = user;
+
+        return {
+          ...userWithoutPassword,
+          dateOfBirth: user.dateOfBirth ? user.dateOfBirth.toISOString() : null,
+        };
       },
     }),
   ],
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        token.id = user.id as string;
-        token.email = user.email;
-        token.name = user.name;
+        token.id = String(user.id);
+        token.email = user.email ?? null;
+        token.name = user.name ?? null;
+        token.dateOfBirth = user.dateOfBirth ?? null;
+        token.location = user.location ?? null;
+        token.phoneNumber = user.phoneNumber ?? null;
+        token.address = user.address ?? null;
       }
       return token;
     },
     async session({ session, token }) {
       if (token) {
         session.user = {
-          id: token.id as string,
-          email: token.email,
-          name: token.name,
+          id: String(token.id),
+          email: token.email ?? null,
+          name: token.name ?? null,
+          dateOfBirth:
+            typeof token.dateOfBirth === "string" ? token.dateOfBirth : null,
+          location: typeof token.location === "string" ? token.location : null,
+          phoneNumber:
+            typeof token.phoneNumber === "string" ? token.phoneNumber : null,
+          address: typeof token.address === "string" ? token.address : null,
         };
       }
       return session;

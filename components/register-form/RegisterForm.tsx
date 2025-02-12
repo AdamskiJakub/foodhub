@@ -25,6 +25,11 @@ const RegisterForm = () => {
       email: "",
       password: "",
       confirmPassword: "",
+      dateOfBirth: "",
+      location: "",
+      phoneNumber: "",
+      address: "",
+      name: "",
     },
   });
 
@@ -38,8 +43,13 @@ const RegisterForm = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          name: data.name,
           email: data.email,
           password: data.password,
+          dateOfBirth: data.dateOfBirth,
+          location: data.location,
+          phoneNumber: data.phoneNumber,
+          address: data.address,
         }),
       });
 
@@ -123,6 +133,88 @@ const RegisterForm = () => {
             {errors.confirmPassword.message}
           </p>
         )}
+      </div>
+      <div>
+        <label className="block text-sm font-medium mb-2">
+          {t("dateOfBirth")}
+        </label>
+        <Controller
+          name="dateOfBirth"
+          control={control}
+          render={({ field }) => (
+            <input
+              {...field}
+              type="date"
+              className="w-full p-2 border rounded"
+            />
+          )}
+        />
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium mb-2">
+          {t("nameAndSurname")}
+        </label>
+        <Controller
+          name="name"
+          control={control}
+          render={({ field }) => (
+            <input
+              {...field}
+              type="text"
+              className="w-full p-2 border rounded"
+            />
+          )}
+        />
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium mb-2">
+          {t("location")}
+        </label>
+        <Controller
+          name="location"
+          control={control}
+          render={({ field }) => (
+            <input
+              {...field}
+              type="text"
+              className="w-full p-2 border rounded"
+            />
+          )}
+        />
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium mb-2">
+          {t("phoneNumber")}
+        </label>
+        <Controller
+          name="phoneNumber"
+          control={control}
+          render={({ field }) => (
+            <input
+              {...field}
+              type="text"
+              className="w-full p-2 border rounded"
+            />
+          )}
+        />
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium mb-2">{t("address")}</label>
+        <Controller
+          name="address"
+          control={control}
+          render={({ field }) => (
+            <input
+              {...field}
+              type="text"
+              className="w-full p-2 border rounded"
+            />
+          )}
+        />
       </div>
       <Button type="submit" className="w-full p-2 text-white rounded">
         {t("submit")}

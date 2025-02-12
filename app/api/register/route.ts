@@ -5,11 +5,18 @@ import prisma from "@/lib/prisma";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { email, password } = body;
+    const {
+      email,
+      password,
+      dateOfBirth,
+      location,
+      phoneNumber,
+      name,
+      address,
+    } = body;
 
     console.log("Received registration request:", { email, password });
 
-    // Ensure email and password are provided
     if (!email || !password) {
       return NextResponse.json(
         { message: "Missing email or password" },
@@ -17,7 +24,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // Check if the email already exists
     const existingUser = await prisma.user.findUnique({
       where: { email },
     });
@@ -25,18 +31,21 @@ export async function POST(request: Request) {
     if (existingUser) {
       return NextResponse.json(
         { message: "Email is already taken" },
-        { status: 409 } // Conflict status code
+        { status: 409 }
       );
     }
 
-    // Hash the password
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Create user in the database
     const user = await prisma.user.create({
       data: {
+        name,
         email,
         password: hashedPassword,
+        dateOfBirth: dateOfBirth ? new Date(dateOfBirth) : null,
+        location,
+        phoneNumber,
+        address,
       },
     });
 
@@ -47,7 +56,6 @@ export async function POST(request: Request) {
       { status: 201 }
     );
   } catch (error) {
-    // Enhance error handling: Check if error is an object before logging
     if (error instanceof Error) {
       console.error("Registration error:", error.message);
     } else {
