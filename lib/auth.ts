@@ -58,7 +58,8 @@ export const authOptions: AuthOptions = {
     }),
   ],
   callbacks: {
-    async jwt({ token, user }) {
+    async jwt({ token, user, trigger, session }) {
+      console.log("🔹 JWT callback | Trigger:", trigger);
       if (user) {
         token.id = String(user.id);
         token.email = user.email ?? null;
@@ -67,6 +68,15 @@ export const authOptions: AuthOptions = {
         token.location = user.location ?? null;
         token.phoneNumber = user.phoneNumber ?? null;
         token.address = user.address ?? null;
+      }
+
+      if (trigger === "update" && session) {
+        console.log("🔹 JWT callback | Updating token with session:", session);
+        token.name = session.name ?? token.name;
+        token.dateOfBirth = session.dateOfBirth ?? token.dateOfBirth;
+        token.location = session.location ?? token.location;
+        token.phoneNumber = session.phoneNumber ?? token.phoneNumber;
+        token.address = session.address ?? token.address;
       }
       return token;
     },
@@ -84,6 +94,7 @@ export const authOptions: AuthOptions = {
           address: typeof token.address === "string" ? token.address : null,
         };
       }
+      console.log("✅ Session callback | Session:", session);
       return session;
     },
   },
