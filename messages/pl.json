@@ -97,5 +97,25 @@
     "profileUpdateError": "Wystąpił błąd podczas aktualizacji profilu",
     "saveChanges": "Zapisz zmiany",
     "emptyField": "Informacja nie została podana"
+  },
+  "Footer": {
+    "linksTitle": "Przydatne linki",
+    "blog": "Blog",
+    "about": "O nas",
+    "faq": "FAQ",
+    "contact": "Kontakt",
+    "contactTitle": "Kontakt",
+    "email": "burguntowy@gmail.com",
+    "phoneNumber": "+48 519 163 848",
+    "addressLine1": "ul. Przykładowa 123",
+    "addressLine2": "00-001 Białystok, Polska",
+    "legalTitle": "Informacje prawne",
+    "privacyPolicy": "Polityka prywatności",
+    "termsOfService": "Regulamin",
+    "socialMediaTitle": "Media społecznościowe",
+    "allRightsReserved": "Wszystkie prawa zastrzeżone.",
+    "name": "FoodHub",
+    "subname": "Najlepsze restauracje w twoim mieście",
+    "realization": "Realizacja"
   }
 }

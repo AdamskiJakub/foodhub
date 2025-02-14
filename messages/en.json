@@ -95,7 +95,26 @@
     "profileUpdatedSuccess": "Profile updated successfully",
     "profileUpdateError": "An error occurred while updating the profile",
     "saveChanges": "Save Changes",
-
     "emptyField": "Information not provided"
+  },
+  "Footer": {
+    "linksTitle": "Useful Links",
+    "blog": "Blog",
+    "about": "About Us",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "contactTitle": "Contact",
+    "email": "burguntowy@gmail.com",
+    "phoneNumber": "+48 519 163 848",
+    "addressLine1": "123 Example Street",
+    "addressLine2": "00-001 Białystok, Poland",
+    "legalTitle": "Legal Information",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "socialMediaTitle": "Social Media",
+    "allRightsReserved": "All rights reserved.",
+    "name": "FoodHub",
+    "subname": "The best restaurants in your city",
+    "realization": "Realization"
   }
 }
