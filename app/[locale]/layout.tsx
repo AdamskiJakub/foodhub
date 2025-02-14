@@ -11,6 +11,7 @@ import { NextIntlClientProvider } from "next-intl";
 import Navbar from "@/components/navbar/Navbar";
 import ClientSessionProvider from "@/components/providers/ClientSessionProvider";
 import { Toaster } from "react-hot-toast";
+import Footer from "@/components/footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -120,6 +121,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <div className="max-w-[1440px] mx-auto px-4 lg:px-20">
               {children}
             </div>
+            <Footer />
           </NextIntlClientProvider>
         </ClientSessionProvider>
       </body>
