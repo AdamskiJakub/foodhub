@@ -117,5 +117,14 @@
     "name": "FoodHub",
     "subname": "Najlepsze restauracje w twoim mieście",
     "realization": "Realizacja"
+  },
+  "Breadcrumb": {
+    "home": "Strona główna",
+    "blog": "Blog",
+    "about": "O nas",
+    "faq": "FAQ",
+    "contact": "Kontakt",
+    "login": "Logowanie",
+    "register": "Zarejestruj się"
   }
 }
