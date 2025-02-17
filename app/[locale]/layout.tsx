@@ -12,6 +12,7 @@ import Navbar from "@/components/navbar/Navbar";
 import ClientSessionProvider from "@/components/providers/ClientSessionProvider";
 import { Toaster } from "react-hot-toast";
 import Footer from "@/components/footer/Footer";
+import Breadcrumbs from "@/components/breadcrumb/Breadcrumb";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -117,8 +118,10 @@ export default async function LocaleLayout({ children, params }: Props) {
         <ClientSessionProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
             <Navbar />
+
             <Toaster position="top-right" />
             <div className="max-w-[1440px] mx-auto px-4 lg:px-20">
+              <Breadcrumbs />
               {children}
             </div>
             <Footer />
