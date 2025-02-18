@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, MapPin, ArrowUpDown, Filter } from "lucide-react";
@@ -36,8 +36,9 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
     openingHours: "",
   });
 
+  const suggestionsRef = useRef<HTMLUListElement>(null);
+
   const filterAndSortRestaurants = useCallback(() => {
-    console.log("Filtering and sorting restaurants...");
     let filtered = restaurants.filter(
       (restaurant) =>
         restaurant.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
@@ -68,12 +69,10 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
       filtered.sort((a, b) => b.name.localeCompare(a.name));
     }
 
-    console.log("Filtered restaurants:", filtered);
     setFilteredRestaurants(filtered);
   }, [restaurants, searchTerm, location, sortOrder, activeFilters]);
 
   useEffect(() => {
-    console.log("Sort order changed to:", sortOrder);
     filterAndSortRestaurants();
   }, [
     searchTerm,
@@ -108,8 +107,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
   };
 
   const handleSortChange = (order: "asc" | "desc") => {
-    console.log("Sort order clicked:", order); // Log the sort option selected
-    setSortOrder(order); // This will trigger the useEffect to call filterAndSortRestaurants
+    console.log("Sort order clicked:", order);
+    setSortOrder(order);
   };
 
   const resetFilters = () => {
@@ -129,6 +128,22 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
     setActiveFilters(filters);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        suggestionsRef.current &&
+        !suggestionsRef.current.contains(event.target as Node)
+      ) {
+        setSuggestions([]);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <div className="flex flex-col gap-4 w-full max-w-2xl mx-auto p-4">
       <div className="flex justify-between items-center">
@@ -142,7 +157,10 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
           />
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-500" />
           {suggestions.length > 0 && (
-            <ul className="absolute z-10 mt-2 w-full bg-white border border-gray-200 rounded-lg shadow-lg">
+            <ul
+              ref={suggestionsRef}
+              className="absolute z-10 mt-2 w-full bg-white border border-gray-200 rounded-lg shadow-lg"
+            >
               {suggestions.map((suggestion, index) => (
                 <li
                   key={index}

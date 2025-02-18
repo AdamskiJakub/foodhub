@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import FilterSection from "./FilterSection";
 import { Filters } from "./SearchBar";
+import { useTranslations } from "next-intl";
 
 interface FiltersModalProps {
   isOpen: boolean;
@@ -25,6 +26,7 @@ const FiltersModal: React.FC<FiltersModalProps> = ({
   onResetFilters,
   activeFilters,
 }) => {
+  const t = useTranslations("FiltersModal");
   const [selectedFilters, setSelectedFilters] = useState(activeFilters);
 
   useEffect(() => {
@@ -77,7 +79,7 @@ const FiltersModal: React.FC<FiltersModalProps> = ({
                   className="text-black text-[20px] leading-7 font-medium"
                   onClick={onClose}
                 >
-                  Filters
+                  {t("title")}
                 </button>
                 {selectedFilterCount > 0 && (
                   <div className="flex font-extrabold bg-[#5647FF] border-[1px] border-white w-[18px] h-[18px] text-white text-xs items-center justify-center rounded-full">
@@ -89,23 +91,41 @@ const FiltersModal: React.FC<FiltersModalProps> = ({
                 <X className="w-5 h-5" />
               </button>
             </div>
-            <div className="px-6 pb-24">
+            <div className="px-6 pb-24 flex flex-col gap-4">
               <FilterSection
-                title="Cuisine"
+                title={t("cuisine")}
                 items={[
-                  { value: "american", label: "American" },
-                  { value: "asian", label: "Asian" },
-                  { value: "balkan", label: "Balkan" },
-                  // Dodaj więcej kuchni
+                  { value: "american", label: t("cuisine_american") },
+                  { value: "asian", label: t("cuisine_asian") },
+                  { value: "balkan", label: t("cuisine_balkan") },
+                  { value: "barbecue", label: t("cuisine_barbecue") },
+                  { value: "burger", label: t("cuisine_burger") },
+                  { value: "chinese", label: t("cuisine_chinese") },
+                  { value: "fish", label: t("cuisine_fish") },
+                  { value: "french", label: t("cuisine_french") },
+                  { value: "greek", label: t("cuisine_greek") },
+                  { value: "italian", label: t("cuisine_italian") },
+                  { value: "japanese", label: t("cuisine_japanese") },
+                  { value: "mediterranean", label: t("cuisine_mediterranean") },
+                  { value: "mexican", label: t("cuisine_mexican") },
+                  { value: "pizza", label: t("cuisine_pizza") },
+                  { value: "polish", label: t("cuisine_polish") },
+                  { value: "seafood", label: t("cuisine_seafood") },
+                  { value: "spanish", label: t("cuisine_spanish") },
+                  { value: "steak_house", label: t("cuisine_steak_house") },
+                  { value: "sushi", label: t("cuisine_sushi") },
+                  { value: "thai", label: t("cuisine_thai") },
+                  { value: "turkish", label: t("cuisine_turkish") },
+                  { value: "vietnamese", label: t("cuisine_vietnamese") },
                 ]}
                 selectedValue={selectedFilters.cuisine}
                 handleSelect={(value) => handleSelect("cuisine", value)}
               />
               <FilterSection
-                title="Delivery"
+                title={t("delivery")}
                 items={[
-                  { value: "yes", label: "Yes" },
-                  { value: "no", label: "No" },
+                  { value: "yes", label: t("deliveryYes") },
+                  { value: "no", label: t("deliveryNo") },
                 ]}
                 selectedValue={selectedFilters.delivery}
                 handleSelect={(value) => handleSelect("delivery", value)}
@@ -116,13 +136,13 @@ const FiltersModal: React.FC<FiltersModalProps> = ({
                 onClick={resetFilters}
                 className="h-[48px] border w-full text-sm border-[#000000] bg-white text-[#000000] py-2 rounded-lg"
               >
-                Reset Filters
+                {t("resetFilters")}
               </button>
               <button
                 onClick={applyFilters}
                 className="bg-[#5647FF] w-full h-[48px] border-[1px] border-white text-sm text-white px-4 py-2 rounded-lg flex items-center justify-center"
               >
-                Apply Filters
+                {t("applyFilters")}
                 {selectedFilterCount > 0 && (
                   <div className="ml-2 flex bg-[#FFFFFF] font-extrabold w-[18px] h-[18px] text-[#5647FF] text-xs items-center justify-center rounded-full">
                     {selectedFilterCount}

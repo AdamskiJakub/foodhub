@@ -8,7 +8,6 @@ import LogoSection from "./LogoSection";
 import LanguageModal from "./LanguageModal";
 import NavbarLinks from "./NavbarLinks";
 import Image from "next/image";
-import { usePathname } from "@/i18n/routing";
 import LocaleSwitcher from "../switcher/LocaleSwitcher";
 import NavbarMobileLinks from "./MobileLinks";
 import UserDropdown from "./UserDropdown";
@@ -20,7 +19,6 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const pathname = usePathname();
   const locale = useLocale();
   const { data: session } = useSession();
   const { handleLocaleChange } = useChangeLocale();
@@ -28,11 +26,6 @@ const Navbar = () => {
   const toggleMenu = useCallback(() => {
     setIsOpen((prev) => !prev);
   }, []);
-
-  const navbarBackground =
-    pathname && ["/specializations", "/downloads"].includes(pathname)
-      ? "bg-beige"
-      : "bg-white";
 
   const handleOverflow = useCallback(() => {
     const body = document.body;
@@ -48,7 +41,7 @@ const Navbar = () => {
   }, [handleOverflow]);
 
   return (
-    <nav className={`w-full ${navbarBackground}`}>
+    <nav className={`w-full`}>
       <div className="w-full h-16 lg:h-20 mx-auto flex items-center justify-between px-4 lg:px-20">
         <Link href="/" aria-label="Homepage">
           <LogoSection />
