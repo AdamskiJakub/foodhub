@@ -2,6 +2,7 @@ import { setRequestLocale } from "next-intl/server";
 import { Locale, routing } from "@/i18n/routing";
 import prisma from "@/lib/prisma";
 import { Restaurant } from "@/types/restaurant";
+import SearchBar from "@/components/searchbar/SearchBar";
 
 type Params = Promise<{ locale: Locale }>;
 
@@ -23,16 +24,7 @@ export default async function HomePage({ params }: Props) {
   return (
     <div>
       <h1>Lista restauracji</h1>
-      <ul>
-        {restaurants.map((restaurant: Restaurant) => (
-          <li key={restaurant.id}>
-            <h2>{restaurant.name}</h2>
-            <p>
-              {restaurant.city}, {restaurant.street}
-            </p>
-          </li>
-        ))}
-      </ul>
+      <SearchBar restaurants={restaurants} />
     </div>
   );
 }
