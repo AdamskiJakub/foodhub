@@ -36,7 +36,6 @@
     "email": "Email",
     "password": "Hasło",
     "submit": "Zaloguj się",
-
     "noAccount": "Nie masz konta?",
     "registerLink": "Zarejestruj się tutaj",
     "toastLoginSuccess": "Logowanie udane!",
@@ -153,8 +152,8 @@
     "cuisine_turkish": "Turecka",
     "cuisine_vietnamese": "Wietnamska",
     "delivery": "Dostawa",
-    "delivery_yes": "Tak",
-    "delivery_no": "Nie",
+    "deliveryYes": "Tak",
+    "deliveryNo": "Nie",
     "resetFilters": "Resetuj filtry",
     "applyFilters": "Zastosuj filtry"
   }

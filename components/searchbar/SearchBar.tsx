@@ -1,17 +1,14 @@
 "use client";
 
-import React, { useState, useEffect, useCallback, useRef } from "react";
-import { Input } from "@/components/ui/input";
+import React, { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
-import { Search, MapPin, ArrowUpDown, Filter } from "lucide-react";
+import { Filter } from "lucide-react";
 import { Restaurant } from "@/types/restaurant";
 import FiltersModal from "./FiltersModal";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
+import LocationSortDropdowns from "./LocationSortDropdown";
+import SearchInput from "./SearchInput";
+import RestaurantList from "./RestaurantList";
+import { useTranslations } from "next-intl";
 
 interface SearchBarProps {
   restaurants: Restaurant[];
@@ -36,7 +33,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
     openingHours: "",
   });
 
-  const suggestionsRef = useRef<HTMLUListElement>(null);
+  const t = useTranslations("FiltersModal");
 
   const filterAndSortRestaurants = useCallback(() => {
     let filtered = restaurants.filter(
@@ -46,15 +43,22 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
     );
 
     if (activeFilters.cuisine) {
-      filtered = filtered.filter(
-        (restaurant) => restaurant.cuisine === activeFilters.cuisine
-      );
+      filtered = filtered.filter((restaurant) => {
+        if (!restaurant.cuisine) return false;
+        const cuisinesArray = restaurant.cuisine
+          .split(";")
+          .map((c) => c.trim());
+        return cuisinesArray.includes(activeFilters.cuisine);
+      });
     }
 
     if (activeFilters.delivery) {
-      filtered = filtered.filter(
-        (restaurant) => String(restaurant.delivery) === activeFilters.delivery
-      );
+      filtered = filtered.filter((restaurant) => {
+        const hasDelivery =
+          typeof restaurant.delivery === "string" ||
+          restaurant.delivery === true;
+        return activeFilters.delivery === "yes" ? hasDelivery : !hasDelivery;
+      });
     }
 
     if (activeFilters.openingHours) {
@@ -107,7 +111,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
   };
 
   const handleSortChange = (order: "asc" | "desc") => {
-    console.log("Sort order clicked:", order);
     setSortOrder(order);
   };
 
@@ -128,51 +131,16 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
     setActiveFilters(filters);
   };
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        suggestionsRef.current &&
-        !suggestionsRef.current.contains(event.target as Node)
-      ) {
-        setSuggestions([]);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
   return (
     <div className="flex flex-col gap-4 w-full max-w-2xl mx-auto p-4">
       <div className="flex justify-between items-center">
-        <div className="relative flex-1">
-          <Input
-            type="text"
-            placeholder="Wpisz nazwę restauracji..."
-            value={searchTerm}
-            onChange={handleSearchChange}
-            className="pl-10"
-          />
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-500" />
-          {suggestions.length > 0 && (
-            <ul
-              ref={suggestionsRef}
-              className="absolute z-10 mt-2 w-full bg-white border border-gray-200 rounded-lg shadow-lg"
-            >
-              {suggestions.map((suggestion, index) => (
-                <li
-                  key={index}
-                  className="p-2 hover:bg-gray-100 cursor-pointer"
-                  onClick={() => handleSuggestionClick(suggestion)}
-                >
-                  {suggestion}
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
+        <SearchInput
+          searchTerm={searchTerm}
+          suggestions={suggestions}
+          onSearchChange={handleSearchChange}
+          onSuggestionClick={handleSuggestionClick}
+          setSuggestions={setSuggestions}
+        />
         <Button
           variant="outline"
           className="ml-2"
@@ -182,49 +150,21 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
         </Button>
       </div>
 
-      <div className="flex gap-2">
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="flex items-center gap-2">
-              <MapPin className="h-4 w-4" />
-              {location}
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent>
-            <DropdownMenuItem onClick={() => handleLocationChange("Białystok")}>
-              Białystok
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+      <LocationSortDropdowns
+        location={location}
+        sortOrder={sortOrder}
+        onLocationChange={handleLocationChange}
+        onSortChange={handleSortChange}
+      />
 
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="flex items-center gap-2">
-              <ArrowUpDown className="h-4 w-4" />
-              {sortOrder === "asc" ? "A-Z" : "Z-A"}
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent>
-            <DropdownMenuItem onClick={() => handleSortChange("asc")}>
-              A-Z
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => handleSortChange("desc")}>
-              Z-A
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+      <div className="flex flex-row justify-between">
+        <div>{filteredRestaurants.length}</div>
+        <div>
+          <Button onClick={() => resetFilters()}>{t("resetFilters")}</Button>
+        </div>
       </div>
 
-      <ul>
-        {filteredRestaurants.map((restaurant) => (
-          <li key={restaurant.id}>
-            <h2>{restaurant.name}</h2>
-            <p>
-              {restaurant.city}, {restaurant.street}
-            </p>
-          </li>
-        ))}
-      </ul>
+      <RestaurantList filteredRestaurants={filteredRestaurants} />
 
       <FiltersModal
         isOpen={isFiltersModalOpen}
