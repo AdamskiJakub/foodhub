@@ -155,6 +155,14 @@
     "deliveryYes": "Yes",
     "deliveryNo": "No",
     "resetFilters": "Reset Filters",
-    "applyFilters": "Apply Filters"
+    "applyFilters": "Apply Filters",
+    "mainTitle": "List of Restaurants",
+    "numberOfRestaurants": "Number of restaurants",
+    "takeaway": "Takeaway",
+    "takeawayYes": "Yes",
+    "takeawayNo": "No",
+    "reservation": "Reservation",
+    "reservationYes": "Yes",
+    "reservationNo": "No"
   }
 }

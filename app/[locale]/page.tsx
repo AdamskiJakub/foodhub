@@ -23,7 +23,6 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <div>
-      <h1>Lista restauracji</h1>
       <SearchBar restaurants={restaurants} />
     </div>
   );

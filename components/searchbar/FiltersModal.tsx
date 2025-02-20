@@ -16,6 +16,8 @@ interface FiltersModalProps {
     cuisine: string;
     delivery: string;
     openingHours: string;
+    takeaway: string;
+    reservation: string;
   };
 }
 
@@ -129,6 +131,24 @@ const FiltersModal: React.FC<FiltersModalProps> = ({
                 ]}
                 selectedValue={selectedFilters.delivery}
                 handleSelect={(value) => handleSelect("delivery", value)}
+              />
+              <FilterSection
+                title={t("takeaway")}
+                items={[
+                  { value: "yes", label: t("takeawayYes") },
+                  { value: "no", label: t("takeawayNo") },
+                ]}
+                selectedValue={selectedFilters.takeaway}
+                handleSelect={(value) => handleSelect("takeaway", value)}
+              />
+              <FilterSection
+                title={t("reservation")}
+                items={[
+                  { value: "yes", label: t("reservationYes") },
+                  { value: "no", label: t("reservationNo") },
+                ]}
+                selectedValue={selectedFilters.reservation}
+                handleSelect={(value) => handleSelect("reservation", value)}
               />
             </div>
             <div className="flex flex-row px-3 justify-center gap-2 fixed z-50 bottom-0 py-3 rounded-md border-[#E5E7EB] bg-white w-full lg:w-[409px] items-center border">

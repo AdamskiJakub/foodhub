@@ -18,6 +18,8 @@ export interface Filters {
   cuisine: string;
   delivery: string;
   openingHours: string;
+  takeaway: string;
+  reservation: string;
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
@@ -31,6 +33,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
     cuisine: "",
     delivery: "",
     openingHours: "",
+    takeaway: "",
+    reservation: "",
   });
 
   const t = useTranslations("FiltersModal");
@@ -61,10 +65,24 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
       });
     }
 
-    if (activeFilters.openingHours) {
-      filtered = filtered.filter(
-        (restaurant) => restaurant.openingHours === activeFilters.openingHours
-      );
+    if (activeFilters.takeaway) {
+      filtered = filtered.filter((restaurant) => {
+        const hasTakeaway =
+          typeof restaurant.takeaway === "string" ||
+          restaurant.takeaway === true;
+        return activeFilters.takeaway === "yes" ? hasTakeaway : !hasTakeaway;
+      });
+    }
+
+    if (activeFilters.reservation) {
+      filtered = filtered.filter((restaurant) => {
+        const hasReservation =
+          typeof restaurant.reservation === "string" ||
+          restaurant.reservation === true;
+        return activeFilters.reservation === "yes"
+          ? hasReservation
+          : !hasReservation;
+      });
     }
 
     if (sortOrder === "asc") {
@@ -122,6 +140,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
       cuisine: "",
       delivery: "",
       openingHours: "",
+      takeaway: "",
+      reservation: "",
     });
     setFilteredRestaurants(restaurants);
     setSuggestions([]);
@@ -132,8 +152,11 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
   };
 
   return (
-    <div className="flex flex-col gap-4 w-full max-w-2xl mx-auto p-4">
-      <div className="flex justify-between items-center">
+    <div className="flex flex-col gap-4 w-full max-w-4xl mx-auto ">
+      <h1 className="text-3xl lg:text-5xl justify-center align-middle w-full text-center mt-4 text-primaryText">
+        {t("mainTitle")}
+      </h1>
+      <div className="flex justify-between items-center mt-4">
         <SearchInput
           searchTerm={searchTerm}
           suggestions={suggestions}
@@ -157,8 +180,10 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
         onSortChange={handleSortChange}
       />
 
-      <div className="flex flex-row justify-between">
-        <div>{filteredRestaurants.length}</div>
+      <div className="flex flex-row justify-between items-center text-center">
+        <div className="flex flex-col sm:flex-row items-center text-left text-secondaryText">
+          {t("numberOfRestaurants")}: {filteredRestaurants.length}
+        </div>
         <div>
           <Button onClick={() => resetFilters()}>{t("resetFilters")}</Button>
         </div>
