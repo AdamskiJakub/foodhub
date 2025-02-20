@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 interface SearchInputProps {
   searchTerm: string;
@@ -20,6 +21,8 @@ const SearchInput: React.FC<SearchInputProps> = ({
   setSuggestions,
 }) => {
   const suggestionsRef = useRef<HTMLUListElement>(null);
+
+  const t = useTranslations("SearchInput");
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -41,7 +44,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
     <div className="relative flex-1">
       <Input
         type="text"
-        placeholder="Wpisz nazwę restauracji..."
+        placeholder={t("placeholder")}
         value={searchTerm}
         onChange={onSearchChange}
         className="pl-10"

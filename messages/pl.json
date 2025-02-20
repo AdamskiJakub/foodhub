@@ -166,5 +166,8 @@
     "reservationNo": "Nie",
     "openingHours": "Godziny Otwarcia",
     "openNow": "Otwarte teraz"
+  },
+  "SearchInput": {
+    "placeholder": "Wpisz nazwę restauracji..."
   }
 }
