@@ -150,6 +150,12 @@ const FiltersModal: React.FC<FiltersModalProps> = ({
                 selectedValue={selectedFilters.reservation}
                 handleSelect={(value) => handleSelect("reservation", value)}
               />
+              <FilterSection
+                title={t("openingHours")}
+                items={[{ value: "open_now", label: t("openNow") }]}
+                selectedValue={selectedFilters.openingHours}
+                handleSelect={(value) => handleSelect("openingHours", value)}
+              />
             </div>
             <div className="flex flex-row px-3 justify-center gap-2 fixed z-50 bottom-0 py-3 rounded-md border-[#E5E7EB] bg-white w-full lg:w-[409px] items-center border">
               <button

@@ -9,6 +9,7 @@ import LocationSortDropdowns from "./LocationSortDropdown";
 import SearchInput from "./SearchInput";
 import RestaurantList from "./RestaurantList";
 import { useTranslations } from "next-intl";
+import opening_hours from "opening_hours";
 
 interface SearchBarProps {
   restaurants: Restaurant[];
@@ -17,9 +18,9 @@ interface SearchBarProps {
 export interface Filters {
   cuisine: string;
   delivery: string;
-  openingHours: string;
   takeaway: string;
   reservation: string;
+  openingHours: string;
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
@@ -32,12 +33,56 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
   const [activeFilters, setActiveFilters] = useState({
     cuisine: "",
     delivery: "",
-    openingHours: "",
     takeaway: "",
     reservation: "",
+    openingHours: "",
   });
 
   const t = useTranslations("FiltersModal");
+
+  const sanitizeOpeningHours = useCallback(
+    (openingHours: string | undefined) => {
+      if (!openingHours) return undefined;
+
+      return openingHours
+        .replace(/PH/g, "")
+        .replace(/,,/g, ",")
+        .replace(/,$/, "")
+        .replace(/,\s*$/, "")
+        .replace(/\s*,\s*/g, ";");
+    },
+    []
+  );
+
+  const isOpenNow = useCallback(
+    (
+      openingHours: string | undefined,
+      latitude?: number,
+      longitude?: number
+    ) => {
+      const sanitizedHours = sanitizeOpeningHours(openingHours);
+      if (!sanitizedHours) return false;
+
+      try {
+        const nominatimObject = {
+          lat: latitude ?? 53.1325,
+          lon: longitude ?? 23.1688,
+          address: {
+            country_code: "PL",
+            state: "Podlaskie",
+            city: "Białystok",
+          },
+        };
+
+        const oh = new opening_hours(sanitizedHours, nominatimObject);
+        return oh.getState();
+      } catch (error) {
+        console.error("Error with opening_hours:", error);
+        return false;
+      }
+    },
+    [sanitizeOpeningHours]
+  );
 
   const filterAndSortRestaurants = useCallback(() => {
     let filtered = restaurants.filter(
@@ -74,6 +119,16 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
       });
     }
 
+    if (activeFilters.openingHours === "open_now") {
+      filtered = filtered.filter((restaurant) =>
+        isOpenNow(
+          restaurant.openingHours ?? undefined,
+          restaurant.latitude,
+          restaurant.longitude
+        )
+      );
+    }
+
     if (activeFilters.reservation) {
       filtered = filtered.filter((restaurant) => {
         const hasReservation =
@@ -92,7 +147,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
     }
 
     setFilteredRestaurants(filtered);
-  }, [restaurants, searchTerm, location, sortOrder, activeFilters]);
+  }, [restaurants, searchTerm, location, sortOrder, activeFilters, isOpenNow]);
 
   useEffect(() => {
     filterAndSortRestaurants();

@@ -163,6 +163,8 @@
     "takeawayNo": "No",
     "reservation": "Reservation",
     "reservationYes": "Yes",
-    "reservationNo": "No"
+    "reservationNo": "No",
+    "openingHours": "Opening hours",
+    "openNow": "Open now"
   }
 }
