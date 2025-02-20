@@ -2,6 +2,8 @@ export interface Restaurant {
   id: number;
   osmId: string;
   name: string;
+  latitude?: number;
+  longitude?: number;
   city: string;
   country: string;
   street: string;
