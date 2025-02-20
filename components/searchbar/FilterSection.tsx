@@ -21,7 +21,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({
           key={item.value}
           className={`flex justify-between text-[#000000] h-[48px] items-center px-4 py-2 bg-white border rounded-md cursor-pointer ${
             selectedValue === item.value
-              ? "bg-[#706D91] text-white border border-[#5647FF]"
+              ? "bg-[#706D91] text-white border border-[#000000]"
               : ""
           }`}
           onClick={() => handleSelect(item.value)}
@@ -36,7 +36,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({
                 border-[1.5px] border-[#E5E5E5]
                 ${
                   selectedValue === item.value
-                    ? "checked:bg-[#5647FF] checked:border-[#5647FF] checked:ring-[3px] checked:ring-white checked:ring-inset"
+                    ? "checked:bg-[#000000] checked:border-[#000000] checked:ring-[3px] checked:ring-white checked:ring-inset"
                     : ""
                 }`}
             />

@@ -10,6 +10,7 @@ import SearchInput from "./SearchInput";
 import RestaurantList from "./RestaurantList";
 import { useTranslations } from "next-intl";
 import opening_hours from "opening_hours";
+import { filterByCuisine, filterByBooleanFlag } from "@/lib/filters";
 
 interface SearchBarProps {
   restaurants: Restaurant[];
@@ -92,31 +93,23 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
     );
 
     if (activeFilters.cuisine) {
-      filtered = filtered.filter((restaurant) => {
-        if (!restaurant.cuisine) return false;
-        const cuisinesArray = restaurant.cuisine
-          .split(";")
-          .map((c) => c.trim());
-        return cuisinesArray.includes(activeFilters.cuisine);
-      });
+      filtered = filterByCuisine(filtered, activeFilters.cuisine);
     }
 
     if (activeFilters.delivery) {
-      filtered = filtered.filter((restaurant) => {
-        const hasDelivery =
-          typeof restaurant.delivery === "string" ||
-          restaurant.delivery === true;
-        return activeFilters.delivery === "yes" ? hasDelivery : !hasDelivery;
-      });
+      filtered = filterByBooleanFlag(
+        filtered,
+        activeFilters.delivery,
+        "delivery"
+      );
     }
 
     if (activeFilters.takeaway) {
-      filtered = filtered.filter((restaurant) => {
-        const hasTakeaway =
-          typeof restaurant.takeaway === "string" ||
-          restaurant.takeaway === true;
-        return activeFilters.takeaway === "yes" ? hasTakeaway : !hasTakeaway;
-      });
+      filtered = filterByBooleanFlag(
+        filtered,
+        activeFilters.takeaway,
+        "takeaway"
+      );
     }
 
     if (activeFilters.openingHours === "open_now") {
@@ -130,14 +123,11 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
     }
 
     if (activeFilters.reservation) {
-      filtered = filtered.filter((restaurant) => {
-        const hasReservation =
-          typeof restaurant.reservation === "string" ||
-          restaurant.reservation === true;
-        return activeFilters.reservation === "yes"
-          ? hasReservation
-          : !hasReservation;
-      });
+      filtered = filterByBooleanFlag(
+        filtered,
+        activeFilters.reservation,
+        "reservation"
+      );
     }
 
     if (sortOrder === "asc") {

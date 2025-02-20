@@ -6,6 +6,7 @@ import { X } from "lucide-react";
 import FilterSection from "./FilterSection";
 import { Filters } from "./SearchBar";
 import { useTranslations } from "next-intl";
+import { Button } from "../ui/button";
 
 interface FiltersModalProps {
   isOpen: boolean;
@@ -84,7 +85,7 @@ const FiltersModal: React.FC<FiltersModalProps> = ({
                   {t("title")}
                 </button>
                 {selectedFilterCount > 0 && (
-                  <div className="flex font-extrabold bg-[#5647FF] border-[1px] border-white w-[18px] h-[18px] text-white text-xs items-center justify-center rounded-full">
+                  <div className="flex font-extrabold bg-[#000000] border-[1px] border-white w-[18px] h-[18px] text-white text-xs items-center justify-center rounded-full">
                     {selectedFilterCount}
                   </div>
                 )}
@@ -164,17 +165,17 @@ const FiltersModal: React.FC<FiltersModalProps> = ({
               >
                 {t("resetFilters")}
               </button>
-              <button
+              <Button
                 onClick={applyFilters}
-                className="bg-[#5647FF] w-full h-[48px] border-[1px] border-white text-sm text-white px-4 py-2 rounded-lg flex items-center justify-center"
+                className=" w-full h-[48px] border-[1px] border-white text-sm text-white px-4 py-2 rounded-lg flex items-center justify-center"
               >
                 {t("applyFilters")}
                 {selectedFilterCount > 0 && (
-                  <div className="ml-2 flex bg-[#FFFFFF] font-extrabold w-[18px] h-[18px] text-[#5647FF] text-xs items-center justify-center rounded-full">
+                  <div className="ml-2 flex bg-[#FFFFFF] font-extrabold w-[18px] h-[18px] text-[#000000] text-xs items-center justify-center rounded-full">
                     {selectedFilterCount}
                   </div>
                 )}
-              </button>
+              </Button>
             </div>
           </motion.div>
         </div>
