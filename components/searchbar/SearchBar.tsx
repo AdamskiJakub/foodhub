@@ -7,7 +7,7 @@ import { Restaurant } from "@/types/restaurant";
 import FiltersModal from "./FiltersModal";
 import LocationSortDropdowns from "./LocationSortDropdown";
 import SearchInput from "./SearchInput";
-import RestaurantList from "./RestaurantList";
+import RestaurantList from "../restaurant-listing/RestaurantList";
 import { useTranslations } from "next-intl";
 import opening_hours from "opening_hours";
 import { filterByCuisine, filterByBooleanFlag } from "@/lib/filters";
@@ -38,6 +38,18 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
     reservation: "",
     openingHours: "",
   });
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [restaurantPerPage] = useState(10);
+
+  const indexOfLastRestaurant = currentPage * restaurantPerPage;
+  const indexOfFirstRestaurant = indexOfLastRestaurant - restaurantPerPage;
+  const currentRestaurants = filteredRestaurants.slice(
+    indexOfFirstRestaurant,
+    indexOfLastRestaurant
+  );
+
+  const totalPages = Math.ceil(filteredRestaurants.length / restaurantPerPage);
 
   const t = useTranslations("FiltersModal");
 
@@ -139,16 +151,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
     setFilteredRestaurants(filtered);
   }, [restaurants, searchTerm, location, sortOrder, activeFilters, isOpenNow]);
 
-  useEffect(() => {
-    filterAndSortRestaurants();
-  }, [
-    searchTerm,
-    location,
-    sortOrder,
-    activeFilters,
-    filterAndSortRestaurants,
-  ]);
-
   const updateSuggestions = (term: string) => {
     const matched = restaurants
       .filter((restaurant) =>
@@ -189,12 +191,27 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
       reservation: "",
     });
     setFilteredRestaurants(restaurants);
+    setCurrentPage(1);
     setSuggestions([]);
   };
 
   const handleApplyFilters = (filters: Filters) => {
     setActiveFilters(filters);
   };
+
+  useEffect(() => {
+    filterAndSortRestaurants();
+  }, [
+    searchTerm,
+    location,
+    sortOrder,
+    activeFilters,
+    filterAndSortRestaurants,
+  ]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPage]);
 
   return (
     <div className="flex flex-col gap-4 w-full max-w-4xl mx-auto ">
@@ -234,7 +251,12 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
         </div>
       </div>
 
-      <RestaurantList filteredRestaurants={filteredRestaurants} />
+      <RestaurantList
+        filteredRestaurants={currentRestaurants}
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={setCurrentPage}
+      />
 
       <FiltersModal
         isOpen={isFiltersModalOpen}
