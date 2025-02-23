@@ -36,4 +36,14 @@ export interface Restaurant {
   dietVegetarian?: boolean | null;
   createdAt: Date;
   updatedAt: Date;
+  ratings?: Rating[];
+}
+
+export interface Rating {
+  id: number;
+  value: number;
+  userId: string;
+  restaurantId: number;
+  createdAt: Date;
+  updatedAt: Date;
 }
