@@ -1,20 +1,25 @@
 import RestaurantDetails from "@/components/restaurant-page/RestaurantDetails";
-import React from "react";
 import prisma from "@/lib/prisma";
 import { notFound } from "next/navigation";
+import { normalizeSlug } from "@/lib/normalizeSlug";
+import { Locale } from "@/i18n/routing";
+
+interface Params {
+  locale: Locale;
+  slug: string;
+}
 
 interface Props {
-  params: {
-    slug: string;
-    locale: string;
-  };
+  params: Params;
 }
 
 export default async function RestaurantPage({ params }: Props) {
   const { slug } = params;
 
+  const normalizedSlug = normalizeSlug(slug);
+
   const restaurant = await prisma.restaurant.findUnique({
-    where: { slug },
+    where: { slug: normalizedSlug },
   });
 
   if (!restaurant) {

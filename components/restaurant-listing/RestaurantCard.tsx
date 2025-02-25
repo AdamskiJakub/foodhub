@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 import { FaStar } from "react-icons/fa";
 import { Link } from "@/i18n/routing";
 import RestaurantLinks from "./RestaurantLinks";
+import { normalizeSlug } from "@/lib/normalizeSlug";
 
 export interface RestaurantCardProps {
   restaurant: Restaurant;
@@ -32,11 +33,13 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant }) => {
       ).toFixed(1)
     : "0";
 
+  const normalizedSlug = normalizeSlug(restaurant.slug);
+
   return (
     <Link
       href={{
         pathname: "/restaurant/[slug]",
-        params: { slug: restaurant.slug },
+        params: { slug: normalizedSlug },
       }}
     >
       <div className="flex flex-col lg:flex-row border rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden">
