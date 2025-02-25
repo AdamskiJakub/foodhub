@@ -4,6 +4,7 @@ import prisma from "@/lib/prisma";
 import { Restaurant } from "@/types/restaurant";
 import SearchBar from "@/components/searchbar/SearchBar";
 import { Suspense } from "react";
+import NotFoundPage from "./not-found";
 
 type Params = Promise<{ locale: Locale }>;
 
@@ -24,7 +25,7 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <div>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<NotFoundPage />}>
         <SearchBar restaurants={restaurants} />
       </Suspense>
     </div>
