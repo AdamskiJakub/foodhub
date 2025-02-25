@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
 interface PaginationProps {
   currentPage: number;
@@ -11,6 +14,16 @@ const Pagination: React.FC<PaginationProps> = ({
   totalPages,
   onPageChange,
 }) => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const handlePageChange = (page: number) => {
+    const params = new URLSearchParams(searchParams);
+    params.set("page", page.toString());
+    router.push(`?${params.toString()}`);
+    onPageChange(page);
+  };
+
   const pages: React.ReactNode[] = [];
 
   const renderPagination = () => {
@@ -24,7 +37,7 @@ const Pagination: React.FC<PaginationProps> = ({
                   ? "bg-[#5647FF] text-white"
                   : "border-[#E5E5E5]"
               } rounded-[8px] cursor-pointer`}
-              onClick={() => onPageChange(i)}
+              onClick={() => handlePageChange(i)}
             >
               {i}
             </button>
@@ -38,7 +51,7 @@ const Pagination: React.FC<PaginationProps> = ({
             className={`h-[40px] w-[40px] border-[1px] ${
               currentPage === 1 ? "bg-[#5647FF] text-white" : "border-[#E5E5E5]"
             } rounded-[8px] cursor-pointer`}
-            onClick={() => onPageChange(1)}
+            onClick={() => handlePageChange(1)}
           >
             1
           </button>
@@ -68,7 +81,7 @@ const Pagination: React.FC<PaginationProps> = ({
                   ? "bg-[#5647FF] text-white"
                   : "border-[#E5E5E5]"
               } rounded-[8px] cursor-pointer`}
-              onClick={() => onPageChange(i)}
+              onClick={() => handlePageChange(i)}
             >
               {i}
             </button>
@@ -95,7 +108,7 @@ const Pagination: React.FC<PaginationProps> = ({
                 ? "bg-[#5647FF] text-white"
                 : "border-[#E5E5E5]"
             } rounded-[8px] cursor-pointer`}
-            onClick={() => onPageChange(totalPages)}
+            onClick={() => handlePageChange(totalPages)}
           >
             {totalPages}
           </button>
@@ -113,7 +126,7 @@ const Pagination: React.FC<PaginationProps> = ({
           className={`h-[40px] w-[40px] border-[1px] border-[#E5E5E5] rounded-[8px] cursor-pointer ${
             currentPage === 1 ? "opacity-50 cursor-not-allowed" : ""
           }`}
-          onClick={() => onPageChange(currentPage - 1)}
+          onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
         >
           ‹
@@ -127,7 +140,7 @@ const Pagination: React.FC<PaginationProps> = ({
           className={`h-[40px] w-[40px] border-[1px] border-[#E5E5E5] rounded-[8px] cursor-pointer ${
             currentPage === totalPages ? "opacity-50 cursor-not-allowed" : ""
           }`}
-          onClick={() => onPageChange(currentPage + 1)}
+          onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
         >
           ›
