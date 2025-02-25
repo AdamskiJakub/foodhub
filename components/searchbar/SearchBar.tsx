@@ -11,6 +11,7 @@ import RestaurantList from "../restaurant-listing/RestaurantList";
 import { useTranslations } from "next-intl";
 import opening_hours from "opening_hours";
 import { filterByCuisine, filterByBooleanFlag } from "@/lib/filters";
+import { useSearchParams } from "next/navigation";
 
 interface SearchBarProps {
   restaurants: Restaurant[];
@@ -39,7 +40,9 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
     openingHours: "",
   });
 
-  const [currentPage, setCurrentPage] = useState(1);
+  const searchParams = useSearchParams();
+  const currentPage = parseInt(searchParams.get("page") || "1", 10);
+
   const [restaurantPerPage] = useState(10);
 
   const indexOfLastRestaurant = currentPage * restaurantPerPage;
@@ -191,7 +194,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
       reservation: "",
     });
     setFilteredRestaurants(restaurants);
-    setCurrentPage(1);
+
     setSuggestions([]);
   };
 
@@ -253,9 +256,12 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
 
       <RestaurantList
         filteredRestaurants={currentRestaurants}
-        currentPage={currentPage}
         totalPages={totalPages}
-        onPageChange={setCurrentPage}
+        onPageChange={(page) => {
+          const params = new URLSearchParams(searchParams);
+          params.set("page", page.toString());
+          window.history.pushState({}, "", `?${params.toString()}`);
+        }}
       />
 
       <FiltersModal
