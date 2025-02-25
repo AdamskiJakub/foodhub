@@ -1,7 +1,12 @@
+import BreadcrumbComponent from "@/components/breadcrumb/Breadcrumb";
 import React from "react";
 
 const page = () => {
-  return <div>page</div>;
+  return (
+    <div>
+      <BreadcrumbComponent />
+    </div>
+  );
 };
 
 export default page;
