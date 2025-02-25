@@ -33,7 +33,7 @@ model Restaurant {
   osmId               String    @unique
   name                String
   slug                String    @unique 
-  description         String?   // Add this line
+  description         String?   
   city                String
   country             String    @default("PL")
   street              String
