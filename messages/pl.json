@@ -124,7 +124,10 @@
     "faq": "FAQ",
     "contact": "Kontakt",
     "login": "Logowanie",
-    "register": "Zarejestruj się"
+    "register": "Zarejestruj się",
+    "restaurant": "Restauracja",
+    "member": "Użytkownik",
+    "settings": "Ustawienia"
   },
   "FiltersModal": {
     "title": "Filtry",

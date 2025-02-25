@@ -10,7 +10,7 @@ import {
 import { User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/routing";
+import { useRouter } from "next/navigation";
 
 interface UserDropdownProps {
   onClose?: () => void;
@@ -19,10 +19,21 @@ interface UserDropdownProps {
 const UserDropdown = ({ onClose }: UserDropdownProps) => {
   const { data: session } = useSession();
   const t = useTranslations("Navbar");
+  const router = useRouter();
 
   if (!session) {
     return null;
   }
+
+  const handleSettingsClick = () => {
+    router.push(`/member/${session.user.id}/settings`);
+    if (onClose) onClose();
+  };
+
+  const handleLogoutClick = () => {
+    signOut();
+    if (onClose) onClose();
+  };
 
   return (
     <DropdownMenu>
@@ -32,16 +43,10 @@ const UserDropdown = ({ onClose }: UserDropdownProps) => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <Link
-          onClick={onClose}
-          href={{
-            pathname: "/[member]/settings",
-            params: { member: session.user.id },
-          }}
-        >
-          <DropdownMenuItem>{t("settings")}</DropdownMenuItem>
-        </Link>
-        <DropdownMenuItem onClick={() => signOut()}>
+        <DropdownMenuItem onClick={handleSettingsClick}>
+          {t("settings")}
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={handleLogoutClick}>
           {t("logout")}
         </DropdownMenuItem>
       </DropdownMenuContent>

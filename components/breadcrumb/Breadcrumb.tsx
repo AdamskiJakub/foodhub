@@ -1,3 +1,4 @@
+// components/breadcrumb/Breadcrumb.tsx
 "use client";
 
 import {
@@ -12,7 +13,7 @@ import { usePathname } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
-const Breadcrumbs = () => {
+const BreadcrumbComponent = () => {
   const pathname = usePathname();
   const t = useTranslations("Breadcrumb");
 
@@ -59,4 +60,4 @@ const Breadcrumbs = () => {
   );
 };
 
-export default Breadcrumbs;
+export default BreadcrumbComponent;

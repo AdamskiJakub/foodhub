@@ -30,8 +30,10 @@ model User {
 
 model Restaurant {
   id                  Int       @id @default(autoincrement())
-  osmId               String    @unique // ID z OpenStreetMap
+  osmId               String    @unique
   name                String
+  slug                String    @unique 
+  description         String?   
   city                String
   country             String    @default("PL")
   street              String
