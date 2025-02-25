@@ -2,6 +2,7 @@ export interface Restaurant {
   id: number;
   osmId: string;
   name: string;
+  description?: string | null;
   latitude?: number;
   longitude?: number;
   city: string;
@@ -37,6 +38,7 @@ export interface Restaurant {
   createdAt: Date;
   updatedAt: Date;
   ratings?: Rating[];
+  slug: string;
 }
 
 export interface Rating {

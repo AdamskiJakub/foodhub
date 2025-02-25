@@ -4,8 +4,7 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Restaurant } from "@/types/restaurant";
-
-import { notFound } from "next/navigation";
+import notFound from "@/app/[locale]/not-found";
 
 interface RestaurantDetailsProps {
   restaurant: Restaurant;
