@@ -11,7 +11,7 @@ import RestaurantList from "../restaurant-listing/RestaurantList";
 import { useTranslations } from "next-intl";
 import opening_hours from "opening_hours";
 import { filterByCuisine, filterByBooleanFlag } from "@/lib/filters";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, usePathname } from "next/navigation";
 
 interface SearchBarProps {
   restaurants: Restaurant[];
@@ -41,7 +41,11 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
   });
 
   const searchParams = useSearchParams();
-  const currentPage = parseInt(searchParams.get("page") || "1", 10);
+  const pathname = usePathname();
+  const locale = pathname.split("/")[1];
+
+  const pageParam = locale === "pl" ? "strona" : "page";
+  const currentPage = parseInt(searchParams.get(pageParam) || "1", 10);
 
   const [restaurantPerPage] = useState(10);
 
@@ -259,7 +263,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
         totalPages={totalPages}
         onPageChange={(page) => {
           const params = new URLSearchParams(searchParams);
-          params.set("page", page.toString());
+          params.set(pageParam, page.toString());
           window.history.pushState({}, "", `?${params.toString()}`);
         }}
       />
