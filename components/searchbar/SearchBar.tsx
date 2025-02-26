@@ -42,9 +42,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
 
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const locale = pathname.split("/")[1]; // Pobierz aktualny język z URL (np. "pl" lub "en")
+  const locale = pathname.split("/")[1];
 
-  // Tłumaczenie parametru "page" w zależności od języka
   const pageParam = locale === "pl" ? "strona" : "page";
   const currentPage = parseInt(searchParams.get(pageParam) || "1", 10);
 

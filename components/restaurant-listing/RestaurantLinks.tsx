@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { useTranslations } from "next-intl";
 import { FaPhone, FaEnvelope, FaGlobe } from "react-icons/fa";
@@ -7,7 +9,7 @@ const RestaurantLinks: React.FC<RestaurantCardProps> = ({ restaurant }) => {
   const t = useTranslations("RestaurantCard");
 
   return (
-    <div>
+    <div className="flex flex-col md:flex-row gap-2 md:gap-4">
       {restaurant.phone && typeof restaurant.phone === "string" && (
         <span
           onClick={(e) => {
