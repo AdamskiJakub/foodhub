@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 interface PaginationProps {
   currentPage: number;
@@ -16,10 +16,14 @@ const Pagination: React.FC<PaginationProps> = ({
 }) => {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const locale = pathname.split("/")[1];
+
+  const pageParam = locale === "pl" ? "strona" : "page";
 
   const handlePageChange = (page: number) => {
     const params = new URLSearchParams(searchParams);
-    params.set("page", page.toString());
+    params.set(pageParam, page.toString());
     router.push(`?${params.toString()}`);
     onPageChange(page);
   };

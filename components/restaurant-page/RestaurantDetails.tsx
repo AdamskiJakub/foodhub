@@ -17,6 +17,15 @@ const RestaurantDetails: React.FC<RestaurantDetailsProps> = ({
     return notFound();
   }
 
+  const formatText = (text: string) => {
+    return text.split(";").map((line, index) => (
+      <React.Fragment key={index}>
+        {line}
+        <br />
+      </React.Fragment>
+    ));
+  };
+
   return (
     <div className="max-w-[1169px] mx-auto py-8">
       <div className="flex flex-col lg:flex-row gap-8 mt-11">
@@ -67,7 +76,7 @@ const RestaurantDetails: React.FC<RestaurantDetailsProps> = ({
               style={{ boxShadow: "0px 2px 2px 0px rgba(28, 36, 51, 0.1)" }}
             >
               <div className="flex flex-col gap-4">
-                <div className="flex justify-between items-center border-b border-[#E5E5E5] pb-4">
+                <div className="flex flex-col gap-2 border-b border-[#E5E5E5] pb-4">
                   <p className="text-[#706D91] font-normal text-[16px] leading-[26px]">
                     Location
                   </p>
@@ -77,23 +86,23 @@ const RestaurantDetails: React.FC<RestaurantDetailsProps> = ({
                 </div>
 
                 {restaurant.openingHours && (
-                  <div className="flex justify-between items-center border-b border-[#E5E5E5] pb-4">
+                  <div className="flex flex-col gap-2 border-b border-[#E5E5E5] pb-4">
                     <p className="text-[#706D91] font-normal text-[16px] leading-[26px]">
                       Opening Hours
                     </p>
                     <p className="text-[#121212] font-medium text-[16px] leading-[28px]">
-                      {restaurant.openingHours}
+                      {formatText(restaurant.openingHours)}
                     </p>
                   </div>
                 )}
 
                 {restaurant.cuisine && (
-                  <div className="flex justify-between items-center border-b border-[#E5E5E5] pb-4">
+                  <div className="flex flex-col gap-2 border-b border-[#E5E5E5] pb-4">
                     <p className="text-[#706D91] font-normal text-[16px] leading-[26px]">
                       Cuisine
                     </p>
                     <p className="text-[#121212] font-medium text-[16px] leading-[28px]">
-                      {restaurant.cuisine}
+                      {formatText(restaurant.cuisine)}
                     </p>
                   </div>
                 )}

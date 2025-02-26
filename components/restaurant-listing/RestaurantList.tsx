@@ -4,7 +4,7 @@ import React from "react";
 import { Restaurant } from "@/types/restaurant";
 import RestaurantCard from "./RestaurantCard";
 import Pagination from "../ui/pagination/Pagination";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 
 interface RestaurantListProps {
   filteredRestaurants: Restaurant[];
@@ -18,7 +18,10 @@ const RestaurantList: React.FC<RestaurantListProps> = ({
   onPageChange,
 }) => {
   const searchParams = useSearchParams();
-  const currentPage = parseInt(searchParams.get("page") || "1", 10);
+  const pathname = usePathname();
+  const locale = pathname.split("/")[1];
+  const pageParam = locale === "pl" ? "strona" : "page";
+  const currentPage = parseInt(searchParams.get(pageParam) || "1", 10);
   return (
     <>
       <div className="flex flex-col gap-6">
