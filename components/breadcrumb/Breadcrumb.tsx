@@ -1,4 +1,3 @@
-// components/breadcrumb/Breadcrumb.tsx
 "use client";
 
 import {
@@ -9,46 +8,45 @@ import {
   BreadcrumbSeparator,
   BreadcrumbPage,
 } from "@/components/ui/breadcrumb";
-import { usePathname } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
-const BreadcrumbComponent = () => {
-  const pathname = usePathname();
+interface BreadcrumbSegment {
+  label: string;
+  href?: string;
+  isTranslation?: boolean;
+}
+
+interface BreadcrumbComponentProps {
+  customSegments?: BreadcrumbSegment[];
+}
+
+const BreadcrumbComponent = ({ customSegments }: BreadcrumbComponentProps) => {
   const t = useTranslations("Breadcrumb");
 
-  const pathSegments = pathname
-    .split("/")
-    .filter(
-      (segment) => segment !== "" && segment !== "pl" && segment !== "en"
-    );
+  const segments = customSegments || [];
 
-  if (pathSegments.length === 0) return null;
+  if (segments.length === 0) return null;
 
   return (
     <Breadcrumb>
       <BreadcrumbList>
-        <BreadcrumbItem>
-          <BreadcrumbLink asChild>
-            <Link href="/">{t("home")}</Link>
-          </BreadcrumbLink>
-        </BreadcrumbItem>
+        {segments.map((segment, index) => {
+          const isLast = index === segments.length - 1;
 
-        {pathSegments.map((segment, index) => {
-          const href = `/${pathSegments.slice(0, index + 1).join("/")}`;
-          const isLast = index === pathSegments.length - 1;
-
+          const label =
+            segment.isTranslation === true ? t(segment.label) : segment.label;
           return (
-            <span key={href} className="flex items-center">
-              <BreadcrumbSeparator>{`>`}</BreadcrumbSeparator>
+            <span key={index} className="flex items-center">
+              {index > 0 && <BreadcrumbSeparator>{`>`}</BreadcrumbSeparator>}
               <BreadcrumbItem>
-                {isLast ? (
+                {isLast || !segment.href ? (
                   <BreadcrumbPage className="ml-3 text-gray">
-                    {t(segment)}
+                    {label}
                   </BreadcrumbPage>
                 ) : (
                   <BreadcrumbLink asChild>
-                    <Link href={href}>{t(segment)}</Link>
+                    <Link href={segment.href}>{label}</Link>
                   </BreadcrumbLink>
                 )}
               </BreadcrumbItem>
