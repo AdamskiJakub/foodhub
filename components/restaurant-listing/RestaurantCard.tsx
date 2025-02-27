@@ -16,7 +16,21 @@ export interface RestaurantCardProps {
 const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant }) => {
   const t = useTranslations("RestaurantCard");
 
-  const formattedHours = formatOpeningHours(restaurant.openingHours, t);
+  const dayTranslations = {
+    Mo: t("Mo"),
+    Tu: t("Tu"),
+    We: t("We"),
+    Th: t("Th"),
+    Fr: t("Fr"),
+    Sa: t("Sa"),
+    Su: t("Su"),
+  };
+
+  const formattedHours = formatOpeningHours(
+    restaurant.openingHours,
+    t,
+    dayTranslations
+  );
 
   const formatCuisine = (cuisine: string | undefined | null) => {
     if (!cuisine) return t("noCuisine");

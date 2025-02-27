@@ -228,7 +228,14 @@
     "cuisine": "Cuisine",
     "address": "Address",
     "imagePlaceholder": "No image",
-    "noOpeningHours": "No information"
+    "noOpeningHours": "No information",
+    "Mo": "Mon",
+    "Tu": "Tue",
+    "We": "Wed",
+    "Th": "Thu",
+    "Fr": "Fri",
+    "Sa": "Sat",
+    "Su": "Sun"
   },
   "RestaurantDetails": {
     "phone": "Phone number",
@@ -285,6 +292,13 @@
     "vietnamese": "Vietnamese",
     "wings": "Wings",
     "email": "Email",
-    "noCuisine": "No cuisine specified"
+    "noCuisine": "No cuisine specified",
+    "Mo": "Mon",
+    "Tu": "Tue",
+    "We": "Wed",
+    "Th": "Thu",
+    "Fr": "Fri",
+    "Sa": "Sat",
+    "Su": "Sun"
   }
 }

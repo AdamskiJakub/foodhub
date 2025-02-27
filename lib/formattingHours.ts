@@ -1,21 +1,11 @@
 export const formatOpeningHours = (
   openingHours: string | undefined | null,
-  t: (key: string) => string
+  t: (key: string) => string,
+  dayTranslations: { [key: string]: string }
 ) => {
   if (!openingHours) return t("noOpeningHours");
 
-  const dayTranslations: { [key: string]: string } = {
-    Mo: "Pon",
-    Tu: "Wt",
-    We: "Śr",
-    Th: "Czw",
-    Fr: "Pt",
-    Sa: "Sob",
-    Su: "Nd",
-  };
-
   const days = openingHours.split(";");
-  console.log(days);
 
   return days
     .map((day) => {

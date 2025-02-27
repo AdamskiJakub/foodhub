@@ -228,7 +228,14 @@
     "cuisine": "Kuchnia",
     "address": "Adres",
     "imagePlaceholder": "Brak zdjęcia",
-    "noOpeningHours": "Brak informacji"
+    "noOpeningHours": "Brak informacji",
+    "Mo": "Pon",
+    "Tu": "Wt",
+    "We": "Śr",
+    "Th": "Czw",
+    "Fr": "Pt",
+    "Sa": "Sob",
+    "Su": "Nd"
   },
   "RestaurantDetails": {
     "phone": "Numer telefonu",
@@ -284,6 +291,13 @@
     "turkish": "Turecka",
     "vietnamese": "Wietnamska",
     "wings": "Skrzydełka",
-    "noCuisine": "Kuchnia nie została podana"
+    "noCuisine": "Kuchnia nie została podana",
+    "Mo": "Pon",
+    "Tu": "Wt",
+    "We": "Śr",
+    "Th": "Czw",
+    "Fr": "Pt",
+    "Sa": "Sob",
+    "Su": "Nd"
   }
 }
