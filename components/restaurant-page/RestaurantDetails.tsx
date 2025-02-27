@@ -7,6 +7,7 @@ import { Restaurant } from "@/types/restaurant";
 import notFound from "@/app/[locale]/not-found";
 import { useTranslations } from "next-intl";
 import { formatOpeningHours } from "@/lib/formattingHours";
+import BreadcrumbComponent from "../breadcrumb/Breadcrumb";
 
 interface RestaurantDetailsProps {
   restaurant: Restaurant;
@@ -33,6 +34,13 @@ const RestaurantDetails: React.FC<RestaurantDetailsProps> = ({
 
   return (
     <div className="max-w-[1169px] mx-auto py-8">
+      <BreadcrumbComponent
+        customSegments={[
+          { label: "home", href: "/", isTranslation: true }, // Klucz tłumaczenia
+          { label: "restaurant", isTranslation: true }, // Klucz tłumaczenia
+          { label: restaurant.name, isTranslation: false }, // Bezpośredni tekst
+        ]}
+      />
       <div className="flex flex-col lg:flex-row gap-8 mt-11">
         <div className="max-w-[745px] w-full">
           <h1 className="text-2xl font-bold mb-4">{restaurant.name}</h1>
