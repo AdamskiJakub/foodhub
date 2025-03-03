@@ -188,7 +188,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
 
   const resetFilters = () => {
     setSearchTerm("");
-    setLocation("Białystok");
+    setLocation("Warszawa");
     setSortOrder("asc");
     setActiveFilters({
       cuisine: "",

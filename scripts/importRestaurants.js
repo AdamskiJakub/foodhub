@@ -4,8 +4,46 @@ import path from "path";
 
 const prisma = new PrismaClient();
 
+const normalizeSlug = (slug) => {
+  console.log("Original slug:", slug);
+
+  const polishChars = {
+    ą: "a",
+    ć: "c",
+    ę: "e",
+    ł: "l",
+    ń: "n",
+    ó: "o",
+    ś: "s",
+    ź: "z",
+    ż: "z",
+    Ą: "A",
+    Ć: "C",
+    Ę: "E",
+    Ł: "L",
+    Ń: "N",
+    Ó: "O",
+    Ś: "S",
+    Ź: "Z",
+    Ż: "Z",
+  };
+
+  const normalized = slug
+    .split("")
+    .map((char) => polishChars[char] || char)
+    .join("")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-zA-Z0-9-]/g, "-")
+    .replace(/-+/g, "-")
+    .toLowerCase();
+
+  console.log("Normalized slug:", normalized);
+  return normalized;
+};
+
 async function main() {
-  const filePath = path.join(process.cwd(), "public", "restaurants.json");
+  const filePath = path.join(process.cwd(), "public", "restaurantsWarsaw.json");
   console.log("Ścieżka do pliku: ", filePath);
   const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
   const restaurants = data.features;
@@ -33,6 +71,8 @@ async function main() {
       );
       continue;
     }
+
+    const slug = normalizeSlug(properties.name);
 
     await prisma.restaurant.create({
       data: {
@@ -74,11 +114,12 @@ async function main() {
         contactWebsite: properties["contact:website"],
         officialName: properties["official_name"],
         dietVegetarian: properties["diet:vegetarian"] === "yes",
+        slug: slug,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
     });
-    console.log(`Dodano restaurację: ${properties.name}`);
+    console.log(`Dodano restaurację: ${properties.name} z slugiem: ${slug}`);
   }
 }
 

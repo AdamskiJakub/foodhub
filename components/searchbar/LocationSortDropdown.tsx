@@ -36,6 +36,9 @@ const LocationSortDropdowns: React.FC<LocationSortDropdownsProps> = ({
           <DropdownMenuItem onClick={() => onLocationChange("Białystok")}>
             Białystok
           </DropdownMenuItem>
+          <DropdownMenuItem onClick={() => onLocationChange("Warszawa")}>
+            Warszawa
+          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
 
