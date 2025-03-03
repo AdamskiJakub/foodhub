@@ -2,7 +2,7 @@ import React from "react";
 
 interface FilterSectionProps {
   title: string;
-  items: { value: string; label: string }[];
+  items: { value: string; label: string; count: number }[];
   selectedValue: string | null;
   handleSelect: (value: string) => void;
 }
@@ -19,7 +19,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({
       {items.map((item) => (
         <li
           key={item.value}
-          className={`flex justify-between text-[#000000] h-[48px] items-center px-4 py-2 bg-white border rounded-md cursor-pointer ${
+          className={`flex justify-between text-primaryText h-[48px] items-center px-4 py-2 bg-white border rounded-md cursor-pointer ${
             selectedValue === item.value
               ? "bg-[#706D91] text-white border border-[#000000]"
               : ""
@@ -40,8 +40,9 @@ const FilterSection: React.FC<FilterSectionProps> = ({
                     : ""
                 }`}
             />
-            <span className="font-normal text-[#000000] text-md">
-              {item.label}
+            <span className="font-normal flex flex-row w-full text-primaryText text-md justify-between">
+              {item.label}{" "}
+              <span className="text-secondaryText">({item.count})</span>
             </span>
           </label>
         </li>
