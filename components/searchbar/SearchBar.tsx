@@ -5,13 +5,14 @@ import { Button } from "@/components/ui/button";
 import { Filter } from "lucide-react";
 import { Restaurant } from "@/types/restaurant";
 import FiltersModal from "./FiltersModal";
-import LocationSortDropdowns from "./LocationSortDropdown";
+import LocationTiles from "./LocationTiles";
+import SortDropdown from "./SortDropdown";
 import SearchInput from "./SearchInput";
 import RestaurantList from "../restaurant-listing/RestaurantList";
 import { useTranslations } from "next-intl";
 import opening_hours from "opening_hours";
 import { filterByCuisine, filterByBooleanFlag } from "@/lib/filters";
-import { useSearchParams, usePathname } from "next/navigation";
+import { useSearchParams, usePathname, useRouter } from "next/navigation";
 
 interface SearchBarProps {
   restaurants: Restaurant[];
@@ -25,12 +26,17 @@ export interface Filters {
   openingHours: string;
 }
 
+const cityMapping: Record<string, string> = {
+  bialystok: "Białystok",
+  warsaw: "Warszawa",
+};
+
 const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [location, setLocation] = useState("Białystok");
-  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
   const [suggestions, setSuggestions] = useState<string[]>([]);
-  const [filteredRestaurants, setFilteredRestaurants] = useState(restaurants);
+  const [filteredRestaurants, setFilteredRestaurants] = useState<Restaurant[]>(
+    []
+  );
   const [isFiltersModalOpen, setIsFiltersModalOpen] = useState(false);
   const [activeFilters, setActiveFilters] = useState({
     cuisine: "",
@@ -42,7 +48,12 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
 
   const searchParams = useSearchParams();
   const pathname = usePathname();
+  const router = useRouter();
   const locale = pathname.split("/")[1];
+
+  const citySlug = searchParams.get("city");
+  const cityName = citySlug ? cityMapping[citySlug] : null;
+  const sortOrder = searchParams.get("sort") || "asc";
 
   const pageParam = locale === "pl" ? "strona" : "page";
   const currentPage = parseInt(searchParams.get(pageParam) || "1", 10);
@@ -105,10 +116,14 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
   );
 
   const filterAndSortRestaurants = useCallback(() => {
-    let filtered = restaurants.filter(
-      (restaurant) =>
-        restaurant.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-        restaurant.city === location
+    let filtered = restaurants;
+
+    if (cityName) {
+      filtered = filtered.filter((restaurant) => restaurant.city === cityName);
+    }
+
+    filtered = filtered.filter((restaurant) =>
+      restaurant.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     if (activeFilters.cuisine) {
@@ -156,7 +171,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
     }
 
     setFilteredRestaurants(filtered);
-  }, [restaurants, searchTerm, location, sortOrder, activeFilters, isOpenNow]);
+  }, [restaurants, searchTerm, cityName, sortOrder, activeFilters, isOpenNow]);
 
   const updateSuggestions = (term: string) => {
     const matched = restaurants
@@ -179,17 +194,22 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
   };
 
   const handleLocationChange = (newLocation: string) => {
-    setLocation(newLocation);
+    const params = new URLSearchParams(searchParams);
+    params.set("city", newLocation);
+    router.push(`${pathname}?${params.toString()}`);
   };
 
   const handleSortChange = (order: "asc" | "desc") => {
-    setSortOrder(order);
+    const params = new URLSearchParams(searchParams);
+    params.set("sort", order);
+    router.push(`${pathname}?${params.toString()}`);
   };
 
   const resetFilters = () => {
     setSearchTerm("");
-    setLocation("Warszawa");
-    setSortOrder("asc");
+    const params = new URLSearchParams(searchParams);
+    params.delete("city");
+    router.push(`${pathname}?${params.toString()}`);
     setActiveFilters({
       cuisine: "",
       delivery: "",
@@ -197,8 +217,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
       takeaway: "",
       reservation: "",
     });
-    setFilteredRestaurants(restaurants);
-
+    setFilteredRestaurants([]);
     setSuggestions([]);
   };
 
@@ -210,7 +229,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
     filterAndSortRestaurants();
   }, [
     searchTerm,
-    location,
+    cityName,
     sortOrder,
     activeFilters,
     filterAndSortRestaurants,
@@ -242,12 +261,13 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
         </Button>
       </div>
 
-      <LocationSortDropdowns
-        location={location}
-        sortOrder={sortOrder}
-        onLocationChange={handleLocationChange}
-        onSortChange={handleSortChange}
-      />
+      <div className="flex flex-row justify-between gap-2">
+        <LocationTiles
+          location={citySlug || ""}
+          onLocationChange={handleLocationChange}
+        />
+        <SortDropdown sortOrder={sortOrder} onSortChange={handleSortChange} />
+      </div>
 
       <div className="flex flex-row justify-between items-center text-center">
         <div className="flex flex-col sm:flex-row items-center text-left text-secondaryText">
@@ -258,15 +278,25 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
         </div>
       </div>
 
-      <RestaurantList
-        filteredRestaurants={currentRestaurants}
-        totalPages={totalPages}
-        onPageChange={(page) => {
-          const params = new URLSearchParams(searchParams);
-          params.set(pageParam, page.toString());
-          window.history.pushState({}, "", `?${params.toString()}`);
-        }}
-      />
+      {!citySlug ? (
+        <div className="text-center text-secondaryText">
+          {t("noCitySelected")}
+        </div>
+      ) : filteredRestaurants.length === 0 ? (
+        <div className="text-center text-secondaryText">
+          {t("noRestaurantsFound")}
+        </div>
+      ) : (
+        <RestaurantList
+          filteredRestaurants={currentRestaurants}
+          totalPages={totalPages}
+          onPageChange={(page) => {
+            const params = new URLSearchParams(searchParams);
+            params.set(pageParam, page.toString());
+            router.push(`${pathname}?${params.toString()}`);
+          }}
+        />
+      )}
 
       <FiltersModal
         isOpen={isFiltersModalOpen}

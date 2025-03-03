@@ -57,7 +57,7 @@ async function main() {
       !properties["addr:city"] ||
       !properties["addr:street"]
     ) {
-      console.log(`Brak wymaganych danych dla restauracji: ${properties.name}`);
+      console.log(`Not enough data to add restaurant: ${properties.name}`);
       continue;
     }
 
@@ -67,7 +67,7 @@ async function main() {
 
     if (existingRestaurant) {
       console.log(
-        `Restauracja o osmId: ${properties["@id"]} już istnieje. Pomijam.`
+        `Restaurant with osmId: ${properties["@id"]} already exist. Skip.`
       );
       continue;
     }
@@ -119,7 +119,7 @@ async function main() {
         updatedAt: new Date(),
       },
     });
-    console.log(`Dodano restaurację: ${properties.name} z slugiem: ${slug}`);
+    console.log(`Added restaruant: ${properties.name} with slug: ${slug}`);
   }
 }
 
