@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+FoodHub
 
-## Getting Started
+🚧 This project is a work in progress and is actively being developed daily. Some features are missing, including a four-step restaurant addition form with payment integration. More updates are coming soon! 🚧
 
-First, run the development server:
+You can find this project here: https://foodhub-gules.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+📌 Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+FoodHub is a restaurant listing platform built with modern web technologies, allowing users to browse and filter restaurants by city. The project provides an intuitive way to discover dining options, apply filters, and manage user profiles.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🛠 Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Next.js – Server-side rendering and static site generation.
 
-## Learn More
+Prisma – ORM for managing the PostgreSQL database.
 
-To learn more about Next.js, take a look at the following resources:
+Supabase – Backend services and authentication.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+PostgreSQL – Relational database.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+shadcn/ui – Pre-built UI components.
 
-## Deploy on Vercel
+Tailwind CSS – Utility-first CSS framework for styling.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Axios – HTTP requests handling.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🔥 Features
+
+🔎 Restaurant Listing – Browse and filter restaurants by city and cuisine.
+
+🏷️ Advanced Filtering – Apply multiple filters to refine search results.
+
+👤 User Authentication – Sign up and log in via Supabase.
+
+🛠 User Profile Management – Edit user profile details in the dashboard.
+
+🏗 Custom UI Components – Most components are handcrafted, with some from shadcn/ui.
+
+💳 (Upcoming) Restaurant Addition Form with Payments – A four-step form to add restaurants, including payment integration.
+
+🤝 Contributing
+
+This project is still in development. Contributions, feedback, and suggestions are welcome!
+
+📜 License
+
+This project is licensed under the MIT License.
