@@ -1,6 +1,4 @@
 export const normalizeSlug = (slug: string) => {
-  console.log("Original slug:", slug);
-
   const polishChars: { [key: string]: string } = {
     ą: "a",
     ć: "c",
@@ -32,6 +30,5 @@ export const normalizeSlug = (slug: string) => {
     .replace(/-+/g, "-")
     .toLowerCase();
 
-  console.log("Normalized slug:", normalized);
   return normalized;
 };
