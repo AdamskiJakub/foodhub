@@ -85,13 +85,25 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
     []
   );
 
+  const isValidOpeningHours = (
+    openingHours: string | null | undefined
+  ): boolean => {
+    if (!openingHours) return false;
+
+    const timeRangeRegex = /(\d{1,2}:\d{2})-(\d{1,2}:\d{2})/;
+    return timeRangeRegex.test(openingHours);
+  };
+
   const isOpenNow = useCallback(
     (
-      openingHours: string | undefined,
+      openingHours: string | null | undefined,
       latitude?: number,
       longitude?: number
     ) => {
-      const sanitizedHours = sanitizeOpeningHours(openingHours);
+      if (!isValidOpeningHours(openingHours)) return false;
+      const sanitizedHours = openingHours
+        ? sanitizeOpeningHours(openingHours)
+        : undefined;
       if (!sanitizedHours) return false;
 
       try {
@@ -239,6 +251,14 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [currentPage]);
 
+  const uniqueCuisines = Array.from(
+    new Set(
+      restaurants
+        .filter((restaurant) => restaurant.city === cityName)
+        .flatMap((restaurant) => restaurant.cuisine?.split(";") || [])
+    )
+  );
+
   return (
     <div className="flex flex-col gap-4 w-full max-w-4xl mx-auto ">
       <h1 className="text-3xl lg:text-5xl justify-center align-middle w-full text-center mt-4 text-primaryText">
@@ -304,6 +324,9 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
         onApplyFilters={handleApplyFilters}
         onResetFilters={resetFilters}
         activeFilters={activeFilters}
+        availableCuisines={uniqueCuisines}
+        restaurants={restaurants}
+        isOpenNow={isOpenNow}
       />
     </div>
   );
