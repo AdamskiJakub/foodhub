@@ -46,6 +46,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
     openingHours: "",
   });
 
+  const [selectedFilters, setSelectedFilters] = useState(activeFilters);
+
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
@@ -235,6 +237,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
 
   const handleApplyFilters = (filters: Filters) => {
     setActiveFilters(filters);
+    setSelectedFilters(filters);
   };
 
   useEffect(() => {
@@ -291,7 +294,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
 
       <div className="flex flex-row justify-between items-center text-center">
         <div className="flex flex-col sm:flex-row items-center text-left text-secondaryText">
-          {t("numberOfRestaurants")}: {filteredRestaurants.length}
+          {t("numberOfRestaurants")}:{" "}
+          {citySlug ? filteredRestaurants.length : 0}
         </div>
         <div>
           <Button onClick={() => resetFilters()}>{t("resetFilters")}</Button>
@@ -327,6 +331,9 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
         availableCuisines={uniqueCuisines}
         restaurants={restaurants}
         isOpenNow={isOpenNow}
+        selectedFilters={selectedFilters}
+        setSelectedFilters={setSelectedFilters}
+        citySlug={citySlug}
       />
     </div>
   );
