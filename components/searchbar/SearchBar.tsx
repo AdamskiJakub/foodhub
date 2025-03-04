@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Filter } from "lucide-react";
 import { Restaurant } from "@/types/restaurant";
@@ -10,20 +10,14 @@ import SortDropdown from "./SortDropdown";
 import SearchInput from "./SearchInput";
 import RestaurantList from "../restaurant-listing/RestaurantList";
 import { useTranslations } from "next-intl";
-import opening_hours from "opening_hours";
-import { filterByCuisine, filterByBooleanFlag } from "@/lib/filters";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
+import { useRestaurantFilters } from "@/hooks/useRestaurantFilters";
+import { usePagination } from "@/hooks/usePagination";
+import { useSearchSuggestions } from "@/hooks/useSearchSuggestions";
+import opening_hours from "opening_hours"; // Dodaj to
 
 interface SearchBarProps {
   restaurants: Restaurant[];
-}
-
-export interface Filters {
-  cuisine: string;
-  delivery: string;
-  takeaway: string;
-  reservation: string;
-  openingHours: string;
 }
 
 const cityMapping: Record<string, string> = {
@@ -32,21 +26,7 @@ const cityMapping: Record<string, string> = {
 };
 
 const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [suggestions, setSuggestions] = useState<string[]>([]);
-  const [filteredRestaurants, setFilteredRestaurants] = useState<Restaurant[]>(
-    []
-  );
-  const [isFiltersModalOpen, setIsFiltersModalOpen] = useState(false);
-  const [activeFilters, setActiveFilters] = useState({
-    cuisine: "",
-    delivery: "",
-    takeaway: "",
-    reservation: "",
-    openingHours: "",
-  });
-
-  const [selectedFilters, setSelectedFilters] = useState(activeFilters);
+  const t = useTranslations("FiltersModal");
 
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -60,18 +40,15 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
   const pageParam = locale === "pl" ? "strona" : "page";
   const currentPage = parseInt(searchParams.get(pageParam) || "1", 10);
 
-  const [restaurantPerPage] = useState(10);
+  const [isFiltersModalOpen, setIsFiltersModalOpen] = useState(false);
 
-  const indexOfLastRestaurant = currentPage * restaurantPerPage;
-  const indexOfFirstRestaurant = indexOfLastRestaurant - restaurantPerPage;
-  const currentRestaurants = filteredRestaurants.slice(
-    indexOfFirstRestaurant,
-    indexOfLastRestaurant
-  );
-
-  const totalPages = Math.ceil(filteredRestaurants.length / restaurantPerPage);
-
-  const t = useTranslations("FiltersModal");
+  const {
+    searchTerm,
+    suggestions,
+    handleSearchChange,
+    handleSuggestionClick,
+    setSuggestions,
+  } = useSearchSuggestions(restaurants);
 
   const sanitizeOpeningHours = useCallback(
     (openingHours: string | undefined) => {
@@ -129,83 +106,26 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
     [sanitizeOpeningHours]
   );
 
-  const filterAndSortRestaurants = useCallback(() => {
-    let filtered = restaurants;
+  const {
+    filteredRestaurants,
+    activeFilters,
+    selectedFilters,
+    handleApplyFilters,
+    resetFilters,
+    setSelectedFilters,
+  } = useRestaurantFilters(
+    restaurants,
+    cityName,
+    searchTerm,
+    sortOrder,
+    isOpenNow
+  );
 
-    if (cityName) {
-      filtered = filtered.filter((restaurant) => restaurant.city === cityName);
-    }
-
-    filtered = filtered.filter((restaurant) =>
-      restaurant.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
-    if (activeFilters.cuisine) {
-      filtered = filterByCuisine(filtered, activeFilters.cuisine);
-    }
-
-    if (activeFilters.delivery) {
-      filtered = filterByBooleanFlag(
-        filtered,
-        activeFilters.delivery,
-        "delivery"
-      );
-    }
-
-    if (activeFilters.takeaway) {
-      filtered = filterByBooleanFlag(
-        filtered,
-        activeFilters.takeaway,
-        "takeaway"
-      );
-    }
-
-    if (activeFilters.openingHours === "open_now") {
-      filtered = filtered.filter((restaurant) =>
-        isOpenNow(
-          restaurant.openingHours ?? undefined,
-          restaurant.latitude,
-          restaurant.longitude
-        )
-      );
-    }
-
-    if (activeFilters.reservation) {
-      filtered = filterByBooleanFlag(
-        filtered,
-        activeFilters.reservation,
-        "reservation"
-      );
-    }
-
-    if (sortOrder === "asc") {
-      filtered.sort((a, b) => a.name.localeCompare(b.name));
-    } else {
-      filtered.sort((a, b) => b.name.localeCompare(a.name));
-    }
-
-    setFilteredRestaurants(filtered);
-  }, [restaurants, searchTerm, cityName, sortOrder, activeFilters, isOpenNow]);
-
-  const updateSuggestions = (term: string) => {
-    const matched = restaurants
-      .filter((restaurant) =>
-        restaurant.name.toLowerCase().startsWith(term.toLowerCase())
-      )
-      .map((restaurant) => restaurant.name);
-    setSuggestions(matched);
-  };
-
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const term = e.target.value;
-    setSearchTerm(term);
-    updateSuggestions(term);
-  };
-
-  const handleSuggestionClick = (suggestion: string) => {
-    setSearchTerm(suggestion);
-    setSuggestions([]);
-  };
+  const { currentItems, totalPages } = usePagination(
+    filteredRestaurants,
+    currentPage,
+    10
+  );
 
   const handleLocationChange = (newLocation: string) => {
     const params = new URLSearchParams(searchParams);
@@ -219,41 +139,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
     router.push(`${pathname}?${params.toString()}`);
   };
 
-  const resetFilters = () => {
-    setSearchTerm("");
-    const params = new URLSearchParams(searchParams);
-    params.delete("city");
-    router.push(`${pathname}?${params.toString()}`);
-    setActiveFilters({
-      cuisine: "",
-      delivery: "",
-      openingHours: "",
-      takeaway: "",
-      reservation: "",
-    });
-    setFilteredRestaurants([]);
-    setSuggestions([]);
-  };
-
-  const handleApplyFilters = (filters: Filters) => {
-    setActiveFilters(filters);
-    setSelectedFilters(filters);
-  };
-
-  useEffect(() => {
-    filterAndSortRestaurants();
-  }, [
-    searchTerm,
-    cityName,
-    sortOrder,
-    activeFilters,
-    filterAndSortRestaurants,
-  ]);
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [currentPage]);
-
   const uniqueCuisines = Array.from(
     new Set(
       restaurants
@@ -263,7 +148,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
   );
 
   return (
-    <div className="flex flex-col gap-4 w-full max-w-4xl mx-auto ">
+    <div className="flex flex-col gap-4 w-full max-w-4xl mx-auto">
       <h1 className="text-3xl lg:text-5xl justify-center align-middle w-full text-center mt-4 text-primaryText">
         {t("mainTitle")}
       </h1>
@@ -312,7 +197,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
         </div>
       ) : (
         <RestaurantList
-          filteredRestaurants={currentRestaurants}
+          filteredRestaurants={currentItems}
           totalPages={totalPages}
           onPageChange={(page) => {
             const params = new URLSearchParams(searchParams);
