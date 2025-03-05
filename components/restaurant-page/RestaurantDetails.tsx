@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Restaurant } from "@/types/restaurant";
@@ -11,6 +11,9 @@ import BreadcrumbComponent from "../breadcrumb/Breadcrumb";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { useSession } from "next-auth/react";
+import { FaStar } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 interface RestaurantDetailsProps {
   restaurant: Restaurant;
@@ -19,7 +22,44 @@ interface RestaurantDetailsProps {
 const RestaurantDetails: React.FC<RestaurantDetailsProps> = ({
   restaurant,
 }) => {
+  const { data: session } = useSession();
   const t = useTranslations("RestaurantDetails");
+  const [selectedRating, setSelectedRating] = useState<number | null>(null);
+  const [ratings, setRatings] = useState(restaurant.ratings ?? []);
+
+  const averageRating =
+    (ratings?.length ?? 0) > 0
+      ? ratings.reduce((sum, rating) => sum + rating.value, 0) / ratings.length
+      : 0;
+
+  const handleRatingSubmit = async () => {
+    if (!session || !selectedRating) return;
+
+    try {
+      const response = await fetch("/api/rate-restaurant", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          restaurantId: restaurant.id,
+          value: selectedRating,
+        }),
+      });
+
+      if (response.ok) {
+        const newRating = await response.json();
+        setRatings((prevRatings) => [...prevRatings, newRating]);
+        setSelectedRating(null);
+        toast.success(t("toastRatingSuccess"));
+      } else if (response.status === 400) {
+        toast.error(t("toastRatingError"));
+      }
+    } catch (error) {
+      console.error("Error submitting rating:", error);
+      toast.error(t("toastRatingError"));
+    }
+  };
 
   const dayTranslations = {
     Mo: t("Mo"),
@@ -151,6 +191,46 @@ const RestaurantDetails: React.FC<RestaurantDetailsProps> = ({
                     </Link>
                   </div>
                 )}
+
+                {session && (
+                  <div className="flex flex-col gap-2 border-b border-[#E5E5E5] pb-4">
+                    <p className="text-secondaryText font-normal text-md">
+                      {t("rateRestaurant")}
+                    </p>
+                    <div className="flex gap-2">
+                      {[1, 2, 3, 4, 5].map((value) => (
+                        <button
+                          key={value}
+                          onClick={() => setSelectedRating(value)}
+                          className={`text-2xl ${
+                            selectedRating && value <= selectedRating
+                              ? "text-yellow-400"
+                              : "text-gray-300"
+                          }`}
+                        >
+                          <FaStar />
+                        </button>
+                      ))}
+                    </div>
+                    {selectedRating && (
+                      <Button
+                        onClick={handleRatingSubmit}
+                        className="mt-2 w-full"
+                      >
+                        {t("submitRating")}
+                      </Button>
+                    )}
+                  </div>
+                )}
+
+                <div className="flex flex-col gap-2 border-b border-[#E5E5E5] pb-4">
+                  <p className="text-secondaryText font-normal text-md">
+                    {t("averageRating")}
+                  </p>
+                  <p className="text-primaryText font-medium text-[16px] leading-[28px]">
+                    {averageRating.toFixed(1)}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
