@@ -4,10 +4,10 @@ import { NextRequest } from "next/server";
 
 export async function GET(
   request: NextRequest,
-  context: { params: { id: string } }
+  { params }: { params: { id: string } }
 ) {
   try {
-    const restaurantId = parseInt(context.params.id);
+    const restaurantId = parseInt(params.id);
 
     if (isNaN(restaurantId)) {
       return NextResponse.json(
