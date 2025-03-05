@@ -1,12 +1,13 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
+import { NextRequest } from "next/server";
 
 export async function GET(
-  request: Request,
-  { params }: { params: { id: string } }
+  request: NextRequest,
+  context: { params: { id: string } }
 ) {
   try {
-    const restaurantId = parseInt(params.id);
+    const restaurantId = parseInt(context.params.id);
 
     if (isNaN(restaurantId)) {
       return NextResponse.json(
