@@ -21,7 +21,9 @@ export default async function HomePage({ params }: Props) {
 
   setRequestLocale(locale);
 
-  const restaurants: Restaurant[] = await prisma.restaurant.findMany();
+  const restaurants: Restaurant[] = await prisma.restaurant.findMany({
+    include: { ratings: true },
+  });
 
   return (
     <div>

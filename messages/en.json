@@ -369,6 +369,11 @@
   },
   "RestaurantDetails": {
     "african": "African",
+    "rateRestaurant": "Rate restaurant",
+    "averageRating": "Avarage rating",
+    "toastRatingSuccess": "Rating submitted successfully!",
+    "toastRatingError": "You have already rated this restaurant.",
+    "submitRating": "Submit Rating",
     "american": "American",
     "arab": "Arab",
     "argentinian": "Argentinian",
