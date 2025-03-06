@@ -26,9 +26,11 @@ const RestaurantDetails: React.FC<RestaurantDetailsProps> = ({
   const t = useTranslations("RestaurantDetails");
   const [selectedRating, setSelectedRating] = useState<number | null>(null);
   const [ratings, setRatings] = useState(restaurant.ratings ?? []);
+  const [comments, setComments] = useState(restaurant.comments ?? []);
+  const [newComment, setNewComment] = useState("");
 
   const averageRating =
-    (ratings?.length ?? 0) > 0
+    ratings.length > 0
       ? ratings.reduce((sum, rating) => sum + rating.value, 0) / ratings.length
       : 0;
 
@@ -58,6 +60,35 @@ const RestaurantDetails: React.FC<RestaurantDetailsProps> = ({
     } catch (error) {
       console.error("Error submitting rating:", error);
       toast.error(t("toastRatingError"));
+    }
+  };
+
+  const handleCommentSubmit = async () => {
+    if (!session || !newComment.trim()) return;
+
+    try {
+      const response = await fetch("/api/comment-restaurant", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          restaurantId: restaurant.id,
+          content: newComment,
+        }),
+      });
+
+      if (response.ok) {
+        const newCommentData = await response.json();
+        setComments((prevComments) => [...prevComments, newCommentData]);
+        setNewComment("");
+        toast.success(t("toastCommentSuccess"));
+      } else {
+        toast.error(t("toastCommentError"));
+      }
+    } catch (error) {
+      console.error("Error submitting comment:", error);
+      toast.error(t("toastCommentError"));
     }
   };
 
@@ -170,6 +201,7 @@ const RestaurantDetails: React.FC<RestaurantDetailsProps> = ({
                     </p>
                   </div>
                 )}
+
                 {restaurant.website && (
                   <div className="flex flex-col gap-2 pb-4">
                     <p className="text-secondaryText font-normal text-md">
@@ -235,6 +267,33 @@ const RestaurantDetails: React.FC<RestaurantDetailsProps> = ({
             </div>
           </div>
         </div>
+      </div>
+      <div className="mt-8">
+        <h2 className="text-xl font-semibold mb-4">{t("comments")}</h2>
+        {comments.map((comment) => (
+          <div key={comment.id} className="mb-4">
+            <p className="text-sm text-secondaryText">
+              <strong>{comment.user?.name}:</strong> {comment.content}
+            </p>
+          </div>
+        ))}
+        {session && (
+          <div className="mt-4">
+            <textarea
+              value={newComment}
+              onChange={(e) => setNewComment(e.target.value)}
+              placeholder={t("addComment")}
+              className="w-full p-2 border rounded-lg"
+            />
+            <Button
+              onClick={handleCommentSubmit}
+              className="mt-2"
+              disabled={!newComment.trim()}
+            >
+              {t("submitComment")}
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   );

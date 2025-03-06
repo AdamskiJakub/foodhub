@@ -38,6 +38,7 @@ export interface Restaurant {
   createdAt: Date;
   updatedAt: Date;
   ratings?: Rating[];
+  comments?: Comment[];
   slug: string;
 }
 
@@ -46,6 +47,31 @@ export interface Rating {
   value: number;
   userId: string;
   restaurantId: number;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface Comment {
+  id: number;
+  content: string;
+  userId: string;
+  restaurantId: number;
+  createdAt: Date;
+  user: User;
+  updatedAt: Date;
+}
+
+export interface User {
+  id: string;
+  name: string | null;
+  email: string;
+  emailVerified?: Date | null;
+  image?: string | null;
+  password: string;
+  dateOfBirth?: Date | null;
+  location?: string | null;
+  phoneNumber?: string | null;
+  address?: string | null;
   createdAt: Date;
   updatedAt: Date;
 }

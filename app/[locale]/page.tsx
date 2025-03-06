@@ -22,7 +22,14 @@ export default async function HomePage({ params }: Props) {
   setRequestLocale(locale);
 
   const restaurants: Restaurant[] = await prisma.restaurant.findMany({
-    include: { ratings: true },
+    include: {
+      ratings: true,
+      comments: {
+        include: {
+          user: true,
+        },
+      },
+    },
   });
 
   return (
