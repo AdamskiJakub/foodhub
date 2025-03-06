@@ -132,6 +132,7 @@
   "FiltersModal": {
     "title": "Filtry",
     "cuisine": "Kuchnia",
+    "beef_bowl": "Beef bowl",
     "cuisine_african": "Afrykańska",
     "cuisine_american": "Amerykańska",
     "cuisine_arab": "Arabska",
@@ -255,8 +256,10 @@
 
   "RestaurantCard": {
     "african": "Afrykańska",
+    "beef_bowl": "Beef bowl",
     "american": "Amerykańska",
     "arab": "Arabska",
+    "sausage": "Parówki",
     "argentinian": "Argentyńska",
     "armenian": "Ormiańska",
     "asian": "Azjatycka",
@@ -324,6 +327,7 @@
     "noodle": "Noodle",
     "onigiri": "Onigiri",
     "oriental": "Orientalna",
+    "wings": "Skrzydełka",
     "pancake": "Naleśnik",
     "pasta": "Makaron",
     "persian": "Perska",
@@ -375,6 +379,8 @@
     "american": "Amerykańska",
     "arab": "Arabska",
     "comments": "Komentarze",
+    "sausage": "Parówki",
+    "wings": "Skrzydełka",
     "addComment": "Dodaj komentarz...",
     "submitComment": "Zatwierdź komentarz",
     "toastCommentSuccess": "Komentarz został dodany pomyślnie!",
@@ -389,6 +395,7 @@
     "asian": "Azjatycka",
     "austrian": "Austriacka",
     "azerbaijani": "Azerbejdżańska",
+    "beef_bowl": "Beef bowl",
     "bagel": "Bajgiel",
     "balkan": "Bałkańska",
     "barbecue": "Grill",
