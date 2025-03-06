@@ -14,6 +14,8 @@ import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { FaStar } from "react-icons/fa";
 import toast from "react-hot-toast";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import { format } from "date-fns";
 
 interface RestaurantDetailsProps {
   restaurant: Restaurant;
@@ -269,31 +271,44 @@ const RestaurantDetails: React.FC<RestaurantDetailsProps> = ({
         </div>
       </div>
       <div className="mt-8">
-        <h2 className="text-xl font-semibold mb-4">{t("comments")}</h2>
-        {comments.map((comment) => (
-          <div key={comment.id} className="mb-4">
-            <p className="text-sm text-secondaryText">
-              <strong>{comment.user?.name}:</strong> {comment.content}
-            </p>
-          </div>
-        ))}
         {session && (
-          <div className="mt-4">
-            <textarea
-              value={newComment}
-              onChange={(e) => setNewComment(e.target.value)}
-              placeholder={t("addComment")}
-              className="w-full p-2 border rounded-lg"
-            />
-            <Button
-              onClick={handleCommentSubmit}
-              className="mt-2"
-              disabled={!newComment.trim()}
-            >
-              {t("submitComment")}
-            </Button>
-          </div>
+          <Card className="mt-4">
+            <CardHeader>
+              <h3 className="text-lg font-semibold">{t("addComment")}</h3>
+            </CardHeader>
+            <CardContent>
+              <textarea
+                value={newComment}
+                onChange={(e) => setNewComment(e.target.value)}
+                placeholder={t("addCommentPlaceholder")}
+                className="w-full p-2 border rounded-lg"
+              />
+              <Button
+                onClick={handleCommentSubmit}
+                className="mt-2"
+                disabled={!newComment.trim()}
+              >
+                {t("submitComment")}
+              </Button>
+            </CardContent>
+          </Card>
         )}
+        <h2 className="text-xl font-semibold mb-4 mt-10">{t("comments")}</h2>
+        {comments.map((comment) => (
+          <Card key={comment.id} className="mb-4">
+            <CardHeader className="flex flex-row items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="font-semibold">{comment.user?.name}</span>
+                <span className="text-sm text-gray-500">
+                  {format(new Date(comment.createdAt), "dd.MM.yyyy HH:mm")}
+                </span>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-secondaryText">{comment.content}</p>
+            </CardContent>
+          </Card>
+        ))}
       </div>
     </div>
   );
