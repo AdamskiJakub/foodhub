@@ -29,7 +29,8 @@
     "ariaToggleMenu": "Przełącz menu nawigacyjne",
     "ariaContact": "Przejdź do strony kontaktowej",
     "logout": "Wyloguj się",
-    "settings": "Ustawienia"
+    "settings": "Ustawienia",
+    "addRestaurant": "Dodaj Restaurację"
   },
   "Login": {
     "title": "Logowanie",

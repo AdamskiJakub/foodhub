@@ -30,6 +30,11 @@ const UserDropdown = ({ onClose }: UserDropdownProps) => {
     if (onClose) onClose();
   };
 
+  const handleRestaurantFormClick = () => {
+    router.push(`/member/${session.user.id}/add-restaurant`);
+    if (onClose) onClose();
+  };
+
   const handleLogoutClick = () => {
     signOut();
     if (onClose) onClose();
@@ -48,6 +53,9 @@ const UserDropdown = ({ onClose }: UserDropdownProps) => {
         </DropdownMenuItem>
         <DropdownMenuItem onClick={handleLogoutClick}>
           {t("logout")}
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={handleRestaurantFormClick}>
+          {t("addRestaurant")}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

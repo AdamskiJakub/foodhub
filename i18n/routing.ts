@@ -38,6 +38,10 @@ export const routing = defineRouting({
       en: "/member/[slug]/settings",
       pl: "/użytkownik/[slug]/ustawienia",
     },
+    "/member/[slug]/add-restaurant": {
+      en: "/member/[slug]/add-restaurant",
+      pl: "/użytkownik/[slug]/dodaj-restaurację",
+    },
     "/restaurant/[slug]": {
       en: "/restaurant/[slug]",
       pl: "/restauracja/[slug]",

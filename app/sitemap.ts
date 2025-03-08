@@ -46,7 +46,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         )
       );
 
-    return [...staticEntries, ...userEntries, ...restaurantEntries];
+    const addRestaurantEntries: MetadataRoute.Sitemap = users
+      .filter((user) => user.id)
+      .map((user) =>
+        getEntry(
+          {
+            pathname: "/member/[slug]/add-restaurant",
+            params: { slug: user.id },
+          },
+          lastModified
+        )
+      );
+
+    return [
+      ...staticEntries,
+      ...userEntries,
+      ...restaurantEntries,
+      ...addRestaurantEntries,
+    ];
   } catch (error) {
     console.error("Error fetching users", error);
     return [];
