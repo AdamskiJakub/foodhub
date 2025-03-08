@@ -34,6 +34,14 @@ export async function POST(req: Request) {
       },
     });
 
+    const newRating = await prisma.rating.create({
+      data: {
+        value,
+        userId: session.user.id,
+        restaurantId,
+      },
+    });
+
     const ratings = await prisma.rating.findMany({
       where: { restaurantId },
     });
@@ -41,7 +49,7 @@ export async function POST(req: Request) {
     const averageRating =
       ratings.reduce((sum, rating) => sum + rating.value, 0) / ratings.length;
 
-    return NextResponse.json({ averageRating }, { status: 200 });
+    return NextResponse.json({ newRating, averageRating }, { status: 200 });
   } catch (error) {
     console.error("Error submitting rating:", error);
     return NextResponse.json(

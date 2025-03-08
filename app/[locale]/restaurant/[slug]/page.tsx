@@ -21,7 +21,7 @@ export default async function RestaurantPage({ params }: Props) {
 
   const restaurant = await prisma.restaurant.findUnique({
     where: { slug: normalizedSlug },
-    include: { ratings: true },
+    include: { ratings: true, comments: { include: { user: true } } },
   });
 
   if (!restaurant) {

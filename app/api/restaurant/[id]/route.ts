@@ -8,7 +8,6 @@ export async function GET(
 ) {
   try {
     const { id } = await params;
-
     const restaurantId = parseInt(id);
 
     if (isNaN(restaurantId)) {
@@ -20,7 +19,7 @@ export async function GET(
 
     const restaurant = await prisma.restaurant.findUnique({
       where: { id: restaurantId },
-      include: { ratings: true },
+      include: { ratings: true, comments: { include: { user: true } } },
     });
 
     if (!restaurant) {
