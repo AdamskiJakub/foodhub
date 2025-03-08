@@ -502,5 +502,20 @@
     "Fr": "Fri",
     "Sa": "Sat",
     "Su": "Sun"
+  },
+  "AddRestaurant": {
+    "restaurantName": "Restaurant Name",
+    "description": "Description",
+    "city": "City",
+    "street": "Street",
+    "houseNumber": "House Number",
+    "cuisine": "Cuisine",
+    "email": "Email (optional)",
+    "phone": "Phone",
+    "website": "Website (optional)",
+    "openingHours": "Opening Hours",
+    "nextButton": "Next",
+    "fillRequiredFields": "Please fill out all required fields",
+    "describeRestaurant": "Describe your restaurant. Divide it into paragraphs and bullet points."
   }
 }

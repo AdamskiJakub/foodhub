@@ -505,5 +505,20 @@
     "Fr": "Pt",
     "Sa": "So",
     "Su": "Ndz"
+  },
+  "AddRestaurant": {
+    "restaurantName": "Nazwa restauracji",
+    "description": "Opis",
+    "city": "Miasto",
+    "street": "Ulica",
+    "houseNumber": "Numer domu",
+    "cuisine": "Kuchnia",
+    "email": "Email (opcjonalny)",
+    "phone": "Telefon",
+    "website": "Strona internetowa (opcjonalna)",
+    "openingHours": "Godziny otwarcia",
+    "nextButton": "Dalej",
+    "fillRequiredFields": "Proszę wypełnić wszystkie wymagane pola",
+    "describeRestaurant": "Opisz swoją restaurację. Podziel na akapity i punkty."
   }
 }
