@@ -380,8 +380,14 @@
     "american": "Amerykańska",
     "arab": "Arabska",
     "comments": "Komentarze",
+    "wheelchair": "Dostępność dla wózków inwalidzkich",
     "sausage": "Parówki",
+    "contactNow": "Skontaktuj się teraz",
     "wings": "Skrzydełka",
+    "features": "Udogodnienia",
+    "delivery": "Dostawa",
+    "takeaway": "Na wynos",
+    "reservation": "Rezerwacja",
     "addComment": "Dodaj komentarz...",
     "submitComment": "Zatwierdź komentarz",
     "toastCommentSuccess": "Komentarz został dodany pomyślnie!",
@@ -544,6 +550,8 @@
     "minLength": "Musi mieć co najmniej {min} znaków",
     "invalidEmail": "Nieprawidłowy adres email",
     "invalidUrl": "Nieprawidłowy URL",
-    "invalidPhone": "Nieprawidłowy numer telefonu"
+    "invalidPhone": "Nieprawidłowy numer telefonu",
+    "phoneRequiredIfFilled": "Numer telefonu jest wymagany",
+    "invalidOpeningHours": "Nieprawidłowy format godzin otwarcia. Przykład: Pn-Cz 11:00-22:00; Pt-Sb 11:00-23:00. Możesz również użyć pełnych nazw dni, np. 'Poniedziałek-Piątek 11:00-22:00'."
   }
 }

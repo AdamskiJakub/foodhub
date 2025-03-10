@@ -73,24 +73,6 @@ const RestaurantDetails: React.FC<RestaurantDetailsProps> = ({
               </ReactMarkdown>
             </div>
           )}
-
-          <div className="mt-6 flex flex-col gap-2">
-            <h2 className="text-xl font-semibold mb-2">{t("contact")}</h2>
-
-            {restaurant.phone && (
-              <p className="text-[#706D91] font-normal text-md">
-                {t("phone")}: {restaurant.phone}
-              </p>
-            )}
-            {restaurant.email && (
-              <a
-                href={`mailto:${restaurant.email}`}
-                className="text-[#706D91] font-normal text-md"
-              >
-                Email: {restaurant.email}
-              </a>
-            )}
-          </div>
         </div>
 
         <RestaurantInfo

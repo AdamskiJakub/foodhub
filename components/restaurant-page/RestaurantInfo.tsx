@@ -42,18 +42,64 @@ export const RestaurantInfo: React.FC<RestaurantInfoProps> = ({
           style={{ boxShadow: "0px 2px 2px 0px rgba(28, 36, 51, 0.1)" }}
         >
           <div className="flex flex-col gap-4">
+            {/* Sekcja kontaktowa */}
             <div className="flex flex-col gap-2 border-b border-[#E5E5E5] pb-4">
-              <p className="text-secondaryText font-normal text-md">
-                {t("location")}
-              </p>
-              <p className="text-primaryText font-medium text-[16px] leading-[28px]">
-                {restaurant.city}, {restaurant.country}
-              </p>
-              <p className="text-primaryText font-normal text-md">
-                {restaurant.street} {restaurant.housenumber}, {restaurant.city}
-              </p>
+              <h2 className="text-xl font-semibold mb-2">{t("contact")}</h2>
+              {restaurant.phone && (
+                <p className="text-[#706D91] font-normal text-md">
+                  {t("phone")}: {restaurant.phone}
+                </p>
+              )}
+              {restaurant.email && (
+                <a
+                  href={`mailto:${restaurant.email}`}
+                  className="text-[#706D91] font-normal text-md"
+                >
+                  Email: {restaurant.email}
+                </a>
+              )}
             </div>
 
+            {/* Sekcja checkboxów */}
+            <div className="flex flex-col gap-2 border-b border-[#E5E5E5] pb-4">
+              <h2 className="text-xl font-semibold mb-2">{t("features")}</h2>
+              <div className="flex flex-col gap-2">
+                {restaurant.delivery && (
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#706D91] font-normal text-md">
+                      {t("delivery")}
+                    </span>
+                    <span className="text-[#34D399]">✓</span>
+                  </div>
+                )}
+                {restaurant.takeaway && (
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#706D91] font-normal text-md">
+                      {t("takeaway")}
+                    </span>
+                    <span className="text-[#34D399]">✓</span>
+                  </div>
+                )}
+                {restaurant.reservation && (
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#706D91] font-normal text-md">
+                      {t("reservation")}
+                    </span>
+                    <span className="text-[#34D399]">✓</span>
+                  </div>
+                )}
+                {restaurant.wheelchair && (
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#706D91] font-normal text-md">
+                      {t("wheelchair")}
+                    </span>
+                    <span className="text-[#34D399]">✓</span>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Reszta kodu pozostaje bez zmian */}
             {restaurant.openingHours && (
               <div className="flex flex-col gap-2 border-b border-[#E5E5E5] pb-4">
                 <p className="text-secondaryText font-normal text-md">
@@ -73,28 +119,6 @@ export const RestaurantInfo: React.FC<RestaurantInfoProps> = ({
                 <p className="text-primaryText font-medium text-[16px] leading-[28px]">
                   {formatCuisine(restaurant.cuisine)}
                 </p>
-              </div>
-            )}
-
-            {restaurant.website && (
-              <div className="flex flex-col gap-2 pb-4">
-                <p className="text-secondaryText font-normal text-md">
-                  {t("website")}
-                </p>
-                <Link href={restaurant.website} target="blank">
-                  <Button
-                    rel="noopener noreferrer"
-                    className="mt-2 w-full flex gap-[10px] items-center justify-center text-white px-4 py-3 rounded-lg"
-                  >
-                    <Image
-                      src="/images/send.svg"
-                      width={20}
-                      height={20}
-                      alt="send"
-                    />
-                    {t("website")}
-                  </Button>
-                </Link>
               </div>
             )}
 
@@ -138,6 +162,46 @@ export const RestaurantInfo: React.FC<RestaurantInfoProps> = ({
               <p className="text-primaryText font-medium text-[16px] leading-[28px]">
                 {averageRating.toFixed(1)}
               </p>
+            </div>
+
+            {restaurant.website && (
+              <div className="flex flex-col gap-2 pb-6 border-b mb-2 border-[#E5E5E5]">
+                <p className="text-secondaryText font-normal text-md">
+                  {t("website")}
+                </p>
+                <Link href={restaurant.website} target="blank">
+                  <Button
+                    rel="noopener noreferrer"
+                    className="mt-2 w-full flex gap-[10px] items-center justify-center text-white px-4 py-3 rounded-lg"
+                  >
+                    <Image
+                      src="/images/send.svg"
+                      width={20}
+                      height={20}
+                      alt="send"
+                    />
+                    {t("website")}
+                  </Button>
+                </Link>
+              </div>
+            )}
+            <div className="flex justify-between items-center">
+              <Button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.location.href = `tel:${restaurant.phone}`;
+                }}
+                className="w-full flex gap-[10px] items-center justify-center bg-[#5647FF] text-white px-4 py-2 rounded-lg cursor-not-allowed"
+              >
+                <Image
+                  src="/images/send.svg"
+                  alt="Contact Now"
+                  width={20}
+                  height={20}
+                  priority
+                />
+                {t("contactNow")}
+              </Button>
             </div>
           </div>
         </div>

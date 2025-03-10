@@ -134,7 +134,7 @@ export default function PreviewStep({
                 )}
 
                 {openingHours && (
-                  <div className="flex justify-between items-center border-b border-[#E5E5E5] pb-4">
+                  <div className="flex justify-between flex-wrap items-center border-b border-[#E5E5E5] pb-4">
                     <p className="text-[#706D91] font-normal text-[16px] leading-[26px]">
                       {t("openingHours")}
                     </p>
@@ -212,7 +212,7 @@ export default function PreviewStep({
           </Button>
           <div className="flex items-center gap-2">
             <Image
-              src="/checkmark-green.svg"
+              src="/images/checkmark-green.svg"
               alt="Checked"
               width={20}
               height={20}

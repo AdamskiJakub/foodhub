@@ -11,6 +11,8 @@ import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
 import { generateSlug } from "@/lib/generateSlug";
 import { Checkbox } from "@/components/ui/checkbox";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 
 const MDEditor = dynamic(() => import("@uiw/react-md-editor"), { ssr: false });
 
@@ -206,10 +208,12 @@ export default function RestaurantForm({
           render={({ field }) => (
             <div className="flex flex-col">
               <label className="font-semibold mb-1">{t("phone")}</label>
-              <input
+              <PhoneInput
                 {...field}
+                international
+                defaultCountry="PL"
                 placeholder={t("phonePlaceholder")}
-                className="border rounded px-3 py-2 h-[48px]"
+                className="border rounded px-3 py-2 h-[48px] outline-none"
               />
               {errors.phone && (
                 <p className="text-red-500 text-sm mt-1">
@@ -293,7 +297,7 @@ export default function RestaurantForm({
         />
       </div>
 
-      <div className="flex flex-row gap-6">
+      <div className="flex flex-row flex-wrap gap-6">
         <Controller
           name="delivery"
           control={control}
