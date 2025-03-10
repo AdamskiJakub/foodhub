@@ -6,19 +6,13 @@ import {
   RestaurantFormValues,
 } from "@/lib/validation/restaurantSchema";
 import { Button } from "@/components/ui/button";
-import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
 import { generateSlug } from "@/lib/generateSlug";
 import { Checkbox } from "@/components/ui/checkbox";
 
-const ReactMarkdownEditor = dynamic(
-  () => import("react-markdown-editor-lite"),
-  {
-    ssr: false,
-  }
-);
+const MDEditor = dynamic(() => import("@uiw/react-md-editor"), { ssr: false });
 
 interface RestaurantFormProps {
   onNextStep: (data: RestaurantFormValues) => void;
@@ -280,17 +274,13 @@ export default function RestaurantForm({
                     {t("describeRestaurant")}
                   </p>
                 )}
-                <ReactMarkdownEditor
+                <MDEditor
                   value={field.value || ""}
-                  style={{ height: "300px" }}
-                  onChange={({ text }: { text: string }) =>
-                    field.onChange(text)
-                  }
-                  renderHTML={(text: string) => (
-                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                      {text}
-                    </ReactMarkdown>
-                  )}
+                  onChange={(value) => field.onChange(value || "")}
+                  height={400}
+                  previewOptions={{
+                    remarkPlugins: [remarkGfm],
+                  }}
                 />
               </div>
               {errors.description && (
