@@ -382,6 +382,11 @@
     "submitRating": "Submit Rating",
     "american": "American",
     "comments": "Comments",
+    "features": "features",
+    "delivery": "Delivery",
+    "takeaway": "Takeaway",
+    "reservation": "Reservation",
+    "wheelchair": "Wheelchair Accessibility",
     "wings": "Wings",
     "notLoggedToRate": "You need to Log in to rate a restaurant",
     "sausage": "Sausage",
@@ -422,6 +427,7 @@
     "ethiopian": "Ethiopian",
     "european": "European",
     "filipino": "Filipino",
+    "contactNow": "Contact now",
     "fine_dining": "Fine Dining",
     "fish": "Fish",
     "french": "French",
@@ -540,6 +546,8 @@
     "minLength": "Must be at least {min} characters",
     "invalidEmail": "Invalid email address",
     "invalidUrl": "Invalid URL",
-    "invalidPhone": "Invalid phone number"
+    "invalidPhone": "Invalid phone number",
+    "phoneRequiredIfFilled": "Phone number is required",
+    "invalidOpeningHours": "Invalid format. Example: Mon-Fr 11:00-22:00; Fr-Sun 11:00-23:00. You can also use full day names like 'Monday-Friday 11:00-22:00'."
   }
 }
