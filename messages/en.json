@@ -514,8 +514,18 @@
     "phone": "Phone",
     "website": "Website (optional)",
     "openingHours": "Opening Hours",
+    "delivery": "Delivery",
+    "takeaway": "Takeaway",
+    "reservation": "Reservations",
+    "wheelchair": "Wheelchair Accessibility",
     "nextButton": "Next",
-    "fillRequiredFields": "Please fill out all required fields",
-    "describeRestaurant": "Describe your restaurant. Divide it into paragraphs and bullet points."
+    "fillRequiredFields": "Please fill in all required fields",
+    "describeRestaurant": "Describe your restaurant. Use paragraphs and bullet points.",
+    "fullRestaurantDescription": "Full restaurant description",
+    "location": "Location",
+    "contactNow": "Contact now",
+    "backToEdit": "Back to edit",
+    "submitAndPay": "Submit and pay",
+    "agreeToTerms": "I accept the terms."
   }
 }

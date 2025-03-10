@@ -506,6 +506,7 @@
     "Sa": "So",
     "Su": "Ndz"
   },
+
   "AddRestaurant": {
     "restaurantName": "Nazwa restauracji",
     "description": "Opis",
@@ -517,8 +518,18 @@
     "phone": "Telefon",
     "website": "Strona internetowa (opcjonalna)",
     "openingHours": "Godziny otwarcia",
+    "delivery": "Dostawa",
+    "takeaway": "Na wynos",
+    "reservation": "Rezerwacje",
+    "wheelchair": "Dostępność dla wózków inwalidzkich",
     "nextButton": "Dalej",
     "fillRequiredFields": "Proszę wypełnić wszystkie wymagane pola",
-    "describeRestaurant": "Opisz swoją restaurację. Podziel na akapity i punkty."
+    "describeRestaurant": "Opisz swoją restaurację. Podziel na akapity i punkty.",
+    "fullRestaurantDescription": "Pełny opis restauracji",
+    "location": "Lokalizacja",
+    "contactNow": "Skontaktuj się teraz",
+    "backToEdit": "Wróć do edycji",
+    "submitAndPay": "Zatwierdź i zapłać",
+    "agreeToTerms": "Akceptuję warunki."
   }
 }

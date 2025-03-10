@@ -4,6 +4,7 @@ export const restaurantSchema = z.object({
   name: z.string().min(1, "Name is required"),
   description: z.string().min(10, "Description must be at least 10 characters"),
   city: z.string().min(1, "City is required"),
+  slug: z.string().optional(),
   street: z.string().min(1, "Street is required"),
   houseNumber: z.string().min(1, "House number is required"),
   cuisine: z.string().min(1, "Cuisine is required"),
@@ -14,7 +15,7 @@ export const restaurantSchema = z.object({
   delivery: z.boolean().optional(),
   takeaway: z.boolean().optional(),
   reservation: z.boolean().optional(),
-  wheelchair: z.string().optional(),
+  wheelchair: z.boolean().optional(),
 });
 
 export type RestaurantFormValues = z.infer<typeof restaurantSchema>;

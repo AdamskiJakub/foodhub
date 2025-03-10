@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -12,6 +10,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
+import { generateSlug } from "@/lib/generateSlug";
 
 const ReactMarkdownEditor = dynamic(
   () => import("react-markdown-editor-lite"),
@@ -32,6 +31,7 @@ export default function RestaurantForm({
   const {
     control,
     handleSubmit,
+    setValue,
     watch,
     formState: { errors, isValid },
   } = useForm<RestaurantFormValues>({
@@ -41,6 +41,7 @@ export default function RestaurantForm({
       name: "",
       description: "",
       city: "",
+      slug: "",
       street: "",
       houseNumber: "",
       cuisine: "",
@@ -51,7 +52,7 @@ export default function RestaurantForm({
       delivery: false,
       takeaway: false,
       reservation: false,
-      wheelchair: "",
+      wheelchair: false,
       ...initialData,
     },
   });
@@ -60,6 +61,11 @@ export default function RestaurantForm({
 
   const formValues = watch();
   const prevFormValues = useRef(formValues);
+
+  const handleSlugGeneration = useCallback(() => {
+    const slug = generateSlug(formValues.name);
+    setValue("slug", slug);
+  }, [formValues.name, setValue]);
 
   useEffect(() => {
     if (JSON.stringify(formValues) !== JSON.stringify(prevFormValues.current)) {
@@ -70,6 +76,10 @@ export default function RestaurantForm({
   const onSubmit = (data: RestaurantFormValues) => {
     onNextStep(data);
   };
+
+  useEffect(() => {
+    handleSlugGeneration();
+  }, [formValues.name, handleSlugGeneration]);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -275,6 +285,90 @@ export default function RestaurantForm({
             {errors.openingHours && (
               <p className="text-red-500 text-sm mt-1">
                 {errors.openingHours.message}
+              </p>
+            )}
+          </div>
+        )}
+      />
+
+      <Controller
+        name="delivery"
+        control={control}
+        render={({ field }) => (
+          <div className="flex flex-col">
+            <label className="font-semibold mb-1">{t("delivery")}</label>
+            <input
+              type="checkbox"
+              checked={field.value}
+              onChange={(e) => field.onChange(e.target.checked)}
+              className="border rounded px-3 py-2 h-[24px]"
+            />
+            {errors.delivery && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.delivery.message}
+              </p>
+            )}
+          </div>
+        )}
+      />
+
+      <Controller
+        name="takeaway"
+        control={control}
+        render={({ field }) => (
+          <div className="flex flex-col">
+            <label className="font-semibold mb-1">{t("takeaway")}</label>
+            <input
+              type="checkbox"
+              checked={field.value}
+              onChange={(e) => field.onChange(e.target.checked)}
+              className="border rounded px-3 py-2 h-[24px]"
+            />
+            {errors.takeaway && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.takeaway.message}
+              </p>
+            )}
+          </div>
+        )}
+      />
+
+      <Controller
+        name="reservation"
+        control={control}
+        render={({ field }) => (
+          <div className="flex flex-col">
+            <label className="font-semibold mb-1">{t("reservation")}</label>
+            <input
+              type="checkbox"
+              checked={field.value}
+              onChange={(e) => field.onChange(e.target.checked)}
+              className="border rounded px-3 py-2 h-[24px]"
+            />
+            {errors.reservation && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.reservation.message}
+              </p>
+            )}
+          </div>
+        )}
+      />
+
+      <Controller
+        name="wheelchair"
+        control={control}
+        render={({ field }) => (
+          <div className="flex flex-col">
+            <label className="font-semibold mb-1">{t("wheelchair")}</label>
+            <input
+              type="checkbox"
+              checked={field.value}
+              onChange={(e) => field.onChange(e.target.checked)}
+              className="border rounded px-3 py-2 h-[24px]"
+            />
+            {errors.wheelchair && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.wheelchair.message}
               </p>
             )}
           </div>
