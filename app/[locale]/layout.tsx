@@ -15,19 +15,17 @@ import Footer from "@/components/footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
-type Params = Promise<{ locale: Locale }>;
-
-interface Props {
+type LayoutProps = {
   children: ReactNode;
-  params: Params;
-}
+  params: Promise<{ locale: string }>;
+};
 
 export const generateStaticParams = (): { locale: Locale }[] => {
   return routing.locales.map((locale) => ({ locale }));
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params;
+export async function generateMetadata(props: LayoutProps): Promise<Metadata> {
+  const { locale } = (await props.params) as { locale: Locale };
 
   const messages = (await getMessages({ locale })) as unknown as Record<
     string,
@@ -59,8 +57,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function LocaleLayout({ children, params }: Props) {
-  const { locale } = await params;
+export default async function LocaleLayout(props: LayoutProps) {
+  const { locale } = (await props.params) as { locale: Locale };
 
   if (!routing.locales.includes(locale)) {
     return notFound();
@@ -120,7 +118,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 
             <Toaster position="top-right" />
             <div className="max-w-[1440px] mx-auto px-4 lg:px-20">
-              {children}
+              {props.children}
             </div>
             <Footer />
           </NextIntlClientProvider>
