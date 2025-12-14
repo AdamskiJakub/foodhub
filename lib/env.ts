@@ -12,5 +12,15 @@ const envSchema = z.object({
     .default("development"),
 });
 
-export const env = envSchema.parse(process.env);
+const result = envSchema.safeParse(process.env);
+
+if (!result.success) {
+  console.error("❌ Invalid environment variables:");
+  console.error(JSON.stringify(result.error.format(), null, 2));
+  throw new Error(
+    "Environment validation failed - check the errors above and your .env file"
+  );
+}
+
+export const env = result.data;
 export type Env = z.infer<typeof envSchema>;

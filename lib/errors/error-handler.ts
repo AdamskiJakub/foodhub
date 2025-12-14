@@ -28,6 +28,11 @@ export function handleApiError(error: unknown): NextResponse {
     return NextResponse.json(response, { status: error.statusCode });
   }
 
-  console.error("Unhandled error:", error);
+  console.error("[API Error Handler] Unhandled error:", {
+    error,
+    message: error instanceof Error ? error.message : "Unknown error",
+    stack: error instanceof Error ? error.stack : undefined,
+    timestamp: new Date().toISOString(),
+  });
   return NextResponse.json({ error: "Internal server error" }, { status: 500 });
 }
