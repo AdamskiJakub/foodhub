@@ -1,0 +1,32 @@
+export const API_ROUTES = {
+  LOGIN: "/api/login",
+  REGISTER: "/api/register",
+  CHANGE_PASSWORD: "/api/change-password",
+  UPDATE_PROFILE: "/api/update-profile",
+  RESTAURANT: "/api/restaurant",
+  COMMENT_RESTAURANT: "/api/comment-restaurant",
+  RATE_RESTAURANT: "/api/rate-restaurant",
+} as const;
+
+export const PAGINATION = {
+  DEFAULT_PAGE_SIZE: 10,
+  MAX_PAGE_SIZE: 100,
+} as const;
+
+export const VALIDATION = {
+  PASSWORD_MIN_LENGTH: 6,
+  PASSWORD_MAX_LENGTH: 100,
+  NAME_MIN_LENGTH: 2,
+  NAME_MAX_LENGTH: 100,
+} as const;
+
+export const HTTP_STATUS = {
+  OK: 200,
+  CREATED: 201,
+  BAD_REQUEST: 400,
+  UNAUTHORIZED: 401,
+  FORBIDDEN: 403,
+  NOT_FOUND: 404,
+  UNPROCESSABLE_ENTITY: 422,
+  INTERNAL_SERVER_ERROR: 500,
+} as const;
