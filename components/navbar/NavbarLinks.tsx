@@ -18,8 +18,10 @@ const NavbarLinks: React.FC<NavbarLinksProps> = ({ onClick }) => {
       <Link
         href="/blog"
         onClick={onClick}
-        className={`text-base font-medium ${
-          isActive("/blog") ? "underline text-primaryText" : "text-primaryText"
+        className={`text-base font-medium transition-all duration-200 ${
+          isActive("/blog")
+            ? "text-primary font-semibold"
+            : "text-primaryText hover:text-primary hover:translate-y-[-2px]"
         }`}
       >
         {t("blog")}
@@ -27,8 +29,10 @@ const NavbarLinks: React.FC<NavbarLinksProps> = ({ onClick }) => {
       <Link
         href="/about"
         onClick={onClick}
-        className={`text-base font-medium ${
-          isActive("/about") ? "underline text-primaryText" : "text-primaryText"
+        className={`text-base font-medium transition-all duration-200 ${
+          isActive("/about")
+            ? "text-primary font-semibold"
+            : "text-primaryText hover:text-primary hover:translate-y-[-2px]"
         }`}
       >
         {t("about")}
@@ -36,8 +40,10 @@ const NavbarLinks: React.FC<NavbarLinksProps> = ({ onClick }) => {
       <Link
         href="/faq"
         onClick={onClick}
-        className={`text-base font-medium ${
-          isActive("/faq") ? "underline text-primaryText" : "text-primaryText"
+        className={`text-base font-medium transition-all duration-200 ${
+          isActive("/faq")
+            ? "text-primary font-semibold"
+            : "text-primaryText hover:text-primary hover:translate-y-[-2px]"
         }`}
       >
         {t("faq")}
@@ -45,10 +51,10 @@ const NavbarLinks: React.FC<NavbarLinksProps> = ({ onClick }) => {
       <Link
         href="/contact"
         onClick={onClick}
-        className={`text-base font-medium ${
+        className={`text-base font-medium transition-all duration-200 ${
           isActive("/contact")
-            ? "underline text-primaryText"
-            : "text-primaryText"
+            ? "text-primary font-semibold"
+            : "text-primaryText hover:text-primary hover:translate-y-[-2px]"
         }`}
       >
         {t("contact")}

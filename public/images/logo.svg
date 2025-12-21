@@ -1,0 +1,16 @@
+<svg width="180" height="40" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon -->
+  <circle cx="20" cy="20" r="18" fill="url(#gradient1)"/>
+  <path d="M20 8C19 8 18 9 18 10V14C18 15 17 16 16 16H12C11 16 10 17 10 18V22C10 23 11 24 12 24H16C17 24 18 25 18 26V30C18 31 19 32 20 32C21 32 22 31 22 30V26C22 25 23 24 24 24H28C29 24 30 23 30 22V18C30 17 29 16 28 16H24C23 16 22 15 22 14V10C22 9 21 8 20 8Z" fill="white"/>
+  
+  <!-- Text -->
+  <text x="48" y="27" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#667eea">Food</text>
+  <text x="102" y="27" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#764ba2">Hub</text>
+  
+  <defs>
+    <linearGradient id="gradient1" x1="2" y1="2" x2="38" y2="38" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#667eea"/>
+      <stop offset="100%" stop-color="#764ba2"/>
+    </linearGradient>
+  </defs>
+</svg>
