@@ -3,6 +3,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { MapPin } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 interface LocationTilesProps {
   location: string;
@@ -13,9 +14,11 @@ const LocationTiles: React.FC<LocationTilesProps> = ({
   location,
   onLocationChange,
 }) => {
+  const t = useTranslations("Cities");
+
   const locations = [
-    { name: "Białystok", slug: "bialystok" },
-    { name: "Warszawa", slug: "warsaw" },
+    { slug: "bialystok", key: "bialystok" },
+    { slug: "warsaw", key: "warsaw" },
   ];
 
   return (
@@ -28,7 +31,7 @@ const LocationTiles: React.FC<LocationTilesProps> = ({
           onClick={() => onLocationChange(loc.slug)}
         >
           <MapPin className="h-4 w-4" />
-          {loc.name}
+          {t(loc.key)}
         </Button>
       ))}
     </div>

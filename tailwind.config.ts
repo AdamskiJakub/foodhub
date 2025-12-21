@@ -63,6 +63,9 @@ export default {
         strong:
           "0 10px 40px -5px rgba(0, 0, 0, 0.2), 0 15px 35px -10px rgba(0, 0, 0, 0.15)",
       },
+      fontSize: {
+        tiny: "0.75rem",
+      },
     },
   },
   // eslint-disable-next-line @typescript-eslint/no-require-imports

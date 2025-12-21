@@ -16,14 +16,23 @@
     "ogTitle": "FoodHub - najlepsza strona z restauracjami",
     "ogDescription": "Sprawdź restauracje w swoim mieście."
   },
+  "Hero": {
+    "title": "Odkryj Najlepsze Restauracje w Twoim Mieście",
+    "subtitle": "Tysiące recenzji, setki restauracji, jedna platforma",
+    "restaurants": "Restauracji",
+    "reviews": "Recenzji",
+    "cities": "Miast"
+  },
+  "Cities": {
+    "bialystok": "Białystok",
+    "warsaw": "Warszawa"
+  },
   "Navbar": {
     "blog": "Blog",
     "about": "O nas",
     "faq": "FAQ",
     "contact": "Kontakt",
     "login": "Zaloguj się",
-    "name": "FoodHub",
-    "subname": "Najlepsze restauracje w twoim mieście",
     "language": "Polski",
     "ariaHomepage": "Przejdź na stronę główną",
     "ariaToggleMenu": "Przełącz menu nawigacyjne",

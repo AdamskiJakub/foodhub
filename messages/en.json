@@ -16,14 +16,23 @@
     "ogTitle": "FoodHub - best restaurant website",
     "ogDescription": "Check restaurants in your city"
   },
+  "Hero": {
+    "title": "Discover the Best Restaurants in Your City",
+    "subtitle": "Thousands of reviews, hundreds of restaurants, one platform",
+    "restaurants": "Restaurants",
+    "reviews": "Reviews",
+    "cities": "Cities"
+  },
+  "Cities": {
+    "bialystok": "Białystok",
+    "warsaw": "Warsaw"
+  },
   "Navbar": {
     "blog": "Blog",
     "about": "About us",
     "faq": "FAQ",
     "contact": "Contact",
     "login": "Login",
-    "name": "FoodHub",
-    "subname": "Best restaurants in your city",
     "language": "English",
     "ariaHomepage": "Go to the homepage",
     "ariaToggleMenu": "Toggle navigation menu",

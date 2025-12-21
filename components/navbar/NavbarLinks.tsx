@@ -13,49 +13,36 @@ const NavbarLinks: React.FC<NavbarLinksProps> = ({ onClick }) => {
 
   const isActive = (path: string) => pathname === path;
 
+  const getLinkClassName = (path: string) =>
+    `inline-block text-base font-medium transition-all duration-200 ${
+      isActive(path)
+        ? "text-primary font-semibold"
+        : "text-primaryText hover:text-primary hover:translate-y-[-2px]"
+    }`;
+
   return (
     <>
       <Link
         href="/blog"
         onClick={onClick}
-        className={`text-base font-medium transition-all duration-200 ${
-          isActive("/blog")
-            ? "text-primary font-semibold"
-            : "text-primaryText hover:text-primary hover:translate-y-[-2px]"
-        }`}
+        className={getLinkClassName("/blog")}
       >
         {t("blog")}
       </Link>
       <Link
         href="/about"
         onClick={onClick}
-        className={`text-base font-medium transition-all duration-200 ${
-          isActive("/about")
-            ? "text-primary font-semibold"
-            : "text-primaryText hover:text-primary hover:translate-y-[-2px]"
-        }`}
+        className={getLinkClassName("/about")}
       >
         {t("about")}
       </Link>
-      <Link
-        href="/faq"
-        onClick={onClick}
-        className={`text-base font-medium transition-all duration-200 ${
-          isActive("/faq")
-            ? "text-primary font-semibold"
-            : "text-primaryText hover:text-primary hover:translate-y-[-2px]"
-        }`}
-      >
+      <Link href="/faq" onClick={onClick} className={getLinkClassName("/faq")}>
         {t("faq")}
       </Link>
       <Link
         href="/contact"
         onClick={onClick}
-        className={`text-base font-medium transition-all duration-200 ${
-          isActive("/contact")
-            ? "text-primary font-semibold"
-            : "text-primaryText hover:text-primary hover:translate-y-[-2px]"
-        }`}
+        className={getLinkClassName("/contact")}
       >
         {t("contact")}
       </Link>
