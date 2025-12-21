@@ -4,6 +4,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { MapPin } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { LOCATIONS } from "@/lib/constants";
 
 interface LocationTilesProps {
   location: string;
@@ -16,14 +17,9 @@ const LocationTiles: React.FC<LocationTilesProps> = ({
 }) => {
   const t = useTranslations("Cities");
 
-  const locations = [
-    { slug: "bialystok", key: "bialystok" },
-    { slug: "warsaw", key: "warsaw" },
-  ];
-
   return (
     <div className="flex flex-row gap-2">
-      {locations.map((loc) => (
+      {LOCATIONS.map((loc) => (
         <Button
           key={loc.slug}
           variant={location === loc.slug ? "default" : "outline"}
@@ -31,7 +27,7 @@ const LocationTiles: React.FC<LocationTilesProps> = ({
           onClick={() => onLocationChange(loc.slug)}
         >
           <MapPin className="h-4 w-4" />
-          {t(loc.key)}
+          {t(loc.translationKey)}
         </Button>
       ))}
     </div>
