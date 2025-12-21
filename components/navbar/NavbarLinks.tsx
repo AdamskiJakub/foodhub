@@ -14,7 +14,7 @@ const NavbarLinks: React.FC<NavbarLinksProps> = ({ onClick }) => {
   const isActive = (path: string) => pathname === path;
 
   const getLinkClassName = (path: string) =>
-    `inline-block text-base font-medium transition-all duration-200 ${
+    `inline-block text-base font-medium transition-[color,transform] duration-200 ${
       isActive(path)
         ? "text-primary font-semibold"
         : "text-primaryText hover:text-primary hover:translate-y-[-2px]"
