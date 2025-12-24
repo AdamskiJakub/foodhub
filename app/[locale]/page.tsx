@@ -2,6 +2,7 @@ import { setRequestLocale } from "next-intl/server";
 import { Locale, routing } from "@/i18n/routing";
 import prisma from "@/lib/prisma";
 import { Restaurant } from "@/types/restaurant";
+import HeroSection from "@/components/hero/HeroSection";
 import SearchBar from "@/components/searchbar/SearchBar";
 import { Suspense } from "react";
 import NotFoundPage from "./not-found";
@@ -34,6 +35,7 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <div>
+      <HeroSection />
       <Suspense fallback={<NotFoundPage />}>
         <SearchBar restaurants={restaurants} />
       </Suspense>
