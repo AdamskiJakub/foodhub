@@ -18,9 +18,12 @@ const Footer = () => {
   const socialData = footerData[3];
 
   return (
-    <footer className="w-full bg-white pt-6 lg:pt-14">
-      <div className="w-full mx-auto flex flex-col gap-6 px-4 md:px-10 lg:px-20">
-        <div className="flex flex-col md:flex-row text-left text-base items-start gap-6 pt-10 flex-wrap md:flex-nowrap">
+    <footer className="w-full bg-gradient-to-t from-purple-100/60 via-purple-50/40 to-white mt-12 md:mt-20">
+      <div className="w-full px-4 md:px-10 lg:px-20">
+        <div className="border-t border-purple-200/50"></div>
+      </div>
+      <div className="w-full mx-auto flex flex-col gap-6 px-4 md:px-10 lg:px-20 pt-8 md:pt-12 lg:pt-16">
+        <div className="flex flex-col md:flex-row text-left text-base items-start gap-6 pt-6 md:pt-10 flex-wrap md:flex-nowrap">
           <div className="mb-4 md:mb-0 md:mr-20">
             <FooterLogoSection />
           </div>
@@ -54,11 +57,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="w-full h-px bg-[#E4E3E3] lg:mt-10"></div>
-
-        <div className="md:px-10 px-4">
-          <FooterLegalSection />
-        </div>
+        <FooterLegalSection />
       </div>
     </footer>
   );

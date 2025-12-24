@@ -31,5 +31,10 @@ export const HTTP_STATUS = {
   INTERNAL_SERVER_ERROR: 500,
 } as const;
 
+export const LOCATIONS = [
+  { slug: "bialystok", translationKey: "bialystok" },
+  { slug: "warsaw", translationKey: "warsaw" },
+] as const;
+
 export type ApiRoute = (typeof API_ROUTES)[keyof typeof API_ROUTES];
 export type HttpStatusCode = (typeof HTTP_STATUS)[keyof typeof HTTP_STATUS];

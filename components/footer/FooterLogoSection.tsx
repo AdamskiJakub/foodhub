@@ -1,28 +1,18 @@
 import React from "react";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 
 const FooterLogoSection = () => {
-  const t = useTranslations("Footer");
-
   return (
-    <div className="flex items-start gap-2">
+    <Link href="/" aria-label="Go to homepage">
       <Image
-        src="/weight.svg"
-        alt="Logo"
-        width={32}
-        height={32}
-        className="md:w-8 md:h-8 w-6 h-6"
+        src="/images/logo.svg"
+        alt="FoodHub Logo"
+        width={180}
+        height={40}
+        className="h-8 w-auto md:h-10 opacity-90 hover:opacity-100 transition-opacity duration-200"
       />
-      <div className="flex flex-col">
-        <span className="text-primaryText text-xs md:text-base font-semibold tracking-[-tightest]">
-          {t("name")}
-        </span>
-        <span className="text-secondaryText text-tiny md:text-xs font-semibold tracking-[-tightest]">
-          {t("subname")}
-        </span>
-      </div>
-    </div>
+    </Link>
   );
 };
 

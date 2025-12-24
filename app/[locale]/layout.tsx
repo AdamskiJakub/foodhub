@@ -117,9 +117,7 @@ export default async function LocaleLayout(props: LayoutProps) {
             <Navbar />
 
             <Toaster position="top-right" />
-            <div className="max-w-[1440px] mx-auto px-4 lg:px-20">
-              {props.children}
-            </div>
+            {props.children}
             <Footer />
           </NextIntlClientProvider>
         </ClientSessionProvider>

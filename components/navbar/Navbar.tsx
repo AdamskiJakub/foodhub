@@ -40,10 +40,25 @@ const Navbar = () => {
     };
   }, [handleOverflow]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024 && isOpen) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isOpen]);
+
   return (
-    <nav className={`w-full`}>
+    <nav className="w-full sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm">
       <div className="w-full h-16 lg:h-20 mx-auto flex items-center justify-between px-4 lg:px-20">
-        <Link href="/" aria-label="Homepage">
+        <Link
+          href="/"
+          aria-label="Homepage"
+          className="transition-transform hover:scale-105"
+        >
           <LogoSection />
         </Link>
 
@@ -59,7 +74,7 @@ const Navbar = () => {
           ) : (
             <Link
               href="/login"
-              className="bg-primary px-6 py-3 leading-none text-white text-center rounded text-base font-medium hover:bg-primary/90"
+              className="bg-gradient-primary px-6 py-3 leading-none text-white text-center rounded-lg text-base font-medium hover:shadow-medium hover:scale-105 transition-all duration-200"
               onClick={() => setIsOpen(false)}
             >
               {t("login")}
@@ -134,7 +149,7 @@ const Navbar = () => {
               ) : (
                 <Link
                   href="/login"
-                  className="bg-primary text-white w-full text-center py-3 rounded text-base font-medium hover:bg-primary/90"
+                  className="bg-gradient-primary text-white w-full text-center py-3 rounded-lg text-base font-medium hover:shadow-medium transition-all duration-200"
                   onClick={() => setIsOpen(false)}
                 >
                   {t("login")}

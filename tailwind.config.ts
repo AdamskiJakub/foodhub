@@ -10,8 +10,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primaryText: "#222222",
-        secondaryText: "#63666D",
+        primaryText: "#1a1a1a",
+        secondaryText: "#6b7280",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -45,24 +45,26 @@ export default {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        chart: {
-          "1": "hsl(var(--chart-1))",
-          "2": "hsl(var(--chart-2))",
-          "3": "hsl(var(--chart-3))",
-          "4": "hsl(var(--chart-4))",
-          "5": "hsl(var(--chart-5))",
-        },
+      },
+      backgroundImage: {
+        "gradient-primary": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+        "gradient-food": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+        "gradient-success": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-      fontSize: {
-        tiny: "8px",
+      boxShadow: {
+        soft: "0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)",
+        medium:
+          "0 4px 20px -2px rgba(0, 0, 0, 0.1), 0 10px 25px -5px rgba(0, 0, 0, 0.1)",
+        strong:
+          "0 10px 40px -5px rgba(0, 0, 0, 0.2), 0 15px 35px -10px rgba(0, 0, 0, 0.15)",
       },
-      buttonBackgrounds: {
-        primary: "#07222F",
+      fontSize: {
+        tiny: "0.5rem",
       },
     },
   },
