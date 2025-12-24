@@ -25,7 +25,7 @@ const FooterSocialSection: React.FC<FooterSocialSectionProps> = ({
         rel="noopener noreferrer"
         className="text-primaryText text-sm hover:text-primary hover:translate-x-1 transition-all duration-200 inline-flex items-center gap-2"
       >
-        {socialIcons[item.content]}
+        {socialIcons[item.content] ?? null}
         {item.content}
       </Link>
     ))}
