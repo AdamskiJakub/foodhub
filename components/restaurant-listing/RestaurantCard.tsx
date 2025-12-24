@@ -52,15 +52,17 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant }) => {
   const normalizedSlug = normalizeSlug(restaurant.slug);
 
   return (
-    <div className="flex flex-col lg:flex-row border rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+    <div className="flex flex-col lg:flex-row border border-gray-200 rounded-xl bg-white shadow-soft hover:shadow-medium hover:border-primary/20 transition-all duration-300 overflow-hidden group">
       <Link
         href={{
           pathname: "/restaurant/[slug]",
           params: { slug: normalizedSlug },
         }}
-        className="w-full h-40 bg-gray-200 flex items-center justify-center lg:w-52 lg:h-auto lg:rounded-l-lg"
+        className="w-full h-40 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center lg:w-52 lg:h-auto lg:rounded-l-xl group-hover:from-purple-50 group-hover:to-blue-50 transition-all duration-300"
       >
-        <span className="text-gray-500 text-sm">{t("imagePlaceholder")}</span>
+        <span className="text-gray-400 text-sm font-medium">
+          {t("imagePlaceholder")}
+        </span>
       </Link>
 
       <div className="p-4 flex flex-col flex-1">

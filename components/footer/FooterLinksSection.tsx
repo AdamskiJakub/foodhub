@@ -12,13 +12,15 @@ const FooterLinksSection: React.FC<FooterLinksSectionProps> = ({
   title,
   items,
 }) => (
-  <div className="flex flex-col items-start text-left gap-1">
-    <h4 className="font-medium text-secondaryText text-sm">{title}</h4>
+  <div className="flex flex-col items-start text-left gap-2">
+    <h4 className="font-semibold text-secondaryText text-sm uppercase tracking-wide">
+      {title}
+    </h4>
     {items.map((item, idx) => (
       <Link
         key={idx}
         href={item.href}
-        className="text-primaryText text-sm hover:underline"
+        className="text-primaryText text-sm hover:text-primary hover:translate-x-1 transition-all duration-200 inline-block"
       >
         {item.content}
       </Link>

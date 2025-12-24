@@ -148,79 +148,86 @@ const SearchBar: React.FC<SearchBarProps> = ({ restaurants }) => {
   );
 
   return (
-    <div className="max-w-[1440px] mx-auto px-4 lg:px-20">
-      <div className="flex flex-col gap-4 w-full max-w-4xl mx-auto">
-        <h1 className="text-3xl lg:text-5xl justify-center align-middle w-full text-center mt-4 text-primaryText">
-          {t("mainTitle")}
-        </h1>
-        <div className="flex justify-between items-center mt-4">
-          <SearchInput
-            searchTerm={searchTerm}
-            suggestions={suggestions}
-            onSearchChange={handleSearchChange}
-            onSuggestionClick={handleSuggestionClick}
-            setSuggestions={setSuggestions}
+    <div className="relative bg-white py-12 lg:py-16">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-4 lg:px-20">
+        <div className="flex flex-col gap-4 w-full max-w-4xl mx-auto">
+          <h1 className="text-3xl lg:text-5xl justify-center align-middle w-full text-center mb-2 text-primaryText font-bold">
+            {t("mainTitle")}
+          </h1>
+          <div className="flex justify-between items-center mt-4">
+            <SearchInput
+              searchTerm={searchTerm}
+              suggestions={suggestions}
+              onSearchChange={handleSearchChange}
+              onSuggestionClick={handleSuggestionClick}
+              setSuggestions={setSuggestions}
+            />
+            <Button
+              variant="outline"
+              className="ml-2"
+              onClick={() => setIsFiltersModalOpen(true)}
+            >
+              <Filter className="h-4 w-4" />
+            </Button>
+          </div>
+
+          <div className="flex flex-row justify-between gap-2">
+            <LocationTiles
+              location={citySlug || ""}
+              onLocationChange={handleLocationChange}
+            />
+            <SortDropdown
+              sortOrder={sortOrder}
+              onSortChange={handleSortChange}
+            />
+          </div>
+
+          <div className="flex flex-row justify-between items-center text-center">
+            <div className="flex flex-col sm:flex-row items-center text-left text-secondaryText">
+              {t("numberOfRestaurants")}:{" "}
+              {citySlug ? filteredRestaurants.length : 0}
+            </div>
+            <div>
+              <Button onClick={() => resetFilters()}>
+                {t("resetFilters")}
+              </Button>
+            </div>
+          </div>
+
+          {!citySlug ? (
+            <div className="text-center text-secondaryText">
+              {t("noCitySelected")}
+            </div>
+          ) : filteredRestaurants.length === 0 ? (
+            <div className="text-center text-secondaryText">
+              {t("noRestaurantsFound")}
+            </div>
+          ) : (
+            <RestaurantList
+              filteredRestaurants={currentItems}
+              totalPages={totalPages}
+              onPageChange={(page) => {
+                const params = new URLSearchParams(searchParams);
+                params.set(pageParam, page.toString());
+                router.push(`${pathname}?${params.toString()}`);
+              }}
+            />
+          )}
+
+          <FiltersModal
+            isOpen={isFiltersModalOpen}
+            onClose={() => setIsFiltersModalOpen(false)}
+            onApplyFilters={handleApplyFilters}
+            onResetFilters={resetFilters}
+            activeFilters={activeFilters}
+            availableCuisines={uniqueCuisines}
+            restaurants={restaurants}
+            isOpenNow={isOpenNow}
+            selectedFilters={selectedFilters}
+            setSelectedFilters={setSelectedFilters}
+            citySlug={citySlug}
           />
-          <Button
-            variant="outline"
-            className="ml-2"
-            onClick={() => setIsFiltersModalOpen(true)}
-          >
-            <Filter className="h-4 w-4" />
-          </Button>
         </div>
-
-        <div className="flex flex-row justify-between gap-2">
-          <LocationTiles
-            location={citySlug || ""}
-            onLocationChange={handleLocationChange}
-          />
-          <SortDropdown sortOrder={sortOrder} onSortChange={handleSortChange} />
-        </div>
-
-        <div className="flex flex-row justify-between items-center text-center">
-          <div className="flex flex-col sm:flex-row items-center text-left text-secondaryText">
-            {t("numberOfRestaurants")}:{" "}
-            {citySlug ? filteredRestaurants.length : 0}
-          </div>
-          <div>
-            <Button onClick={() => resetFilters()}>{t("resetFilters")}</Button>
-          </div>
-        </div>
-
-        {!citySlug ? (
-          <div className="text-center text-secondaryText">
-            {t("noCitySelected")}
-          </div>
-        ) : filteredRestaurants.length === 0 ? (
-          <div className="text-center text-secondaryText">
-            {t("noRestaurantsFound")}
-          </div>
-        ) : (
-          <RestaurantList
-            filteredRestaurants={currentItems}
-            totalPages={totalPages}
-            onPageChange={(page) => {
-              const params = new URLSearchParams(searchParams);
-              params.set(pageParam, page.toString());
-              router.push(`${pathname}?${params.toString()}`);
-            }}
-          />
-        )}
-
-        <FiltersModal
-          isOpen={isFiltersModalOpen}
-          onClose={() => setIsFiltersModalOpen(false)}
-          onApplyFilters={handleApplyFilters}
-          onResetFilters={resetFilters}
-          activeFilters={activeFilters}
-          availableCuisines={uniqueCuisines}
-          restaurants={restaurants}
-          isOpenNow={isOpenNow}
-          selectedFilters={selectedFilters}
-          setSelectedFilters={setSelectedFilters}
-          citySlug={citySlug}
-        />
       </div>
     </div>
   );
