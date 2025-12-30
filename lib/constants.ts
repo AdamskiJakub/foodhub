@@ -31,6 +31,12 @@ export const HTTP_STATUS = {
   INTERNAL_SERVER_ERROR: 500,
 } as const;
 
+export const SOCIAL_LINKS = {
+  PORTFOLIO: "https://portfolio-jakubs-projects-f8e02b26.vercel.app/",
+  LINKEDIN: "https://www.linkedin.com/in/jakub-adamski/",
+  GITHUB: "https://github.com/AdamskiJakub",
+} as const;
+
 export const LOCATIONS = [
   { slug: "bialystok", translationKey: "bialystok" },
   { slug: "warsaw", translationKey: "warsaw" },
