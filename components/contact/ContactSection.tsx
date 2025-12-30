@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { FaGithub, FaLinkedin, FaExternalLinkAlt } from "react-icons/fa";
 import TechStack from "./TechStack";
+import { SOCIAL_LINKS } from "@/lib/constants";
 
 const ContactSection = () => {
   const t = useTranslations("ContactPage");
@@ -40,7 +41,7 @@ const ContactSection = () => {
 
             <div className="mt-8 flex flex-wrap gap-4">
               <a
-                href="https://portfolio-jakubs-projects-f8e02b26.vercel.app/"
+                href={SOCIAL_LINKS.PORTFOLIO}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={t("portfolioAriaLabel")}
@@ -50,7 +51,7 @@ const ContactSection = () => {
                 {t("portfolioButton")}
               </a>
               <a
-                href="https://www.linkedin.com/in/jakub-adamski/"
+                href={SOCIAL_LINKS.LINKEDIN}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={t("linkedinAriaLabel")}
@@ -60,7 +61,7 @@ const ContactSection = () => {
                 {t("linkedinButton")}
               </a>
               <a
-                href="https://github.com/AdamskiJakub"
+                href={SOCIAL_LINKS.GITHUB}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={t("githubAriaLabel")}

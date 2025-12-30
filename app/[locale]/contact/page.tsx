@@ -2,23 +2,12 @@ import { setRequestLocale } from "next-intl/server";
 import { Locale } from "@/i18n/routing";
 import ContactSection from "@/components/contact/ContactSection";
 import { getTranslations } from "next-intl/server";
+import { truncateDescription } from "@/lib/utils";
 
 type Params = Promise<{ locale: Locale }>;
 
 interface Props {
   params: Params;
-}
-
-function truncateDescription(text: string, maxLength: number): string {
-  if (!text || text.length <= maxLength) {
-    return text;
-  }
-  const truncated = text.substring(0, maxLength);
-  const lastSpaceIndex = truncated.lastIndexOf(" ");
-  if (lastSpaceIndex > 0) {
-    return truncated.substring(0, lastSpaceIndex) + "...";
-  }
-  return truncated + "...";
 }
 
 export async function generateMetadata({ params }: Props) {
