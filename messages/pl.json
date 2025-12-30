@@ -559,5 +559,30 @@
     "invalidPhone": "Nieprawidłowy numer telefonu",
     "phoneRequiredIfFilled": "Numer telefonu jest wymagany",
     "invalidOpeningHours": "Nieprawidłowy format godzin otwarcia. Przykład: Pn-Cz 11:00-22:00; Pt-Sb 11:00-23:00. Możesz również użyć pełnych nazw dni, np. 'Poniedziałek-Piątek 11:00-22:00'."
+  },
+  "ContactPage": {
+    "title": "O projekcie",
+    "subtitle": "FoodHub - Twój przewodnik po restauracjach",
+    "authorLabel": "Twórca",
+    "authorName": "Jakub Adamski",
+    "greeting": "Cześć!",
+    "intro": "FoodHub to projekt, który stworzyłem, aby ułatwić ludziom znajdowanie najlepszych restauracji w ich mieście. Jako programista skupiający się na nowoczesnych technologiach webowych i AI, chciałem połączyć funkcjonalność z przyjemnym doświadczeniem użytkownika.\n\nProjekt powstał z myślą o sposób, w jaki ludzie szukają miejsc do jedzenia - szybko, intuicyjnie i z dostępem do rzetelnych recenzji.",
+    "techStackTitle": "Technologie użyte w projekcie",
+    "projectFeatures": "Funkcje projektu",
+    "features": {
+      "search": "Zaawansowane wyszukiwanie i filtrowanie restauracji",
+      "reviews": "System recenzji i ocen",
+      "auth": "Autoryzacja użytkowników",
+      "responsive": "Pełna responsywność"
+    },
+    "techStack": {
+      "frontend": "Next.js, React, TypeScript, Tailwind CSS",
+      "backend": "Prisma, PostgreSQL",
+      "other": "NextAuth, next-intl, react-hook-form"
+    },
+    "portfolioButton": "Zobacz moje portfolio",
+    "linkedinButton": "LinkedIn",
+    "githubButton": "GitHub",
+    "contactCTA": "Jeśli masz pytania o projekt lub chcesz zobaczyć więcej moich prac, zajrzyj na moje portfolio lub skontaktuj się przez LinkedIn."
   }
 }
