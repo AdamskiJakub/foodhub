@@ -34,9 +34,9 @@ const TechStack = () => {
       </h2>
 
       <div className="space-y-6">
-        {techCategories.map((category, index) => (
+        {techCategories.map((category) => (
           <div
-            key={index}
+            key={category.label}
             className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 p-4 transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
           >
             <div

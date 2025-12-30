@@ -9,12 +9,24 @@ interface Props {
   params: Params;
 }
 
+function truncateDescription(text: string, maxLength: number): string {
+  if (!text || text.length <= maxLength) {
+    return text;
+  }
+  const truncated = text.substring(0, maxLength);
+  const lastSpaceIndex = truncated.lastIndexOf(" ");
+  if (lastSpaceIndex > 0) {
+    return truncated.substring(0, lastSpaceIndex) + "...";
+  }
+  return truncated + "...";
+}
+
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "ContactPage" });
 
   const title = `${t("title")} - ${t("subtitle")}`;
-  const description = t("intro").substring(0, 160);
+  const description = truncateDescription(t("intro"), 160);
 
   return {
     title,

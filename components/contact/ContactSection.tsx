@@ -43,6 +43,7 @@ const ContactSection = () => {
                 href="https://portfolio-jakubs-projects-f8e02b26.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={t("portfolioAriaLabel")}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium transition-colors duration-200 shadow-md hover:shadow-lg"
               >
                 <FaExternalLinkAlt size={20} />
@@ -52,6 +53,7 @@ const ContactSection = () => {
                 href="https://www.linkedin.com/in/jakub-adamski/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={t("linkedinAriaLabel")}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors duration-200 shadow-md hover:shadow-lg"
               >
                 <FaLinkedin size={20} />
@@ -61,6 +63,7 @@ const ContactSection = () => {
                 href="https://github.com/AdamskiJakub"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={t("githubAriaLabel")}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 hover:bg-gray-900 text-white rounded-lg font-medium transition-colors duration-200 shadow-md hover:shadow-lg"
               >
                 <FaGithub size={20} />
