@@ -18,7 +18,7 @@ const Footer = () => {
   const socialData = footerData[3];
 
   return (
-    <footer className="w-full bg-gradient-to-t from-purple-100/60 via-purple-50/40 to-white mt-12 md:mt-20">
+    <footer className="w-full bg-gradient-to-t from-purple-100/60 via-purple-50/40 to-transparent">
       <div className="w-full px-4 md:px-10 lg:px-20">
         <div className="border-t border-purple-200/50"></div>
       </div>

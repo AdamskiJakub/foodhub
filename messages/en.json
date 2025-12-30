@@ -555,5 +555,33 @@
     "invalidPhone": "Invalid phone number",
     "phoneRequiredIfFilled": "Phone number is required",
     "invalidOpeningHours": "Invalid format. Example: Mon-Fr 11:00-22:00; Fr-Sun 11:00-23:00. You can also use full day names like 'Monday-Friday 11:00-22:00'."
+  },
+  "ContactPage": {
+    "title": "About the project",
+    "subtitle": "FoodHub - Your restaurant guide",
+    "authorLabel": "Creator",
+    "authorName": "Jakub Adamski",
+    "greeting": "Hi!",
+    "intro": "FoodHub is a project I created to make it easier for people to find the best restaurants in their city. As a programmer focused on modern web technologies and AI, I wanted to combine functionality with a pleasant user experience.\n\nThe project was created with the way people search for places to eat in mind - quickly, intuitively and with access to reliable reviews.",
+    "techStackTitle": "Technologies used in the project",
+    "projectFeatures": "Project features",
+    "features": {
+      "search": "Advanced restaurant search and filtering",
+      "reviews": "Review and rating system",
+      "auth": "User authentication",
+      "responsive": "Fully responsive"
+    },
+    "techStack": {
+      "frontend": "Next.js, React, TypeScript, Tailwind CSS",
+      "backend": "Prisma, PostgreSQL",
+      "other": "NextAuth, next-intl, react-hook-form"
+    },
+    "portfolioButton": "View my portfolio",
+    "linkedinButton": "LinkedIn",
+    "githubButton": "GitHub",
+    "portfolioAriaLabel": "View my portfolio (opens in a new tab)",
+    "linkedinAriaLabel": "Visit my LinkedIn profile (opens in a new tab)",
+    "githubAriaLabel": "View my GitHub profile (opens in a new tab)",
+    "contactCTA": "If you have questions about the project or want to see more of my work, check out my portfolio or contact me via LinkedIn."
   }
 }
