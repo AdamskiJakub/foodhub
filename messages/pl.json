@@ -587,5 +587,35 @@
     "linkedinAriaLabel": "Odwiedź mój profil LinkedIn (otwiera się w nowej karcie)",
     "githubAriaLabel": "Zobacz mój profil GitHub (otwiera się w nowej karcie)",
     "contactCTA": "Jeśli masz pytania o projekt lub chcesz zobaczyć więcej moich prac, zajrzyj na moje portfolio lub skontaktuj się przez LinkedIn."
+  },
+  "FAQPage": {
+    "title": "Często zadawane pytania",
+    "subtitle": "Znajdź odpowiedzi na najczęściej zadawane pytania dotyczące FoodHub",
+    "questions": {
+      "howToAddRestaurant": {
+        "question": "Jak dodać restaurację?",
+        "answer": "Aby dodać restaurację, musisz być zalogowany. Następnie kliknij przycisk 'Dodaj Restaurację' w menu użytkownika. Wypełnij formularz z informacjami o restauracji, w tym nazwą, adresem, kuchnią i godzinami otwarcia."
+      },
+      "howToEditReview": {
+        "question": "Jak edytować swoją recenzję?",
+        "answer": "Przejdź do strony restauracji, znajdź swoją recenzję i kliknij przycisk 'Edytuj'. Możesz zmienić ocenę i treść komentarza. Po zapisaniu zmian, Twoja recenzja zostanie zaktualizowana."
+      },
+      "howToDeleteAccount": {
+        "question": "Czy mogę usunąć swoje konto?",
+        "answer": "Tak, możesz usunąć swoje konto w ustawieniach profilu. Pamiętaj, że ta operacja jest nieodwracalna i wszystkie Twoje recenzje zostaną usunięte."
+      },
+      "howRatingWorks": {
+        "question": "Jak działa system ocen?",
+        "answer": "System ocen FoodHub opiera się na średniej wszystkich ocen wystawionych przez użytkowników. Każdy zalogowany użytkownik może wystawić jedną ocenę (od 1 do 5 gwiazdek) dla restauracji. Średnia ocena jest automatycznie aktualizowana."
+      },
+      "howToReportRestaurant": {
+        "question": "Jak zgłosić problem z restauracją?",
+        "answer": "Jeśli zauważysz nieprawidłowe informacje o restauracji lub nieodpowiednie treści, skontaktuj się z nami przez stronę kontaktową. Podaj nazwę restauracji i opis problemu."
+      },
+      "canIChangePassword": {
+        "question": "Jak zmienić hasło?",
+        "answer": "Możesz zmienić hasło w ustawieniach konta. Przejdź do zakładki 'Zmień hasło', podaj obecne hasło oraz nowe hasło (musi zawierać minimum 6 znaków, wielką literę, małą literę, cyfrę i znak specjalny)."
+      }
+    }
   }
 }

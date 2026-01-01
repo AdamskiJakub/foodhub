@@ -583,5 +583,35 @@
     "linkedinAriaLabel": "Visit my LinkedIn profile (opens in a new tab)",
     "githubAriaLabel": "View my GitHub profile (opens in a new tab)",
     "contactCTA": "If you have questions about the project or want to see more of my work, check out my portfolio or contact me via LinkedIn."
+  },
+  "FAQPage": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to the most common questions about FoodHub",
+    "questions": {
+      "howToAddRestaurant": {
+        "question": "How do I add a restaurant?",
+        "answer": "To add a restaurant, you must be logged in. Then click the 'Add Restaurant' button in the user menu. Fill out the form with restaurant information including name, address, cuisine, and opening hours."
+      },
+      "howToEditReview": {
+        "question": "How do I edit my review?",
+        "answer": "Go to the restaurant page, find your review and click the 'Edit' button. You can change the rating and comment text. After saving changes, your review will be updated."
+      },
+      "howToDeleteAccount": {
+        "question": "Can I delete my account?",
+        "answer": "Yes, you can delete your account in profile settings. Please note that this operation is irreversible and all your reviews will be deleted."
+      },
+      "howRatingWorks": {
+        "question": "How does the rating system work?",
+        "answer": "FoodHub's rating system is based on the average of all ratings given by users. Each logged-in user can give one rating (from 1 to 5 stars) for a restaurant. The average rating is automatically updated."
+      },
+      "howToReportRestaurant": {
+        "question": "How do I report a problem with a restaurant?",
+        "answer": "If you notice incorrect restaurant information or inappropriate content, contact us through the contact page. Provide the restaurant name and problem description."
+      },
+      "canIChangePassword": {
+        "question": "How do I change my password?",
+        "answer": "You can change your password in account settings. Go to the 'Change Password' tab, enter your current password and new password (must contain at least 6 characters, uppercase letter, lowercase letter, digit and special character)."
+      }
+    }
   }
 }
