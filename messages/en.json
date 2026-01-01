@@ -587,6 +587,8 @@
   "FAQPage": {
     "title": "Frequently Asked Questions",
     "subtitle": "Find answers to the most common questions about FoodHub",
+    "noAnswerText": "Didn't find the answer to your question?",
+    "contactLinkText": "Contact us",
     "questions": {
       "howToAddRestaurant": {
         "question": "How do I add a restaurant?",

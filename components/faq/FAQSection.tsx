@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 import {
   Accordion,
   AccordionContent,
@@ -46,13 +47,13 @@ const FAQSection = () => {
 
       <div className="mt-12 text-center">
         <p className="text-gray-600">
-          Nie znalazłeś odpowiedzi na swoje pytanie?{" "}
-          <a
-            href="/kontakt"
+          {t("noAnswerText")}{" "}
+          <Link
+            href="/contact"
             className="text-purple-600 hover:text-purple-700 font-semibold underline"
           >
-            Skontaktuj się z nami
-          </a>
+            {t("contactLinkText")}
+          </Link>
         </p>
       </div>
     </section>
