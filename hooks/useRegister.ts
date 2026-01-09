@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import toast from "react-hot-toast";
 import { RegisterFormData } from "@/lib/validation/registerSchema";
-import { BadRequestError, UnauthorizedError } from "@/lib/errors/api-error";
+import { BadRequestError } from "@/lib/errors/api-error";
 
 export const useRegister = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -37,7 +37,6 @@ export const useRegister = () => {
           throw new BadRequestError("Email is already taken");
         }
 
-        toast.error(t("toastRegisterError"));
         throw new BadRequestError(result.message || "Registration failed");
       }
 

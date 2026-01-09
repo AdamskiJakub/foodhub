@@ -32,8 +32,6 @@ const LoginForm = ({ locale }: Props) => {
     },
   });
 
-  console.log("Locale in LoginForm:", locale);
-
   const onSubmit: SubmitHandler<LoginFormData> = async (data) => {
     const result = await login(data);
 
@@ -112,8 +110,12 @@ const LoginForm = ({ locale }: Props) => {
         )}
       </div>
 
-      <Button type="submit" className="w-full p-2 text-white rounded">
-        {t("submit")}
+      <Button
+        type="submit"
+        className="w-full p-2 text-white rounded"
+        disabled={isLoading}
+      >
+        {isLoading ? t("loading") : t("submit")}
       </Button>
 
       <p className="text-center">

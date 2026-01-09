@@ -36,6 +36,7 @@ const RegisterForm = () => {
   });
 
   const onSubmit: SubmitHandler<RegisterFormData> = async (data) => {
+    if (isLoading) return;
     await registerUser(data);
   };
 
@@ -113,16 +114,24 @@ const RegisterForm = () => {
         <Input
           id="dateOfBirth"
           type="date"
-          max={
-            new Date(new Date().setFullYear(new Date().getFullYear() - 13))
-              .toISOString()
-              .split("T")[0]
-          }
-          min={
-            new Date(new Date().setFullYear(new Date().getFullYear() - 120))
-              .toISOString()
-              .split("T")[0]
-          }
+          max={(() => {
+            const today = new Date();
+            const maxDate = new Date(
+              today.getFullYear() - 13,
+              today.getMonth(),
+              today.getDate()
+            );
+            return maxDate.toISOString().split("T")[0];
+          })()}
+          min={(() => {
+            const today = new Date();
+            const minDate = new Date(
+              today.getFullYear() - 120,
+              today.getMonth(),
+              today.getDate()
+            );
+            return minDate.toISOString().split("T")[0];
+          })()}
           {...register("dateOfBirth")}
         />
         {errors.dateOfBirth && (
@@ -152,8 +161,12 @@ const RegisterForm = () => {
           <p className="text-red-500 text-sm">{errors.phoneNumber.message}</p>
         )}
       </div>
-      <Button type="submit" className="w-full p-2 text-white rounded">
-        {t("submit")}
+      <Button
+        type="submit"
+        className="w-full p-2 text-white rounded"
+        disabled={isLoading}
+      >
+        {isLoading ? t("loading") : t("submit")}
       </Button>
       <p className="text-center">
         {t("haveAccount")}{" "}

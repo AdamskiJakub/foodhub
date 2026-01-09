@@ -46,9 +46,17 @@ export const createRegisterSchema = (t: (key: string) => string) => {
       phoneNumber: z
         .string()
         .optional()
-        .refine((val) => !val || /^[+]?[0-9\s-()]{9,15}$/.test(val), {
-          message: t("phoneInvalid"),
-        }),
+        .refine(
+          (val) => {
+            if (!val) return true;
+            if (!/^[+]?[0-9\s-()]+$/.test(val)) return false;
+            const digitsOnly = val.replace(/\D/g, "");
+            return digitsOnly.length >= 9 && digitsOnly.length <= 15;
+          },
+          {
+            message: t("phoneInvalid"),
+          }
+        ),
     })
     .refine((data) => data.password === data.confirmPassword, {
       message: t("passwordMatch"),

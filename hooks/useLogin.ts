@@ -26,7 +26,6 @@ export const useLogin = () => {
       });
 
       if (result?.error) {
-        toast.error(t("toastLoginError"));
         throw new UnauthorizedError("Invalid credentials");
       }
 
