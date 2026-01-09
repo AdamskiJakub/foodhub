@@ -29,13 +29,6 @@ const NavbarLinks: React.FC<NavbarLinksProps> = ({ onClick }) => {
       >
         {t("blog")}
       </Link>
-      <Link
-        href="/about"
-        onClick={onClick}
-        className={getLinkClassName("/about")}
-      >
-        {t("about")}
-      </Link>
       <Link href="/faq" onClick={onClick} className={getLinkClassName("/faq")}>
         {t("faq")}
       </Link>
