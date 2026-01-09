@@ -23,7 +23,7 @@ export const createRegisterSchema = (t: (key: string) => string) => {
         .optional()
         .refine(
           (val) => {
-            if (!val) return true; // optional field
+            if (!val) return true;
             const date = new Date(val);
             const today = new Date();
             const age = today.getFullYear() - date.getFullYear();
