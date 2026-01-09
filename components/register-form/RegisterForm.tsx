@@ -1,22 +1,39 @@
 "use client";
 
-import React from "react";
-import { useForm, Controller, SubmitHandler } from "react-hook-form";
+import React, { useMemo } from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   RegisterFormData,
   createRegisterSchema,
 } from "@/lib/validation/registerSchema";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
-import toast from "react-hot-toast";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useRegister } from "@/hooks/useRegister";
 
 const RegisterForm = () => {
   const t = useTranslations("Register");
+  const { register: registerUser, isLoading } = useRegister();
+
+  const maxDate = useMemo(() => {
+    const today = new Date();
+    const date = new Date(today);
+    date.setFullYear(date.getFullYear() - 13);
+    return date.toISOString().split("T")[0];
+  }, []);
+
+  const minDate = useMemo(() => {
+    const today = new Date();
+    const date = new Date(today);
+    date.setFullYear(date.getFullYear() - 120);
+    return date.toISOString().split("T")[0];
+  }, []);
+
   const {
-    control,
+    register,
     handleSubmit,
     formState: { errors },
   } = useForm<RegisterFormData>({
@@ -28,47 +45,13 @@ const RegisterForm = () => {
       dateOfBirth: "",
       location: "",
       phoneNumber: "",
-      address: "",
       name: "",
     },
   });
 
-  const router = useRouter();
-
   const onSubmit: SubmitHandler<RegisterFormData> = async (data) => {
-    try {
-      const response = await fetch("/api/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: data.name,
-          email: data.email,
-          password: data.password,
-          dateOfBirth: data.dateOfBirth,
-          location: data.location,
-          phoneNumber: data.phoneNumber,
-          address: data.address,
-        }),
-      });
-
-      const result = await response.json();
-
-      if (response.ok) {
-        toast.success(t("toastRegisterSuccess"));
-        setTimeout(() => router.push("/login"), 5000);
-      } else {
-        if (result.message === "Email is already taken") {
-          toast.error(t("toastEmailTaken"));
-        } else {
-          toast.error(t("toastRegisterError"));
-        }
-      }
-    } catch (error) {
-      toast.error(t("toastRegisterError"));
-      console.error("Registration error:", error);
-    }
+    if (isLoading) return;
+    await registerUser(data);
   };
 
   return (
@@ -77,56 +60,46 @@ const RegisterForm = () => {
       className="space-y-4 max-w-2xl items-center align-middle justify-center mx-auto px-4 my-20"
     >
       <h1 className="text-2xl font-bold">{t("title")}</h1>
-      <div>
-        <label className="block text-sm font-medium mb-2">{t("email")}</label>
-        <Controller
-          name="email"
-          control={control}
-          render={({ field }) => (
-            <input
-              {...field}
-              type="email"
-              className="w-full p-2 border rounded"
-            />
-          )}
+
+      <div className="space-y-2">
+        <Label htmlFor="email">
+          {t("email")} <span className="text-red-500">*</span>
+        </Label>
+        <Input
+          id="email"
+          type="email"
+          placeholder={t("emailPlaceholder")}
+          {...register("email")}
         />
         {errors.email && (
           <p className="text-red-500 text-sm">{errors.email.message}</p>
         )}
       </div>
-      <div>
-        <label className="block text-sm font-medium mb-2">
-          {t("password")}
-        </label>
-        <Controller
-          name="password"
-          control={control}
-          render={({ field }) => (
-            <input
-              {...field}
-              type="password"
-              className="w-full p-2 border rounded"
-            />
-          )}
+
+      <div className="space-y-2">
+        <Label htmlFor="password">
+          {t("password")} <span className="text-red-500">*</span>
+        </Label>
+        <Input
+          id="password"
+          type="password"
+          placeholder={t("passwordPlaceholder")}
+          {...register("password")}
         />
         {errors.password && (
           <p className="text-red-500 text-sm">{errors.password.message}</p>
         )}
       </div>
-      <div>
-        <label className="block text-sm font-medium mb-2">
-          {t("confirmPassword")}
-        </label>
-        <Controller
-          name="confirmPassword"
-          control={control}
-          render={({ field }) => (
-            <input
-              {...field}
-              type="password"
-              className="w-full p-2 border rounded"
-            />
-          )}
+
+      <div className="space-y-2">
+        <Label htmlFor="confirmPassword">
+          {t("confirmPassword")} <span className="text-red-500">*</span>
+        </Label>
+        <Input
+          id="confirmPassword"
+          type="password"
+          placeholder={t("confirmPasswordPlaceholder")}
+          {...register("confirmPassword")}
         />
         {errors.confirmPassword && (
           <p className="text-red-500 text-sm">
@@ -134,90 +107,64 @@ const RegisterForm = () => {
           </p>
         )}
       </div>
-      <div>
-        <label className="block text-sm font-medium mb-2">
-          {t("dateOfBirth")}
-        </label>
-        <Controller
-          name="dateOfBirth"
-          control={control}
-          render={({ field }) => (
-            <input
-              {...field}
-              type="date"
-              className="w-full p-2 border rounded"
-            />
-          )}
+
+      <div className="space-y-2">
+        <Label htmlFor="name">
+          {t("nameAndSurname")} <span className="text-red-500">*</span>
+        </Label>
+        <Input
+          id="name"
+          type="text"
+          placeholder={t("nameAndSurnamePlaceholder")}
+          {...register("name")}
+        />
+        {errors.name && (
+          <p className="text-red-500 text-sm">{errors.name.message}</p>
+        )}
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="dateOfBirth">{t("dateOfBirth")}</Label>
+        <Input
+          id="dateOfBirth"
+          type="date"
+          max={maxDate}
+          min={minDate}
+          {...register("dateOfBirth")}
+        />
+        {errors.dateOfBirth && (
+          <p className="text-red-500 text-sm">{errors.dateOfBirth.message}</p>
+        )}
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="location">{t("location")}</Label>
+        <Input
+          id="location"
+          type="text"
+          placeholder={t("locationPlaceholder")}
+          {...register("location")}
         />
       </div>
 
-      <div>
-        <label className="block text-sm font-medium mb-2">
-          {t("nameAndSurname")}
-        </label>
-        <Controller
-          name="name"
-          control={control}
-          render={({ field }) => (
-            <input
-              {...field}
-              type="text"
-              className="w-full p-2 border rounded"
-            />
-          )}
+      <div className="space-y-2">
+        <Label htmlFor="phoneNumber">{t("phoneNumber")}</Label>
+        <Input
+          id="phoneNumber"
+          type="text"
+          placeholder={t("phoneNumberPlaceholder")}
+          {...register("phoneNumber")}
         />
+        {errors.phoneNumber && (
+          <p className="text-red-500 text-sm">{errors.phoneNumber.message}</p>
+        )}
       </div>
-
-      <div>
-        <label className="block text-sm font-medium mb-2">
-          {t("location")}
-        </label>
-        <Controller
-          name="location"
-          control={control}
-          render={({ field }) => (
-            <input
-              {...field}
-              type="text"
-              className="w-full p-2 border rounded"
-            />
-          )}
-        />
-      </div>
-
-      <div>
-        <label className="block text-sm font-medium mb-2">
-          {t("phoneNumber")}
-        </label>
-        <Controller
-          name="phoneNumber"
-          control={control}
-          render={({ field }) => (
-            <input
-              {...field}
-              type="text"
-              className="w-full p-2 border rounded"
-            />
-          )}
-        />
-      </div>
-
-      <div>
-        <label className="block text-sm font-medium mb-2">{t("address")}</label>
-        <Controller
-          name="address"
-          control={control}
-          render={({ field }) => (
-            <input
-              {...field}
-              type="text"
-              className="w-full p-2 border rounded"
-            />
-          )}
-        />
-      </div>
-      <Button type="submit" className="w-full p-2 text-white rounded">
-        {t("submit")}
+      <Button
+        type="submit"
+        className="w-full p-2 text-white rounded"
+        disabled={isLoading}
+      >
+        {isLoading ? t("loading") : t("submit")}
       </Button>
       <p className="text-center">
         {t("haveAccount")}{" "}
