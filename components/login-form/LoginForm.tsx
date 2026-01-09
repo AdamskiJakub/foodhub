@@ -8,9 +8,7 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Locale } from "@/i18n/routing";
-import toast from "react-hot-toast";
-import { useRouter } from "next/navigation";
-import { signIn } from "next-auth/react";
+import { useLogin } from "@/hooks/useLogin";
 
 interface Props {
   locale: Locale;
@@ -18,6 +16,7 @@ interface Props {
 
 const LoginForm = ({ locale }: Props) => {
   const t = useTranslations("Login");
+  const { login, isLoading } = useLogin();
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
 
@@ -35,29 +34,13 @@ const LoginForm = ({ locale }: Props) => {
 
   console.log("Locale in LoginForm:", locale);
 
-  const router = useRouter();
-
   const onSubmit: SubmitHandler<LoginFormData> = async (data) => {
-    try {
-      const result = await signIn("credentials", {
-        redirect: false,
-        email: data.email,
-        password: data.password,
-      });
+    const result = await login(data);
 
-      if (result?.error) {
-        toast.error(t("toastLoginError"));
-        setEmailError(true);
-        setPasswordError(true);
-      } else {
-        toast.success(t("toastLoginSuccess"));
-        setEmailError(false);
-        setPasswordError(false);
-        router.push(`/${locale}`);
-      }
-    } catch (error) {
-      console.error("Login failed:", error);
-      toast.error(t("toastLoginError"));
+    if (result.success) {
+      setEmailError(false);
+      setPasswordError(false);
+    } else {
       setEmailError(true);
       setPasswordError(true);
     }

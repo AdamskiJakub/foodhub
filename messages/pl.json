@@ -60,8 +60,12 @@
   "Register": {
     "title": "Zarejestruj się",
     "email": "Email",
+    "emailPlaceholder": "np. jan.kowalski@email.com",
+    "emailRequired": "Email jest wymagany",
     "password": "Hasło",
+    "passwordPlaceholder": "Min. 6 znaków, duża litera, cyfra, znak specjalny",
     "confirmPassword": "Potwierdź Hasło",
+    "confirmPasswordPlaceholder": "Wpisz hasło ponownie",
     "submit": "Zarejestruj się",
     "haveAccount": "Masz już konto?",
     "loginLink": "Zaloguj się tutaj",
@@ -73,10 +77,17 @@
     "passwordRegex": "Hasło musi zawierać co najmniej jedną dużą literę, jedną małą literę, cyfrę i znak specjalny.",
     "passwordMatch": "Hasła muszą być identyczne.",
     "dateOfBirth": "Data urodzenia",
-    "location": "Lokalizacja",
+    "dateOfBirthPlaceholder": "Wybierz datę (opcjonalne)",
+    "dateOfBirthInvalid": "Musisz mieć co najmniej 13 lat",
+    "dateOfBirthFuture": "Data urodzenia nie może być w przyszłości",
+    "location": "Miasto",
+    "locationPlaceholder": "np. Warszawa (opcjonalne)",
     "phoneNumber": "Numer telefonu",
-    "address": "Adres",
-    "nameAndSurname": "Imię i nazwisko"
+    "phoneNumberPlaceholder": "np. +48 123 456 789 (opcjonalne)",
+    "phoneInvalid": "Nieprawidłowy format numeru telefonu",
+    "nameAndSurname": "Imię i nazwisko",
+    "nameAndSurnamePlaceholder": "np. Jan Kowalski",
+    "nameRequired": "Imię i nazwisko jest wymagane"
   },
   "UserSettings": {
     "title": "Ustawienia użytkownika",

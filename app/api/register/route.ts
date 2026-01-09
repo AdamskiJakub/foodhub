@@ -5,17 +5,9 @@ import prisma from "@/lib/prisma";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const {
-      email,
-      password,
-      dateOfBirth,
-      location,
-      phoneNumber,
-      name,
-      address,
-    } = body;
+    const { email, password, dateOfBirth, location, phoneNumber, name } = body;
 
-    console.log("Received registration request:", { email, password });
+    console.log("Received registration request:", { email, name });
 
     if (!email || !password) {
       return NextResponse.json(
@@ -45,7 +37,6 @@ export async function POST(request: Request) {
         dateOfBirth: dateOfBirth ? new Date(dateOfBirth) : null,
         location,
         phoneNumber,
-        address,
       },
     });
 

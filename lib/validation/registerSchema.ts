@@ -3,7 +3,10 @@ import { z } from "zod";
 export const createRegisterSchema = (t: (key: string) => string) => {
   return z
     .object({
-      email: z.string().email(t("invalidEmail")),
+      email: z
+        .string()
+        .min(1, { message: t("emailRequired") })
+        .email(t("invalidEmail")),
       password: z
         .string()
         .min(6, { message: t("passwordMin") })
@@ -13,12 +16,39 @@ export const createRegisterSchema = (t: (key: string) => string) => {
             message: t("passwordRegex"),
           }
         ),
-      name: z.string(),
+      name: z.string().min(1, { message: t("nameRequired") }),
       confirmPassword: z.string(),
-      dateOfBirth: z.string().optional(),
+      dateOfBirth: z
+        .string()
+        .optional()
+        .refine(
+          (val) => {
+            if (!val) return true; // optional field
+            const date = new Date(val);
+            const today = new Date();
+            const age = today.getFullYear() - date.getFullYear();
+            const monthDiff = today.getMonth() - date.getMonth();
+            const dayDiff = today.getDate() - date.getDate();
+            const actualAge =
+              monthDiff < 0 || (monthDiff === 0 && dayDiff < 0) ? age - 1 : age;
+            return actualAge >= 13 && actualAge <= 120;
+          },
+          { message: t("dateOfBirthInvalid") }
+        )
+        .refine(
+          (val) => {
+            if (!val) return true;
+            return new Date(val) < new Date();
+          },
+          { message: t("dateOfBirthFuture") }
+        ),
       location: z.string().optional(),
-      phoneNumber: z.string().optional(),
-      address: z.string().optional(),
+      phoneNumber: z
+        .string()
+        .optional()
+        .refine((val) => !val || /^[+]?[0-9\s-()]{9,15}$/.test(val), {
+          message: t("phoneInvalid"),
+        }),
     })
     .refine((data) => data.password === data.confirmPassword, {
       message: t("passwordMatch"),
