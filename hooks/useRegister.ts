@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import toast from "react-hot-toast";
 import { RegisterFormData } from "@/lib/validation/registerSchema";
@@ -37,6 +37,7 @@ export const useRegister = () => {
           throw new BadRequestError("Email is already taken");
         }
 
+        toast.error(result.message || t("toastRegisterError"));
         throw new BadRequestError(result.message || "Registration failed");
       }
 

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useMemo } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -8,7 +8,7 @@ import {
   createRegisterSchema,
 } from "@/lib/validation/registerSchema";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -17,6 +17,26 @@ import { useRegister } from "@/hooks/useRegister";
 const RegisterForm = () => {
   const t = useTranslations("Register");
   const { register: registerUser, isLoading } = useRegister();
+
+  const maxDate = useMemo(() => {
+    const today = new Date();
+    const date = new Date(
+      today.getFullYear() - 13,
+      today.getMonth(),
+      today.getDate()
+    );
+    return date.toISOString().split("T")[0];
+  }, []);
+
+  const minDate = useMemo(() => {
+    const today = new Date();
+    const date = new Date(
+      today.getFullYear() - 120,
+      today.getMonth(),
+      today.getDate()
+    );
+    return date.toISOString().split("T")[0];
+  }, []);
 
   const {
     register,
@@ -114,24 +134,8 @@ const RegisterForm = () => {
         <Input
           id="dateOfBirth"
           type="date"
-          max={(() => {
-            const today = new Date();
-            const maxDate = new Date(
-              today.getFullYear() - 13,
-              today.getMonth(),
-              today.getDate()
-            );
-            return maxDate.toISOString().split("T")[0];
-          })()}
-          min={(() => {
-            const today = new Date();
-            const minDate = new Date(
-              today.getFullYear() - 120,
-              today.getMonth(),
-              today.getDate()
-            );
-            return minDate.toISOString().split("T")[0];
-          })()}
+          max={maxDate}
+          min={minDate}
           {...register("dateOfBirth")}
         />
         {errors.dateOfBirth && (

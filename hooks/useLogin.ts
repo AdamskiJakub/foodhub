@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import toast from "react-hot-toast";
 import { UnauthorizedError } from "@/lib/errors/api-error";
@@ -26,6 +26,7 @@ export const useLogin = () => {
       });
 
       if (result?.error) {
+        toast.error(t("toastLoginError"));
         throw new UnauthorizedError("Invalid credentials");
       }
 

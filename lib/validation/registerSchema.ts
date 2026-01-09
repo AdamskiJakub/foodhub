@@ -21,27 +21,32 @@ export const createRegisterSchema = (t: (key: string) => string) => {
       dateOfBirth: z
         .string()
         .optional()
-        .refine(
-          (val) => {
-            if (!val) return true;
-            const date = new Date(val);
-            const today = new Date();
-            const age = today.getFullYear() - date.getFullYear();
-            const monthDiff = today.getMonth() - date.getMonth();
-            const dayDiff = today.getDate() - date.getDate();
-            const actualAge =
-              monthDiff < 0 || (monthDiff === 0 && dayDiff < 0) ? age - 1 : age;
-            return actualAge >= 13 && actualAge <= 120;
-          },
-          { message: t("dateOfBirthInvalid") }
-        )
-        .refine(
-          (val) => {
-            if (!val) return true;
-            return new Date(val) < new Date();
-          },
-          { message: t("dateOfBirthFuture") }
-        ),
+        .superRefine((val, ctx) => {
+          if (!val) return;
+          const date = new Date(val);
+          const today = new Date();
+
+          if (date >= today) {
+            ctx.addIssue({
+              code: z.ZodIssueCode.custom,
+              message: t("dateOfBirthFuture"),
+            });
+            return;
+          }
+
+          const age = today.getFullYear() - date.getFullYear();
+          const monthDiff = today.getMonth() - date.getMonth();
+          const dayDiff = today.getDate() - date.getDate();
+          const actualAge =
+            monthDiff < 0 || (monthDiff === 0 && dayDiff < 0) ? age - 1 : age;
+
+          if (actualAge < 13 || actualAge > 120) {
+            ctx.addIssue({
+              code: z.ZodIssueCode.custom,
+              message: t("dateOfBirthInvalid"),
+            });
+          }
+        }),
       location: z.string().optional(),
       phoneNumber: z
         .string()
