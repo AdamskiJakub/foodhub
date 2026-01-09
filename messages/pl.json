@@ -593,6 +593,11 @@
     "subtitle": "Znajdź odpowiedzi na najczęściej zadawane pytania dotyczące FoodHub",
     "noAnswerText": "Nie znalazłeś odpowiedzi na swoje pytanie?",
     "contactLinkText": "Skontaktuj się z nami",
+    "categories": {
+      "account": "Konto i ustawienia",
+      "restaurants": "Restauracje",
+      "reviews": "Recenzje i oceny"
+    },
     "questions": {
       "howToAddRestaurant": {
         "question": "Jak dodać restaurację?",

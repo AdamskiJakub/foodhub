@@ -589,6 +589,11 @@
     "subtitle": "Find answers to the most common questions about FoodHub",
     "noAnswerText": "Didn't find the answer to your question?",
     "contactLinkText": "Contact us",
+    "categories": {
+      "account": "Account and Settings",
+      "restaurants": "Restaurants",
+      "reviews": "Reviews and Ratings"
+    },
     "questions": {
       "howToAddRestaurant": {
         "question": "How do I add a restaurant?",

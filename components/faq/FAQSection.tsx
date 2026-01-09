@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
+import { Button } from "@/components/ui/button";
 import {
   Accordion,
   AccordionContent,
@@ -12,13 +13,19 @@ import {
 const FAQSection = () => {
   const t = useTranslations("FAQPage");
 
-  const questions = [
-    "howToAddRestaurant",
-    "howToEditReview",
-    "howToDeleteAccount",
-    "howRatingWorks",
-    "howToReportRestaurant",
-    "canIChangePassword",
+  const categories = [
+    {
+      key: "account",
+      questions: ["canIChangePassword", "howToDeleteAccount"],
+    },
+    {
+      key: "restaurants",
+      questions: ["howToAddRestaurant", "howToReportRestaurant"],
+    },
+    {
+      key: "reviews",
+      questions: ["howToEditReview", "howRatingWorks"],
+    },
   ];
 
   return (
@@ -31,30 +38,38 @@ const FAQSection = () => {
       </div>
 
       <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8">
-        <Accordion type="single" collapsible className="w-full">
-          {questions.map((key, index) => (
-            <AccordionItem key={key} value={`item-${index}`}>
-              <AccordionTrigger className="text-left text-lg font-semibold text-gray-800 hover:text-purple-600">
-                {t(`questions.${key}.question`)}
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-600 leading-relaxed">
-                {t(`questions.${key}.answer`)}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        {categories.map((category, categoryIndex) => (
+          <div
+            key={category.key}
+            className={categoryIndex > 0 ? "pt-8 mt-8" : ""}
+          >
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">
+              {t(`categories.${category.key}`)}
+            </h2>
+            <Accordion type="single" collapsible className="w-full">
+              {category.questions.map((questionKey, index) => (
+                <AccordionItem
+                  key={questionKey}
+                  value={`${category.key}-${index}`}
+                >
+                  <AccordionTrigger className="text-left text-lg font-semibold text-gray-800 hover:text-purple-600">
+                    {t(`questions.${questionKey}.question`)}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600 leading-relaxed">
+                    {t(`questions.${questionKey}.answer`)}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        ))}
       </div>
 
       <div className="mt-12 text-center">
-        <p className="text-gray-600">
-          {t("noAnswerText")}{" "}
-          <Link
-            href="/contact"
-            className="text-purple-600 hover:text-purple-700 font-semibold underline"
-          >
-            {t("contactLinkText")}
-          </Link>
-        </p>
+        <p className="text-gray-600 mb-4">{t("noAnswerText")}</p>
+        <Button asChild size="lg">
+          <Link href="/contact">{t("contactLinkText")}</Link>
+        </Button>
       </div>
     </section>
   );
