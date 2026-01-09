@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { isValidPhoneNumber } from "react-phone-number-input";
 
 export const createRegisterSchema = (t: (key: string) => string) => {
   return z
@@ -25,8 +26,12 @@ export const createRegisterSchema = (t: (key: string) => string) => {
           if (!val) return;
           const date = new Date(val);
           const today = new Date();
+          const birthDateAtMidnight = new Date(date);
+          birthDateAtMidnight.setHours(0, 0, 0, 0);
+          const todayAtMidnight = new Date(today);
+          todayAtMidnight.setHours(0, 0, 0, 0);
 
-          if (date >= today) {
+          if (birthDateAtMidnight >= todayAtMidnight) {
             ctx.addIssue({
               code: z.ZodIssueCode.custom,
               message: t("dateOfBirthFuture"),
@@ -54,9 +59,7 @@ export const createRegisterSchema = (t: (key: string) => string) => {
         .refine(
           (val) => {
             if (!val) return true;
-            if (!/^[+]?[0-9\s-()]+$/.test(val)) return false;
-            const digitsOnly = val.replace(/\D/g, "");
-            return digitsOnly.length >= 9 && digitsOnly.length <= 15;
+            return isValidPhoneNumber(val);
           },
           {
             message: t("phoneInvalid"),

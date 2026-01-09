@@ -20,21 +20,15 @@ const RegisterForm = () => {
 
   const maxDate = useMemo(() => {
     const today = new Date();
-    const date = new Date(
-      today.getFullYear() - 13,
-      today.getMonth(),
-      today.getDate()
-    );
+    const date = new Date(today);
+    date.setFullYear(date.getFullYear() - 13);
     return date.toISOString().split("T")[0];
   }, []);
 
   const minDate = useMemo(() => {
     const today = new Date();
-    const date = new Date(
-      today.getFullYear() - 120,
-      today.getMonth(),
-      today.getDate()
-    );
+    const date = new Date(today);
+    date.setFullYear(date.getFullYear() - 120);
     return date.toISOString().split("T")[0];
   }, []);
 
