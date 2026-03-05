@@ -1,5 +1,4 @@
 import { z } from "zod";
-import { isValidPhoneNumber } from "react-phone-number-input";
 
 export const createRegisterSchema = (t: (key: string) => string) => {
   return z
@@ -15,7 +14,7 @@ export const createRegisterSchema = (t: (key: string) => string) => {
           /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,15}$/,
           {
             message: t("passwordRegex"),
-          }
+          },
         ),
       name: z.string().min(1, { message: t("nameRequired") }),
       confirmPassword: z.string(),
@@ -59,11 +58,12 @@ export const createRegisterSchema = (t: (key: string) => string) => {
         .refine(
           (val) => {
             if (!val) return true;
-            return isValidPhoneNumber(val);
+            const digitsOnly = val.replace(/[\s-]/g, "");
+            return /^(\+48)?[0-9]{9}$/.test(digitsOnly);
           },
           {
             message: t("phoneInvalid"),
-          }
+          },
         ),
     })
     .refine((data) => data.password === data.confirmPassword, {
