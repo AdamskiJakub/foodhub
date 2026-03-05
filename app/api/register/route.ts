@@ -15,6 +15,13 @@ export async function POST(request: Request) {
     } = body;
     const email = rawEmail?.toLowerCase().trim();
 
+    if (typeof rawEmail !== "string" || typeof password !== "string") {
+      return NextResponse.json(
+        { message: "Invalid email or password format" },
+        { status: 400 },
+      );
+    }
+
     if (!email || !password) {
       return NextResponse.json(
         { message: "Missing email or password" },
@@ -43,6 +50,15 @@ export async function POST(request: Request) {
         dateOfBirth: dateOfBirth ? new Date(dateOfBirth) : null,
         location,
         phoneNumber,
+      },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        dateOfBirth: true,
+        location: true,
+        phoneNumber: true,
+        createdAt: true,
       },
     });
 

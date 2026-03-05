@@ -26,7 +26,9 @@ export const createRegisterSchema = (t: (key: string) => string) => {
         .optional()
         .superRefine((val, ctx) => {
           if (!val) return;
-          const date = new Date(val);
+
+          const [y, m, d] = val.split("-").map(Number);
+          const date = new Date(y, m - 1, d);
 
           if (isNaN(date.getTime())) {
             ctx.addIssue({
