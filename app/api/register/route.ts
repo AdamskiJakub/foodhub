@@ -6,21 +6,26 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     const {
-      email,
+      email: rawEmail,
       password,
       dateOfBirth,
       location,
       phoneNumber,
       name,
-      address,
     } = body;
+    const email = rawEmail?.toLowerCase().trim();
 
-    console.log("Received registration request:", { email, password });
+    if (typeof rawEmail !== "string" || typeof password !== "string") {
+      return NextResponse.json(
+        { message: "Invalid email or password format" },
+        { status: 400 },
+      );
+    }
 
     if (!email || !password) {
       return NextResponse.json(
         { message: "Missing email or password" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -31,7 +36,7 @@ export async function POST(request: Request) {
     if (existingUser) {
       return NextResponse.json(
         { message: "Email is already taken" },
-        { status: 409 }
+        { status: 409 },
       );
     }
 
@@ -45,15 +50,21 @@ export async function POST(request: Request) {
         dateOfBirth: dateOfBirth ? new Date(dateOfBirth) : null,
         location,
         phoneNumber,
-        address,
+      },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        dateOfBirth: true,
+        location: true,
+        phoneNumber: true,
+        createdAt: true,
       },
     });
 
-    console.log("User created successfully:", user);
-
     return NextResponse.json(
       { message: "User created successfully", user },
-      { status: 201 }
+      { status: 201 },
     );
   } catch (error) {
     if (error instanceof Error) {
@@ -67,7 +78,7 @@ export async function POST(request: Request) {
         message: "Failed to create user",
         error: error instanceof Error ? error.message : "Unknown error",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
