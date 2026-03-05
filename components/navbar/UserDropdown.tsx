@@ -10,7 +10,7 @@ import {
 import { User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/routing";
 
 interface UserDropdownProps {
   onClose?: () => void;
@@ -26,12 +26,18 @@ const UserDropdown = ({ onClose }: UserDropdownProps) => {
   }
 
   const handleSettingsClick = () => {
-    router.push(`/member/${session.user.id}/settings`);
+    router.push({
+      pathname: "/member/[slug]/settings",
+      params: { slug: session.user.id },
+    });
     if (onClose) onClose();
   };
 
   const handleRestaurantFormClick = () => {
-    router.push(`/member/${session.user.id}/add-restaurant`);
+    router.push({
+      pathname: "/member/[slug]/add-restaurant",
+      params: { slug: session.user.id },
+    });
     if (onClose) onClose();
   };
 
@@ -43,18 +49,34 @@ const UserDropdown = ({ onClose }: UserDropdownProps) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" className="rounded-full">
+        <Button
+          variant="ghost"
+          size="icon"
+          className="rounded-full data-[state=open]:bg-accent data-[state=open]:text-accent-foreground focus-visible:ring-0"
+        >
           <User className="h-5 w-5" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={handleSettingsClick}>
+      <DropdownMenuContent
+        align="end"
+        onCloseAutoFocus={(e) => e.preventDefault()}
+      >
+        <DropdownMenuItem
+          className="cursor-pointer"
+          onClick={handleSettingsClick}
+        >
           {t("settings")}
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={handleLogoutClick}>
+        <DropdownMenuItem
+          className="cursor-pointer"
+          onClick={handleLogoutClick}
+        >
           {t("logout")}
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={handleRestaurantFormClick}>
+        <DropdownMenuItem
+          className="cursor-pointer"
+          onClick={handleRestaurantFormClick}
+        >
           {t("addRestaurant")}
         </DropdownMenuItem>
       </DropdownMenuContent>
