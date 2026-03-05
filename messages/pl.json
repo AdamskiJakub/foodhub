@@ -85,7 +85,7 @@
     "location": "Miasto",
     "locationPlaceholder": "np. Warszawa (opcjonalne)",
     "phoneNumber": "Numer telefonu",
-    "phoneNumberPlaceholder": "np. +48 123 456 789 (opcjonalne)",
+    "phoneNumberPlaceholder": "np. 123 456 789 (opcjonalne)",
     "phoneInvalid": "Nieprawidłowy format numeru telefonu",
     "nameAndSurname": "Imię i nazwisko",
     "nameAndSurnamePlaceholder": "np. Jan Kowalski",

@@ -16,7 +16,10 @@ export const createRegisterSchema = (t: (key: string) => string) => {
             message: t("passwordRegex"),
           },
         ),
-      name: z.string().min(1, { message: t("nameRequired") }),
+      name: z
+        .string()
+        .trim()
+        .min(1, { message: t("nameRequired") }),
       confirmPassword: z.string(),
       dateOfBirth: z
         .string()
@@ -24,13 +27,22 @@ export const createRegisterSchema = (t: (key: string) => string) => {
         .superRefine((val, ctx) => {
           if (!val) return;
           const date = new Date(val);
+
+          if (isNaN(date.getTime())) {
+            ctx.addIssue({
+              code: z.ZodIssueCode.custom,
+              message: t("dateOfBirthInvalid"),
+            });
+            return;
+          }
+
           const today = new Date();
           const birthDateAtMidnight = new Date(date);
           birthDateAtMidnight.setHours(0, 0, 0, 0);
           const todayAtMidnight = new Date(today);
           todayAtMidnight.setHours(0, 0, 0, 0);
 
-          if (birthDateAtMidnight >= todayAtMidnight) {
+          if (birthDateAtMidnight > todayAtMidnight) {
             ctx.addIssue({
               code: z.ZodIssueCode.custom,
               message: t("dateOfBirthFuture"),

@@ -76,7 +76,7 @@
     "location": "City",
     "locationPlaceholder": "e.g. Warsaw (optional)",
     "phoneNumber": "Phone Number",
-    "phoneNumberPlaceholder": "e.g. +48 123 456 789 (optional)",
+    "phoneNumberPlaceholder": "e.g. 123 456 789 (optional)",
     "phoneInvalid": "Invalid phone number format",
     "haveAccount": "Already have an account?",
     "loginLink": "Login here",
@@ -89,7 +89,7 @@
     "passwordMatch": "Passwords must match.",
     "nameAndSurname": "Name and surname",
     "nameAndSurnamePlaceholder": "e.g. John Doe",
-    "nameRequired": "Name and surname is required"
+    "nameRequired": "Full name is required"
   },
   "UserSettings": {
     "title": "User Settings",

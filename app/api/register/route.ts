@@ -5,14 +5,20 @@ import prisma from "@/lib/prisma";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { email, password, dateOfBirth, location, phoneNumber, name } = body;
-
-    console.log("Received registration request:", { email, name });
+    const {
+      email: rawEmail,
+      password,
+      dateOfBirth,
+      location,
+      phoneNumber,
+      name,
+    } = body;
+    const email = rawEmail?.toLowerCase().trim();
 
     if (!email || !password) {
       return NextResponse.json(
         { message: "Missing email or password" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -23,7 +29,7 @@ export async function POST(request: Request) {
     if (existingUser) {
       return NextResponse.json(
         { message: "Email is already taken" },
-        { status: 409 }
+        { status: 409 },
       );
     }
 
@@ -40,11 +46,9 @@ export async function POST(request: Request) {
       },
     });
 
-    console.log("User created successfully:", user);
-
     return NextResponse.json(
       { message: "User created successfully", user },
-      { status: 201 }
+      { status: 201 },
     );
   } catch (error) {
     if (error instanceof Error) {
@@ -58,7 +62,7 @@ export async function POST(request: Request) {
         message: "Failed to create user",
         error: error instanceof Error ? error.message : "Unknown error",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
