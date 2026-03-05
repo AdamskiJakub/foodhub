@@ -32,7 +32,6 @@ export async function POST(req: Request) {
         dateOfBirth: user.dateOfBirth,
         location: user.location,
         phoneNumber: user.phoneNumber,
-        address: user.address,
       },
     });
   } catch (error) {
