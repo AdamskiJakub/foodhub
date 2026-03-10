@@ -40,7 +40,7 @@ const MobileUserMenu = ({ onClose }: MobileUserMenuProps) => {
   return (
     <div className="w-full border-t border-gray-100 pt-6 mt-4 flex flex-col gap-4">
       <p className="text-xs text-gray-400 uppercase tracking-widest text-center">
-        {session.user.name}
+        {session.user.name || session.user.email}
       </p>
       <button
         onClick={handleSettingsClick}

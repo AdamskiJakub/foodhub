@@ -69,15 +69,15 @@ const UserDropdown = ({ onClose }: UserDropdownProps) => {
         </DropdownMenuItem>
         <DropdownMenuItem
           className="cursor-pointer"
-          onClick={handleLogoutClick}
-        >
-          {t("logout")}
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          className="cursor-pointer"
           onClick={handleRestaurantFormClick}
         >
           {t("addRestaurant")}
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          className="cursor-pointer"
+          onClick={handleLogoutClick}
+        >
+          {t("logout")}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
