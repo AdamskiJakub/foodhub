@@ -8,10 +8,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date().toISOString();
 
   try {
-    const users = await prisma.user.findMany({
-      select: { id: true, username: true },
-    });
-
     const restaurants = await prisma.restaurant.findMany({
       select: { slug: true },
     });
@@ -37,36 +33,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         ),
       );
 
-    const userEntries: MetadataRoute.Sitemap = users
-      .filter((user) => user.username)
-      .map((user) =>
-        getEntry(
-          {
-            pathname: "/member/[username]/settings",
-            params: { username: user.username! },
-          },
-          lastModified,
-        ),
-      );
-
-    const addRestaurantEntries: MetadataRoute.Sitemap = users
-      .filter((user) => user.username)
-      .map((user) =>
-        getEntry(
-          {
-            pathname: "/member/[username]/add-restaurant",
-            params: { username: user.username! },
-          },
-          lastModified,
-        ),
-      );
-
-    return [
-      ...staticEntries,
-      ...userEntries,
-      ...restaurantEntries,
-      ...addRestaurantEntries,
-    ];
+    return [...staticEntries, ...restaurantEntries];
   } catch (error) {
     console.error("Error fetching users", error);
     return [];

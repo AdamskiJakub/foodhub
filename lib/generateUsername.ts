@@ -6,19 +6,18 @@ import prisma from "./prisma";
  * If duplicate, appends number: "jakub-adamski-2"
  */
 export async function generateUsername(name: string): Promise<string> {
-  // Remove extra spaces, lowercase, replace spaces with hyphens
-  const baseUsername = name
+  let baseUsername = name
     .trim()
     .toLowerCase()
     .replace(/\s+/g, "-")
-    // Remove special characters except hyphens
     .replace(/[^a-z0-9-]/g, "")
-    // Remove multiple consecutive hyphens
     .replace(/-+/g, "-")
-    // Remove leading/trailing hyphens
     .replace(/^-|-$/g, "");
 
-  // Check if this username exists
+  if (baseUsername.length === 0) {
+    baseUsername = `user-${Math.random().toString(36).slice(2, 8)}`;
+  }
+
   const existingUser = await prisma.user.findUnique({
     where: { username: baseUsername },
   });

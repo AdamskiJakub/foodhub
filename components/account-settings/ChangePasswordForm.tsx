@@ -20,7 +20,7 @@ const ChangePasswordForm = () => {
           {t("changePassword")}
         </h2>
         <p className="mt-1 text-sm text-gray-500">
-          Update your password to keep your account secure
+          {t("changePasswordDescription")}
         </p>
       </div>
 

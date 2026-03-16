@@ -49,7 +49,7 @@ const ProfileInfo = () => {
           {t("profileInfo")}
         </h2>
         <p className="mt-1 text-sm text-gray-500">
-          Your personal information and contact details
+          {t("profileInfoDescription")}
         </p>
       </div>
 

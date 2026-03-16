@@ -29,13 +29,12 @@ const EditProfileForm = ({ defaultValues }: EditProfileFormProps) => {
           {t("editProfile")}
         </h2>
         <p className="mt-1 text-sm text-gray-500">
-          Update your personal information and contact details
+          {t("editProfileDescription")}
         </p>
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Name */}
           <div className="md:col-span-2">
             <Label htmlFor="name" className="text-sm font-medium text-gray-700">
               {t("name")} <span className="text-red-500">*</span>
@@ -59,8 +58,6 @@ const EditProfileForm = ({ defaultValues }: EditProfileFormProps) => {
               </p>
             )}
           </div>
-
-          {/* Date of Birth */}
           <div>
             <Label
               htmlFor="dateOfBirth"
@@ -81,8 +78,6 @@ const EditProfileForm = ({ defaultValues }: EditProfileFormProps) => {
               )}
             />
           </div>
-
-          {/* Phone Number */}
           <div>
             <Label
               htmlFor="phoneNumber"
@@ -98,14 +93,12 @@ const EditProfileForm = ({ defaultValues }: EditProfileFormProps) => {
                   {...field}
                   id="phoneNumber"
                   type="text"
-                  placeholder="123 456 789"
+                  placeholder={t("phoneNumberPlaceholder")}
                   className="mt-1.5"
                 />
               )}
             />
           </div>
-
-          {/* Location */}
           <div className="md:col-span-2">
             <Label
               htmlFor="location"
@@ -121,15 +114,13 @@ const EditProfileForm = ({ defaultValues }: EditProfileFormProps) => {
                   {...field}
                   id="location"
                   type="text"
-                  placeholder="Warsaw, Poland"
+                  placeholder={t("locationPlaceholder")}
                   className="mt-1.5"
                 />
               )}
             />
           </div>
         </div>
-
-        {/* Submit Button */}
         <div className="flex justify-end pt-4 border-t border-gray-200">
           <Button type="submit" className="px-6 py-2.5 flex items-center gap-2">
             <Save className="h-4 w-4" />
