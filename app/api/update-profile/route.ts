@@ -12,12 +12,12 @@ export async function POST(req: Request) {
 
   try {
     const body = await req.json();
-    const { name, dateOfBirth, location, phoneNumber, address } = body;
+    const { name, dateOfBirth, location, phoneNumber } = body;
 
     if (!name) {
       return NextResponse.json(
         { message: "Name is required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -30,22 +30,21 @@ export async function POST(req: Request) {
         dateOfBirth: parsedDateOfBirth,
         location: location || null,
         phoneNumber: phoneNumber || null,
-        address: address || null,
       },
     });
 
     return NextResponse.json(
       { message: "Profile updated successfully", user: updatedUser },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error) {
     console.error(
       "Error updating profile:",
-      error instanceof Error ? error.message : error
+      error instanceof Error ? error.message : error,
     );
     return NextResponse.json(
       { message: "An error occurred while updating the profile" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

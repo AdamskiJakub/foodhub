@@ -9,7 +9,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   try {
     const users = await prisma.user.findMany({
-      select: { id: true },
+      select: { id: true, username: true },
     });
 
     const restaurants = await prisma.restaurant.findMany({
@@ -33,29 +33,32 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             pathname: "/restaurant/[slug]",
             params: { slug: restaurant.slug },
           },
-          lastModified
-        )
+          lastModified,
+        ),
       );
 
     const userEntries: MetadataRoute.Sitemap = users
-      .filter((user) => user.id)
-      .map((user) =>
-        getEntry(
-          { pathname: "/member/[slug]/settings", params: { slug: user.id } },
-          lastModified
-        )
-      );
-
-    const addRestaurantEntries: MetadataRoute.Sitemap = users
-      .filter((user) => user.id)
+      .filter((user) => user.username)
       .map((user) =>
         getEntry(
           {
-            pathname: "/member/[slug]/add-restaurant",
-            params: { slug: user.id },
+            pathname: "/member/[username]/settings",
+            params: { username: user.username! },
           },
-          lastModified
-        )
+          lastModified,
+        ),
+      );
+
+    const addRestaurantEntries: MetadataRoute.Sitemap = users
+      .filter((user) => user.username)
+      .map((user) =>
+        getEntry(
+          {
+            pathname: "/member/[username]/add-restaurant",
+            params: { username: user.username! },
+          },
+          lastModified,
+        ),
       );
 
     return [
@@ -72,14 +75,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
 function getEntry(
   href: Parameters<typeof getPathname>[0]["href"],
-  lastModified: string
+  lastModified: string,
 ): MetadataRoute.Sitemap[0] {
   return {
     url: getUrl(href, routing.defaultLocale),
     lastModified,
     alternates: {
       languages: Object.fromEntries(
-        routing.locales.map((locale) => [locale, getUrl(href, locale)])
+        routing.locales.map((locale) => [locale, getUrl(href, locale)]),
       ),
     },
   };
@@ -87,7 +90,7 @@ function getEntry(
 
 function getUrl(
   href: Parameters<typeof getPathname>[0]["href"],
-  locale: (typeof routing.locales)[number]
+  locale: (typeof routing.locales)[number],
 ): string {
   const pathname = getPathname({ locale, href });
   return new URL(pathname, host).toString();

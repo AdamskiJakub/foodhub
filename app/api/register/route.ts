@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import prisma from "@/lib/prisma";
+import { generateUsername } from "@/lib/generateUsername";
 
 export async function POST(request: Request) {
   try {
@@ -40,11 +41,14 @@ export async function POST(request: Request) {
       );
     }
 
+    const username = await generateUsername(name || email.split("@")[0]);
+
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const user = await prisma.user.create({
       data: {
         name,
+        username,
         email,
         password: hashedPassword,
         dateOfBirth: dateOfBirth ? new Date(dateOfBirth) : null,
@@ -53,6 +57,7 @@ export async function POST(request: Request) {
       },
       select: {
         id: true,
+        username: true,
         name: true,
         email: true,
         dateOfBirth: true,

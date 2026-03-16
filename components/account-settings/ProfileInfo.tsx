@@ -2,6 +2,7 @@
 
 import { useSession } from "next-auth/react";
 import { useTranslations } from "next-intl";
+import { Mail, User, Calendar, MapPin, Phone } from "lucide-react";
 
 const ProfileInfo = () => {
   const { data: session } = useSession();
@@ -9,35 +10,73 @@ const ProfileInfo = () => {
 
   if (!session) return null;
 
-  return (
-    <>
-      <h2 className="text-lg font-semibold mb-4">{t("profileInfo")}</h2>
-      <p>
-        <strong>{t("name")}:</strong> {session.user.name || t("emptyField")}
-      </p>
-      <p>
-        <strong>{t("email")}:</strong> {session.user.email}
-      </p>
-      <p>
-        <strong>{t("dateOfBirth")}:</strong>
-        {session.user.dateOfBirth &&
+  const profileFields = [
+    {
+      icon: User,
+      label: t("name"),
+      value: session.user.name || t("emptyField"),
+    },
+    {
+      icon: Mail,
+      label: t("email"),
+      value: session.user.email || t("emptyField"),
+    },
+    {
+      icon: Calendar,
+      label: t("dateOfBirth"),
+      value:
+        session.user.dateOfBirth &&
         !isNaN(new Date(session.user.dateOfBirth).getTime())
           ? new Date(session.user.dateOfBirth).toLocaleDateString()
-          : t("emptyField")}
-      </p>
-      <p>
-        <strong>{t("location")}:</strong>{" "}
-        {session.user.location || t("emptyField")}
-      </p>
-      <p>
-        <strong>{t("phoneNumber")}:</strong>{" "}
-        {session.user.phoneNumber || t("emptyField")}
-      </p>
-      <p>
-        <strong>{t("address")}:</strong>{" "}
-        {session.user.address || t("emptyField")}
-      </p>
-    </>
+          : t("emptyField"),
+    },
+    {
+      icon: MapPin,
+      label: t("location"),
+      value: session.user.location || t("emptyField"),
+    },
+    {
+      icon: Phone,
+      label: t("phoneNumber"),
+      value: session.user.phoneNumber || t("emptyField"),
+    },
+  ];
+
+  return (
+    <div>
+      <div className="mb-6">
+        <h2 className="text-2xl font-semibold text-gray-900">
+          {t("profileInfo")}
+        </h2>
+        <p className="mt-1 text-sm text-gray-500">
+          Your personal information and contact details
+        </p>
+      </div>
+
+      <div className="space-y-4">
+        {profileFields.map((field, index) => {
+          const Icon = field.icon;
+          return (
+            <div
+              key={index}
+              className="flex items-start gap-4 p-4 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors"
+            >
+              <div className="flex-shrink-0 mt-0.5">
+                <Icon className="h-5 w-5 text-gray-400" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-medium text-gray-500">
+                  {field.label}
+                </p>
+                <p className="mt-1 text-base text-gray-900 break-words">
+                  {field.value}
+                </p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 };
 

@@ -30,7 +30,7 @@ export const authOptions: AuthOptions = {
             dateOfBirth: true,
             location: true,
             phoneNumber: true,
-            address: true,
+            username: true,
           },
         });
 
@@ -40,7 +40,7 @@ export const authOptions: AuthOptions = {
 
         const isPasswordValid = await bcrypt.compare(
           credentials.password,
-          user.password
+          user.password,
         );
 
         if (!isPasswordValid) {
@@ -59,24 +59,21 @@ export const authOptions: AuthOptions = {
   ],
   callbacks: {
     async jwt({ token, user, trigger, session }) {
-      console.log("🔹 JWT callback | Trigger:", trigger);
       if (user) {
         token.id = String(user.id);
         token.email = user.email ?? null;
         token.name = user.name ?? null;
+        token.username = user.username ?? null;
         token.dateOfBirth = user.dateOfBirth ?? null;
         token.location = user.location ?? null;
         token.phoneNumber = user.phoneNumber ?? null;
-        token.address = user.address ?? null;
       }
 
       if (trigger === "update" && session) {
-        console.log("🔹 JWT callback | Updating token with session:", session);
         token.name = session.name ?? token.name;
         token.dateOfBirth = session.dateOfBirth ?? token.dateOfBirth;
         token.location = session.location ?? token.location;
         token.phoneNumber = session.phoneNumber ?? token.phoneNumber;
-        token.address = session.address ?? token.address;
       }
       return token;
     },
@@ -86,15 +83,14 @@ export const authOptions: AuthOptions = {
           id: String(token.id),
           email: token.email ?? null,
           name: token.name ?? null,
+          username: typeof token.username === "string" ? token.username : null,
           dateOfBirth:
             typeof token.dateOfBirth === "string" ? token.dateOfBirth : null,
           location: typeof token.location === "string" ? token.location : null,
           phoneNumber:
             typeof token.phoneNumber === "string" ? token.phoneNumber : null,
-          address: typeof token.address === "string" ? token.address : null,
         };
       }
-      console.log("✅ Session callback | Session:", session);
       return session;
     },
   },
