@@ -11,6 +11,7 @@ import Image from "next/image";
 import LocaleSwitcher from "../switcher/LocaleSwitcher";
 import NavbarMobileLinks from "./MobileLinks";
 import UserDropdown from "./UserDropdown";
+import MobileUserMenu from "./MobileUserMenu";
 import { useSession } from "next-auth/react";
 import { useChangeLocale } from "@/hooks/useChangeLocal";
 
@@ -52,113 +53,115 @@ const Navbar = () => {
   }, [isOpen]);
 
   return (
-    <nav className="w-full sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm">
-      <div className="w-full h-16 lg:h-20 mx-auto flex items-center justify-between px-4 lg:px-20">
-        <Link
-          href="/"
-          aria-label="Homepage"
-          className="transition-transform hover:scale-105"
-        >
-          <LogoSection />
-        </Link>
-
-        <div className="hidden lg:flex items-center gap-10">
-          <div className="flex items-center gap-10">
-            <NavbarLinks />
-          </div>
-          {/* TODO: both LocaleSwitcher and LanguageModal should have passed the same logic for switching lang */}
-          <LocaleSwitcher onChangeLocale={handleLocaleChange} />
-
-          {session ? (
-            <UserDropdown />
-          ) : (
-            <Link
-              href="/login"
-              className="bg-gradient-primary px-6 py-3 leading-none text-white text-center rounded-lg text-base font-medium hover:shadow-medium hover:scale-105 transition-all duration-200"
-              onClick={() => setIsOpen(false)}
-            >
-              {t("login")}
-            </Link>
-          )}
-        </div>
-
-        <button
-          className="block lg:hidden z-50"
-          onClick={toggleMenu}
-          aria-label="Toggle Menu"
-        >
-          <motion.svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
+    <>
+      <nav className="w-full sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm">
+        <div className="w-full h-16 lg:h-20 mx-auto flex items-center justify-between px-4 lg:px-20">
+          <Link
+            href="/"
+            aria-label="Homepage"
+            className="transition-transform hover:scale-105"
           >
-            {!isOpen ? (
-              <path
-                d="M3 6h18M3 12h18M3 18h18"
-                stroke="#222"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
+            <LogoSection />
+          </Link>
+
+          <div className="hidden lg:flex items-center gap-10">
+            <div className="flex items-center gap-10">
+              <NavbarLinks />
+            </div>
+            {/* TODO: both LocaleSwitcher and LanguageModal should have passed the same logic for switching lang */}
+            <LocaleSwitcher onChangeLocale={handleLocaleChange} />
+
+            {session ? (
+              <UserDropdown />
             ) : (
-              <motion.path
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                d="M6 6l12 12M6 18L18 6"
-                stroke="#222"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
+              <Link
+                href="/login"
+                className="bg-gradient-primary px-6 py-3 leading-none text-white text-center rounded-lg text-base font-medium hover:shadow-medium hover:scale-105 transition-all duration-200"
+                onClick={() => setIsOpen(false)}
+              >
+                {t("login")}
+              </Link>
             )}
-          </motion.svg>
-        </button>
+          </div>
 
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="absolute top-0 left-0 w-full h-screen bg-white flex flex-col items-center px-5 pt-16 pb-5 z-40"
+          <button
+            className="block lg:hidden z-50"
+            onClick={toggleMenu}
+            aria-label="Toggle Menu"
+          >
+            <motion.svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
             >
-              <div className="absolute top-0 left-0 w-full h-16 bg-white flex items-center shadow-md z-50 px-5">
-                <Link href="/" aria-label="Homepage">
-                  <LogoSection />
-                </Link>
-              </div>
-
-              <div className="flex flex-col items-center w-full gap-10 mt-10 flex-1">
-                <NavbarMobileLinks onClose={() => setIsOpen(false)} />
-                <button
-                  onClick={() => setIsModalOpen(true)}
-                  className="text-base font-medium flex items-center gap-2"
-                >
-                  <Image
-                    src={`/images/${locale}.svg`}
-                    alt="flag"
-                    width={20}
-                    height={20}
-                  />
-                  {t("language")}
-                </button>
-              </div>
-              {session ? (
-                <UserDropdown onClose={() => setIsOpen(false)} />
+              {!isOpen ? (
+                <path
+                  d="M3 6h18M3 12h18M3 18h18"
+                  stroke="#222"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
               ) : (
-                <Link
-                  href="/login"
-                  className="bg-gradient-primary text-white w-full text-center py-3 rounded-lg text-base font-medium hover:shadow-medium transition-all duration-200"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {t("login")}
-                </Link>
+                <motion.path
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  d="M6 6l12 12M6 18L18 6"
+                  stroke="#222"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
               )}
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+            </motion.svg>
+          </button>
+
+          <AnimatePresence>
+            {isOpen && (
+              <motion.div
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                className="fixed top-0 left-0 w-full h-screen bg-white flex flex-col z-40"
+              >
+                <div className="w-full h-16 bg-white flex items-center shadow-md z-50 px-5 shrink-0">
+                  <Link href="/" aria-label="Homepage">
+                    <LogoSection />
+                  </Link>
+                </div>
+
+                <div className="flex flex-col items-center w-full gap-10 py-10 px-5 overflow-y-auto flex-1">
+                  <NavbarMobileLinks onClose={() => setIsOpen(false)} />
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className="text-base font-medium flex items-center gap-2"
+                  >
+                    <Image
+                      src={`/images/${locale}.svg`}
+                      alt="flag"
+                      width={20}
+                      height={20}
+                    />
+                    {t("language")}
+                  </button>
+                  {session ? (
+                    <MobileUserMenu onClose={() => setIsOpen(false)} />
+                  ) : (
+                    <Link
+                      href="/login"
+                      className="bg-gradient-primary text-white w-full text-center py-3 rounded-lg text-base font-medium hover:shadow-medium transition-all duration-200"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {t("login")}
+                    </Link>
+                  )}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </nav>
 
       {isModalOpen && (
         <LanguageModal
@@ -167,7 +170,7 @@ const Navbar = () => {
           onChangeLocale={handleLocaleChange}
         />
       )}
-    </nav>
+    </>
   );
 };
 
