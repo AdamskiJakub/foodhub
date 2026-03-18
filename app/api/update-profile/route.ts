@@ -31,6 +31,16 @@ export async function POST(req: Request) {
         location: location || null,
         phoneNumber: phoneNumber || null,
       },
+      select: {
+        id: true,
+        username: true,
+        name: true,
+        email: true,
+        image: true,
+        dateOfBirth: true,
+        location: true,
+        phoneNumber: true,
+      },
     });
 
     return NextResponse.json(
