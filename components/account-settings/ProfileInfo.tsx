@@ -54,11 +54,11 @@ const ProfileInfo = () => {
       </div>
 
       <div className="space-y-4">
-        {profileFields.map((field, index) => {
+        {profileFields.map((field) => {
           const Icon = field.icon;
           return (
             <div
-              key={index}
+              key={field.label}
               className="flex items-start gap-4 p-4 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors"
             >
               <div className="flex-shrink-0 mt-0.5">
