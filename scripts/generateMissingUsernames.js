@@ -1,42 +1,7 @@
 import { PrismaClient } from "@prisma/client";
+import { generateUsername } from "../lib/generateUsername.js";
 
 const prisma = new PrismaClient();
-
-async function generateUsername(name, email) {
-  const baseText = name || email.split("@")[0];
-
-  const baseUsername = baseText
-    .trim()
-    .toLowerCase()
-    .replace(/\s+/g, "-")
-    .replace(/[^a-z0-9-]/g, "")
-    .replace(/-+/g, "-")
-    .replace(/^-|-$/g, "");
-
-  const existingUser = await prisma.user.findUnique({
-    where: { username: baseUsername },
-  });
-
-  if (!existingUser) {
-    return baseUsername;
-  }
-
-  let counter = 2;
-  let candidateUsername = `${baseUsername}-${counter}`;
-
-  while (
-    await prisma.user.findUnique({ where: { username: candidateUsername } })
-  ) {
-    counter++;
-    candidateUsername = `${baseUsername}-${counter}`;
-
-    if (counter > 1000) {
-      throw new Error("Unable to generate unique username");
-    }
-  }
-
-  return candidateUsername;
-}
 
 async function main() {
   console.log("🔍 Looking for users without username...\n");
@@ -68,7 +33,8 @@ async function main() {
   console.log("\n🚀 Generating usernames...\n");
 
   for (const user of usersWithoutUsername) {
-    const username = await generateUsername(user.name, user.email);
+    const baseText = user.name || user.email.split("@")[0];
+    const username = await generateUsername(baseText);
 
     await prisma.user.update({
       where: { id: user.id },

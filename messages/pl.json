@@ -124,7 +124,14 @@
     "profileUpdatedSuccess": "Profil został zaktualizowany pomyślnie",
     "profileUpdateError": "Wystąpił błąd podczas aktualizacji profilu",
     "saveChanges": "Zapisz zmiany",
-    "emptyField": "Informacja nie została podana"
+    "emptyField": "Informacja nie została podana",
+    "description": "Zarządzaj ustawieniami i preferencjami konta",
+    "passwordRequirementsTitle": "Wymagania hasła:",
+    "passwordRequirementsMinLength": "Co najmniej 6 znaków (max 15)",
+    "passwordRequirementsUppercase": "Jedna duża litera",
+    "passwordRequirementsLowercase": "Jedna mała litera",
+    "passwordRequirementsNumber": "Jedna cyfra",
+    "passwordRequirementsSpecialChar": "Jeden znak specjalny (@$!%*?&)"
   },
   "Footer": {
     "linksTitle": "Przydatne linki",

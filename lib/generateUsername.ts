@@ -1,12 +1,33 @@
 import prisma from "./prisma";
 
-/**
- * Generates a unique username from a full name
- * Example: "Jakub Adamski" -> "jakub-adamski"
- * If duplicate, appends number: "jakub-adamski-2"
- */
 export async function generateUsername(name: string): Promise<string> {
+  const polishChars: { [key: string]: string } = {
+    ą: "a",
+    ć: "c",
+    ę: "e",
+    ł: "l",
+    ń: "n",
+    ó: "o",
+    ś: "s",
+    ź: "z",
+    ż: "z",
+    Ą: "a",
+    Ć: "c",
+    Ę: "e",
+    Ł: "l",
+    Ń: "n",
+    Ó: "o",
+    Ś: "s",
+    Ź: "z",
+    Ż: "z",
+  };
+
   let baseUsername = name
+    .split("")
+    .map((char) => polishChars[char] || char)
+    .join("")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
     .trim()
     .toLowerCase()
     .replace(/\s+/g, "-")
@@ -22,12 +43,10 @@ export async function generateUsername(name: string): Promise<string> {
     where: { username: baseUsername },
   });
 
-  // If doesn't exist, we're good!
   if (!existingUser) {
     return baseUsername;
   }
 
-  // If exists, try with numbers: username-2, username-3, etc.
   let counter = 2;
   let candidateUsername = `${baseUsername}-${counter}`;
 
@@ -37,7 +56,6 @@ export async function generateUsername(name: string): Promise<string> {
     counter++;
     candidateUsername = `${baseUsername}-${counter}`;
 
-    // Safety limit to prevent infinite loop
     if (counter > 1000) {
       throw new Error("Unable to generate unique username");
     }

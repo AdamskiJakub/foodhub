@@ -42,7 +42,11 @@ export async function POST(request: Request) {
       );
     }
 
-    const baseUsername = name || email.split("@")[0];
+    const emailLocalPart = email.split("@")[0];
+    const baseUsername =
+      typeof name === "string" && name.trim().length > 0
+        ? name
+        : emailLocalPart;
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const maxUsernameAttempts = 5;

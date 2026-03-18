@@ -124,7 +124,14 @@
     "profileUpdatedSuccess": "Profile updated successfully",
     "profileUpdateError": "An error occurred while updating the profile",
     "saveChanges": "Save Changes",
-    "emptyField": "Information not provided"
+    "emptyField": "Information not provided",
+    "description": "Manage your account settings and preferences",
+    "passwordRequirementsTitle": "Password requirements:",
+    "passwordRequirementsMinLength": "At least 6 characters (max 15)",
+    "passwordRequirementsUppercase": "One uppercase letter",
+    "passwordRequirementsLowercase": "One lowercase letter",
+    "passwordRequirementsNumber": "One number",
+    "passwordRequirementsSpecialChar": "One special character (@$!%*?&)"
   },
   "Footer": {
     "linksTitle": "Useful Links",

@@ -6,7 +6,7 @@ import ChangePasswordForm from "@/components/account-settings/ChangePasswordForm
 import SettingsSidebar from "@/components/account-settings/SideBarSettings";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/routing";
 import { useSession } from "next-auth/react";
 import { useTranslations } from "next-intl";
 
@@ -21,7 +21,7 @@ const UserSettingsPage = () => {
 
   useEffect(() => {
     if (status === "unauthenticated") {
-      router.push("/login");
+      router.push({ pathname: "/login" });
     }
   }, [status, router]);
 
@@ -33,9 +33,7 @@ const UserSettingsPage = () => {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900">{t("title")}</h1>
-          <p className="mt-2 text-sm text-gray-600">
-            Manage your account settings and preferences
-          </p>
+          <p className="mt-2 text-sm text-gray-600">{t("description")}</p>
         </div>
 
         {/* Content Grid */}

@@ -35,7 +35,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     return [...staticEntries, ...restaurantEntries];
   } catch (error) {
-    console.error("Error fetching users", error);
+    console.error("Error generating sitemap", error);
     return [];
   }
 }
