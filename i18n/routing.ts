@@ -34,13 +34,13 @@ export const routing = defineRouting({
       en: "/login",
       pl: "/zaloguj",
     },
-    "/member/[slug]/settings": {
-      en: "/member/[slug]/settings",
-      pl: "/użytkownik/[slug]/ustawienia",
+    "/member/[username]/settings": {
+      en: "/member/[username]/settings",
+      pl: "/użytkownik/[username]/ustawienia",
     },
-    "/member/[slug]/add-restaurant": {
-      en: "/member/[slug]/add-restaurant",
-      pl: "/użytkownik/[slug]/dodaj-restaurację",
+    "/member/[username]/add-restaurant": {
+      en: "/member/[username]/add-restaurant",
+      pl: "/użytkownik/[username]/dodaj-restaurację",
     },
     "/restaurant/[slug]": {
       en: "/restaurant/[slug]",

@@ -18,16 +18,16 @@ const MobileUserMenu = ({ onClose }: MobileUserMenuProps) => {
 
   const handleSettingsClick = () => {
     router.push({
-      pathname: "/member/[slug]/settings",
-      params: { slug: session.user.id },
+      pathname: "/member/[username]/settings",
+      params: { username: session.user.username || session.user.id },
     });
     onClose();
   };
 
   const handleRestaurantFormClick = () => {
     router.push({
-      pathname: "/member/[slug]/add-restaurant",
-      params: { slug: session.user.id },
+      pathname: "/member/[username]/add-restaurant",
+      params: { username: session.user.username || session.user.id },
     });
     onClose();
   };

@@ -2,69 +2,135 @@
 
 import { useChangePassword } from "@/hooks/useChangePassword";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Controller } from "react-hook-form";
 import { useTranslations } from "next-intl";
+import { Lock, Save } from "lucide-react";
 
 const ChangePasswordForm = () => {
   const t = useTranslations("UserSettings");
   const { control, handleSubmit, errors, onSubmit } = useChangePassword();
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-      <div>
-        <label className="block text-sm font-medium mb-2">
-          {t("currentPassword")}
-        </label>
-        <Controller
-          name="currentPassword"
-          control={control}
-          render={({ field }) => (
-            <Input {...field} type="password" className="w-full" />
-          )}
-        />
-        {errors.currentPassword && (
-          <p className="text-red-500 text-sm">
-            {errors.currentPassword.message}
+    <div>
+      <div className="mb-6">
+        <h2 className="text-2xl font-semibold text-gray-900 flex items-center gap-2">
+          <Lock className="h-6 w-6" />
+          {t("changePassword")}
+        </h2>
+        <p className="mt-1 text-sm text-gray-500">
+          {t("changePasswordDescription")}
+        </p>
+      </div>
+
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+        <div className="space-y-5">
+          {/* Current Password */}
+          <div>
+            <Label
+              htmlFor="currentPassword"
+              className="text-sm font-medium text-gray-700"
+            >
+              {t("currentPassword")} <span className="text-red-500">*</span>
+            </Label>
+            <Controller
+              name="currentPassword"
+              control={control}
+              render={({ field }) => (
+                <Input
+                  {...field}
+                  id="currentPassword"
+                  type="password"
+                  className="mt-1.5"
+                />
+              )}
+            />
+            {errors.currentPassword && (
+              <p className="mt-1.5 text-sm text-red-600">
+                {errors.currentPassword.message}
+              </p>
+            )}
+          </div>
+
+          {/* New Password */}
+          <div>
+            <Label
+              htmlFor="newPassword"
+              className="text-sm font-medium text-gray-700"
+            >
+              {t("newPassword")} <span className="text-red-500">*</span>
+            </Label>
+            <Controller
+              name="newPassword"
+              control={control}
+              render={({ field }) => (
+                <Input
+                  {...field}
+                  id="newPassword"
+                  type="password"
+                  className="mt-1.5"
+                />
+              )}
+            />
+            {errors.newPassword && (
+              <p className="mt-1.5 text-sm text-red-600">
+                {errors.newPassword.message}
+              </p>
+            )}
+          </div>
+
+          {/* Confirm New Password */}
+          <div>
+            <Label
+              htmlFor="confirmNewPassword"
+              className="text-sm font-medium text-gray-700"
+            >
+              {t("confirmNewPassword")} <span className="text-red-500">*</span>
+            </Label>
+            <Controller
+              name="confirmNewPassword"
+              control={control}
+              render={({ field }) => (
+                <Input
+                  {...field}
+                  id="confirmNewPassword"
+                  type="password"
+                  className="mt-1.5"
+                />
+              )}
+            />
+            {errors.confirmNewPassword && (
+              <p className="mt-1.5 text-sm text-red-600">
+                {errors.confirmNewPassword.message}
+              </p>
+            )}
+          </div>
+        </div>
+
+        {/* Password Requirements */}
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+          <p className="text-sm font-medium text-blue-900 mb-2">
+            {t("passwordRequirementsTitle")}
           </p>
-        )}
-      </div>
-      <div>
-        <label className="block text-sm font-medium mb-2">
-          {t("newPassword")}
-        </label>
-        <Controller
-          name="newPassword"
-          control={control}
-          render={({ field }) => (
-            <Input {...field} type="password" className="w-full" />
-          )}
-        />
-        {errors.newPassword && (
-          <p className="text-red-500 text-sm">{errors.newPassword.message}</p>
-        )}
-      </div>
-      <div>
-        <label className="block text-sm font-medium mb-2">
-          {t("confirmNewPassword")}
-        </label>
-        <Controller
-          name="confirmNewPassword"
-          control={control}
-          render={({ field }) => (
-            <Input {...field} type="password" className="w-full" />
-          )}
-        />
-        {errors.confirmNewPassword && (
-          <p className="text-red-500 text-sm">
-            {errors.confirmNewPassword.message}
-          </p>
-        )}
-      </div>
-      <Button type="submit" className="w-full">
-        {t("changePassword")}
-      </Button>
-    </form>
+          <ul className="text-sm text-blue-700 space-y-1 list-disc list-inside">
+            <li>{t("passwordRequirementsMinLength")}</li>
+            <li>{t("passwordRequirementsUppercase")}</li>
+            <li>{t("passwordRequirementsLowercase")}</li>
+            <li>{t("passwordRequirementsNumber")}</li>
+            <li>{t("passwordRequirementsSpecialChar")}</li>
+          </ul>
+        </div>
+
+        {/* Submit Button */}
+        <div className="flex justify-end pt-4 border-t border-gray-200">
+          <Button type="submit" className="px-6 py-2.5 flex items-center gap-2">
+            <Save className="h-4 w-4" />
+            {t("changePassword")}
+          </Button>
+        </div>
+      </form>
+    </div>
   );
 };
 

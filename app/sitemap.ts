@@ -8,10 +8,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date().toISOString();
 
   try {
-    const users = await prisma.user.findMany({
-      select: { id: true },
-    });
-
     const restaurants = await prisma.restaurant.findMany({
       select: { slug: true },
     });
@@ -33,53 +29,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             pathname: "/restaurant/[slug]",
             params: { slug: restaurant.slug },
           },
-          lastModified
-        )
+          lastModified,
+        ),
       );
 
-    const userEntries: MetadataRoute.Sitemap = users
-      .filter((user) => user.id)
-      .map((user) =>
-        getEntry(
-          { pathname: "/member/[slug]/settings", params: { slug: user.id } },
-          lastModified
-        )
-      );
-
-    const addRestaurantEntries: MetadataRoute.Sitemap = users
-      .filter((user) => user.id)
-      .map((user) =>
-        getEntry(
-          {
-            pathname: "/member/[slug]/add-restaurant",
-            params: { slug: user.id },
-          },
-          lastModified
-        )
-      );
-
-    return [
-      ...staticEntries,
-      ...userEntries,
-      ...restaurantEntries,
-      ...addRestaurantEntries,
-    ];
+    return [...staticEntries, ...restaurantEntries];
   } catch (error) {
-    console.error("Error fetching users", error);
+    console.error("Error generating sitemap", error);
     return [];
   }
 }
 
 function getEntry(
   href: Parameters<typeof getPathname>[0]["href"],
-  lastModified: string
+  lastModified: string,
 ): MetadataRoute.Sitemap[0] {
   return {
     url: getUrl(href, routing.defaultLocale),
     lastModified,
     alternates: {
       languages: Object.fromEntries(
-        routing.locales.map((locale) => [locale, getUrl(href, locale)])
+        routing.locales.map((locale) => [locale, getUrl(href, locale)]),
       ),
     },
   };
@@ -87,7 +57,7 @@ function getEntry(
 
 function getUrl(
   href: Parameters<typeof getPathname>[0]["href"],
-  locale: (typeof routing.locales)[number]
+  locale: (typeof routing.locales)[number],
 ): string {
   const pathname = getPathname({ locale, href });
   return new URL(pathname, host).toString();

@@ -11,7 +11,7 @@ export const changePasswordSchema = (t: (key: string) => string) =>
         .min(6, { message: t("passwordMin") })
         .regex(
           /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,15}$/,
-          { message: t("passwordRegex") }
+          { message: t("passwordRegex") },
         ),
       confirmNewPassword: z.string(),
     })
@@ -30,7 +30,6 @@ export const changeProfileSchema = (t: (key: string) => string) =>
     dateOfBirth: z.string().optional(),
     location: z.string().optional(),
     phoneNumber: z.string().optional(),
-    address: z.string().optional(),
   });
 
 export type ProfileFormData = z.infer<ReturnType<typeof changeProfileSchema>>;
