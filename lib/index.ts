@@ -1,6 +1,7 @@
 export { default as prisma } from "./prisma";
 export * from "./utils";
 export { generateSlug } from "./generateSlug";
+export { generateUsername } from "./generateUsername";
 export { normalizeSlug } from "./normalizeSlug";
 export { formatOpeningHours } from "./formattingHours";
 export { filterByCuisine, filterByBooleanFlag } from "./filters";

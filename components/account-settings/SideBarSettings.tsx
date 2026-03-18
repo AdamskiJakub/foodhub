@@ -2,55 +2,66 @@
 
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
+import { User, Edit, Lock } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface SettingsSidebarProps {
+  activeSection: "profile" | "changePassword" | "editProfile";
   onSectionChange: (
-    section: "profile" | "changePassword" | "editProfile"
+    section: "profile" | "changePassword" | "editProfile",
   ) => void;
 }
 
-const SettingsSidebar = ({ onSectionChange }: SettingsSidebarProps) => {
+const SettingsSidebar = ({
+  activeSection,
+  onSectionChange,
+}: SettingsSidebarProps) => {
   const t = useTranslations("UserSettings");
 
-  const handleSectionChange = (
-    section: "profile" | "changePassword" | "editProfile"
-  ) => {
-    onSectionChange(section);
-  };
+  const menuItems = [
+    {
+      id: "profile" as const,
+      label: t("profileInfo"),
+      icon: User,
+    },
+    {
+      id: "editProfile" as const,
+      label: t("editProfile"),
+      icon: Edit,
+    },
+    {
+      id: "changePassword" as const,
+      label: t("changePassword"),
+      icon: Lock,
+    },
+  ];
 
   return (
-    <div className="w-full md:w-1/3 bg-white p-4 rounded-lg shadow-md">
-      <h2 className="text-lg font-semibold mb-4">{t("options")}</h2>
-      <ul className="space-y-2">
-        <li>
-          <Button
-            variant="ghost"
-            className="w-full text-left"
-            onClick={() => handleSectionChange("profile")}
-          >
-            {t("profileInfo")}
-          </Button>
-        </li>
-        <li>
-          <Button
-            variant="ghost"
-            className="w-full text-left"
-            onClick={() => handleSectionChange("editProfile")}
-          >
-            {t("editProfile")}
-          </Button>
-        </li>
-        <li>
-          <Button
-            variant="ghost"
-            className="w-full text-left"
-            onClick={() => handleSectionChange("changePassword")}
-          >
-            {t("changePassword")}
-          </Button>
-        </li>
-      </ul>
-    </div>
+    <nav className="bg-white rounded-xl shadow-sm border border-gray-200 p-2">
+      <div className="space-y-1">
+        {menuItems.map((item) => {
+          const Icon = item.icon;
+          const isActive = activeSection === item.id;
+
+          return (
+            <Button
+              key={item.id}
+              variant="ghost"
+              className={cn(
+                "w-full justify-start gap-3 px-4 py-3 h-auto font-medium transition-colors",
+                isActive
+                  ? "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground"
+                  : "text-gray-700 hover:bg-gray-100 hover:text-gray-900",
+              )}
+              onClick={() => onSectionChange(item.id)}
+            >
+              <Icon className="h-5 w-5" />
+              <span>{item.label}</span>
+            </Button>
+          );
+        })}
+      </div>
+    </nav>
   );
 };
 
